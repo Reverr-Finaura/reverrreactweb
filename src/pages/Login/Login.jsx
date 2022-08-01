@@ -4,7 +4,6 @@ import { auth } from "../../firebase";
 import {
   signInWithPopup,
   GoogleAuthProvider,
-  createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useDispatch } from "react-redux";
