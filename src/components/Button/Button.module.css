@@ -1,0 +1,14 @@
+button {
+  background: linear-gradient(
+    236.51deg,
+    #012437 24.72%,
+    rgba(140, 150, 253, 0.42) 100%
+  );
+  color: white;
+  padding: 0.5rem 5rem;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 36px;
+  outline: none;
+  border:none;
+}

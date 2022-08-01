@@ -1,12 +1,23 @@
 import React, { useState } from "react";
 import styles from "./Auth.module.css";
 import { auth } from "../../firebase";
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  signInWithPopup,
+  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
+} from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
+import Button from "../../components/Button/Button";
+import { Link } from "react-router-dom";
 
 function Auth() {
   const [userType, setUserType] = useState("founder");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const dispatch = useDispatch();
 
   const provider = new GoogleAuthProvider();
@@ -29,45 +40,95 @@ function Auth() {
       });
   };
 
+  const signUpEmail = (e) => {
+    e.preventDefault();
+
+    if (password === confirmPassword) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          dispatch(
+            login({
+              firstName,
+              lastName,
+              email,
+              password,
+              userType
+            })
+          );
+        })
+        .catch((error) => {
+          const errorMessage = error.message;
+          alert(errorMessage);
+        });
+    } else {
+      alert("passwords do not match");
+    }
+  };
+
   return (
     <section className={styles.auth}>
       <div className={styles.signup}>
         <div>
-          <button onClick={() => setUserType("founder")}>
+          <Button onClick={() => setUserType("founder")}>
             Join as a Founder
-          </button>
-          <button onClick={() => setUserType("mentor")}>
+          </Button>
+          <Button onClick={() => setUserType("mentor")}>
             Join as a Mentor
-          </button>
+          </Button>
         </div>
         <div>
-          <h1>Get started as a {userType}</h1>
+          <h1>Get started as a {userType} with REVERR</h1>
         </div>
-        <button onClick={signInWithGoogle}>Sign up with Google</button>
+        <Button onClick={signInWithGoogle}>Sign up with Google</Button>
         <div>
           <p>Or Sign Up with your E-mail</p>
         </div>
-        <form>
+        <form onSubmit={signUpEmail}>
           <div className={styles.name}>
-            <input type="text" placeholder="First Name" />
-            <input type="text" placeholder="Last Name" />
+            <input
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
+              type="text"
+              placeholder="First Name"
+            />
+            <input
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
+              type="text"
+              placeholder="Last Name"
+            />
           </div>
           <div>
-            <input type="email" placeholder="Your E-Mail" />
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              type="email"
+              placeholder="Your E-Mail"
+            />
           </div>
           <div>
-            <input type="password" placeholder="Enter a password" />
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              type="password"
+              placeholder="Enter a password"
+            />
           </div>
           <div>
-            <input type="password" placeholder="Confirm Password" />
+            <input
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              value={confirmPassword}
+              type="password"
+              placeholder="Confirm Password"
+            />
           </div>
-          <button>Sign Up</button>
+          <Button type="submit">Sign Up</Button>
         </form>
         <p>
-          Already have an account? <button>Login</button>
+          Already have an account? <Link to="/login">Login</Link>
         </p>
         <p>
-          Forgot Password? <button>Click Here</button>
+          Forgot Password? <Link to="passwordrecovery">Click Here</Link>
         </p>
       </div>
     </section>
