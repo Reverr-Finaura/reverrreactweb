@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Auth from "./pages/Auth/Auth";
 
 function App() {
   return (
-    <div>App</div>
-  )
+    <Routes>
+      <Route path="/" element={<Auth />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;
