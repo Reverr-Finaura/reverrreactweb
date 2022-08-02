@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Auth.module.css";
-import { auth } from "../../firebase";
+import { auth, db } from "../../firebase";
 import {
   signInWithPopup,
   GoogleAuthProvider,
@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
+import { collection, addDoc } from "firebase/firestore";
 
 function Auth() {
   const [userType, setUserType] = useState("founder");
@@ -35,6 +36,15 @@ function Auth() {
           })
         );
       })
+      .then(() => {
+        const docRef = addDoc(collection(db, "Users"), {
+          email: auth.currentUser.email,
+          uid: auth.currentUser.uid,
+          displayName: auth.currentUser.displayName,
+          userType,
+        });
+        console.log("Document written with ID: ", docRef.id);
+      })
       .catch((error) => {
         alert(error);
       });
@@ -52,9 +62,18 @@ function Auth() {
               lastName,
               email,
               password,
-              userType
+              userType,
             })
           );
+        })
+        .then(() => {
+          const docRef = addDoc(collection(db, "Users"), {
+            name: firstName + " " + lastName,
+            email: auth.currentUser.email,
+            uid: auth.currentUser.uid,
+            userType,
+          });
+          console.log("Document written with ID: ", docRef.id);
         })
         .catch((error) => {
           const errorMessage = error.message;
