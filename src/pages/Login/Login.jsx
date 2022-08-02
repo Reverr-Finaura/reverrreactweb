@@ -82,7 +82,7 @@ function Auth() {
           Already have an account? <Link to="/login">Login</Link>
         </p>
         <p>
-          Forgot Password? <Link to="passwordrecovery">Click Here</Link>
+          Forgot Password? <Link to="/forgotpassword">Click Here</Link>
         </p>
       </div>
     </section>
