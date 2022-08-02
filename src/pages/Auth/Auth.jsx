@@ -72,6 +72,7 @@ function Auth() {
             email: auth.currentUser.email,
             uid: auth.currentUser.uid,
             userType,
+            password,
           });
           console.log("Document written with ID: ", docRef.id);
         })
