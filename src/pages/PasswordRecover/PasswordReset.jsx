@@ -1,5 +1,5 @@
 import { confirmPasswordReset } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { auth } from "../../firebase";
 import styles from "./Passwordreset.module.css";

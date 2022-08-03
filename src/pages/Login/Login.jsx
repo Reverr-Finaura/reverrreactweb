@@ -42,7 +42,10 @@ function Auth() {
       .then((userCredential) => {
         dispatch(
           login({
-            email,
+            email: auth.currentUser.email,
+            uid: auth.currentUser.uid,
+            displayName: auth.currentUser.displayName,
+            profilePic: auth.currentUser.photoURL,
           })
         );
       })
@@ -79,7 +82,7 @@ function Auth() {
           <Button type="submit">Login</Button>
         </form>
         <p>
-          Already have an account? <Link to="/login">Login</Link>
+          Don't have an account? <Link to="/">Sign Up</Link>
         </p>
         <p>
           Forgot Password? <Link to="/forgotpassword">Click Here</Link>

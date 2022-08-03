@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import styles from "./Auth.module.css";
 import { auth, db } from "../../firebase";
-import {
-  signInWithPopup,
-  GoogleAuthProvider,
-  createUserWithEmailAndPassword,
-} from "firebase/auth";
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
+import { create } from "../../features/newUserSlice";
 import Button from "../../components/Button/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
+import emailjs from "@emailjs/browser";
 
 function Auth() {
+  const navigate = useNavigate();
   const [userType, setUserType] = useState("founder");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -54,31 +53,55 @@ function Auth() {
     e.preventDefault();
 
     if (password === confirmPassword) {
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          dispatch(
-            login({
-              firstName,
-              lastName,
-              email,
-              password,
-              userType,
-            })
-          );
+      function generate(n) {
+        var add = 1,
+          max = 12 - add;
+        if (n > max) {
+          return generate(max) + generate(n - max);
+        }
+        max = Math.pow(10, n + add);
+        var min = max / 10;
+        var number = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        return ("" + number).substring(add);
+      }
+      const otp = generate(6);
+      dispatch(
+        create({
+          name: firstName + " " + lastName,
+          email: email,
+          userType,
+          otp,
+          password,
         })
+      );
+      var templateParams = {
+        from_name: "Reverr",
+        to_name: firstName + " " + lastName,
+        to_email: email,
+        otp,
+      };
+
+      emailjs
+        .send(
+          "service_lfmmz8k",
+          "template_n3pcht5",
+          templateParams,
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+          },
+          function (error) {
+            console.log("FAILED...", error);
+          }
+        )
         .then(() => {
-          const docRef = addDoc(collection(db, "Users"), {
-            name: firstName + " " + lastName,
-            email: auth.currentUser.email,
-            uid: auth.currentUser.uid,
-            userType,
-            password,
-          });
-          console.log("Document written with ID: ", docRef.id);
+          navigate("/enterotp");
         })
         .catch((error) => {
-          const errorMessage = error.message;
-          alert(errorMessage);
+          console.log(error);
         });
     } else {
       alert("passwords do not match");

@@ -1,0 +1,10 @@
+.otp{
+    width: 50%;
+    background: #1d263b;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 1rem;
+}
