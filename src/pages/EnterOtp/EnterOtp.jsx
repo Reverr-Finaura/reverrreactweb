@@ -37,8 +37,48 @@ function EnterOtp() {
 
   return (
     <div className={styles.otp}>
-      <form onSubmit={checkOtp}>
-        <p>Enter OTP sent to your e-mail</p>
+      <div className={styles.getStarted}>
+        <h1>
+          Get Started with <span>REVERR</span>
+        </h1>
+      </div>
+      <div className={styles.para}>
+        <p>
+          We have provided you an OTP email address; please enter the OTP
+          received to proceed and become a member of Reverr.
+        </p>
+      </div>
+      <form className={styles.otpForm} onSubmit={checkOtp}>
+        <input
+          type="text"
+          value={enteredOtp}
+          onChange={(e) => setEnteredotp(e.target.value)}
+          placeholder="Enter OTP"
+        />
+        <input
+          type="text"
+          value={enteredOtp}
+          onChange={(e) => setEnteredotp(e.target.value)}
+          placeholder="Enter OTP"
+        />
+        <input
+          type="text"
+          value={enteredOtp}
+          onChange={(e) => setEnteredotp(e.target.value)}
+          placeholder="Enter OTP"
+        />
+        <input
+          type="text"
+          value={enteredOtp}
+          onChange={(e) => setEnteredotp(e.target.value)}
+          placeholder="Enter OTP"
+        />
+        <input
+          type="text"
+          value={enteredOtp}
+          onChange={(e) => setEnteredotp(e.target.value)}
+          placeholder="Enter OTP"
+        />
         <input
           type="text"
           value={enteredOtp}

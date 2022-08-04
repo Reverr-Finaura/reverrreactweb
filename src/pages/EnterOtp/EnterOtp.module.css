@@ -1,10 +1,43 @@
-.otp{
-    width: 50%;
-    background: #1d263b;
-    margin: auto;
+.otp {
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.getStarted {
+  width: 60%;
+}
+
+.getStarted > h1 {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 75px;
+}
+
+.getStarted > h1 > span {
+  font-family: "Philosopher", sans-serif;
+  color: rgba(42, 114, 222, 1);
+}
+
+.para {
+  width: 65%;
+}
+
+.para > p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.otpForm {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    padding: 1rem;
+}
+
+.otpForm > input {
+    width: 66px;
+    height: 66px;
 }
