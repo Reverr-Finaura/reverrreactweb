@@ -11,6 +11,9 @@ export const newUserSlice = createSlice({
     create: (state, action) => {
       state.newUser = action.payload;
     },
+    // modify: (state, action) => {
+    //   return {...state, action.payload}
+    // },
     remove: (state, action) => {
       state.newUser = null;
     },
