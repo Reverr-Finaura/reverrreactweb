@@ -6,7 +6,7 @@ function RoundButton(props) {
     <button
       type={props.type}
       onClick={props.onClick}
-      className={`${props.className} ${styles.button}`}
+      className={styles.round_btn}
     >
       {props.children}
     </button>

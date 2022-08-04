@@ -2,6 +2,7 @@ import React from "react";
 import Divider from "../../components/Divider/Divider";
 import RoundButton from "../../components/RoundButton/RoundButton";
 import styles from "./home.module.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -108,7 +109,9 @@ const Home = () => {
             content
           </p>
           <div className={styles.rd_btn}>
-            <RoundButton>Login Now</RoundButton>
+            <Link to="/login">
+              <RoundButton>Login Now</RoundButton>
+            </Link>
           </div>
         </div>
         <div className={styles.rd_img}>

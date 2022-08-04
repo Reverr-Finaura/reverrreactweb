@@ -82,7 +82,7 @@ function Auth() {
           <Button type="submit">Login</Button>
         </form>
         <p>
-          Don't have an account? <Link to="/">Sign Up</Link>
+          Don't have an account? <Link to="/signup">Sign Up</Link>
         </p>
         <p>
           Forgot Password? <Link to="/forgotpassword">Click Here</Link>

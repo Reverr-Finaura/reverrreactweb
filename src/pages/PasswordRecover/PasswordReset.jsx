@@ -1,23 +1,28 @@
 import { confirmPasswordReset } from "firebase/auth";
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { auth } from "../../firebase";
 import styles from "./Passwordreset.module.css";
 
 const PasswordReset = () => {
   const [newPassword, setNewPassword] = useState("");
+  const [newConfirmPassword, setNewConfirmPassword] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const handlePasswordChange = (e) => {
     e.preventDefault();
     const oobCode = searchParams.get("oobCode");
 
-    confirmPasswordReset(auth, oobCode, newPassword)
-      .then(() => {
-        alert("Password changed successfully");
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
+    if (newPassword === newConfirmPassword) {
+      confirmPasswordReset(auth, oobCode, newPassword)
+        .then(() => {
+          alert("Password changed successfully");
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
+    } else {
+      alert("Passwords do not match");
+    }
   };
 
   return (
@@ -31,6 +36,14 @@ const PasswordReset = () => {
               setNewPassword(e.target.value);
             }}
             placeholder="Enter your new password"
+          />
+          <input
+            type="password"
+            id=""
+            onChange={(e) => {
+              setNewConfirmPassword(e.target.value);
+            }}
+            placeholder="Enter your new confirm password"
           />
           <p>
             <Link to="/login">Back to Login</Link>
