@@ -11,16 +11,16 @@ export const newUserSlice = createSlice({
     create: (state, action) => {
       state.newUser = action.payload;
     },
-    // modify: (state, action) => {
-    //   return {...state, action.payload}
-    // },
+    modify: (state, action) => {
+      state.newUser = { ...state.newUser, ...action.payload };
+    },
     remove: (state, action) => {
       state.newUser = null;
     },
   },
 });
 
-export const { create, remove } = newUserSlice.actions;
+export const { create, remove, modify } = newUserSlice.actions;
 export const selectNewUser = (state) => state.newUser.newUser;
 
 export default newUserSlice.reducer;

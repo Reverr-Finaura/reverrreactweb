@@ -3,7 +3,7 @@ import { addDoc, collection } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../../components/Button/Button";
-import { create, selectNewUser } from "../../features/newUserSlice";
+import { modify, selectNewUser } from "../../features/newUserSlice";
 import { login } from "../../features/userSlice";
 import { auth, db } from "../../firebase";
 import styles from "./EnterOtp.module.css";
@@ -110,7 +110,7 @@ function EnterOtp() {
       to_email: newUser.email,
       otp,
     };
-// dispatch(create({...prevState, otp}))
+    dispatch(modify({ otp }));
     emailjs
       .send(
         "service_lfmmz8k",
