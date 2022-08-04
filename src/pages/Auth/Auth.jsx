@@ -177,16 +177,29 @@ function Auth() {
             <Button type="submit">Sign Up</Button>
           </div>
         </form>
-        <p>
-          Already have an account?{" "}
-          <Link className={styles.login_link} to="/login">
-            Login Here
-          </Link>
-        </p>
-        <p>
-          {`Want to join as a ${userType}?`}
-          <button className={styles.apply_link}> Apply Here</button>
-        </p>
+        <div className={styles.signupBottom}>
+          <div className={styles.links}>
+            <p>Already have an account? </p>
+            <Link className={styles.login_link} to="/login">
+              Login Here
+            </Link>
+          </div>
+          <div className={styles.links}>
+            <p>
+              {`Want to join as a ${
+                userType === "FOUNDER" ? "MENTOR" : "FOUNDER"
+              }?`}
+            </p>
+            <button
+              onClick={() =>
+                setUserType(userType === "FOUNDER" ? "MENTOR" : "FOUNDER")
+              }
+              className={styles.apply_link}
+            >
+              Apply Here
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );
