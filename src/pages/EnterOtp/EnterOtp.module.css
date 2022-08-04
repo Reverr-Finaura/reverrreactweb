@@ -34,10 +34,38 @@
 }
 
 .otpForm {
-    display: flex;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
-.otpForm > input {
-    width: 66px;
-    height: 66px;
+.otpForm > .otpInputs > input {
+  width: 66px;
+  height: 66px;
+  background: rgba(95, 95, 95, 0.2);
+  color: white;
+  font-size: large;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.otpInputs {
+  display: flex;
+  gap: 1rem;
+}
+
+.resend {
+  width: fit-content;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.4);
 }
