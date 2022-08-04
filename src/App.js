@@ -9,6 +9,7 @@ import Auth from "./pages/Auth/Auth";
 import Community from "./pages/Community/Community";
 import EnterOtp from "./pages/EnterOtp/EnterOtp";
 import ForgotPassword from "./pages/Forgotpassword/ForgotPassword";
+import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import PasswordReset from "./pages/PasswordRecover/PasswordReset";
 
@@ -36,7 +37,8 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={user ? <Community /> : <Auth />} />
+      <Route path="/" element={user ? <Community /> : <Home />} />
+      <Route path="/signup" element={user ? <Community /> : <Auth />} />
       <Route path="/login" element={user ? <Community /> : <Login />} />
       <Route
         path="/forgotpassword"
