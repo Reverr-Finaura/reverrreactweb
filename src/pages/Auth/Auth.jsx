@@ -178,7 +178,7 @@ function Auth() {
           </div>
         </form>
         <p>
-          Already have an account?
+          Already have an account?{" "}
           <Link className={styles.login_link} to="/login">
             Login Here
           </Link>

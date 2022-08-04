@@ -46,7 +46,9 @@ const PasswordReset = () => {
             placeholder="Enter your new confirm password"
           />
           <p>
-            <Link to="/login">Back to Login</Link>
+            <Link to="/login" className={styles.link}>
+              Back to Login
+            </Link>
           </p>
           <button type="submit">Save New Password</button>
         </form>

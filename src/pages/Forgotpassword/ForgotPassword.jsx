@@ -35,7 +35,9 @@ const ForgotPassword = () => {
             placeholder="Email"
           />
           <p>
-            <Link to="/login">Back to Login</Link>
+            <Link to="/login" className={styles.link}>
+              Back to Login
+            </Link>
           </p>
           <Button type="submit">Send Mail</Button>
         </form>
