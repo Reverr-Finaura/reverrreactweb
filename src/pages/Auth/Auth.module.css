@@ -15,12 +15,16 @@
   padding: 1rem;
 }
 
+.signup > p {
+  margin: 0% auto;
+}
+
 .signup > form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: auto;
-  width: 80%;
+  width: 85%;
   gap: 1rem;
 }
 
@@ -29,7 +33,7 @@
   gap: 0.5rem;
 }
 
-.signup > form > div>  input {
+.signup > form > div > input {
   background: rgba(95, 95, 95, 0.2);
   border-radius: 4px;
   height: 2.5rem;
@@ -40,11 +44,30 @@
   color: white;
 }
 
-.name > input {
-  background: rgba(95, 95, 95, 0.2);
-  border-radius: 4px;
-  height: 2.5rem;
-  width: 6.8rem;
-  outline: none;
+.signup > form > .name > input {
+  width: 6.7rem;
+}
+
+.google_signup img {
+  height: 5vh;
+  position: relative;
+  left: -10%;
+  top: 8px;
+}
+
+.login_link {
+  text-decoration: none;
+  color: #2a72de;
+}
+
+.apply_link {
+  background: transparent;
+  box-shadow: none;
   border: none;
+  color: #2a72de;
+  padding: 0;
+  line-height: 1;
+  width: 70px;
+  margin: 0;
+  font-size: 17px;
 }

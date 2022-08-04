@@ -12,7 +12,7 @@ import emailjs from "@emailjs/browser";
 
 function Auth() {
   const navigate = useNavigate();
-  const [userType, setUserType] = useState("founder");
+  const [userType, setUserType] = useState("FOUNDER");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -111,18 +111,26 @@ function Auth() {
   return (
     <section className={styles.auth}>
       <div className={styles.signup}>
-        <div>
+        {/* <div>
           <Button onClick={() => setUserType("founder")}>
             Join as a Founder
           </Button>
           <Button onClick={() => setUserType("mentor")}>
             Join as a Mentor
           </Button>
-        </div>
+        </div> */}
         <div>
-          <h1>Get started as a {userType} with REVERR</h1>
+          <h1>
+            Get started as a {userType} with
+            <span style={{ color: "#2a72de" }}> REVERR</span>
+          </h1>
         </div>
-        <Button onClick={signInWithGoogle}>Sign up with Google</Button>
+        <div className={styles.google_signup}>
+          <Button onClick={signInWithGoogle}>
+            <img src="/images/image 134.svg" alt="" />
+            Sign up with Google
+          </Button>
+        </div>
         <div>
           <p>Or Sign Up with your E-mail</p>
         </div>
@@ -165,10 +173,19 @@ function Auth() {
               placeholder="Confirm Password"
             />
           </div>
-          <Button type="submit">Sign Up</Button>
+          <div className={styles.email_signup}>
+            <Button type="submit">Sign Up</Button>
+          </div>
         </form>
         <p>
-          Already have an account? <Link to="/login">Login</Link>
+          Already have an account?
+          <Link className={styles.login_link} to="/login">
+            Login Here
+          </Link>
+        </p>
+        <p>
+          {`Want to join as a ${userType}?`}
+          <button className={styles.apply_link}> Apply Here</button>
         </p>
       </div>
     </section>

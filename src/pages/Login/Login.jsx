@@ -58,7 +58,12 @@ function Auth() {
   return (
     <section className={styles.auth}>
       <div className={styles.signup}>
-        <Button onClick={signInWithGoogle}>Login with Google</Button>
+        <div className={styles.google_signup}>
+          <Button onClick={signInWithGoogle}>
+            <img src="/images/image 134.svg" alt="" />
+            Login with Google
+          </Button>
+        </div>
         <div>
           <p>Or Login with your E-mail</p>
         </div>
@@ -82,10 +87,16 @@ function Auth() {
           <Button type="submit">Login</Button>
         </form>
         <p>
-          Don't have an account? <Link to="/signup">Sign Up</Link>
+          Don't have an account?{" "}
+          <Link to="/signup" className={styles.link}>
+            Sign Up
+          </Link>
         </p>
         <p>
-          Forgot Password? <Link to="/forgotpassword">Click Here</Link>
+          Forgot Password?{" "}
+          <Link to="/forgotpassword" className={styles.link}>
+            Click Here
+          </Link>
         </p>
       </div>
     </section>
