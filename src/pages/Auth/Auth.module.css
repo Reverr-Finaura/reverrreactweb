@@ -71,3 +71,12 @@
   margin: 0;
   font-size: 17px;
 }
+
+@media (max-width: 425px) {
+  .name {
+    flex-direction: column;
+  }
+  .signup > form > div > input {
+    width: 6.7rem;
+  }
+}
