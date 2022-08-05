@@ -1,0 +1,61 @@
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 15rem 3rem 15rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  box-shadow: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoImg {
+  margin: 0 0 0.2rem 0;
+}
+
+.buttonRow {
+  display: flex;
+  align-items: center;
+  /* background-color: yellow; */
+  margin-left: 11rem;
+}
+
+.navButton {
+  background-color: transparent;
+  padding: 1rem 1rem 1rem 1rem;
+  color: white;
+  box-shadow: none;
+  white-space: nowrap;
+}
+
+.authButton {
+  margin: 0 0.5rem 0 0.5rem;
+  position: relative;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  white-space: nowrap;
+  width: 11rem;
+  height: 3rem;
+}
+
+.authButtonTextContainer {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 11rem;
+  height: 3rem;
+  top: 0;
+  background-color: transparent;
+}
+
+.authButtonText {
+  color: white;
+}

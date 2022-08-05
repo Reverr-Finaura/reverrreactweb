@@ -1,10 +1,10 @@
-import { onAuthStateChanged } from "firebase/auth";
+// import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { selectNewUser } from "./features/newUserSlice";
 import { login, logout, selectUser } from "./features/userSlice";
-import { auth } from "./firebase";
+// import { auth } from "./firebase";
 import Auth from "./pages/Auth/Auth";
 import Community from "./pages/Community/Community";
 import EnterOtp from "./pages/EnterOtp/EnterOtp";
@@ -18,22 +18,22 @@ function App() {
   const newUser = useSelector(selectNewUser);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        dispatch(
-          login({
-            email: auth.currentUser.email,
-            uid: auth.currentUser.uid,
-            displayName: auth.currentUser.displayName,
-            photoURL: auth.currentUser.photoURL,
-          })
-        );
-      } else {
-        dispatch(logout());
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       dispatch(
+  //         login({
+  //           email: auth.currentUser.email,
+  //           uid: auth.currentUser.uid,
+  //           displayName: auth.currentUser.displayName,
+  //           photoURL: auth.currentUser.photoURL,
+  //         })
+  //       );
+  //     } else {
+  //       dispatch(logout());
+  //     }
+  //   });
+  // }, []);
 
   return (
     <Routes>

@@ -1,12 +1,27 @@
 import React from "react";
 import Divider from "../../components/Divider/Divider";
 import RoundButton from "../../components/RoundButton/RoundButton";
+import Header from "../../components/Header/Header";
+
 import styles from "./home.module.css";
 import { Link } from "react-router-dom";
+import Hero from "./Hero/Hero";
+import Tagline from "../Tagline/Tagline";
+import Footer from "../Footer/Footer";
 
 const Home = () => {
   return (
     <>
+      <Header />
+      <section className={styles.hero}>
+        <Hero />
+      </section>
+      <Divider />
+      <section className="styles tagline">
+        <Tagline />
+      </section>
+      <Divider />
+
       <section className={styles.rever_stats}>
         <div>
           <p className={styles.rs_heading}>
@@ -150,6 +165,9 @@ const Home = () => {
             </p>
           </div>
         </div>
+      </section>
+      <section className="styles">
+        <Footer />
       </section>
     </>
   );
