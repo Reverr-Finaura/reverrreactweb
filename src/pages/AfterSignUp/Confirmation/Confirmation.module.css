@@ -1,0 +1,58 @@
+.confirm_section {
+  width: 80%;
+  margin: auto auto 3rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.confirm_section > h1 {
+  font-size: 50px;
+}
+
+.btns_div {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  /* width: 50%; */
+}
+
+.confirm_btn {
+  font-weight: 600;
+  font-size: 29px;
+  line-height: 30px;
+  /* identical to box height */
+  border: none;
+  text-align: center;
+  color: #ffffff;
+  /* width: 150px; */
+  padding: 1rem;
+  background: #2a72de;
+  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+}
+
+.back_btn {
+  font-weight: 600;
+  font-size: 29px;
+  line-height: 30px;
+  /* identical to box height */
+  border: none;
+  text-align: center;
+  color: #2a72de;
+  border: 2px solid #2a72de;
+  /* width: 150px; */
+  padding: 1rem;
+  background: #f6f6f6;
+  border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+  .confirm_section > h1 {
+    font-size: 34px;
+  }
+
+  .back_btn,
+  .confirm_btn {
+    font-size: 18px;
+  }
+}
