@@ -60,3 +60,54 @@
   text-align: center;
   color: #2a72de;
 }
+
+@media (max-width: 1278px) {
+  .hc_heroImage {
+    width: 90%;
+    height: 90%;
+  }
+  .hc_heroText {
+    font-size: 30px;
+  }
+  .hc_heroSubtext {
+    font-size: 20px;
+  }
+  .hc_imStartUp {
+    font-size: 100%;
+  }
+
+  .styles.heroImage {
+    width: 90%;
+  }
+  .hac_scrollDownText {
+    display: none;
+  }
+}
+
+@media (max-width: 769px) {
+  .heroContainer {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+  }
+  .hc_textContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .hc_imageContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .hc_signUpButton {
+    margin: auto;
+    margin-top: 30px;
+  }
+  .hc_heroSubtext {
+    text-align: center;
+    width: 100%;
+  }
+}

@@ -39,18 +39,22 @@ const Hero = () => {
       </div>
       <div className={styles.hc_imageContainer}>
         <div>
-          <img src="/images/hero-image.svg" alt="" />
+          <img
+            src="/images/hero-image.svg"
+            className={styles.hc_heroImage}
+            alt=""
+          />
         </div>
         <div className={styles.hc_logoContainer}>
-          <div>
+          <div className={styles.heroImage}>
             <img src="/images/hero-unicorn-logo.svg" alt="" />
             <p className={styles.hc_imStartUp}>I'm a Start-up</p>
           </div>
-          <div>
+          <div className={styles.heroImage}>
             <img src="/images/hero-antler-logo.svg" alt="" />
             <p className={styles.hc_imStartUp}>I'm a Start-up</p>
           </div>
-          <div>
+          <div className={styles.heroImage}>
             <img src="/images/hero-hair-logo.svg" alt="" />
             <p className={styles.hc_imStartUp}>I'm a Start-up</p>
           </div>
