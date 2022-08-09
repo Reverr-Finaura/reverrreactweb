@@ -152,7 +152,7 @@
   background: linear-gradient(167.37deg, #020e2c 9.15%, #09245e 64.83%);
   border-radius: 8px;
   width: 366px;
-  height: 280px;
+  height: 310px;
   text-align: center;
 }
 
@@ -179,7 +179,7 @@
 
 /* media queries */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .rs_heading,
   .rf_heading,
   .rd_intro_heading,
