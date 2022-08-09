@@ -13,10 +13,12 @@
   box-shadow: none;
   justify-content: center;
   align-items: center;
+  border: none;
 }
 
 .logoImg {
   margin: 0 0 0.2rem 0;
+  border: none;
 }
 
 .buttonRow {
@@ -32,6 +34,7 @@
   color: white;
   box-shadow: none;
   white-space: nowrap;
+  border: none;
 }
 
 .authButton {
@@ -43,6 +46,7 @@
   white-space: nowrap;
   width: 11rem;
   height: 3rem;
+  border: none;
 }
 
 .authButtonTextContainer {
@@ -58,4 +62,5 @@
 
 .authButtonText {
   color: white;
+  border: none;
 }

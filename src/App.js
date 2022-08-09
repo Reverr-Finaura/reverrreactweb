@@ -18,6 +18,9 @@ import PasswordReset from "./pages/PasswordRecover/PasswordReset";
 import Experience from "./pages/AfterSignUp/Experience/Experience";
 import Industry from "./pages/AfterSignUp/Industry/Industry";
 import Role from "./pages/AfterSignUp/Role/Role";
+import Onboarding from "./pages/AfterSignUp/Onboarding/Onboarding";
+import Education from "./pages/AfterSignUp/Education/Education";
+import Gender from "./pages/AfterSignUp/Gender/Gender";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 
@@ -66,7 +69,7 @@ function App() {
     // </Routes>
     <div>
       <Header />
-      <Industry />
+      <Gender />
       <Footer />
     </div>
   );
