@@ -22,6 +22,7 @@ const Confirmation = () => {
           Yes
         </button>
       </section>
+
       <section
         style={{ display: isVisible ? "block" : "none" }}
         className={styles.confirm_section}
