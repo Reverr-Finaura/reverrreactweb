@@ -18,6 +18,9 @@ import PasswordReset from "./pages/PasswordRecover/PasswordReset";
 import Experience from "./pages/AfterSignUp/Experience/Experience";
 import Industry from "./pages/AfterSignUp/Industry/Industry";
 import Role from "./pages/AfterSignUp/Role/Role";
+import Onboarding from "./pages/AfterSignUp/Onboarding/Onboarding";
+import Education from "./pages/AfterSignUp/Education/Education";
+import Gender from "./pages/AfterSignUp/Gender/Gender";
 
 function App() {
   const user = useSelector(selectUser);
@@ -42,31 +45,31 @@ function App() {
   // }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={user ? <Community /> : <Home />} />
-      <Route path="/signup" element={user ? <Community /> : <Auth />} />
-      <Route path="/login" element={user ? <Community /> : <Login />} />
-      <Route
-        path="/forgotpassword"
-        element={user ? <Community /> : <ForgotPassword />}
-      />
-      <Route
-        path="/password-reset"
-        element={user ? <Community /> : <PasswordReset />}
-      />
-      {newUser ? (
-        <Route
-          path="enterotp"
-          element={user ? <Community /> : <EnterOtp />}
-        ></Route>
-      ) : null}
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-    // <div>
-    //   <Header />
-    //   <Experience />
-    //   <Footer />
-    // </div>
+    // <Routes>
+    //   <Route path="/" element={user ? <Community /> : <Home />} />
+    //   <Route path="/signup" element={user ? <Community /> : <Auth />} />
+    //   <Route path="/login" element={user ? <Community /> : <Login />} />
+    //   <Route
+    //     path="/forgotpassword"
+    //     element={user ? <Community /> : <ForgotPassword />}
+    //   />
+    //   <Route
+    //     path="/password-reset"
+    //     element={user ? <Community /> : <PasswordReset />}
+    //   />
+    //   {newUser ? (
+    //     <Route
+    //       path="enterotp"
+    //       element={user ? <Community /> : <EnterOtp />}
+    //     ></Route>
+    //   ) : null}
+    //   <Route path="*" element={<Navigate to="/" replace />} />
+    // </Routes>
+    <div>
+      <Header />
+      <Gender />
+      <Footer />
+    </div>
   );
 }
 
