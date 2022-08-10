@@ -21,6 +21,8 @@ import Role from "./pages/AfterSignUp/Role/Role";
 import Onboarding from "./pages/AfterSignUp/Onboarding/Onboarding";
 import Education from "./pages/AfterSignUp/Education/Education";
 import Gender from "./pages/AfterSignUp/Gender/Gender";
+import Review from "./pages/AfterSignUp/Review page/Review";
+import Confirmation from "./pages/AfterSignUp/Confirmation/Confirmation";
 
 function App() {
   const user = useSelector(selectUser);
@@ -67,7 +69,7 @@ function App() {
     // </Routes>
     <div>
       <Header />
-      <Gender />
+      <Education />
       <Footer />
     </div>
   );
