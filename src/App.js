@@ -25,8 +25,6 @@ import Review from "./pages/AfterSignUp/Review page/Review";
 import Confirmation from "./pages/AfterSignUp/Confirmation/Confirmation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
-import Confirmation from "./pages/AfterSignUp/Confirmation/Confirmation";
-import Review from "./pages/AfterSignUp/Review page/Review";
 
 function App() {
   const user = useSelector(selectUser);
