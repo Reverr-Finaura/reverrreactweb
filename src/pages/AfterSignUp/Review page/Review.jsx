@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./Review.module.css";
 import { Link } from "react-router-dom";
-import Header from "../../../components/Header/Header";
-import Footer from "../../Footer/Footer";
 
 const Review = () => {
   return (

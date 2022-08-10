@@ -4,7 +4,7 @@ import styles from "./education.module.css";
 const Education = () => {
   return (
     <div className={styles.education__container}>
-      <h1 className={styles.big__heading}>What are you looking for?</h1>
+      <h1 className={styles.big__heading}>Let's know about your education</h1>
       <div className={styles.education__cards}>
         <div className={styles.education__card}>
           <img src="./images/edu1.png" alt="" className={styles.edu__img} />
