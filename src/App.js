@@ -2,15 +2,12 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Header from "./components/Header/Header";
 import { selectNewUser } from "./features/newUserSlice";
 import { login, logout, selectUser } from "./features/userSlice";
 import Card from "./pages/AfterSignUp/Cards/Card";
-// import { auth } from "./firebase";
 import Auth from "./pages/Auth/Auth";
 import Community from "./pages/Community/Community";
 import EnterOtp from "./pages/EnterOtp/EnterOtp";
-import Footer from "./pages/Footer/Footer";
 import ForgotPassword from "./pages/Forgotpassword/ForgotPassword";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
@@ -94,11 +91,6 @@ function App() {
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-    // <div>
-    //   <Header />
-    //   <Confirmation />
-    //   <Footer />
-    // </div>
   );
 }
 
