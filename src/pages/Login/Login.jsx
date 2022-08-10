@@ -10,6 +10,8 @@ import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
 import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
+import Header from "../../components/Header/Header";
+import Footer from "../Footer/Footer";
 
 function Auth() {
   const [email, setEmail] = useState("");
@@ -56,6 +58,8 @@ function Auth() {
   };
 
   return (
+    <>
+    <Header />
     <section className={styles.auth}>
       <div className={styles.signup}>
         <div className={styles.google_signup}>
@@ -100,6 +104,8 @@ function Auth() {
         </p>
       </div>
     </section>
+    <Footer />
+    </>
   );
 }
 

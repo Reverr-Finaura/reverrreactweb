@@ -16,6 +16,7 @@
 }
 .gen__card {
   background: #2a72de;
+  cursor: pointer;
 }
 .gen__img {
   margin: auto;

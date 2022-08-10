@@ -1,10 +1,25 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../../../components/Header/Header";
+import { modify } from "../../../features/newUserSlice";
 import Footer from "../../Footer/Footer";
 import styles from "./Onboarding.module.css";
 
 const Onboarding = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [organisationName, setOrganisationName] = useState(null);
+  const [designation, setDesignation] = useState(null);
+  const [yearsInOrg, setYearsInOrg] = useState(null);
+  const [yourRole, setYourRole] = useState(null);
+
+  const handleNext = () => {
+    dispatch(modify({ organisationName, designation, yearsInOrg, yourRole }));
+    navigate("/startup-review");
+  };
+
   return (
     <>
       <Header />
@@ -25,7 +40,14 @@ const Onboarding = () => {
               easy. Just click “Edit Text” or double click me to add your own
               content.
             </p>
-            <input type="text" name="" placeholder="Organisation Name" id="" />
+            <input
+              value={organisationName}
+              type="text"
+              name=""
+              placeholder="Organisation Name"
+              id=""
+              onChange={(e) => setOrganisationName(e.target.value)}
+            />
           </div>
 
           <div className={styles.onboard_input}>
@@ -35,7 +57,14 @@ const Onboarding = () => {
               easy. Just click “Edit Text” or double click me to add your own
               content.
             </p>
-            <input type="text" name="" placeholder="Designation" id="" />
+            <input
+              value={designation}
+              type="text"
+              name=""
+              placeholder="Designation"
+              id=""
+              onChange={(e) => setDesignation(e.target.value)}
+            />
           </div>
 
           <div className={styles.onboard_input}>
@@ -45,7 +74,14 @@ const Onboarding = () => {
               easy. Just click “Edit Text” or double click me to add your own
               content.
             </p>
-            <input type="text" name="" placeholder="Type in years" id="" />
+            <input
+              value={yearsInOrg}
+              type="text"
+              name=""
+              placeholder="Type in years"
+              id=""
+              onChange={(e) => setYearsInOrg(e.target.value)}
+            />
           </div>
 
           <div className={styles.onboard_input}>
@@ -55,12 +91,35 @@ const Onboarding = () => {
               easy. Just click “Edit Text” or double click me to add your own
               content.
             </p>
-            <textarea placeholder="Your role" />
+            <textarea
+              value={yourRole}
+              placeholder="Your role"
+              onChange={(e) => setYourRole(e.target.value)}
+            />
           </div>
           <div className={styles.next_btn}>
-            <Link to="/startup-review">
-              <button>Next</button>
-            </Link>
+            <button
+              disabled={
+                organisationName?.trim().length > 0 &&
+                designation?.trim().length > 0 &&
+                yearsInOrg?.trim().length > 0 &&
+                yourRole?.trim().length > 0
+                  ? false
+                  : true
+              }
+              style={{
+                opacity:
+                  organisationName?.trim().length > 0 &&
+                  designation?.trim().length > 0 &&
+                  yearsInOrg?.trim().length > 0 &&
+                  yourRole?.trim().length > 0
+                    ? "1"
+                    : "0.5",
+              }}
+              onClick={handleNext}
+            >
+              Next
+            </button>
           </div>
         </div>
       </section>

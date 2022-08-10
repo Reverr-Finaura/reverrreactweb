@@ -1,25 +1,71 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { modify } from "../../../features/newUserSlice";
 import styles from "./experience.module.css";
 
 const Experience = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const array = [
+    { experience: "0-2 Years Experience", years: "0-2" },
+    { experience: "2-4 Years Experience", years: "2-4" },
+    { experience: "4-6 Years Experience", years: "4-6" },
+    { experience: "6-8 Years Experience", years: "6-8" },
+    { experience: "8-10 Years Experience", years: "8-10" },
+    { experience: "10-12 Years Experience", years: "10-12" },
+    { experience: "12+ Years Experience", years: "12+" },
+  ];
+
+  const [experienceYears, setExperienceYears] = useState(null);
+
+  const handleNext = () => {
+    dispatch(modify({ experienceYears }));
+    navigate("/education");
+  };
+
+  const handleSkip = () => {
+    dispatch(modify({ experienceYears: null }));
+    navigate("/education");
+  };
+
   return (
     <div className={styles.ex__container}>
       <div className={styles.ex__heading}>Tell us your Experience</div>
       <div className={styles.ex__btns}>
-        <button className={styles.ex__btn}>0-2 Years Experience</button>
-        <button className={styles.ex__btn}>2-4 Years Experience</button>
-        <button className={styles.ex__btn}>4-6 Years Experience</button>
-        <button className={styles.ex__btn}>6-8 Years Experience</button>
-        <button className={styles.ex__btn}>8-10 Years Experience</button>
-        <button className={styles.ex__btn}>10-12 Years Exprience </button>
-        <button className={styles.ex__btn}>12 + Years Experience</button>
+        {array.map((item, index) => (
+          <button
+            onClick={() => {
+              if (experienceYears === item.years) {
+                setExperienceYears(null);
+              } else if (experienceYears !== item.years) {
+                setExperienceYears(item.years);
+              }
+            }}
+            key={index}
+            className={styles.ex__btn}
+            style={{
+              backgroundColor:
+                experienceYears === item.years ? "white" : "#d9d9d9",
+            }}
+          >
+            {item.experience}
+          </button>
+        ))}
       </div>
       <div className={styles.btns}>
-        <Link to="/education">
-          <button className={styles.btn1}>Next</button>
-        </Link>
-        <button className={styles.btn2}>Skip</button>
+        <button
+          disabled={experienceYears?.trim().length > 0 ? false : true}
+          className={styles.btn1}
+          onClick={handleNext}
+          style={{ opacity: experienceYears?.trim().length > 0 ? "1" : "0.5" }}
+        >
+          Next
+        </button>
+        <button onClick={handleSkip} className={styles.btn2}>
+          Skip
+        </button>
       </div>
     </div>
   );

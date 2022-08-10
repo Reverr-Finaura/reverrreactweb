@@ -6,6 +6,13 @@
   color: #ffffff;
 }
 
+.yesNoBtns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
 .confirm_section_1 > h1,
 .confirm_section_2 > h1 {
   font-size: 50px;
@@ -18,15 +25,47 @@
   /* width: 50%; */
 }
 
-.confirm_btn {
+.yes_btn {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
-  /* identical to box height */
   text-align: center;
-  /* padding: 6px 128px; */
+  width: 299px;
+  height: 42px;
+  color: #2a72de;
+  /* background: #2a72de; */
+  /* border: 2px solid #2a72de; */
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.no_btn {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  width: 299px;
+  height: 42px;
+  color: #2a72de;
+  border: none;
+  outline: none;
+  /* background: #2a72de; */
+  /* border: 2px solid #2a72de; */
+  cursor: pointer;
+}
+
+.verify_btn {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
   width: 299px;
   height: 42px;
   color: white;

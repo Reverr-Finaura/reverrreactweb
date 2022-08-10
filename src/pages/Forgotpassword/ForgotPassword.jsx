@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import { auth } from "../../firebase";
+import Header from "../../components/Header/Header";
+import Footer from "../Footer/Footer";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -23,6 +25,8 @@ const ForgotPassword = () => {
       });
   };
   return (
+    <>
+    <Header />
     <section className={styles.auth}>
       <div className={styles.password_reset}>
         <p>We'll mail you password reset link.</p>
@@ -43,6 +47,8 @@ const ForgotPassword = () => {
         </form>
       </div>
     </section>
+    <Footer />
+    </>
   );
 };
 

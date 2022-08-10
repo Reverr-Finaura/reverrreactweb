@@ -9,6 +9,8 @@ import Button from "../../components/Button/Button";
 import { Link, useNavigate } from "react-router-dom";
 import { collection, addDoc } from "firebase/firestore";
 import emailjs from "@emailjs/browser";
+import Header from "../../components/Header/Header";
+import Footer from "../Footer/Footer";
 
 function Auth() {
   const navigate = useNavigate();
@@ -26,23 +28,18 @@ function Auth() {
     signInWithPopup(auth, provider)
       .then((userCredential) => {
         dispatch(
-          login({
+          create({
             email: auth.currentUser.email,
             uid: auth.currentUser.uid,
             displayName: auth.currentUser.displayName,
             profilePic: auth.currentUser.photoURL,
             userType: userType,
+            loginType: "google",
           })
         );
       })
       .then(() => {
-        const docRef = addDoc(collection(db, "Users"), {
-          email: auth.currentUser.email,
-          uid: auth.currentUser.uid,
-          displayName: auth.currentUser.displayName,
-          userType,
-        });
-        console.log("Document written with ID: ", docRef.id);
+        navigate("/startup-list");
       })
       .catch((error) => {
         alert(error);
@@ -109,99 +106,95 @@ function Auth() {
   };
 
   return (
-    <section className={styles.auth}>
-      <div className={styles.signup}>
-        {/* <div>
-          <Button onClick={() => setUserType("founder")}>
-            Join as a Founder
-          </Button>
-          <Button onClick={() => setUserType("mentor")}>
-            Join as a Mentor
-          </Button>
-        </div> */}
-        <div>
-          <h1>
-            Get started as a {userType} with
-            <span style={{ color: "#2a72de" }}> REVERR</span>
-          </h1>
-        </div>
-        <div className={styles.google_signup}>
-          <Button onClick={signInWithGoogle}>
-            <img src="/images/image 134.svg" alt="" />
-            Sign up with Google
-          </Button>
-        </div>
-        <div>
-          <p>Or Sign Up with your E-mail</p>
-        </div>
-        <form onSubmit={signUpEmail}>
-          <div className={styles.name}>
-            <input
-              onChange={(e) => setFirstName(e.target.value)}
-              value={firstName}
-              type="text"
-              placeholder="First Name"
-            />
-            <input
-              onChange={(e) => setLastName(e.target.value)}
-              value={lastName}
-              type="text"
-              placeholder="Last Name"
-            />
+    <>
+    <Header />
+      <section className={styles.auth}>
+        <div className={styles.signup}>
+          <div>
+            <h1>
+              Get started as a {userType} with
+              <span style={{ color: "#2a72de" }}> REVERR</span>
+            </h1>
+          </div>
+          <div className={styles.google_signup}>
+            <Button onClick={signInWithGoogle}>
+              <img src="/images/image 134.svg" alt="" />
+              Sign up with Google
+            </Button>
           </div>
           <div>
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              type="email"
-              placeholder="Your E-Mail"
-            />
+            <p>Or Sign Up with your E-mail</p>
           </div>
-          <div>
-            <input
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-              type="password"
-              placeholder="Enter a password"
-            />
-          </div>
-          <div>
-            <input
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              value={confirmPassword}
-              type="password"
-              placeholder="Confirm Password"
-            />
-          </div>
-          <div className={styles.email_signup}>
-            <Button type="submit">Sign Up</Button>
-          </div>
-        </form>
-        <div className={styles.signupBottom}>
-          <div className={styles.links}>
-            <p>Already have an account? </p>
-            <Link className={styles.login_link} to="/login">
-              Login Here
-            </Link>
-          </div>
-          <div className={styles.links}>
-            <p>
-              {`Want to join as a ${
-                userType === "FOUNDER" ? "MENTOR" : "FOUNDER"
-              }?`}
-            </p>
-            <button
-              onClick={() =>
-                setUserType(userType === "FOUNDER" ? "MENTOR" : "FOUNDER")
-              }
-              className={styles.apply_link}
-            >
-              Apply Here
-            </button>
+          <form onSubmit={signUpEmail}>
+            <div className={styles.name}>
+              <input
+                onChange={(e) => setFirstName(e.target.value)}
+                value={firstName}
+                type="text"
+                placeholder="First Name"
+              />
+              <input
+                onChange={(e) => setLastName(e.target.value)}
+                value={lastName}
+                type="text"
+                placeholder="Last Name"
+              />
+            </div>
+            <div>
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                type="email"
+                placeholder="Your E-Mail"
+              />
+            </div>
+            <div>
+              <input
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                type="password"
+                placeholder="Enter a password"
+              />
+            </div>
+            <div>
+              <input
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={confirmPassword}
+                type="password"
+                placeholder="Confirm Password"
+              />
+            </div>
+            <div className={styles.email_signup}>
+              <Button type="submit">Sign Up</Button>
+            </div>
+          </form>
+          <div className={styles.signupBottom}>
+            <div className={styles.links}>
+              <p>Already have an account? </p>
+              <Link className={styles.login_link} to="/login">
+                Login Here
+              </Link>
+            </div>
+            <div className={styles.links}>
+              <p>
+                {`Want to join as a ${
+                  userType === "FOUNDER" ? "MENTOR" : "FOUNDER"
+                }?`}
+              </p>
+              <button
+                onClick={() =>
+                  setUserType(userType === "FOUNDER" ? "MENTOR" : "FOUNDER")
+                }
+                className={styles.apply_link}
+              >
+                Apply Here
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Footer />
+    </>
   );
 }
 

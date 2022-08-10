@@ -16,7 +16,7 @@
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 36px;
   /* identical to box height */
   margin-top: 10px;
@@ -39,17 +39,14 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
-  /* identical to box height */
-
   text-align: center;
-
   color: #ffffff;
-  width: 302px;
+  /* width: 302px; */
   height: 42px;
-
   background: #2a72de;
   box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
   border-radius: 4px;
+  padding: 0 8rem;
 }
 .btn2 {
   font-family: "Poppins";
@@ -57,15 +54,11 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 30px;
-  /* identical to box height */
-
   text-align: center;
   padding: 6px 128px;
   gap: 10px;
-
-  width: 299px;
+  padding:0 8rem;
   height: 42px;
-
   background: #ffffff;
   border: 2px solid #2a72de;
   border-radius: 4px;

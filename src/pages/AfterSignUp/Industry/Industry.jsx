@@ -1,31 +1,30 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import Header from "../../../components/Header/Header";
 import Footer from "../../Footer/Footer";
 import styles from "./industry.module.css";
-
-// import { useDispatch } from "react-redux";
-// import { modify } from "../../../features/newUserSlice";
+import { modify } from "../../../features/newUserSlice";
+import { useNavigate } from "react-router-dom";
 
 const array = [
   {
-    heading: "Mentorship",
+    heading: "Fintech",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
-    heading: "Ideas",
+    heading: "Sales",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
-    heading: "Networking",
+    heading: "Legal",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
-    heading: "Accounting",
+    heading: "Fund Raising",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
-    heading: "Funding",
+    heading: "Product Development",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
@@ -43,15 +42,28 @@ const array = [
 ];
 
 const Industry = () => {
-  // const dispatch = useDispatchatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [industry, setIndustry] = useState(null);
+
+  const handleNext = () => {
+    dispatch(modify({ industry }));
+    navigate("/experience");
+  };
+
+  const handleSkip = () => {
+    dispatch(modify({ industry: null }));
+    navigate("/experience");
+  };
+
   return (
     <>
       <Header />
       <div className={styles.industry__container}>
-        <h1 className={styles.big__heading}>What are you looking for?</h1>
+        <h1 className={styles.big__heading}>What is your Industry?</h1>
         <div className={styles.cards__flex}>
-          {array.map(({ heading, paragraph }) => (
-            <div className={styles.industry_card_container}>
+          {array.map(({ heading, paragraph }, index) => (
+            <div key={index} className={styles.industry_card_container}>
               <div className={styles.card__image_container}>
                 <img
                   src="/images/hero2.png"
@@ -61,15 +73,38 @@ const Industry = () => {
               </div>
               <div className={styles.card__heading}>{heading}</div>
               <div className={styles.card__para}>{paragraph}</div>
-              <button className={styles.card__btn}>Select</button>
+              {!(industry === heading) ? (
+                <button
+                  onClick={() => {
+                    setIndustry(heading);
+                  }}
+                  className={styles.card__btn}
+                >
+                  Select
+                </button>
+              ) : (
+                <button
+                  onClick={() => setIndustry(null)}
+                  className={styles.card__btn}
+                >
+                  Remove
+                </button>
+              )}
             </div>
           ))}
         </div>
         <div className={styles.btns}>
-          <Link to="/experience">
-            <button className={styles.btn1}>Next</button>
-          </Link>
-          <button className={styles.btn2}>Skip</button>
+          <button
+            disabled={industry?.length > 0 ? false : true}
+            className={styles.btn1}
+            onClick={handleNext}
+            style={{ opacity: industry?.length > 0 ? "1" : "0.5" }}
+          >
+            Next
+          </button>
+          <button onClick={handleSkip} className={styles.btn2}>
+            Skip
+          </button>
         </div>
       </div>
       <Footer />

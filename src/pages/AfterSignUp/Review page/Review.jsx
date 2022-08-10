@@ -1,10 +1,52 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Review.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../../../components/Header/Header";
 import Footer from "../../Footer/Footer";
+import { useDispatch, useSelector } from "react-redux";
+import { modify, selectNewUser } from "../../../features/newUserSlice";
+import { addDoc, collection } from "firebase/firestore";
+import { auth, db } from "../../../firebase";
+import emailjs from "@emailjs/browser";
 
 const Review = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const newUser = useSelector(selectNewUser);
+  useEffect(() => {
+    dispatch(modify({ isVerfied: false }));
+
+    const docRef = addDoc(collection(db, "Users"), {
+      email: auth?.currentUser?.email,
+      uid: auth?.currentUser?.uid,
+      displayName: auth?.currentUser?.displayName,
+      ...newUser,
+    }).then(() => {
+      var templateParams = {
+        subject: "Welcome to Reverr!",
+        name: auth?.currentUser?.displayName,
+        email: auth?.currentUser?.email,
+        message: "You have successfully created your account at Reverr!",
+      };
+
+      emailjs
+        .send(
+          "service_lfmmz8k",
+          "template_6lqwjap",
+          templateParams,
+          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        )
+        .then(
+          function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+          },
+          function (error) {
+            console.log("FAILED...", error);
+          }
+        );
+    });
+  }, []);
+
   return (
     <>
       <Header />

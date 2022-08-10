@@ -27,34 +27,36 @@ const PasswordReset = () => {
   };
 
   return (
-    <section className={styles.auth}>
-      <div className={styles.password_reset}>
-        <form onSubmit={handlePasswordChange}>
-          <input
-            type="password"
-            id=""
-            onChange={(e) => {
-              setNewPassword(e.target.value);
-            }}
-            placeholder="Enter your new password"
-          />
-          <input
-            type="password"
-            id=""
-            onChange={(e) => {
-              setNewConfirmPassword(e.target.value);
-            }}
-            placeholder="Enter your new confirm password"
-          />
-          <p>
-            <Link to="/login" className={styles.link}>
-              Back to Login
-            </Link>
-          </p>
-          <Button type="submit">Save New Password</Button>
-        </form>
-      </div>
-    </section>
+    <>
+      <section className={styles.auth}>
+        <div className={styles.password_reset}>
+          <form onSubmit={handlePasswordChange}>
+            <input
+              type="password"
+              id=""
+              onChange={(e) => {
+                setNewPassword(e.target.value);
+              }}
+              placeholder="Enter your new password"
+            />
+            <input
+              type="password"
+              id=""
+              onChange={(e) => {
+                setNewConfirmPassword(e.target.value);
+              }}
+              placeholder="Enter your new confirm password"
+            />
+            <p>
+              <Link to="/login" className={styles.link}>
+                Back to Login
+              </Link>
+            </p>
+            <Button type="submit">Save New Password</Button>
+          </form>
+        </div>
+      </section>
+    </>
   );
 };
 

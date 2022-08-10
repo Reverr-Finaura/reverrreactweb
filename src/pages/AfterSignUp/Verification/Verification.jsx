@@ -9,7 +9,6 @@ const Verification = () => {
     <>
       <Header />
       <div>
-        {" "}
         <section className={styles.review_section}>
           <div className={styles.review_intro}>
             <div className={styles.review_note}>
