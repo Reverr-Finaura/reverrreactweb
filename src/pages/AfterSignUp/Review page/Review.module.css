@@ -39,34 +39,40 @@
 }
 
 .next_btn {
+  font-family: "Poppins";
+  font-style: normal;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 30px;
   /* identical to box height */
-  border: none;
+
   text-align: center;
-  color: #ffffff;
-  width: 200px;
-  padding: 1rem;
+  padding: 6px 128px;
+
+  width: 299px;
+  height: 42px;
+  color: white;
   background: #2a72de;
-  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.25);
-  border-radius: 4px;
+  border: 2px solid #2a72de;
   cursor: pointer;
 }
 
 .skip_btn {
+  font-family: "Poppins";
+  font-style: normal;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 30px;
   /* identical to box height */
-  border: none;
+
   text-align: center;
+  padding: 6px 128px;
+
+  width: 299px;
+  height: 42px;
   color: #2a72de;
+  background: #ffffff;
   border: 2px solid #2a72de;
-  width: 200px;
-  padding: 1rem;
-  background: #f6f6f6;
-  border-radius: 4px;
   cursor: pointer;
 }
 

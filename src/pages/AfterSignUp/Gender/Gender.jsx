@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./gender.module.css";
 
 const Gender = () => {
@@ -40,7 +41,9 @@ const Gender = () => {
         </div>
       </div>
       <div className={styles.btns}>
-        <button className={styles.btn1}>Next</button>
+        <Link to="/startup-confirm">
+          <button className={styles.btn1}>Next</button>
+        </Link>
         <button className={styles.btn2}>Skip</button>
       </div>
     </div>

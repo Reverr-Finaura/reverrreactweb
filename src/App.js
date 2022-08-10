@@ -23,6 +23,8 @@ import Education from "./pages/AfterSignUp/Education/Education";
 import Gender from "./pages/AfterSignUp/Gender/Gender";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
+import Confirmation from "./pages/AfterSignUp/Confirmation/Confirmation";
+import Review from "./pages/AfterSignUp/Review page/Review";
 
 function App() {
   const user = useSelector(selectUser);
@@ -47,31 +49,55 @@ function App() {
   }, []);
 
   return (
-    // <Routes>
-    //   <Route path="/" element={user ? <Community /> : <Home />} />
-    //   <Route path="/signup" element={user ? <Community /> : <Auth />} />
-    //   <Route path="/login" element={user ? <Community /> : <Login />} />
-    //   <Route
-    //     path="/forgotpassword"
-    //     element={user ? <Community /> : <ForgotPassword />}
-    //   />
-    //   <Route
-    //     path="/password-reset"
-    //     element={user ? <Community /> : <PasswordReset />}
-    //   />
-    //   {newUser ? (
-    //     <Route
-    //       path="enterotp"
-    //       element={user ? <Community /> : <EnterOtp />}
-    //     ></Route>
-    //   ) : null}
-    //   <Route path="*" element={<Navigate to="/" replace />} />
-    // </Routes>
-    <div>
-      <Header />
-      <Gender />
-      <Footer />
-    </div>
+    <Routes>
+      <Route path="/" element={user ? <Community /> : <Home />} />
+      <Route path="/signup" element={user ? <Community /> : <Auth />} />
+      <Route path="/login" element={user ? <Community /> : <Login />} />
+      <Route
+        path="/forgotpassword"
+        element={user ? <Community /> : <ForgotPassword />}
+      />
+      <Route
+        path="/password-reset"
+        element={user ? <Community /> : <PasswordReset />}
+      />
+      {newUser ? (
+        <Route
+          path="enterotp"
+          element={user ? <Community /> : <EnterOtp />}
+        ></Route>
+      ) : null}
+      <Route
+        path="/startup-list"
+        element={user ? <Community /> : <Industry />}
+      />
+      <Route path="/industry" element={user ? <Community /> : <Card />} />
+      <Route
+        path="/experience"
+        element={user ? <Community /> : <Experience />}
+      />
+      <Route path="/education" element={user ? <Community /> : <Education />} />
+      <Route path="/gender" element={user ? <Community /> : <Gender />} />
+      <Route
+        path="/startup-confirm"
+        element={user ? <Community /> : <Confirmation />}
+      />
+      <Route
+        path="/startup-onboarding"
+        element={user ? <Community /> : <Onboarding />}
+      />
+      <Route
+        path="/startup-review"
+        element={user ? <Community /> : <Review />}
+      />
+
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+    // <div>
+    //   <Header />
+    //   <Confirmation />
+    //   <Footer />
+    // </div>
   );
 }
 
