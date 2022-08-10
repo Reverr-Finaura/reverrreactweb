@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./../Cards/card.module.css";
+import Header from "../../../components/Header/Header";
+import Footer from "../../Footer/Footer";
+import styles from "./industry.module.css";
 
 // import { useDispatch } from "react-redux";
 // import { modify } from "../../../features/newUserSlice";
@@ -43,31 +45,35 @@ const array = [
 const Industry = () => {
   // const dispatch = useDispatchatch();
   return (
-    <div className={styles.industry__container}>
-      <h1 className={styles.big__heading}>What are you looking for?</h1>
-      <div className={styles.cards__flex}>
-        {array.map(({ heading, paragraph }) => (
-          <div className={styles.card__container}>
-            <div className={styles.card__image_container}>
-              <img
-                src="/images/hero2.png"
-                alt=""
-                className={styles.card__image}
-              />
+    <>
+      <Header />
+      <div className={styles.industry__container}>
+        <h1 className={styles.big__heading}>What are you looking for?</h1>
+        <div className={styles.cards__flex}>
+          {array.map(({ heading, paragraph }) => (
+            <div className={styles.industry_card_container}>
+              <div className={styles.card__image_container}>
+                <img
+                  src="/images/hero2.png"
+                  alt=""
+                  className={styles.card__image}
+                />
+              </div>
+              <div className={styles.card__heading}>{heading}</div>
+              <div className={styles.card__para}>{paragraph}</div>
+              <button className={styles.card__btn}>Select</button>
             </div>
-            <div className={styles.card__heading}>{heading}</div>
-            <div className={styles.card__para}>{paragraph}</div>
-            <button className={styles.card__btn}>Select</button>
-          </div>
-        ))}
+          ))}
+        </div>
+        <div className={styles.btns}>
+          <Link to="/experience">
+            <button className={styles.btn1}>Next</button>
+          </Link>
+          <button className={styles.btn2}>Skip</button>
+        </div>
       </div>
-      <div className={styles.btns}>
-        <Link to="/industry">
-          <button className={styles.btn1}>Next</button>
-        </Link>
-        <button className={styles.btn2}>Skip</button>
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 export default Industry;

@@ -67,11 +67,8 @@ function App() {
           element={user ? <Community /> : <EnterOtp />}
         ></Route>
       ) : null}
-      <Route
-        path="/startup-list"
-        element={user ? <Community /> : <Industry />}
-      />
-      <Route path="/industry" element={user ? <Community /> : <Card />} />
+      <Route path="/startup-list" element={user ? <Community /> : <Card />} />
+      <Route path="/industry" element={user ? <Community /> : <Industry />} />
       <Route
         path="/experience"
         element={user ? <Community /> : <Experience />}
