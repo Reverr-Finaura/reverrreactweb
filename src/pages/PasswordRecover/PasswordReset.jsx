@@ -1,6 +1,7 @@
 import { confirmPasswordReset } from "firebase/auth";
 import React, { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import Button from "../../components/Button/Button";
 import { auth } from "../../firebase";
 import styles from "./Passwordreset.module.css";
 
@@ -50,7 +51,7 @@ const PasswordReset = () => {
               Back to Login
             </Link>
           </p>
-          <button type="submit">Save New Password</button>
+          <Button type="submit">Save New Password</Button>
         </form>
       </div>
     </section>

@@ -58,7 +58,7 @@ const Onboarding = () => {
             <textarea placeholder="Your role" />
           </div>
           <div className={styles.next_btn}>
-            <Link to="">
+            <Link to="/startup-review">
               <button>Next</button>
             </Link>
           </div>

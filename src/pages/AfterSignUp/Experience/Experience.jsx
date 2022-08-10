@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./experience.module.css";
 
 const Experience = () => {
@@ -15,7 +16,9 @@ const Experience = () => {
         <button className={styles.ex__btn}>12 + Years Experience</button>
       </div>
       <div className={styles.btns}>
-        <button className={styles.btn1}>Next</button>
+        <Link to="/education">
+          <button className={styles.btn1}>Next</button>
+        </Link>
         <button className={styles.btn2}>Skip</button>
       </div>
     </div>

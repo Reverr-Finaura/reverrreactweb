@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./../Cards/card.module.css";
 
 // import { useDispatch } from "react-redux";
@@ -61,7 +62,9 @@ const Industry = () => {
         ))}
       </div>
       <div className={styles.btns}>
-        <button className={styles.btn1}>Next</button>
+        <Link to="/industry">
+          <button className={styles.btn1}>Next</button>
+        </Link>
         <button className={styles.btn2}>Skip</button>
       </div>
     </div>
