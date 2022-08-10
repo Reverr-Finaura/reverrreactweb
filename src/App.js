@@ -88,7 +88,10 @@ function App() {
         path="/startup-review"
         element={user ? <Community /> : <Review />}
       />
-
+      <Route
+        path="/startup-verification"
+        element={user ? <Community /> : <Verification />}
+      />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
     // <div>
