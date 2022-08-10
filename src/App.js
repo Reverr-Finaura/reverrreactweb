@@ -21,6 +21,8 @@ import Role from "./pages/AfterSignUp/Role/Role";
 import Onboarding from "./pages/AfterSignUp/Onboarding/Onboarding";
 import Education from "./pages/AfterSignUp/Education/Education";
 import Gender from "./pages/AfterSignUp/Gender/Gender";
+import Review from "./pages/AfterSignUp/Review page/Review";
+import Confirmation from "./pages/AfterSignUp/Confirmation/Confirmation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import Confirmation from "./pages/AfterSignUp/Confirmation/Confirmation";

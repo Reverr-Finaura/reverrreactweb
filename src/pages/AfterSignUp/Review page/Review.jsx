@@ -7,7 +7,6 @@ import Footer from "../../Footer/Footer";
 const Review = () => {
   return (
     <>
-      <Header />
       <section className={styles.review_section}>
         <div className={styles.review_intro}>
           <div className={styles.review_note}>
@@ -30,7 +29,6 @@ const Review = () => {
           </Link>
         </div>
       </section>
-      <Footer />
     </>
   );
 };
