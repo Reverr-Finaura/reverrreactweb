@@ -5,7 +5,7 @@ import styles from "./gender.module.css";
 const Gender = () => {
   return (
     <div className={styles.gender__container}>
-      <h1 className={styles.big__heading}>What are you looking for?</h1>
+      <h1 className={styles.big__heading}>Let's know more about you</h1>
       <div className={styles.gen__cards}>
         <div className={styles.gen__card}>
           <img src="./images/gen1.png" alt="" className={styles.gen__img} />

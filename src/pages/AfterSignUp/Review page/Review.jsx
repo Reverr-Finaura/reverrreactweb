@@ -1,13 +1,10 @@
 import React from "react";
 import styles from "./Review.module.css";
 import { Link } from "react-router-dom";
-import Header from "../../../components/Header/Header";
-import Footer from "../../Footer/Footer";
 
 const Review = () => {
   return (
     <>
-      <Header />
       <section className={styles.review_section}>
         <div className={styles.review_intro}>
           <div className={styles.review_note}>
@@ -30,7 +27,6 @@ const Review = () => {
           </Link>
         </div>
       </section>
-      <Footer />
     </>
   );
 };
