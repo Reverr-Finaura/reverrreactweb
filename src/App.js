@@ -65,11 +65,8 @@ function App() {
           element={user ? <Community /> : <EnterOtp />}
         ></Route>
       ) : null}
-      <Route
-        path="/startup-list"
-        element={user ? <Community /> : <Industry />}
-      />
-      <Route path="/industry" element={user ? <Community /> : <Card />} />
+      <Route path="/startup-list" element={user ? <Community /> : <Card />} />
+      <Route path="/industry" element={user ? <Community /> : <Industry />} />
       <Route
         path="/experience"
         element={user ? <Community /> : <Experience />}
@@ -88,7 +85,10 @@ function App() {
         path="/startup-review"
         element={user ? <Community /> : <Review />}
       />
-
+      <Route
+        path="/startup-verification"
+        element={user ? <Community /> : <Verification />}
+      />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

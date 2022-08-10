@@ -3,8 +3,24 @@
   color: white;
 }
 
+.list__container {
+  width: 85%;
+  margin: auto;
+}
+
 .card__container {
   background-color: #2a72de;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 300px;
+}
+
+.industry_card_container {
+  background: linear-gradient(167.37deg, #020e2c 9.15%, #09245e 64.83%);
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 10px;
