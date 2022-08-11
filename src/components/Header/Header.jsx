@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { selectNewUser } from "../../features/newUserSlice";
+import { useNavigate } from "react-router-dom";
 import { logout, selectUser } from "../../features/userSlice";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
@@ -12,7 +11,6 @@ import styles from "./header.module.css";
 const Header = ({ theme }) => {
   const navigate = useNavigate();
   const user = useSelector(selectUser);
-  const newUser = useSelector(selectNewUser);
   const dispatch = useDispatch();
   const [extendNavbar, setExtendNavbar] = useState(false);
 

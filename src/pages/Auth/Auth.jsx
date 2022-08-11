@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import styles from "./Auth.module.css";
-import { auth, db } from "../../firebase";
+import { auth } from "../../firebase";
 import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useDispatch } from "react-redux";
-import { login } from "../../features/userSlice";
 import { create } from "../../features/newUserSlice";
 import Button from "../../components/Button/Button";
 import { Link, useNavigate } from "react-router-dom";
-import { collection, addDoc } from "firebase/firestore";
 import emailjs from "@emailjs/browser";
 import Header from "../../components/Header/Header";
 import Footer from "../Footer/Footer";

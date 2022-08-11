@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Header from "../../../components/Header/Header";
 import { modify } from "../../../features/newUserSlice";
 import Footer from "../../Footer/Footer";

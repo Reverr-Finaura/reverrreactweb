@@ -1,10 +1,9 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { addDoc, collection } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../../components/Button/Button";
 import { create, modify, selectNewUser } from "../../features/newUserSlice";
-import { auth, db } from "../../firebase";
+import { auth } from "../../firebase";
 import styles from "./EnterOtp.module.css";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
