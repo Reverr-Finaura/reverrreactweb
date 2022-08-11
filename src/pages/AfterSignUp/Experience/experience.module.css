@@ -4,7 +4,8 @@
 }
 .ex__heading {
   font-size: 50px;
-  color: rgb(255, 255, 255);
+  color: black;
+  font-weight: 500;
 }
 .ex__btns {
   display: flex;

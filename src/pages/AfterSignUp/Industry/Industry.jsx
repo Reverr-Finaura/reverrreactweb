@@ -58,7 +58,7 @@ const Industry = () => {
 
   return (
     <>
-      <Header />
+      <Header theme={"black"} />
       <div className={styles.industry__container}>
         <h1 className={styles.big__heading}>What is your Industry?</h1>
         <div className={styles.cards__flex}>

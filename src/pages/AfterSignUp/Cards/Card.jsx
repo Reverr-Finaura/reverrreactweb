@@ -55,7 +55,7 @@ const Card = () => {
   };
   return (
     <>
-      <Header />
+      <Header theme="black" />
       <div className={styles.list__container}>
         <h1 className={styles.big__heading}>What are you looking for?</h1>
         <div className={styles.cards__flex}>

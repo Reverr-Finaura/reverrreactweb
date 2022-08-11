@@ -49,7 +49,7 @@ const Review = () => {
 
   return (
     <>
-      <Header />
+      <Header theme={"black"} />
       <section className={styles.review_section}>
         <div className={styles.review_intro}>
           <div className={styles.review_note}>

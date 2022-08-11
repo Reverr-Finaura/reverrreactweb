@@ -22,7 +22,7 @@ const Onboarding = () => {
 
   return (
     <>
-      <Header />
+      <Header theme={"black"} />
       <section className={styles.onboard_section}>
         <div className={styles.onboard_intro}>
           <h1>Tell Us About You</h1>

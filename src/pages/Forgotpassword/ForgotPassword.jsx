@@ -26,28 +26,28 @@ const ForgotPassword = () => {
   };
   return (
     <>
-    <Header />
-    <section className={styles.auth}>
-      <div className={styles.password_reset}>
-        <p>We'll mail you password reset link.</p>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            name="email"
-            onChange={(e) => setEmail(e.target.value)}
-            id=""
-            placeholder="Email"
-          />
-          <p>
-            <Link to="/login" className={styles.link}>
-              Back to Login
-            </Link>
-          </p>
-          <Button type="submit">Send Mail</Button>
-        </form>
-      </div>
-    </section>
-    <Footer />
+      <Header theme={"black"} />
+      <section className={styles.auth}>
+        <div className={styles.password_reset}>
+          <p>We'll mail you password reset link.</p>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="email"
+              name="email"
+              onChange={(e) => setEmail(e.target.value)}
+              id=""
+              placeholder="Email"
+            />
+            <p>
+              <Link to="/login" className={styles.link}>
+                Back to Login
+              </Link>
+            </p>
+            <Button type="submit">Send Mail</Button>
+          </form>
+        </div>
+      </section>
+      <Footer />
     </>
   );
 };

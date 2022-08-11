@@ -1,7 +1,7 @@
 .onboard_section {
   width: 80%;
   margin: auto;
-  color: #fff;
+  /* color: #fff; */
 }
 
 .onboard_intro > h1 {
@@ -38,7 +38,7 @@
   border-radius: 4px;
   outline: none;
   padding: 1.3rem;
-  color: #fff;
+  /* color: #fff; */
   font-size: 18px;
 }
 

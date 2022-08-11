@@ -1,5 +1,9 @@
 /* Reverr stats section */
 
+.main_div {
+  background: linear-gradient(167.37deg, #020e2c 9.15%, #09245e 64.83%);
+}
+
 .hero {
   margin: 4% auto;
   width: 100%;

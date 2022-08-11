@@ -2,7 +2,6 @@ import React from "react";
 import Divider from "../../components/Divider/Divider";
 import RoundButton from "../../components/RoundButton/RoundButton";
 import Header from "../../components/Header/Header";
-
 import styles from "./home.module.css";
 import { Link } from "react-router-dom";
 import Hero from "./Hero/Hero";
@@ -11,8 +10,8 @@ import Footer from "../Footer/Footer";
 
 const Home = () => {
   return (
-    <>
-      <Header />
+    <div className={styles.main_div}>
+      <Header theme={"white"} />
       <section className={styles.hero}>
         <Hero />
       </section>
@@ -169,7 +168,7 @@ const Home = () => {
       <section className="styles">
         <Footer />
       </section>
-    </>
+    </div>
   );
 };
 

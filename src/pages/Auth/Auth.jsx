@@ -107,7 +107,7 @@ function Auth() {
 
   return (
     <>
-    <Header />
+      <Header theme={"black"} />
       <section className={styles.auth}>
         <div className={styles.signup}>
           <div>

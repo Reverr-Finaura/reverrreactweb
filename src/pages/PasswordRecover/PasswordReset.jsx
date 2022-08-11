@@ -2,7 +2,9 @@ import { confirmPasswordReset } from "firebase/auth";
 import React, { useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Button from "../../components/Button/Button";
+import Header from "../../components/Header/Header";
 import { auth } from "../../firebase";
+import Footer from "../Footer/Footer";
 import styles from "./Passwordreset.module.css";
 
 const PasswordReset = () => {
@@ -28,8 +30,10 @@ const PasswordReset = () => {
 
   return (
     <>
+      <Header theme={"black"} />
       <section className={styles.auth}>
         <div className={styles.password_reset}>
+          <h1>Change your password</h1>
           <form onSubmit={handlePasswordChange}>
             <input
               type="password"
@@ -56,6 +60,7 @@ const PasswordReset = () => {
           </form>
         </div>
       </section>
+      <Footer />
     </>
   );
 };

@@ -5,8 +5,12 @@
 
 .big__heading {
   font-size: 50px;
+<<<<<<< HEAD
   color: white;
   text-align: center;
+=======
+  /* color: white; */
+>>>>>>> f2231a1042f5b456797ebec48b93690e4e52c85f
 }
 
 .gen__cards {
@@ -35,7 +39,7 @@
 
 .loc__heading {
   font-size: 50px;
-  color: white;
+  /* color: white; */
   text-align: center;
 }
 
