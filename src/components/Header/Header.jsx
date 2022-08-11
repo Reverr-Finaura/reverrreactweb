@@ -5,6 +5,7 @@ import { selectNewUser } from "../../features/newUserSlice";
 import { logout, selectUser } from "../../features/userSlice";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
+import { toast } from "react-hot-toast";
 
 import styles from "./header.module.css";
 
@@ -96,9 +97,13 @@ const Header = ({ theme }) => {
           onClick={
             user
               ? () =>
-                  signOut(auth).then(() => {
-                    dispatch(logout());
-                  })
+                  signOut(auth)
+                    .then(() => {
+                      dispatch(logout());
+                    })
+                    .then(() => {
+                      toast.success("sucessfully logged out");
+                    })
               : () => navigate("/login")
           }
           className={styles.authButton}

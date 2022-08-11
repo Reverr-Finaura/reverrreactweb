@@ -23,6 +23,7 @@ import Confirmation from "./pages/AfterSignUp/Confirmation/Confirmation";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import Verification from "./pages/AfterSignUp/Verification/Verification";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const user = useSelector(selectUser);
@@ -47,6 +48,8 @@ function App() {
   }, []);
 
   return (
+    <>
+    <Toaster />
     <Routes>
       <Route path="/" element={<Home />} />
       {!user ? (
@@ -73,6 +76,7 @@ function App() {
       <Route path="/startup-verification" element={<Verification />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    </>
   );
 }
 
