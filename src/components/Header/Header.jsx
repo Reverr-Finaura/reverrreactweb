@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { selectNewUser } from "../../features/newUserSlice";
 import { logout, selectUser } from "../../features/userSlice";
 import { signOut } from "firebase/auth";
@@ -8,24 +8,53 @@ import { auth } from "../../firebase";
 
 import styles from "./header.module.css";
 
-const Header = () => {
+const Header = ({ theme }) => {
   const navigate = useNavigate();
   const user = useSelector(selectUser);
   const newUser = useSelector(selectNewUser);
   const dispatch = useDispatch();
+  const [extendNavbar, setExtendNavbar] = useState(false);
+
+  const handleClick = () => {
+    setExtendNavbar(!extendNavbar);
+  };
 
   return (
     <section className={styles.headerContainer}>
-      <button className={styles.logo}>
-        <img src={"/images/reaver-logo.svg"} alt="" />
+      <button className={styles.logo} onClick={handleClick}>
+        <img
+          src={
+            theme === "black"
+              ? "/images/Reverr Black 1.svg"
+              : "/images/reaver-logo.svg"
+          }
+          alt=""
+        />
         <img src={"/images/reaver-text.svg"} alt="" />
       </button>
-      <div className={styles.buttonRow}>
-        <button className={styles.navButton}>Investors</button>
-        <button className={styles.navButton}>Founders</button>
-        <button className={styles.navButton}>Members</button>
-        <button className={styles.navButton}>About Us</button>
-        <button className={styles.navButton}>Contact Us</button>
+
+      <div
+        className={styles.buttonRow}
+        style={{
+          display:
+            window.innerWidth < 769 ? (extendNavbar ? "flex" : "none") : "flex",
+        }}
+      >
+        <button className={styles.navButton} style={{ color: theme }}>
+          Investors
+        </button>
+        <button className={styles.navButton} style={{ color: theme }}>
+          Founders
+        </button>
+        <button className={styles.navButton} style={{ color: theme }}>
+          Members
+        </button>
+        <button className={styles.navButton} style={{ color: theme }}>
+          About Us
+        </button>
+        <button className={styles.navButton} style={{ color: theme }}>
+          Contact Us
+        </button>
         {!user && (
           <button
             onClick={() => navigate("/signup")}

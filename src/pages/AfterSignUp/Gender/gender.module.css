@@ -5,7 +5,7 @@
 
 .big__heading {
   font-size: 50px;
-  color: white;
+  /* color: white; */
 }
 
 .gen__cards {
@@ -34,7 +34,7 @@
 
 .loc__heading {
   font-size: 50px;
-  color: white;
+  /* color: white; */
   text-align: center;
 }
 

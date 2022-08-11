@@ -10,7 +10,7 @@
   margin: auto;
   gap: 0.5rem;
   width: 85%;
-  color: white;
+  color: black;
   border-radius: 12px;
 }
 
@@ -38,10 +38,16 @@
   border: none;
   width: 20rem;
   padding: 0 3rem;
-  color: white;
+  color: black3;
 }
 
 .link {
   text-decoration: none;
   color: #2a72de;
+}
+
+@media (max-width: 768px) {
+  .signup > form > div > input {
+    width: 7.7rem;
+  }
 }

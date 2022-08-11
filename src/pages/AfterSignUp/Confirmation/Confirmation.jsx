@@ -19,7 +19,7 @@ const Confirmation = () => {
 
   return (
     <>
-      <Header />
+      <Header theme={"black"} />
       <section className={styles.confirm_section_1}>
         <h1>Do you have a Start-Up?</h1>
         <div className={styles.yesNoBtns}>

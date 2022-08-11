@@ -59,52 +59,52 @@ function Auth() {
 
   return (
     <>
-    <Header />
-    <section className={styles.auth}>
-      <div className={styles.signup}>
-        <div className={styles.google_signup}>
-          <Button onClick={signInWithGoogle}>
-            <img src="/images/image 134.svg" alt="" />
-            Login with Google
-          </Button>
-        </div>
-        <div>
-          <p>Or Login with your E-mail</p>
-        </div>
-        <form onSubmit={loginEmail}>
-          <div>
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              value={email}
-              type="email"
-              placeholder="Your E-Mail"
-            />
+      <Header theme={"black"} />
+      <section className={styles.auth}>
+        <div className={styles.signup}>
+          <div className={styles.google_signup}>
+            <Button onClick={signInWithGoogle}>
+              <img src="/images/image 134.svg" alt="" />
+              Login with Google
+            </Button>
           </div>
           <div>
-            <input
-              onChange={(e) => setPassword(e.target.value)}
-              value={password}
-              type="password"
-              placeholder="Enter a password"
-            />
+            <p>Or Login with your E-mail</p>
           </div>
-          <Button type="submit">Login</Button>
-        </form>
-        <p>
-          Don't have an account?{" "}
-          <Link to="/signup" className={styles.link}>
-            Sign Up
-          </Link>
-        </p>
-        <p>
-          Forgot Password?{" "}
-          <Link to="/forgotpassword" className={styles.link}>
-            Click Here
-          </Link>
-        </p>
-      </div>
-    </section>
-    <Footer />
+          <form onSubmit={loginEmail}>
+            <div>
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                type="email"
+                placeholder="Your E-Mail"
+              />
+            </div>
+            <div>
+              <input
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                type="password"
+                placeholder="Enter a password"
+              />
+            </div>
+            <Button type="submit">Login</Button>
+          </form>
+          <p>
+            Don't have an account?{" "}
+            <Link to="/signup" className={styles.link}>
+              Sign Up
+            </Link>
+          </p>
+          <p>
+            Forgot Password?{" "}
+            <Link to="/forgotpassword" className={styles.link}>
+              Click Here
+            </Link>
+          </p>
+        </div>
+      </section>
+      <Footer />
     </>
   );
 }

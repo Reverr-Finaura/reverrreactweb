@@ -7,7 +7,7 @@ import Footer from "../../Footer/Footer";
 const Verification = () => {
   return (
     <>
-      <Header />
+      <Header theme={"black"} />
       <div>
         <section className={styles.review_section}>
           <div className={styles.review_intro}>

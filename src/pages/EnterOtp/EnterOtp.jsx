@@ -109,7 +109,7 @@ function EnterOtp() {
 
   return (
     <>
-    <Header />
+      <Header theme={"black"} />
       <div className={styles.otp}>
         <div className={styles.getStarted}>
           <h1>
