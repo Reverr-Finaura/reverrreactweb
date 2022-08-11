@@ -1,6 +1,14 @@
+body {
+  background-color: white;
+}
 .big__heading {
   font-size: 50px;
+<<<<<<< HEAD
+  color: white;
+  text-align: center;
+=======
   color: black;
+>>>>>>> f2231a1042f5b456797ebec48b93690e4e52c85f
 }
 
 .list__container {
@@ -19,6 +27,12 @@
   height: 300px;
 }
 
+/* @media (max-width: 1024px) {
+  .card__container {
+    display: flex;
+    flex-direction: column;
+  }
+} */
 .industry_card_container {
   background: linear-gradient(167.37deg, #020e2c 9.15%, #09245e 64.83%);
   padding-top: 20px;
@@ -122,6 +136,13 @@
   grid-template-columns: 2fr 2fr 2fr 2fr;
   gap: 30px;
 }
+
+@media (max-width: 1024px) {
+  .cards__flex {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .industry__container {
   width: 85%;
   margin: auto;
@@ -129,7 +150,17 @@
 
 @media (max-width: 1024px) {
   .btns {
+    /* display: flex;
+    flex-direction: column;
+    max-width: 80%; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+  }
+
+  .btn1 {
+    margin-bottom: 30px;
   }
 }

@@ -48,8 +48,6 @@ function App() {
   }, []);
 
   return (
-    <>
-    <Toaster />
     <Routes>
       <Route path="/" element={<Home />} />
       {!user ? (
@@ -76,7 +74,6 @@ function App() {
       <Route path="/startup-verification" element={<Verification />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-    </>
   );
 }
 

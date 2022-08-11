@@ -133,7 +133,28 @@
 
 @media (max-width: 1024px) {
   .btns {
+    /* display: flex;
+    flex-direction: column;
+    max-width: 80%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+  }
+
+  .btn1 {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cards__flex {
     display: flex;
     flex-direction: column;
   }
+}
+.industry__container {
+  width: 85%;
+  margin: auto;
 }

@@ -11,13 +11,13 @@ const Experience = () => {
   const navigate = useNavigate();
 
   const array = [
-    { experience: "0-2 Years Experience", years: "0-2" },
-    { experience: "2-4 Years Experience", years: "2-4" },
-    { experience: "4-6 Years Experience", years: "4-6" },
-    { experience: "6-8 Years Experience", years: "6-8" },
-    { experience: "8-10 Years Experience", years: "8-10" },
-    { experience: "10-12 Years Experience", years: "10-12" },
-    { experience: "12+ Years Experience", years: "12+" },
+    { experience: "0-2 Years ", years: "0-2" },
+    { experience: "2-4 Years ", years: "2-4" },
+    { experience: "4-6 Years ", years: "4-6" },
+    { experience: "6-8 Years ", years: "6-8" },
+    { experience: "8-10 Years ", years: "8-10" },
+    { experience: "10-12 Years ", years: "10-12" },
+    { experience: "12+ Years ", years: "12+" },
   ];
 
   const [experienceYears, setExperienceYears] = useState(null);
