@@ -12,9 +12,9 @@ const Gender = () => {
 
   const array = [
     { gender: "Male", image: "./images/gen1.png" },
-    { gender: "Female", image: "./images/gen1.png" },
-    { gender: "Other", image: "./images/gen1.png" },
-    { gender: "Not Say", image: "./images/gen1.png" },
+    { gender: "Female", image: "./images/gen2.png" },
+    { gender: "Other", image: "./images/gen3.png" },
+    { gender: "Not Say", image: "./images/gen4.png" },
   ];
 
   const [gender, setGender] = useState(null);

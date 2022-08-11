@@ -11,6 +11,7 @@ import { collection, addDoc } from "firebase/firestore";
 import emailjs from "@emailjs/browser";
 import Header from "../../components/Header/Header";
 import Footer from "../Footer/Footer";
+import { toast } from "react-hot-toast";
 
 function Auth() {
   const navigate = useNavigate();
@@ -97,8 +98,12 @@ function Auth() {
         .then(() => {
           navigate("/enterotp");
         })
+        .then(() => {
+          toast.success("An OTP has been sent to your e-mail");
+        })
         .catch((error) => {
           console.log(error);
+          toast.error(error.message);
         });
     } else {
       alert("passwords do not match");

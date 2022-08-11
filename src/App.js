@@ -1,4 +1,3 @@
-// import { onAuthStateChanged } from "firebase/auth";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Routes, Route, Navigate } from "react-router-dom";
@@ -48,32 +47,37 @@ function App() {
   }, []);
 
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      {!user ? (
-        <>
-          <Route path="/signup" element={<Auth />} />
-          <Route path="/login" element={<Login />} />
-        </>
-      ) : null}
-      <Route path="/forgotpassword" element={<ForgotPassword />} />
-      <Route path="/password-reset" element={<PasswordReset />} />
-      {newUser ? <Route path="enterotp" element={<EnterOtp />}></Route> : null}
-      {newUser ? (
-        <>
-          <Route path="/startup-list" element={<Card />} />
-          <Route path="/industry" element={<Industry />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/gender" element={<Gender />} />
-          <Route path="/startup-confirm" element={<Confirmation />} />
-          <Route path="/startup-onboarding" element={<Onboarding />} />
-          <Route path="/startup-review" element={<Review />} />{" "}
-        </>
-      ) : null}
-      <Route path="/startup-verification" element={<Verification />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+    <>
+      <Toaster />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {!user ? (
+          <>
+            <Route path="/signup" element={<Auth />} />
+            <Route path="/login" element={<Login />} />
+          </>
+        ) : null}
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/password-reset" element={<PasswordReset />} />
+        {newUser ? (
+          <Route path="enterotp" element={<EnterOtp />}></Route>
+        ) : null}
+        {newUser ? (
+          <>
+            <Route path="/startup-list" element={<Card />} />
+            <Route path="/industry" element={<Industry />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/gender" element={<Gender />} />
+            <Route path="/startup-confirm" element={<Confirmation />} />
+            <Route path="/startup-onboarding" element={<Onboarding />} />
+            <Route path="/startup-review" element={<Review />} />{" "}
+          </>
+        ) : null}
+        <Route path="/startup-verification" element={<Verification />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </>
   );
 }
 

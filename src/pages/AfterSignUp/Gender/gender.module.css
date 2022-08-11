@@ -5,12 +5,7 @@
 
 .big__heading {
   font-size: 50px;
-<<<<<<< HEAD
-  color: white;
-  text-align: center;
-=======
   /* color: white; */
->>>>>>> f2231a1042f5b456797ebec48b93690e4e52c85f
 }
 
 .gen__cards {
@@ -25,7 +20,9 @@
 }
 .gen__img {
   margin: auto;
+  width: 13rem;
   padding: 10px;
+  object-fit: contain;
 }
 .gen__para {
   color: white;
@@ -39,7 +36,6 @@
 
 .loc__heading {
   font-size: 50px;
-  /* color: white; */
   text-align: center;
 }
 
@@ -48,6 +44,12 @@
   margin: auto;
   display: flex;
   flex-direction: column;
+}
+
+.entry > input {
+  padding: 0 1rem;
+  border: none;
+  outline: none;
 }
 
 .loc__hometown {

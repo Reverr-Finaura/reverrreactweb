@@ -12,6 +12,7 @@ import Button from "../../components/Button/Button";
 import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../Footer/Footer";
+import { toast } from "react-hot-toast";
 
 function Auth() {
   const [email, setEmail] = useState("");
@@ -50,6 +51,9 @@ function Auth() {
             profilePic: auth.currentUser.photoURL,
           })
         );
+      })
+      .then(() => {
+        toast.success("Sucessfully logged in");
       })
       .catch((error) => {
         const errorMessage = error.message;

@@ -10,6 +10,7 @@ import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../Footer/Footer";
+import { toast } from "react-hot-toast";
 
 function EnterOtp() {
   const dispatch = useDispatch();
@@ -56,12 +57,11 @@ function EnterOtp() {
           navigate("/startup-list");
         })
         .catch((error) => {
-          const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(error, errorCode, errorMessage);
+          toast.error(errorMessage);
         });
     } else {
-      console.log("check kar");
+      toast.error("Please check the entered OTP");
     }
   };
 
