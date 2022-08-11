@@ -3,34 +3,42 @@ import styles from "../Cards/card.module.css";
 
 const array = [
   {
+    img: "./images/role1.png",
     heading: "Fintech",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role2.png",
     heading: "Sales",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role3.png",
     heading: "Legal",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role4.png",
     heading: "Fund Raising",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role5.png",
     heading: "Product Development",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role6.png",
     heading: "Research",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role7.png",
     heading: "Marketing",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role8.png",
     heading: "Financing",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
@@ -39,16 +47,12 @@ const array = [
 const Role = () => {
   return (
     <div className={styles.industry__container}>
-      <h1 className={styles.big__heading}>What are you looking for?</h1>
+      <h1 className={styles.big__heading}>What is your Industry</h1>
       <div className={styles.cards__flex}>
-        {array.map(({ heading, paragraph }) => (
+        {array.map(({ heading, paragraph, img }) => (
           <div className={styles.card__container}>
             <div className={styles.card__image_container}>
-              <img
-                src="/images/hero2.png"
-                alt=""
-                className={styles.card__image}
-              />
+              <img src={img} alt="" className={styles.card__image} />
             </div>
             <div className={styles.card__heading}>{heading}</div>
             <div className={styles.card__para}>{paragraph}</div>

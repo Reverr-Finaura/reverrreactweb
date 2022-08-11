@@ -6,6 +6,7 @@
 .big__heading {
   font-size: 50px;
   color: white;
+  text-align: center;
 }
 
 .gen__cards {
@@ -39,7 +40,7 @@
 }
 
 .entry {
-  max-width: 50%;
+  width: 50%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -103,16 +104,33 @@
   justify-content: space-around;
 }
 @media (max-width: 1024px) {
-  .btns {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .btn1 {
-    margin-bottom: 20px;
-  }
   .big__heading {
     text-align: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .btns {
+    /* display: flex;
+    flex-direction: column;
+    max-width: 80%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 60%;
+  }
+
+  .btn1 {
+    margin-bottom: 30px;
+  }
+
+  .gen__cards {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .entry {
+    width: 100%;
   }
 }
