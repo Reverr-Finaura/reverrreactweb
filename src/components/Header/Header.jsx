@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout, selectUser } from "../../features/userSlice";
@@ -13,6 +13,26 @@ const Header = ({ theme }) => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
   const [extendNavbar, setExtendNavbar] = useState(false);
+
+  const [dimensions, setDimensions] = React.useState({
+    height: window.innerHeight,
+    width: window.innerWidth,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setDimensions({
+        height: window.innerHeight,
+        width: window.innerWidth,
+      });
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return (_) => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
 
   const handleClick = () => {
     setExtendNavbar(!extendNavbar);
@@ -36,7 +56,11 @@ const Header = ({ theme }) => {
         className={styles.buttonRow}
         style={{
           display:
-            window.innerWidth < 769 ? (extendNavbar ? "flex" : "none") : "flex",
+            dimensions.width > 768
+              ? "flex"
+              : extendNavbar === false
+              ? "none"
+              : "flex",
         }}
       >
         <button className={styles.navButton} style={{ color: theme }}>

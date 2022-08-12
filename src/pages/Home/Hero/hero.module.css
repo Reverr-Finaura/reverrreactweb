@@ -110,4 +110,7 @@
     text-align: center;
     width: 100%;
   }
+  .heroImage > img {
+    height: 7rem;
+  }
 }

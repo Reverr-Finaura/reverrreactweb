@@ -84,3 +84,9 @@
     margin-top: 1.3rem;
   }
 }
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .buttonRow {
+    margin-left: 1.4rem;
+  }
+}

@@ -42,6 +42,7 @@ const Onboarding = () => {
             </p>
             <input
               value={organisationName}
+              required
               type="text"
               name=""
               placeholder="Organisation Name"
@@ -60,6 +61,7 @@ const Onboarding = () => {
             <input
               value={designation}
               type="text"
+              required
               name=""
               placeholder="Designation"
               id=""
@@ -76,6 +78,7 @@ const Onboarding = () => {
             </p>
             <input
               value={yearsInOrg}
+              required
               type="text"
               name=""
               placeholder="Type in years"
@@ -93,6 +96,7 @@ const Onboarding = () => {
             </p>
             <textarea
               value={yourRole}
+              required
               placeholder="Your role"
               onChange={(e) => setYourRole(e.target.value)}
             />
