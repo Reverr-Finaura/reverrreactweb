@@ -4,27 +4,27 @@ import styles from "../Cards/card.module.css";
 const array = [
   {
     img: "./images/role1.png",
-    heading: "Fintech",
+    heading: "Mentorship",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
     img: "./images/role2.png",
-    heading: "Sales",
+    heading: "Ideas",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
     img: "./images/role3.png",
-    heading: "Legal",
+    heading: "Networking",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
     img: "./images/role4.png",
-    heading: "Fund Raising",
+    heading: "Accounting",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
     img: "./images/role5.png",
-    heading: "Product Development",
+    heading: "Fundings",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
@@ -47,7 +47,7 @@ const array = [
 const Role = () => {
   return (
     <div className={styles.industry__container}>
-      <h1 className={styles.big__heading}>What is your Industry</h1>
+      <h1 className={styles.big__heading}>What are you looking for?</h1>
       <div className={styles.cards__flex}>
         {array.map(({ heading, paragraph, img }) => (
           <div className={styles.card__container}>
