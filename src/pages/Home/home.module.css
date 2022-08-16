@@ -209,7 +209,7 @@
   }
 
   .rf_card > img {
-    height: 50vh;
+    height: 12rem;
   }
 
   .rever_deal {
@@ -246,7 +246,12 @@
 
 @media (max-width: 425px) {
   .rt_card {
-    width: 300px;
+    width: 280px;
     margin-top: 18%;
+  }
+
+  .rs_card {
+    /* margin-left: 20%; */
+    align-items: flex-end;
   }
 }

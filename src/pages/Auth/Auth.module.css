@@ -24,6 +24,12 @@
   margin: 0% auto;
 }
 
+.googleSignUpBtn{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .signup > form {
   display: flex;
   flex-direction: column;
@@ -55,9 +61,6 @@
 
 .google_signup img {
   height: 5vh;
-  position: relative;
-  left: -10%;
-  top: 8px;
 }
 
 .signupBottom {

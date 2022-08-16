@@ -67,7 +67,7 @@ function Auth() {
       <section className={styles.auth}>
         <div className={styles.signup}>
           <div className={styles.google_signup}>
-            <Button onClick={signInWithGoogle}>
+            <Button className={styles.googleLoginBtn} onClick={signInWithGoogle}>
               <img src="/images/image 134.svg" alt="" />
               Login with Google
             </Button>
