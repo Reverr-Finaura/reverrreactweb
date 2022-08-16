@@ -1,6 +1,5 @@
 .book_section {
   margin: auto;
-  /* width: 85%; */
 }
 
 .book_para {
@@ -75,6 +74,10 @@
   align-items: center;
 }
 
+.menuIcon {
+  display: none;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -87,6 +90,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.phnLogo {
+  display: none;
 }
 
 .options {
@@ -144,6 +151,9 @@
   gap: 3rem;
 }
 
+.phnSidebar {
+  display: none;
+}
 
 .sidebarOption > p {
   display: none;
@@ -157,7 +167,6 @@
   width: 2.5rem;
   object-fit: contain;
 }
-
 
 .sidebarOption > p {
   margin: 0;
@@ -249,6 +258,26 @@
 }
 
 @media (max-width: 600px) {
+  /* .logo {
+    display: none;
+  } */
+  /* .phnLogo {
+    display: block;
+  }
+
+  .phnLogo > p {
+    margin-top: -0.25rem;
+    font-family: "Philosopher", sans-serif;
+    color: rgba(42, 114, 222, 1);
+    font-weight: 700;
+    font-size: 24px;
+  }
+  
+  .phnLogo > img {
+    width: 6rem;
+    object-fit: contain;
+  } */
+
   .phnOptions {
     display: flex;
     gap: 3rem;
@@ -265,7 +294,7 @@
     align-items: center;
   }
 
-  .sidebar{
+  .sidebar {
     display: none;
   }
 
@@ -281,6 +310,14 @@
     flex-direction: column;
     justify-content: center;
   }
+  .menuIcon {
+    position: absolute;
+    left: 2.5rem;
+    top: 3rem;
+    display: block;
+    height: 3rem;
+    width: 3rem;
+  }
 
   .heading {
     font-size: 16px;
@@ -293,5 +330,33 @@
     font-size: 24px;
   }
 
-}
+  .phnSidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #d9d9d9;
+    width: 60%;
+    position: fixed;
+    height: 100vh;
+    z-index: 999;
+    border-radius: 0 1rem 1rem 0;
+    padding: 1rem;
+  }
 
+  .phnSidebarOption {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5rem;
+    cursor: pointer;
+  }
+
+  .xicon {
+    width: 2.5rem;
+  }
+
+  .phnSidebarOption > img {
+    width: 2.5rem;
+    object-fit: contain;
+  }
+}
