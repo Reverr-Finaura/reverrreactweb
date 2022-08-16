@@ -21,7 +21,11 @@
 .options {
   display: flex;
   align-items: center;
-  gap: 3rem;
+  gap: 2.5rem;
+}
+
+.phnOptions {
+  display: none;
 }
 
 .logo > p {
@@ -33,24 +37,23 @@
 }
 
 .logo > img {
-  width: 8rem;
+  width: 6rem;
   object-fit: contain;
 }
 
 .options > div > img {
-  width: 2.5rem;
+  width: 2rem;
   object-fit: contain;
 }
 
 .body {
-  width: 86.5%;
+  width: 88.5%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
 }
 
 .sidebar {
-  margin-top: -3rem;
   background-color: #d9d9d9;
   border-radius: 0.2rem 0.2rem 3rem 3rem;
   padding: 1rem 10rem 1rem 1rem;
@@ -58,6 +61,9 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
+  position: fixed;
+  z-index: 50;
+  transition: all ease-in 200ms;
 }
 
 .sidebarOption {
@@ -67,21 +73,19 @@
   gap: 3rem;
 }
 
-.sidebarOption > p{
-    display: none;
-}
-
-.sidebar{
-    padding: 1rem;
-}
-
 .sidebarOption > img {
   width: 2.5rem;
   object-fit: contain;
 }
 
-.content{
-    width: 85%;
+.sidebarOption > p {
+  margin: 0;
+  cursor: pointer;
+}
+
+.content {
+  width: 85%;
+  margin: auto 5rem auto 10rem;
 }
 
 .search {
@@ -105,22 +109,106 @@
   background-color: transparent;
 }
 
-
-.headings{
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: auto;
+.headings {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  gap: 1rem;
 }
 
-.heading{
-    font-size: 35px;
+.heading {
+  font-size: 35px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all ease-in 250ms;
+}
+
+.heading:hover {
+  font-size: 50px;
+}
+
+.text {
+  font-size: 32px;
+  text-align: center;
+  line-height: 52.5px;
+  color: rgba(32, 32, 32, 0.75);
+  font-weight: 700;
+}
+
+.journeyPartText {
+  color: rgba(32, 32, 32, 1);
+}
+
+.chapters {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  margin: 4rem 0;
+}
+
+@media (max-width: 1024px) {
+  .text {
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .heading {
+    font-size: 22px;
     font-weight: 700;
     cursor: pointer;
-    transition: all ease 200ms;
+    transition: all ease-in 250ms;
+  }
+
+  .heading:hover {
+    font-size: 32px;
+  }
 }
 
-.heading:hover{
-    font-size: 50px;
+@media (max-width: 600px) {
+  .phnOptions {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .phnOptions > div > img {
+    width: 2rem;
+    object-fit: contain;
+  }
+
+  .body {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar{
+    display: none;
+  }
+
+  .content {
+    margin: 2rem auto;
+  }
+
+  .options {
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .heading {
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all ease-in 250ms;
+  }
+
+  .heading:hover {
+    font-size: 24px;
+  }
 }
