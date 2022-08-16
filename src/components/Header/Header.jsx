@@ -7,6 +7,7 @@ import { auth } from "../../firebase";
 import { toast } from "react-hot-toast";
 
 import styles from "./header.module.css";
+import { remove } from "../../features/newUserSlice";
 
 const Header = ({ theme }) => {
   const navigate = useNavigate();
@@ -122,9 +123,10 @@ const Header = ({ theme }) => {
                   signOut(auth)
                     .then(() => {
                       dispatch(logout());
+                      dispatch(remove());
                     })
                     .then(() => {
-                      toast.success("sucessfully logged out");
+                      toast.success("Sucessfully logged out");
                     })
               : () => navigate("/login")
           }

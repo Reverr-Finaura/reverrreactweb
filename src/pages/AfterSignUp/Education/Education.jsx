@@ -56,7 +56,15 @@ const Education = () => {
                     alt={item.level}
                     className={styles.edu__img}
                   />
-                  <div className={styles.edu__name}>{item.level}</div>
+                  <div
+                    className={styles.edu__name}
+                    style={{
+                      borderBottom:
+                        educationLevel === item.level && "2px solid blue",
+                    }}
+                  >
+                    {item.level}
+                  </div>
                 </div>
               );
             }
@@ -82,7 +90,15 @@ const Education = () => {
                     alt={item.level}
                     className={styles.edu__img}
                   />
-                  <div className={styles.edu__name}>{item.level}</div>
+                  <div
+                    className={styles.edu__name}
+                    style={{
+                      borderBottom:
+                        educationLevel === item.level && "2px solid blue",
+                    }}
+                  >
+                    {item.level}
+                  </div>
                 </div>
               );
             }

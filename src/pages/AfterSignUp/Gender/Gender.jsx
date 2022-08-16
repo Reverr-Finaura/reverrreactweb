@@ -48,9 +48,19 @@ const Gender = () => {
               }}
               key={index}
               className={styles.gen__card}
+              style={{
+                backgroundColor: gender === item.gender && "white",
+                }}
             >
               <img src={item.image} alt="" className={styles.gen__img} />
-              <div className={styles.gen__para}>{item.gender}</div>
+              <div
+                className={styles.gen__para}
+                style={{
+                color: gender === item.gender && "#2a72de",
+                }}
+              >
+                {item.gender}
+              </div>
             </div>
           ))}
         </div>

@@ -8,6 +8,7 @@ import { modify, selectNewUser } from "../../../features/newUserSlice";
 import { addDoc, collection } from "firebase/firestore";
 import { auth, db } from "../../../firebase";
 import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 const Review = () => {
   const dispatch = useDispatch();
@@ -43,7 +44,13 @@ const Review = () => {
           function (error) {
             console.log("FAILED...", error);
           }
-        );
+        )
+        .then(() => {
+          toast.success("You have successfully create your account!");
+        })
+        .catch((error) => {
+          toast.error(error.message);
+        });
     });
   }, []);
 
