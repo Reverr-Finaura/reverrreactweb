@@ -248,10 +248,6 @@ function Knowledge() {
               style={{ display: !booksSelected && "none" }}
             >
               <div>
-                <p className={styles.book_para}>
-                  Most Important and Trending books that will help you in your
-                  Start-up Journey.
-                </p>
                 <div className={styles.book_filter_btn}>
                   <img
                     src="/images/Vector.svg"
@@ -346,12 +342,12 @@ function Knowledge() {
                     </p>
                   </div>
                 </div>
-      <Footer />
               </div>
             </section>
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
