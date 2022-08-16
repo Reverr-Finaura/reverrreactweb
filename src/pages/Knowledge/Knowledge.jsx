@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Chapter from "../../components/Chapter/Chapter";
 import Footer from "../Footer/Footer";
+import Filter from "../../components/Book filter menu/Filter";
 import styles from "./Knowledge.module.css";
 import "animate.css";
 
@@ -8,6 +9,7 @@ function Knowledge() {
   const [booksSelected, setBooksSeleceted] = useState(false);
   const [journeySelected, setJourneySeleceted] = useState(true);
   const [coursesSelected, setCoursesSeleceted] = useState(false);
+  const [filterMenuVisible, setFilterMenuVisible] = useState(false);
   const [isHoveringSidebar, setIsHoveringSidebar] = useState(false);
   const [phnOptionsVisible, setPhnOptionsVisible] = useState(false);
 
@@ -28,32 +30,36 @@ function Knowledge() {
   };
 
   return (
-    <div className={styles.knowledge}>
-      <navbar className={styles.navbar}>
-        <div
+    <>
+      <div className={styles.knowledge}>
+        <navbar className={styles.navbar}>
+          <div
           onClick={() => setPhnOptionsVisible(!phnOptionsVisible)}
           className={styles.logo}
         >
-          <img src="./images/Reverr Black 1.png" alt="" />
-          <p>REVERR</p>
-        </div>
-        <div className={styles.options}>
-          <div>
-            <img src="./images/bell.png" alt="" />
+            <img src="./images/Reverr Black 1.png" alt="" />
+            <p>REVERR</p>
           </div>
-          <div>
-            <img src="./images/ant-design_question-circle-filled.png" alt="" />
+          <div className={styles.options}>
+            <div>
+              <img src="./images/bell.png" alt="" />
+            </div>
+            <div>
+              <img
+                src="./images/ant-design_question-circle-filled.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <img src="./images/uim_calender.png" alt="" />
+            </div>
+            <div>
+              <img src="./images/ant-design_message-twotone.png" alt="" />
+            </div>
+            <div>
+              <img src="./images/Group.png" alt="" />
+            </div>
           </div>
-          <div>
-            <img src="./images/uim_calender.png" alt="" />
-          </div>
-          <div>
-            <img src="./images/ant-design_message-twotone.png" alt="" />
-          </div>
-          <div>
-            <img src="./images/Group.png" alt="" />
-          </div>
-        </div>
         <div
           style={{ display: phnOptionsVisible ? "flex" : "none" }}
           className={`${styles.phnOptions} animate__animated animate__fadeIn`}
@@ -74,9 +80,9 @@ function Knowledge() {
             <img src="./images/Group.png" alt="" />
           </div>
         </div>
-      </navbar>
-      <div className={styles.body}>
-        <div
+        </navbar>
+        <div className={styles.body}>
+          <div
           style={{
             padding: isHoveringSidebar ? "1rem 10rem 1rem 1rem" : "1rem",
           }}
@@ -84,83 +90,83 @@ function Knowledge() {
           onMouseOver={() => setIsHoveringSidebar(true)}
           onMouseOut={() => setIsHoveringSidebar(false)}
         >
-          <div className={styles.sidebarOption}>
-            <img src="./images/dashboard.png" alt="" />
-            <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            <div className={styles.sidebarOption}>
+              <img src="./images/dashboard.png" alt="" />
+              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
               Dashboard
             </p>
-          </div>
-          <div className={styles.sidebarOption}>
-            <img src="./images/presentation.png" alt="" />
-            <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            </div>
+            <div className={styles.sidebarOption}>
+              <img src="./images/presentation.png" alt="" />
+              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
               Tools
             </p>
-          </div>
-          <div className={styles.sidebarOption}>
-            <img src="./images/brain.png" alt="" />
-            <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            </div>
+            <div className={styles.sidebarOption}>
+              <img src="./images/brain.png" alt="" />
+              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
               Knowledge
             </p>
-          </div>
-          <div className={styles.sidebarOption}>
-            <img src="./images/wallet.png" alt="" />
-            <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            </div>
+            <div className={styles.sidebarOption}>
+              <img src="./images/wallet.png" alt="" />
+              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
               Funding
             </p>
-          </div>
-          <div className={styles.sidebarOption}>
-            <img src="./images/video.png" alt="" />
-            <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            </div>
+            <div className={styles.sidebarOption}>
+              <img src="./images/video.png" alt="" />
+              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
               Patch
             </p>
-          </div>
-          <div className={styles.sidebarOption}>
-            <img src="./images/bookopen.png" alt="" />
-            <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            </div>
+            <div className={styles.sidebarOption}>
+              <img src="./images/bookopen.png" alt="" />
+              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
               Get Mentored
             </p>
-          </div>
-          <div className={styles.sidebarOption}>
-            <img src="./images/handshake.png" alt="" />
-            <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            </div>
+            <div className={styles.sidebarOption}>
+              <img src="./images/handshake.png" alt="" />
+              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
               Community
             </p>
-          </div>
-          <div className={styles.sidebarOption}>
-            <img src="./images/crown.png" alt="" />
-            <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            </div>
+            <div className={styles.sidebarOption}>
+              <img src="./images/crown.png" alt="" />
+              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
               Upgrade
             </p>
-          </div>
-        </div>
-        <div className={styles.content}>
-          <div className={styles.search}>
-            <img src="./images/searchicon.png" alt="search" />
-            <input type="text" placeholder="Search here" />
-          </div>
-          <div className={styles.headings}>
-            <div
-              onClick={selectBooks}
-              style={{ fontSize: booksSelected && "45px" }}
-              className={styles.heading}
-            >
-              <p>Books</p>
-            </div>
-            <div
-              onClick={selectJourney}
-              style={{ fontSize: journeySelected && "45px" }}
-              className={styles.heading}
-            >
-              <p>The Journey</p>
-            </div>
-            <div
-              onClick={selectCourses}
-              style={{ fontSize: coursesSelected && "45px" }}
-              className={styles.heading}
-            >
-              <p>Courses</p>
             </div>
           </div>
+          <div className={styles.content}>
+            <div className={styles.search}>
+              <img src="./images/searchicon.png" alt="search" />
+              <input type="text" placeholder="Search here" />
+            </div>
+            <div className={styles.headings}>
+              <div
+                onClick={selectBooks}
+                style={{ fontSize: booksSelected && "45px" }}
+                className={styles.heading}
+              >
+                <p>Books</p>
+              </div>
+              <div
+                onClick={selectJourney}
+                style={{ fontSize: journeySelected && "45px" }}
+                className={styles.heading}
+              >
+                <p>The Journey</p>
+              </div>
+              <div
+                onClick={selectCourses}
+                style={{ fontSize: coursesSelected && "45px" }}
+                className={styles.heading}
+              >
+                <p>Courses</p>
+              </div>
+            </div>
           <div className={styles.sectionDescription}>
             <p
               style={{ display: journeySelected ? "block" : "none" }}
@@ -235,10 +241,118 @@ function Knowledge() {
             eiusmod tempor"
             />
           </section>
+
+            {/* Book Section */}
+            <section
+              className={styles.book_section}
+              style={{ display: !booksSelected && "none" }}
+            >
+              <div>
+                <p className={styles.book_para}>
+                  Most Important and Trending books that will help you in your
+                  Start-up Journey.
+                </p>
+                <div className={styles.book_filter_btn}>
+                  <img
+                    src="/images/Vector.svg"
+                    alt=""
+                    onClick={() => setFilterMenuVisible(!filterMenuVisible)}
+                  />
+                </div>
+                <Filter visible={filterMenuVisible} />
+                <div className={styles.books}>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                </div>
+      <Footer />
+              </div>
+            </section>
+          </div>
         </div>
       </div>
-      <Footer />
-    </div>
+    </>
   );
 }
 

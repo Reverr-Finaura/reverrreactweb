@@ -75,6 +75,7 @@ function App() {
         ) : null}
         <Route path="/startup-verification" element={<Verification />} />
         <Route path="/knowledge" element={<Knowledge />}></Route>
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
