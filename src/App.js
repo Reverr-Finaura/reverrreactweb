@@ -21,6 +21,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "./firebase";
 import Verification from "./pages/AfterSignUp/Verification/Verification";
 import { Toaster } from "react-hot-toast";
+import Knowledge from "./pages/Knowledge/Knowledge";
 
 function App() {
   const user = useSelector(selectUser);
@@ -73,6 +74,7 @@ function App() {
           </>
         ) : null}
         <Route path="/startup-verification" element={<Verification />} />
+        <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
