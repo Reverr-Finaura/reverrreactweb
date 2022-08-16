@@ -3,7 +3,7 @@
   width: 30%;
   display: flex;
   right: 100px;
-  top: 230px;
+  top: 630px;
   flex-wrap: wrap;
   padding: 1%;
   background: #f6f6f6;
@@ -26,9 +26,8 @@
 
 @media (max-width: 768px) {
   .filter_menu {
-    /* flex-direction: r; */
     right: 12%;
-    top: 22%;
+    top: 520px;
     /* width: 240px; */
     height: 300px;
     overflow-y: scroll;
@@ -46,8 +45,8 @@
 
 @media (max-width: 425px) {
   .filter_menu {
-    right: 15%;
-    top: 30%;
+    right: 10%;
+    top: 590px;
     width: 40%;
     height: 200px;
     overflow-y: scroll;
