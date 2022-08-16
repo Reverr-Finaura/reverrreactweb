@@ -6,6 +6,7 @@ import Header from "../../components/Header/Header";
 import { auth } from "../../firebase";
 import Footer from "../Footer/Footer";
 import styles from "./Passwordreset.module.css";
+import { toast } from "react-hot-toast";
 
 const PasswordReset = () => {
   const [newPassword, setNewPassword] = useState("");
@@ -18,13 +19,13 @@ const PasswordReset = () => {
     if (newPassword === newConfirmPassword) {
       confirmPasswordReset(auth, oobCode, newPassword)
         .then(() => {
-          alert("Password changed successfully");
+          toast.success("Password changed successfully");
         })
         .catch((err) => {
-          alert(err.message);
+          toast.error(err.message);
         });
     } else {
-      alert("Passwords do not match");
+      toast.error("Passwords do not match");
     }
   };
 

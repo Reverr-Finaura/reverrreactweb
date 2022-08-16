@@ -1,15 +1,15 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { addDoc, collection } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "../../components/Button/Button";
 import { create, modify, selectNewUser } from "../../features/newUserSlice";
-import { auth, db } from "../../firebase";
+import { auth } from "../../firebase";
 import styles from "./EnterOtp.module.css";
 import emailjs from "@emailjs/browser";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../Footer/Footer";
+import { toast } from "react-hot-toast";
 
 function EnterOtp() {
   const dispatch = useDispatch();
@@ -56,12 +56,11 @@ function EnterOtp() {
           navigate("/startup-list");
         })
         .catch((error) => {
-          const errorCode = error.code;
           const errorMessage = error.message;
-          console.log(error, errorCode, errorMessage);
+          toast.error(errorMessage);
         });
     } else {
-      console.log("check kar");
+      toast.error("Please check the entered OTP");
     }
   };
 

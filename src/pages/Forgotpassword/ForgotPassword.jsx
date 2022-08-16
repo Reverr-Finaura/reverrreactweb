@@ -6,6 +6,7 @@ import Button from "../../components/Button/Button";
 import { auth } from "../../firebase";
 import Header from "../../components/Header/Header";
 import Footer from "../Footer/Footer";
+import {toast} from "react-hot-toast"
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -15,13 +16,13 @@ const ForgotPassword = () => {
     e.preventDefault();
     sendPasswordResetEmail(auth, email)
       .then(() => {
-        alert("pls check your email");
+        toast.success("Please check your email");
         setTimeout(() => {
           navigate("/login");
         }, 5000);
       })
       .catch((err) => {
-        alert(err.message);
+        toast.error(err.message);
       });
   };
   return (

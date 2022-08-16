@@ -8,34 +8,42 @@ import { useNavigate } from "react-router-dom";
 
 const array = [
   {
+    img: "./images/ind1.png",
     heading: "Fintech",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/ind2.png",
     heading: "Sales",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/ind3.png",
     heading: "Legal",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/ind4.png",
     heading: "Fund Raising",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/ind5.png",
     heading: "Product Development",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/ind6.png",
     heading: "Research",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/ind7.png",
     heading: "Marketing",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/ind8.png",
     heading: "Financing",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
@@ -62,14 +70,10 @@ const Industry = () => {
       <div className={styles.industry__container}>
         <h1 className={styles.big__heading}>What is your Industry?</h1>
         <div className={styles.cards__flex}>
-          {array.map(({ heading, paragraph }, index) => (
+          {array.map(({ heading, paragraph, img }, index) => (
             <div key={index} className={styles.industry_card_container}>
               <div className={styles.card__image_container}>
-                <img
-                  src="/images/hero2.png"
-                  alt=""
-                  className={styles.card__image}
-                />
+                <img src={img} alt="" className={styles.card__image} />
               </div>
               <div className={styles.card__heading}>{heading}</div>
               <div className={styles.card__para}>{paragraph}</div>

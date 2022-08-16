@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Header from "../../../components/Header/Header";
 import Footer from "../../Footer/Footer";
 import styles from "./Confirmation.module.css";
-// import "animate.css";
+import "animate.css";
 import { useDispatch } from "react-redux";
 import { modify } from "../../../features/newUserSlice";
 

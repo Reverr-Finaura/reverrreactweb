@@ -8,34 +8,42 @@ import styles from "./card.module.css";
 
 const array = [
   {
+    img: "./images/role1.png",
     heading: "Mentorship",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role2.png",
     heading: "Ideas",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role3.png",
     heading: "Networking",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role4.png",
     heading: "Accounting",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role5.png",
     heading: "Funding",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role6.png",
     heading: "Research",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role7.png",
     heading: "Marketing",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
   {
+    img: "./images/role8.png",
     heading: "Financing",
     paragraph: "I am a paragraph , Click me to change the paragraph",
   },
@@ -59,14 +67,10 @@ const Card = () => {
       <div className={styles.list__container}>
         <h1 className={styles.big__heading}>What are you looking for?</h1>
         <div className={styles.cards__flex}>
-          {array.map(({ heading, paragraph }, index) => (
+          {array.map(({ heading, paragraph, img }, index) => (
             <div key={index} className={styles.card__container}>
               <div className={styles.card__image_container}>
-                <img
-                  src="/images/hero2.png"
-                  alt=""
-                  className={styles.card__image}
-                />
+                <img src={img} alt="" className={styles.card__image} />
               </div>
               <div className={styles.card__heading}>{heading}</div>
               <div className={styles.card__para}>{paragraph}</div>
