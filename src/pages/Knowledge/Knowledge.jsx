@@ -413,6 +413,236 @@ function Knowledge() {
                 </div>
               </div>
             </section>
+            {/* Courses Section */}
+            <section
+              className={styles.book_section}
+              style={{ display: !coursesSelected && "none" }}
+            >
+              <div>
+                <h1 className={styles.courses__heading}>
+                  Culture and Operation
+                </h1>
+                <div className={styles.courses__flex}>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                </div>
+                <h1 className={styles.courses__heading}>Fund Raising</h1>
+                <div className={styles.courses__flex}>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                </div>
+                <h1 className={styles.courses__heading}>
+                  Ideation and Feasibility
+                </h1>
+                <div className={styles.courses__flex}>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                </div>
+                <h1 className={styles.courses__heading}>Founder Development</h1>
+                <div className={styles.courses__flex}>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                </div>
+                <h1 className={styles.courses__heading}>Legal</h1>
+                <div className={styles.courses__flex}>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                </div>
+                <h1 className={styles.courses__heading}>Product Development</h1>
+                <div className={styles.courses__flex}>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                </div>
+                <h1 className={styles.courses__heading}>Sales and Marketing</h1>
+                <div className={styles.courses__flex}>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                  <div className={styles.book}>
+                    <img src="/images/book_dummy.svg" alt="" />
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Libero ut soluta perspiciatis dicta voluptatibus totam!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
       </div>

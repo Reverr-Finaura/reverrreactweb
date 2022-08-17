@@ -47,7 +47,7 @@ function App() {
 
   return (
     <>
-      <Toaster />
+      {/* <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
         {!user ? (
@@ -77,7 +77,8 @@ function App() {
         <Route path="/knowledge" element={<Knowledge />}></Route>
 
         <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      </Routes> */}
+      <Knowledge />
     </>
   );
 }

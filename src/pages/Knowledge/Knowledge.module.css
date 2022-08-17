@@ -49,6 +49,14 @@
   width: 90%;
 }
 
+.courses__heading {
+  font-size: 40px;
+}
+
+.courses__flex {
+  display: flex;
+}
+
 @media (max-width: 768px) {
   .book_para {
     font-size: 24px;
