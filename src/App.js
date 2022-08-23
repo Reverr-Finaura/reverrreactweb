@@ -23,6 +23,7 @@ import Verification from "./pages/AfterSignUp/Verification/Verification";
 import { Toaster } from "react-hot-toast";
 import Knowledge from "./pages/Knowledge/Knowledge";
 import BetaTesting from "./pages/AfterKnowledge/BetaTesting/BetaTesting";
+import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
 
 function App() {
   const user = useSelector(selectUser);
@@ -79,7 +80,8 @@ function App() {
 
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes> */}
-      <BetaTesting />
+      {/* <BetaTesting /> */}
+      <IdeaValidation />
     </>
   );
 }
