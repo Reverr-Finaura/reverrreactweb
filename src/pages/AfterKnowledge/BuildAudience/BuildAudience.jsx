@@ -6,21 +6,24 @@ import Hero from "../../../components/After knowledge/Hero-section/Hero";
 import Header from "../../../components/Header/Header";
 import Footer from "../../Footer/Footer";
 
-const IdeaValidation = () => {
+const BuildAudience = () => {
   const courseDetails = {
-    title: "Idea validation and elevator pitch",
+    title: "Beta Testing-Learn from the basic level to the best",
     para: "I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop anywhere you like on your page.",
   };
   return (
     <>
       <Header theme="black" />
-      <Hero imgUrl="ideavalidation.png" />
+      <Hero
+        imgUrl="audience1.png"
+        // heading="Idea validation and elevator pitch"
+      />
       <CourseIntro courseDetails={courseDetails} />
-      <CourseContent imgUrl="image 29.svg" />
+      <CourseContent imgUrl="audience2.png" />
       <CourseReview />
       <Footer />
     </>
   );
 };
 
-export default IdeaValidation;
+export default BuildAudience;

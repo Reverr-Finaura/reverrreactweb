@@ -24,6 +24,11 @@ import { Toaster } from "react-hot-toast";
 import Knowledge from "./pages/Knowledge/Knowledge";
 import BetaTesting from "./pages/AfterKnowledge/BetaTesting/BetaTesting";
 import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
+import BusinessPlanning from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanning";
+import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
+import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
+import BusinessModal from "./pages/AfterKnowledge/BusinessModal/BusinessModal";
+import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysis";
 
 function App() {
   const user = useSelector(selectUser);
@@ -81,7 +86,12 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes> */}
       {/* <BetaTesting /> */}
-      <IdeaValidation />
+      {/* <IdeaValidation /> */}
+      {/* <BusinessPlanning /> */}
+      {/* <Newsletter /> */}
+      {/* <BuildAudience /> */}
+      {/* <BusinessModal /> */}
+      <CompetitorAnalysis />
     </>
   );
 }
