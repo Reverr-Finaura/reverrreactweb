@@ -32,6 +32,7 @@ import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/Compet
 import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
 import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAgreement";
 import Slides from "./pages/AfterKnowledge/Idea Validation & EP/Slides";
+import EquityAndEverything from "./pages/AfterKnowledge/EquityAndEverything/EquityAndEverything";
 
 function App() {
   const user = useSelector(selectUser);
@@ -97,6 +98,7 @@ function App() {
       {/* <CompetitorAnalysis /> */}
 
       <Slides />
+      {/* <EquityAndEverything /> */}
     </>
   );
 }

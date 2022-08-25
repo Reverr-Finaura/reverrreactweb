@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Slide.module.css";
+import "animate.css";
 
 const Slide = ({ content, setCurrIndex, currIndex, size }) => {
   const handleNext = () => {
@@ -12,7 +13,9 @@ const Slide = ({ content, setCurrIndex, currIndex, size }) => {
   };
 
   return (
-    <div className={styles.slide_container}>
+    <div
+      className={`${styles.slide_container} animate__animated animate__fadeInRight`}
+    >
       <div className={styles.course_content}>
         <div className={styles.course_details}>
           <h1>{content.title}</h1>
