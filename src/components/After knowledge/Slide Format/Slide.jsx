@@ -21,7 +21,6 @@ const Slide = ({ content, setCurrIndex, currIndex, size }) => {
           <h1>{content.title}</h1>
           <p>{content.para}</p>
           <div className={styles.btns_div}>
-            {/* <Link> */}
             <button
               onClick={handleNext}
               style={{ display: currIndex === size - 1 && "none" }}
@@ -34,7 +33,6 @@ const Slide = ({ content, setCurrIndex, currIndex, size }) => {
             >
               Go Back &larr;{" "}
             </button>
-            {/* </Link> */}
           </div>
         </div>
         <div className={styles.course_img}>
