@@ -29,11 +29,13 @@ import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
 import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
 import BusinessModal from "./pages/AfterKnowledge/BusinessModal/BusinessModal";
 import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysis";
-import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
+// import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
 import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAgreement";
 import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
-import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
+// import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
 import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
+import ESOP_Slides from "./pages/AfterKnowledge/Esop/ESOP_Slides";
+import Slide from "./components/After knowledge/Slide Format/Slide";
 
 function App() {
   const user = useSelector(selectUser);
@@ -98,7 +100,7 @@ function App() {
       {/* <BusinessModal /> */}
       {/* <CompetitorAnalysis /> */}
 
-      <IV_Slides />
+      <ESOP_Slides />
     </>
   );
 }
