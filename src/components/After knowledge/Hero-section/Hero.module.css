@@ -34,3 +34,9 @@
     font-size: 35px;
   }
 }
+
+@media (max-width: 425px) {
+  .heroImg {
+    height: max-content;
+  }
+}
