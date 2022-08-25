@@ -29,7 +29,9 @@ import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
 import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
 import BusinessModal from "./pages/AfterKnowledge/BusinessModal/BusinessModal";
 import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysis";
-import EquityAndEverything from "./pages/AfterKnowledge/EquityAndEverything/EquityAndEverything";
+import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
+import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAgreement";
+import Slides from "./pages/AfterKnowledge/Idea Validation & EP/Slides";
 
 function App() {
   const user = useSelector(selectUser);
@@ -93,7 +95,8 @@ function App() {
       {/* <BuildAudience /> */}
       {/* <BusinessModal /> */}
       {/* <CompetitorAnalysis /> */}
-      <EquityAndEverything />
+
+      <Slides />
     </>
   );
 }
