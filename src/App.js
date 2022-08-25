@@ -31,8 +31,13 @@ import BusinessModal from "./pages/AfterKnowledge/BusinessModal/BusinessModal";
 import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysis";
 import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
 import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAgreement";
+
 import Slides from "./pages/AfterKnowledge/Idea Validation & EP/Slides";
 import EquityAndEverything from "./pages/AfterKnowledge/EquityAndEverything/EquityAndEverything";
+
+import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
+import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
+import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
 
 function App() {
   const user = useSelector(selectUser);
@@ -96,7 +101,6 @@ function App() {
       {/* <BuildAudience /> */}
       {/* <BusinessModal /> */}
       {/* <CompetitorAnalysis /> */}
-
       <Slides />
       {/* <EquityAndEverything /> */}
     </>

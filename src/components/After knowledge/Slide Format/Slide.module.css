@@ -1,5 +1,9 @@
+body {
+  background-color: #ffffff;
+}
 .slide_container {
   width: 90%;
+
   margin: auto;
 }
 
