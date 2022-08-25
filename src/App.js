@@ -23,7 +23,7 @@ import Verification from "./pages/AfterSignUp/Verification/Verification";
 import { Toaster } from "react-hot-toast";
 import Knowledge from "./pages/Knowledge/Knowledge";
 import BetaTesting from "./pages/AfterKnowledge/BetaTesting/BetaTesting";
-import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
+// import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
 import BusinessPlanning from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanning";
 import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
 import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
@@ -32,12 +32,15 @@ import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/Compet
 import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
 import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAgreement";
 
-import Slides from "./pages/AfterKnowledge/Idea Validation & EP/Slides";
+// import Slides from "./pages/AfterKnowledge/Idea Validation & EP/Slides";
 import EquityAndEverything from "./pages/AfterKnowledge/EquityAndEverything/EquityAndEverything";
 
-import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
+// import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
 import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
 import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
+import EESlides from "./pages/AfterKnowledge/EquityAndEverything/EESlides";
+import NDAgreements from "./pages/AfterKnowledge/NDAgreements/NDAgreements";
+import NDASlides from "./pages/AfterKnowledge/NDAgreements/NDASlides";
 
 function App() {
   const user = useSelector(selectUser);
@@ -101,8 +104,10 @@ function App() {
       {/* <BuildAudience /> */}
       {/* <BusinessModal /> */}
       {/* <CompetitorAnalysis /> */}
-      <Slides />
       {/* <EquityAndEverything /> */}
+      {/* <EESlides /> */}
+      {/* <NDAgreements /> */}
+      <NDASlides />
     </>
   );
 }
