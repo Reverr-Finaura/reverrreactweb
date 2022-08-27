@@ -22,6 +22,7 @@ import { auth } from "./firebase";
 import Verification from "./pages/AfterSignUp/Verification/Verification";
 import { Toaster } from "react-hot-toast";
 import Knowledge from "./pages/Knowledge/Knowledge";
+import Mentors from "./pages/Mentors/Mentors";
 import BetaTesting from "./pages/AfterKnowledge/BetaTesting/BetaTesting";
 // import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
 import BusinessPlanning from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanning";
@@ -107,7 +108,11 @@ function App() {
       {/* <EquityAndEverything /> */}
       {/* <EESlides /> */}
       {/* <NDAgreements /> */}
-      <NDASlides />
+      {/* <NDASlides /> */}
+      <Routes>
+        <Route path="/knowledge" element={<Knowledge />}></Route>
+        <Route path="/mentors" element={<Mentors />}></Route>
+      </Routes>
     </>
   );
 }
