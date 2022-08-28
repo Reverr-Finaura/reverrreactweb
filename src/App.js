@@ -42,6 +42,7 @@ import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
 import EESlides from "./pages/AfterKnowledge/EquityAndEverything/EESlides";
 import NDAgreements from "./pages/AfterKnowledge/NDAgreements/NDAgreements";
 import NDASlides from "./pages/AfterKnowledge/NDAgreements/NDASlides";
+import Mentor from "./pages/Mentor/Mentor";
 
 function App() {
   const user = useSelector(selectUser);
@@ -112,6 +113,7 @@ function App() {
       <Routes>
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/mentors" element={<Mentors />}></Route>
+        <Route path="/mentor" element={<Mentor />}></Route>
       </Routes>
     </>
   );
