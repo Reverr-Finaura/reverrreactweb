@@ -7,7 +7,16 @@ const MentorForm = () => {
       <img src="/images/reverr-logo.svg" alt="" className={styles.logo} />
       <div className={styles.personal_details}>
         <h1>Let's get your profile done first!!</h1>
-        <img src="/images/profile.png" alt="" />
+        <label htmlFor="profile_choose">
+          <img src="/images/profile.png" alt="" />
+          <input
+            type="file"
+            name=""
+            accept=".jpg,.png,.jpeg"
+            id="profile_choose"
+            hidden
+          />
+        </label>
         <div className={styles.input_flex}>
           <input type="text" name="" id="" placeholder="Full name" />
           <input type="text" name="" id="" placeholder="Last name" />
@@ -110,11 +119,14 @@ const MentorForm = () => {
       <div className={styles.startup_details}>
         <h1>Start Up Verification</h1>
         <h3>Upload comapany documents</h3>
-        <img
-          src="/images/upload-vector.svg"
-          alt=""
-          className={styles.upload_btn}
-        />
+        <label htmlFor="upload_docs">
+          <img
+            src="/images/upload-vector.svg"
+            alt=""
+            className={styles.upload_btn}
+          />
+        </label>
+        <input type="file" hidden name="" id="upload_docs" />
         <input type="text" name="" placeholder="Full Name" id="" />
         <input type="text" name="" placeholder="Professional Email" id="" />
         <input type="text" name="" placeholder="Mobile No." id="" />

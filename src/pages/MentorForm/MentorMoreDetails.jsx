@@ -48,7 +48,7 @@ const MentorMoreDetails = () => {
     <div className={styles.form_container}>
       <img src="/images/reverr-logo.svg" alt="" className={styles.logo} />
       <div className={styles.selection_div}>
-        <img src="/images/image 215.svg" alt="" className={styles.img1} />
+        {/* <img src="/images/image 215.svg" alt="" className={styles.img1} /> */}
         <h1>What are you looking for?</h1>
         <div className={styles.search_div}>
           <img src="/images/search-vector.svg" alt="" />

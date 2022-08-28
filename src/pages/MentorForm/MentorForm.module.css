@@ -33,7 +33,7 @@ h3 {
   color: #202020;
 }
 
-.personal_details > img {
+.personal_details > label > img {
   height: 8rem;
   cursor: pointer;
 }

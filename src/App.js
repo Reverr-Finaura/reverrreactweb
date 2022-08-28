@@ -42,12 +42,11 @@ import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
 import EESlides from "./pages/AfterKnowledge/EquityAndEverything/EESlides";
 import NDAgreements from "./pages/AfterKnowledge/NDAgreements/NDAgreements";
 import NDASlides from "./pages/AfterKnowledge/NDAgreements/NDASlides";
-<<<<<<< HEAD
+
 import MentorForm from "./pages/MentorForm/MentorForm";
 import MentorMoreDetails from "./pages/MentorForm/MentorMoreDetails";
-=======
+
 import Mentor from "./pages/Mentor/Mentor";
->>>>>>> 23e44d5010bed28aa86d961217b40dd020a1a804
 
 function App() {
   const user = useSelector(selectUser);
@@ -119,6 +118,7 @@ function App() {
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
+        <Route path="/mentorform" element={<MentorForm />}></Route>
       </Routes>
     </>
   );

@@ -34,7 +34,7 @@ h1 {
   height: 1.6rem;
 }
 
-input {
+.search_div > input {
   font-size: 24px;
   border: none;
   padding: auto;
