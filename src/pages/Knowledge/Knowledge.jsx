@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Chapter from "../../components/Chapter/Chapter";
+import PhnSidebar from "../../components/PhnSidebar/PhnSidebar";
 import Footer from "../Footer/Footer";
 import Filter from "../../components/Book filter menu/Filter";
 import styles from "./Knowledge.module.css";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import "animate.css";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import KnowledgeNavbar from "../../components/KnowledgeNavbar/KnowledgeNavbar";
 
 function Knowledge() {
   const [booksSelected, setBooksSeleceted] = useState(false);
   const [journeySelected, setJourneySeleceted] = useState(true);
   const [coursesSelected, setCoursesSeleceted] = useState(false);
   const [filterMenuVisible, setFilterMenuVisible] = useState(false);
-  const [isHoveringSidebar, setIsHoveringSidebar] = useState(false);
-  const [phnOptionsVisible, setPhnOptionsVisible] = useState(false);
-  const [phnSidebarVisible, setPhnSidebarVisible] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
   const updateWidth = () => {
@@ -43,171 +42,11 @@ function Knowledge() {
 
   return (
     <>
-      <div
-        style={{
-          display: phnSidebarVisible && width <= 600 ? "flex" : "none",
-        }}
-        className={`${styles.phnSidebar} animate__animated 
-        animate__slideInLeft animate__faster`}
-      >
-        <div
-          onClick={() => {
-            setPhnSidebarVisible(false);
-          }}
-          className={styles.phnSidebarOption}
-        >
-          <XIcon className={styles.xicon} />
-        </div>
-        <div className={styles.phnSidebarOption}>
-          <img src="./images/dashboard.png" alt="" />
-          <p>Dashboard</p>
-        </div>
-        <div className={styles.phnSidebarOption}>
-          <img src="./images/presentation.png" alt="" />
-          <p>Tools</p>
-        </div>
-        <div className={styles.phnSidebarOption}>
-          <img src="./images/brain.png" alt="" />
-          <p>Knowledge</p>
-        </div>
-        <div className={styles.phnSidebarOption}>
-          <img src="./images/wallet.png" alt="" />
-          <p>Funding</p>
-        </div>
-        <div className={styles.phnSidebarOption}>
-          <img src="./images/video.png" alt="" />
-          <p>Patch</p>
-        </div>
-        <div className={styles.phnSidebarOption}>
-          <img src="./images/bookopen.png" alt="" />
-          <p>Get Mentored</p>
-        </div>
-        <div className={styles.phnSidebarOption}>
-          <img src="./images/handshake.png" alt="" />
-          <p>Community</p>
-        </div>
-        <div className={styles.phnSidebarOption}>
-          <img src="./images/crown.png" alt="" />
-          <p>Upgrade</p>
-        </div>
-      </div>
+      <PhnSidebar />
       <div className={styles.knowledge}>
-        <navbar className={styles.navbar}>
-          <MenuIcon
-            onClick={() => setPhnSidebarVisible(true)}
-            className={styles.menuIcon}
-          />
-          <div
-            className={styles.logo}
-            onClick={() => setPhnOptionsVisible(!phnOptionsVisible)}
-          >
-            <img src="./images/Reverr Black 1.png" alt="" />
-            <p>REVERR</p>
-          </div>
-          <div className={styles.options}>
-            <div>
-              <img src="./images/bell.png" alt="" />
-            </div>
-            <div>
-              <img
-                src="./images/ant-design_question-circle-filled.png"
-                alt=""
-              />
-            </div>
-            <div>
-              <img src="./images/uim_calender.png" alt="" />
-            </div>
-            <div>
-              <img src="./images/ant-design_message-twotone.png" alt="" />
-            </div>
-            <div>
-              <img src="./images/Group.png" alt="" />
-            </div>
-          </div>
-          <div
-            style={{
-              display: phnOptionsVisible && width <= 600 ? "flex" : "none",
-            }}
-            className={`${styles.phnOptions} animate__animated animate__fadeIn`}
-          >
-            <div>
-              <img src="./images/bell.png" alt="" />
-            </div>
-            <div>
-              <img
-                src="./images/ant-design_question-circle-filled.png"
-                alt=""
-              />
-            </div>
-            <div>
-              <img src="./images/uim_calender.png" alt="" />
-            </div>
-            <div>
-              <img src="./images/ant-design_message-twotone.png" alt="" />
-            </div>
-            <div>
-              <img src="./images/Group.png" alt="" />
-            </div>
-          </div>
-        </navbar>
+        <KnowledgeNavbar />
         <div className={styles.body}>
-          <div
-            style={{
-              padding: isHoveringSidebar ? "1rem 10rem 1rem 1rem" : "1rem",
-            }}
-            className={styles.sidebar}
-            onMouseOver={() => setIsHoveringSidebar(true)}
-            onMouseOut={() => setIsHoveringSidebar(false)}
-          >
-            <div className={styles.sidebarOption}>
-              <img src="./images/dashboard.png" alt="" />
-              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-                Dashboard
-              </p>
-            </div>
-            <div className={styles.sidebarOption}>
-              <img src="./images/presentation.png" alt="" />
-              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-                Tools
-              </p>
-            </div>
-            <div className={styles.sidebarOption}>
-              <img src="./images/brain.png" alt="" />
-              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-                Knowledge
-              </p>
-            </div>
-            <div className={styles.sidebarOption}>
-              <img src="./images/wallet.png" alt="" />
-              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-                Funding
-              </p>
-            </div>
-            <div className={styles.sidebarOption}>
-              <img src="./images/video.png" alt="" />
-              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-                Patch
-              </p>
-            </div>
-            <div className={styles.sidebarOption}>
-              <img src="./images/bookopen.png" alt="" />
-              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-                Get Mentored
-              </p>
-            </div>
-            <div className={styles.sidebarOption}>
-              <img src="./images/handshake.png" alt="" />
-              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-                Community
-              </p>
-            </div>
-            <div className={styles.sidebarOption}>
-              <img src="./images/crown.png" alt="" />
-              <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-                Upgrade
-              </p>
-            </div>
-          </div>
+          <Sidebar isVisible={width >= 600 ? true : false} />
           <div className={styles.content}>
             <div className={styles.search}>
               <img src="./images/searchicon.png" alt="search" />
