@@ -42,6 +42,8 @@ import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
 import EESlides from "./pages/AfterKnowledge/EquityAndEverything/EESlides";
 import NDAgreements from "./pages/AfterKnowledge/NDAgreements/NDAgreements";
 import NDASlides from "./pages/AfterKnowledge/NDAgreements/NDASlides";
+import MentorForm from "./pages/MentorForm/MentorForm";
+import MentorMoreDetails from "./pages/MentorForm/MentorMoreDetails";
 
 function App() {
   const user = useSelector(selectUser);
