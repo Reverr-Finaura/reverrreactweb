@@ -22,8 +22,9 @@ import { auth } from "./firebase";
 import Verification from "./pages/AfterSignUp/Verification/Verification";
 import { Toaster } from "react-hot-toast";
 import Knowledge from "./pages/Knowledge/Knowledge";
+import Mentors from "./pages/Mentors/Mentors";
 import BetaTesting from "./pages/AfterKnowledge/BetaTesting/BetaTesting";
-import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
+// import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
 import BusinessPlanning from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanning";
 import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
 import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
@@ -105,6 +106,15 @@ function App() {
       {/* <CompetitorAnalysis /> */}
       <BetaSlide />
       {/* <EquityAndEverything /> */}
+      {/* <EESlides /> */}
+      {/* <NDAgreements /> */}
+      {/* <NDASlides /> */}
+      {/* <Routes>
+        <Route path="/knowledge" element={<Knowledge />}></Route>
+        <Route path="/mentors" element={<Mentors />}></Route>
+        <Route path="/mentor" element={<Mentor />}></Route>
+        <Route path="/mentorform" element={<MentorForm />}></Route>
+      </Routes> */}
     </>
   );
 }

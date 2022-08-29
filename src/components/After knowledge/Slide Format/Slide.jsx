@@ -5,11 +5,15 @@ import "animate.css";
 import { useEffect } from "react";
 
 const Slide = ({ content, setCurrIndex, currIndex, size }) => {
+  const animation = useSelector(selectAnimation);
+  const dispatch = useDispatch();
   const handleNext = () => {
+    dispatch(forward());
     setCurrIndex((prev) => prev + 1);
   };
 
   const handlePrev = () => {
+    dispatch(backward());
     setCurrIndex((prev) => prev - 1);
   };
 
@@ -20,21 +24,18 @@ const Slide = ({ content, setCurrIndex, currIndex, size }) => {
           <h1>{content.title}</h1>
           <p>{content.para}</p>
           <div className={styles.btns_div}>
-            {/* <Link> */}
-            <button
-              onClick={handlePrev}
-              style={{ display: currIndex === 0 && "none" }}
-            >
-              ⬅ Go Back
-            </button>
             <button
               onClick={handleNext}
               style={{ display: currIndex === size - 1 && "none" }}
             >
               Move Ahead ➡
             </button>
-
-            {/* </Link> */}
+            <button
+              onClick={handleNext}
+              style={{ display: currIndex === size - 1 && "none" }}
+            >
+              Move Ahead &rarr;{" "}
+            </button>
           </div>
         </div>
         <div className={styles.course_img}>

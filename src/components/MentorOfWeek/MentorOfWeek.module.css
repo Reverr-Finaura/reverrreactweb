@@ -1,0 +1,24 @@
+.mentor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #edebeb;
+  padding: 2rem 1rem;
+  border-radius: 1rem;
+}
+
+.mentor > img {
+  width: 95%;
+  margin: auto;
+  object-fit: contain;
+}
+
+.name {
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 16px;
+  }
+}
