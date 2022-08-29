@@ -140,6 +140,39 @@ select {
   font-weight: 400;
 }
 
+/* fundingform */
+.form__heading {
+  font-size: 35px;
+}
+.heading {
+  font-size: 25px;
+  opacity: 0.75;
+}
+.social__flex {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+.social__icons {
+  padding-right: 20px;
+}
+
+.apply__btn {
+  margin-bottom: 30px !important;
+  display: block;
+
+  text-align: center;
+  margin: auto;
+  border: none;
+  outline: none;
+  background: #2a72de;
+  border-radius: 6px;
+  font-size: 24px;
+  color: #f6f6f6;
+  padding: 0.4rem 5rem;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .logo {
     height: 4rem;

@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./MentorForm.module.css";
+import styles from "../MentorForm/MentorForm.module.css";
 import Footer from "../Footer/Footer";
 const MentorForm = () => {
   return (

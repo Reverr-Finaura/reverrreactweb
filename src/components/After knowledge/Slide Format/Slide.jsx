@@ -2,7 +2,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Slide.module.css";
 import "animate.css";
-import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  backward,
+  forward,
+  selectAnimation,
+} from "../../../features/animationSlice";
 
 const Slide = ({ content, setCurrIndex, currIndex, size }) => {
   const animation = useSelector(selectAnimation);
@@ -18,23 +23,23 @@ const Slide = ({ content, setCurrIndex, currIndex, size }) => {
   };
 
   return (
-    <div className={`${styles.slide_container} animate__animated fadeInLeft`}>
+    <div className={`${styles.slide_container} animate__animated ${animation}`}>
       <div className={styles.course_content}>
         <div className={styles.course_details}>
           <h1>{content.title}</h1>
           <p>{content.para}</p>
           <div className={styles.btns_div}>
             <button
-              onClick={handleNext}
+              onClick={handlePrev}
               style={{ display: currIndex === size - 1 && "none" }}
             >
-              Move Ahead ➡
+              ⬅Move Ahead
             </button>
             <button
               onClick={handleNext}
               style={{ display: currIndex === size - 1 && "none" }}
             >
-              Move Ahead &rarr;{" "}
+              Move Ahead ➡
             </button>
           </div>
         </div>

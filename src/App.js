@@ -42,6 +42,10 @@ import ESOP_Slides from "./pages/AfterKnowledge/Esop/ESOP_Slides";
 import Slide from "./components/After knowledge/Slide Format/Slide";
 import BetaSlide from "./pages/AfterKnowledge/BetaTesting/BetaSlide";
 
+import MentorForm from "./pages/MentorForm/MentorForm";
+import Funding from "./pages/Funding/FundingPage/Funding";
+import FundingForm from "./pages/Funding/FundingForm";
+
 function App() {
   const user = useSelector(selectUser);
   const newUser = useSelector(selectNewUser);
@@ -104,7 +108,7 @@ function App() {
       {/* <BuildAudience /> */}
       {/* <BusinessModal /> */}
       {/* <CompetitorAnalysis /> */}
-      <BetaSlide />
+      {/* <BetaSlide /> */}
       {/* <EquityAndEverything /> */}
       {/* <EESlides /> */}
       {/* <NDAgreements /> */}
@@ -115,6 +119,9 @@ function App() {
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>
       </Routes> */}
+
+      {/* <Funding /> */}
+      <FundingForm />
     </>
   );
 }

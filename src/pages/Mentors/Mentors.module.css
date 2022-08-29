@@ -81,6 +81,54 @@
   margin: 3rem 0;
 }
 
+/* fundingform */
+.funding__flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.textcolor {
+  color: #202020;
+  opacity: 0.75;
+}
+.funding__para {
+  margin: 50px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 50px;
+  /* or 125% */
+
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.001em;
+}
+
+.funding__btn {
+  margin-bottom: 30px !important;
+  max-width: 25%;
+  text-align: center;
+  margin: auto;
+  border: none;
+  outline: none;
+  background: #2a72de;
+  border-radius: 6px;
+  font-size: 24px;
+  color: #f6f6f6;
+  padding: 0.4rem 5rem;
+  cursor: pointer;
+}
+@media (max-width: 1024px) {
+  .funding__para {
+    font-size: 20px;
+  }
+  .funding__btn {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 600px) {
   .body {
     width: 100%;
