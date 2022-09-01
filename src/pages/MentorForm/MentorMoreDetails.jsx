@@ -51,7 +51,7 @@ const MentorMoreDetails = () => {
         {/* <img src="/images/image 215.svg" alt="" className={styles.img1} /> */}
         <h1>What are you looking for?</h1>
         <div className={styles.search_div}>
-          <img src="/images/search-vector.svg" alt="" />
+          <img src="/images/searchicon.png" alt="" />
           <input type="search" name="" id="" placeholder="Search here" />
         </div>
         <div className={styles.ex__btns}>
@@ -80,7 +80,7 @@ const MentorMoreDetails = () => {
       <div className={styles.selection_div}>
         <h1>What is your Industry?</h1>
         <div className={styles.search_div}>
-          <img src="/images/search-vector.svg" alt="" />
+          <img src="/images/searchicon.png" alt="" />
           <input type="search" name="" id="" placeholder="Search here" />
         </div>
         <div className={styles.ex__btns}>

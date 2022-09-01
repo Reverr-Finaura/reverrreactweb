@@ -17,6 +17,7 @@ const MentorForm = () => {
             hidden
           />
         </label>
+        {/* <img src="/images/image 210.svg" alt="" className={styles.bg_img1} /> */}
         <div className={styles.input_flex}>
           <input type="text" name="" id="" placeholder="Full name" />
           <input type="text" name="" id="" placeholder="Last name" />

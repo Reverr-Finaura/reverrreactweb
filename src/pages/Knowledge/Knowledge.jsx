@@ -166,84 +166,84 @@ function Knowledge() {
                 <Filter visible={filterMenuVisible} />
                 <div className={styles.books}>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book1.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book2.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book3.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book4.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book1.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book2.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book3.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book4.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book1.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book2.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book3.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!
                     </p>
                   </div>
                   <div className={styles.book}>
-                    <img src="/images/book_dummy.svg" alt="" />
+                    <img src="/images/book4.svg" alt="" />
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                       Libero ut soluta perspiciatis dicta voluptatibus totam!

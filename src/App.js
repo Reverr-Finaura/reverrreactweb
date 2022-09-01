@@ -38,13 +38,16 @@ import EquityAndEverything from "./pages/AfterKnowledge/EquityAndEverything/Equi
 // import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
 // import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
 import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
-import ESOP_Slides from "./pages/AfterKnowledge/Esop/ESOP_Slides";
+
 import Slide from "./components/After knowledge/Slide Format/Slide";
 import BetaSlide from "./pages/AfterKnowledge/BetaTesting/BetaSlide";
 
 import MentorForm from "./pages/MentorForm/MentorForm";
+import MentorMoreDetails from "./pages/MentorForm/MentorMoreDetails";
+import Mentor from "./pages/Mentor/Mentor";
 import Funding from "./pages/Funding/FundingPage/Funding";
 import FundingForm from "./pages/Funding/FundingForm";
+import MentorProfile from "./pages/MentorProfile/MentorProfile";
 
 function App() {
   const user = useSelector(selectUser);
@@ -113,15 +116,20 @@ function App() {
       {/* <EESlides /> */}
       {/* <NDAgreements /> */}
       {/* <NDASlides /> */}
-      {/* <Routes>
+      <Routes>
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>
-      </Routes> */}
+        <Route path="/mentordetails" element={<MentorMoreDetails />}></Route>
+        <Route path="/funding" element={<Funding />}></Route>
+        <Route path="/fundingform" element={<FundingForm />}></Route>
+        <Route path="/knowledge" element={<Knowledge />}></Route>
+        <Route path="/mentor-profile" element={<MentorProfile />}></Route>
+      </Routes>
 
       {/* <Funding /> */}
-      <FundingForm />
+      {/* <FundingForm /> */}
     </>
   );
 }
