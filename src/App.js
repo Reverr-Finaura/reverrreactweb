@@ -45,6 +45,7 @@ import BetaSlide from "./pages/AfterKnowledge/BetaTesting/BetaSlide";
 import MentorForm from "./pages/MentorForm/MentorForm";
 import Funding from "./pages/Funding/FundingPage/Funding";
 import FundingForm from "./pages/Funding/FundingForm";
+import Community from "./pages/Community/Community";
 
 function App() {
   const user = useSelector(selectUser);
@@ -121,7 +122,7 @@ function App() {
       </Routes> */}
 
       {/* <Funding /> */}
-      <FundingForm />
+      <Community />
     </>
   );
 }
