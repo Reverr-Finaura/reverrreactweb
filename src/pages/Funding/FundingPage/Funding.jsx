@@ -6,10 +6,9 @@ import styles from "../../Mentors/Mentors.module.css";
 import Footer from "../../Footer/Footer";
 import "animate.css";
 import "../FundingPage/funding.module.css";
+import PhnSidebarSlice from "../../../features/phnSidebarSlice";
 function Funding() {
   const [width, setWidth] = useState(window.innerWidth);
-  const [expertiseSelected, setExpertiseSelected] = useState(true);
-  const [industrySelected, setIndustrySelected] = useState(false);
 
   const updateWidth = () => {
     setWidth(window.innerWidth);
