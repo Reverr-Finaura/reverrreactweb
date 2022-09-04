@@ -49,7 +49,7 @@ const MentorMoreDetails = () => {
       <img src="/images/reverr-logo.svg" alt="" className={styles.logo} />
       <div className={styles.selection_div}>
         {/* <img src="/images/image 215.svg" alt="" className={styles.img1} /> */}
-        <h1>What are you looking for?</h1>
+        <h1 className={styles.h1_tag}>What are you looking for?</h1>
         <div className={styles.search_div}>
           <img src="/images/searchicon.png" alt="" />
           <input type="search" name="" id="" placeholder="Search here" />
@@ -78,7 +78,7 @@ const MentorMoreDetails = () => {
       </div>
 
       <div className={styles.selection_div}>
-        <h1>What is your Industry?</h1>
+        <h1 className={styles.h1_tag}>What is your Industry?</h1>
         <div className={styles.search_div}>
           <img src="/images/searchicon.png" alt="" />
           <input type="search" name="" id="" placeholder="Search here" />
@@ -108,7 +108,7 @@ const MentorMoreDetails = () => {
       </div>
 
       <div className={styles.selection_div}>
-        <h1 className={styles.ex__heading}>Tell us your Experience</h1>
+        <h1 className={styles.h1_tag}>Tell us your Experience</h1>
         <div className={styles.exp__btns}>
           {experience.map((item, index) => (
             <button

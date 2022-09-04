@@ -6,7 +6,7 @@ const MentorForm = () => {
     <div className={styles.form_container}>
       <img src="/images/reverr-logo.svg" alt="" className={styles.logo} />
       <div className={styles.personal_details}>
-        <h1>Let's get your profile done first!!</h1>
+        <h1 className={styles.heading}>Let's get your profile done first!!</h1>
         <label htmlFor="profile_choose">
           <img src="/images/profile.png" alt="" />
           <input
@@ -34,7 +34,7 @@ const MentorForm = () => {
         <textarea name="" id="" placeholder="Add Bio"></textarea>
 
         <div>
-          <h3>How you want to meet people</h3>
+          <h3 className={styles.sub_heading}>How you want to meet people</h3>
           <div className={styles.social_icons}>
             <a>
               <img src="/images/image 11.svg" alt="" />
@@ -53,7 +53,7 @@ const MentorForm = () => {
       </div>
 
       <div className={styles.education_details}>
-        <h1>Let's know about your Education!</h1>
+        <h1 className={styles.heading}>Let's know about your Education!</h1>
         <select placeholder="Degree">
           <option value="degree">Degree</option>
         </select>
@@ -66,7 +66,9 @@ const MentorForm = () => {
       </div>
 
       <div className={styles.professional_details}>
-        <h1>Now let's get your Professional Profile Done</h1>
+        <h1 className={styles.heading}>
+          Now let's get your Professional Profile Done
+        </h1>
         <input
           type="text"
           name=""
@@ -110,7 +112,7 @@ const MentorForm = () => {
       </div>
 
       <div className={styles.startup_details}>
-        <h1>Do you have a Start-Up?</h1>
+        <h1 className={styles.heading}>Do you have a Start-Up?</h1>
         <div className={styles.yesno_btns}>
           <button>Yes</button>
           <button>No</button>
@@ -118,8 +120,8 @@ const MentorForm = () => {
       </div>
 
       <div className={styles.startup_details}>
-        <h1>Start Up Verification</h1>
-        <h3>Upload comapany documents</h3>
+        <h1 className={styles.heading}>Start Up Verification</h1>
+        <h3 className={styles.sub_heading}>Upload comapany documents</h3>
         <label htmlFor="upload_docs">
           <img
             src="/images/upload-vector.svg"

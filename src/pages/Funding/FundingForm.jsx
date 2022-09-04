@@ -7,7 +7,7 @@ function FundingForm() {
     <div className={styles.form_container}>
       <img src="/images/reverr-logo.svg" alt="" className={styles.logo} />
       <div className={styles.personal_details}>
-        <h1>Public Funding</h1>
+        <h1 className={styles.heading}>Public Funding</h1>
         <div className={styles.form__heading}>Apply with Profile</div>
         <textarea name="" id="" placeholder="Add Bio"></textarea>
         {/* <div className={styles.input_flex}>

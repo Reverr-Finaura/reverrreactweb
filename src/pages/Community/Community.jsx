@@ -32,7 +32,7 @@ function Community() {
           <div class={styles.community__main}>
             <div class={styles.community__main_left}>
               <div class={styles.community__intro_heading}>
-                <h1>
+                <h1 className={styles.community__heading}>
                   Join our Reverr community to get the best knowledge of
                   Start-ups and mentors
                 </h1>

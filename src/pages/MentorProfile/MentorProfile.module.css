@@ -52,7 +52,7 @@
   height: 20rem;
 }
 
-h1 {
+.h1_tag {
   font-size: 60px;
   color: #202020;
   font-weight: 600;
@@ -254,7 +254,7 @@ h1 {
     height: 15rem;
   }
 
-  h1 {
+  .h1_tag {
     font-size: 40px;
   }
   .about_mentor > p {

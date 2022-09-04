@@ -30,13 +30,13 @@ html {
   text-align: center;
 }
 
-h1 {
+.heading {
   font-size: 50px;
   color: #202020;
   font-weight: 600;
 }
 
-h3 {
+.sub_heading {
   font-size: 40px;
   font-weight: 500;
   color: #202020;
@@ -186,11 +186,11 @@ select {
   .logo {
     height: 4rem;
   }
-  h1 {
+  .heading {
     font-size: 35px;
   }
 
-  h3 {
+  .sub_heading {
     font-size: 28px;
   }
   .input_flex {

@@ -25,7 +25,7 @@ const MentorProfile = () => {
           <div className={styles.mentor_intro}>
             <img src="/images/Ellipse 468.svg" alt="" />
             <div className={styles.about_mentor}>
-              <h1>Neetan Sachdeva</h1>
+              <h1 className={styles.h1_tag}>Neetan Sachdeva</h1>
               <p>Market Research</p>
               <div className={styles.mentor_details}>
                 <div className={styles.detail}>
@@ -52,7 +52,9 @@ const MentorProfile = () => {
           </div>
 
           <div className={styles.mentor_bio}>
-            <h1>“I like being aware of new things around me ”</h1>
+            <h1 className={styles.h1_tag}>
+              “I like being aware of new things around me ”
+            </h1>
             <p>
               I am a marketing research , with <span>7+ years</span> of
               experience., I am an <span>IIM Bangalore</span> graduate and have
@@ -70,7 +72,7 @@ const MentorProfile = () => {
           </div>
 
           <div className={styles.areaofExpertise}>
-            <h1>Area Of Expertise</h1>
+            <h1 className={styles.h1_tag}>Area Of Expertise</h1>
             <div className={styles.mentor_expertise}>
               <div className={styles.expertise}>
                 <img src="/images/expertise1.svg" alt="" />
