@@ -34,19 +34,19 @@ function KnowledgeNavbar() {
       </div>
       <div className={styles.options}>
         <div>
-          <img src="./images/bell.png" alt="" />
+          <img src="./images/bell.svg" alt="" />
         </div>
         <div>
-          <img src="./images/ant-design_question-circle-filled.png" alt="" />
+          <img src="./images/question.svg" alt="" />
         </div>
         <div>
-          <img src="./images/uim_calender.png" alt="" />
+          <img src="./images/calender.svg" alt="" />
         </div>
         <div>
-          <img src="./images/ant-design_message-twotone.png" alt="" />
+          <img src="./images/chat.svg" alt="" />
         </div>
         <div>
-          <img src="./images/Group.png" alt="" />
+          <img src="./images/profile.svg" alt="" />
         </div>
       </div>
       <div
@@ -56,19 +56,19 @@ function KnowledgeNavbar() {
         className={`${styles.phnOptions} animate__animated animate__fadeIn`}
       >
         <div>
-          <img src="./images/bell.png" alt="" />
+          <img src="./images/bell.svg" alt="" />
         </div>
         <div>
-          <img src="./images/ant-design_question-circle-filled.png" alt="" />
+          <img src="./images/question.svg" alt="" />
         </div>
         <div>
-          <img src="./images/uim_calender.png" alt="" />
+          <img src="./images/calender.svg" alt="" />
         </div>
         <div>
-          <img src="./images/ant-design_message-twotone.png" alt="" />
+          <img src="./images/chat.svg" alt="" />
         </div>
         <div>
-          <img src="./images/Group.png" alt="" />
+          <img src="./images/profile.svg" alt="" />
         </div>
       </div>
     </navbar>

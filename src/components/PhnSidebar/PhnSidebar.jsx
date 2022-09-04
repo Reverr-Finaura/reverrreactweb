@@ -37,35 +37,35 @@ function Sidebar() {
         <XIcon className={styles.xicon} />
       </div>
       <div className={styles.phnSidebarOption}>
-        <img src="./images/dashboard.png" alt="" />
+        <img src="./images/dashboard.svg" alt="" />
         <p>Dashboard</p>
       </div>
       <div className={styles.phnSidebarOption}>
-        <img src="./images/presentation.png" alt="" />
+        <img src="./images/presentation.svg" alt="" />
         <p>Tools</p>
       </div>
       <div className={styles.phnSidebarOption}>
-        <img src="./images/brain.png" alt="" />
+        <img src="./images/brain.svg" alt="" />
         <p>Knowledge</p>
       </div>
       <div className={styles.phnSidebarOption}>
-        <img src="./images/wallet.png" alt="" />
+        <img src="./images/wallet.svg" alt="" />
         <p>Funding</p>
       </div>
       <div className={styles.phnSidebarOption}>
-        <img src="./images/video.png" alt="" />
+        <img src="./images/videos.svg" alt="" />
         <p>Patch</p>
       </div>
       <div className={styles.phnSidebarOption}>
-        <img src="./images/bookopen.png" alt="" />
+        <img src="./images/bookopen.svg" alt="" />
         <p>Get Mentored</p>
       </div>
       <div className={styles.phnSidebarOption}>
-        <img src="./images/handshake.png" alt="" />
+        <img src="./images/handshake.svg" alt="" />
         <p>Community</p>
       </div>
       <div className={styles.phnSidebarOption}>
-        <img src="./images/crown.png" alt="" />
+        <img src="./images/crown.svg" alt="" />
         <p>Upgrade</p>
       </div>
     </div>

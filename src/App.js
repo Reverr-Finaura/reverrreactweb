@@ -49,6 +49,7 @@ import Funding from "./pages/Funding/FundingPage/Funding";
 import FundingForm from "./pages/Funding/FundingForm";
 import MentorProfile from "./pages/MentorProfile/MentorProfile";
 import Community from "./pages/Community/Community";
+import Schedule from "./pages/Schedule/Schedule";
 
 function App() {
   const user = useSelector(selectUser);
@@ -128,13 +129,8 @@ function App() {
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/mentor-profile" element={<MentorProfile />}></Route>
         <Route path="/community" element={<Community />}></Route>
+        <Route path="/schedule" element={<Schedule />}></Route>
       </Routes>
-
-      {/* <Funding /> */}
-
-      {/* <FundingForm /> */}
-
-      {/* <Community /> */}
     </>
   );
 }
