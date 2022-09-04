@@ -38,7 +38,7 @@ import EquityAndEverything from "./pages/AfterKnowledge/EquityAndEverything/Equi
 // import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
 // import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
 import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
-import ESOP_Slides from "./pages/AfterKnowledge/Esop/ESOP_Slides";
+// import ESOP_Slides from "./pages/AfterKnowledge/Esop/ESOP_Slides";
 import Slide from "./components/After knowledge/Slide Format/Slide";
 import BetaSlide from "./pages/AfterKnowledge/BetaTesting/BetaSlide";
 
