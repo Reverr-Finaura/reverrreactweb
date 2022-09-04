@@ -11,6 +11,15 @@ html {
   height: 6rem;
 }
 
+/* .bg_img1 {
+  position: absolute;
+  right: 0;
+  top: 40rem;
+  height: 12rem;
+  background-image: url("../../../public/images/Ellipse 241.svg");
+  background-position: center;
+} */
+
 .personal_details,
 .education_details,
 .professional_details,
