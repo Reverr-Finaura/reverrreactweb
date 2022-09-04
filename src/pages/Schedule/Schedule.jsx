@@ -45,8 +45,12 @@ function Schedule() {
             </div>
             {!date && <Calendar onChange={selectDate} value={date} />}
             {date && (
-              <div>
+              <div className={styles.selectTime}>
+                <div>
+                  <h3>Set Your time for the session</h3>
+                </div>
                 <TimePicker onChange={selectTime} value={time} />
+                <button>Done</button>
               </div>
             )}
           </div>
