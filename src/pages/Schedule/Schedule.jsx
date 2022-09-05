@@ -10,21 +10,13 @@ import "../../components/Calendar/Calendar.css";
 import "../../components/TimePicker/TimePicker.css";
 import "../../components/Clock/Clock.css";
 import TimePicker from "react-time-picker";
+import SelectTime from "../../components/SelectTime/SelectTime";
+import { InlineWidget } from "react-calendly";
 
 function Schedule() {
   const [width, setWidth] = useState(window.innerWidth);
-  const [date, setDate] = useState();
-  const [time, setTime] = useState("10:00");
   const updateWidth = () => {
     setWidth(window.innerWidth);
-  };
-
-  const selectDate = (date) => {
-    setDate(date);
-  };
-
-  const selectTime = (time) => {
-    setTime(time);
   };
 
   useEffect(() => {
@@ -39,20 +31,18 @@ function Schedule() {
         <div className={styles.body}>
           <Sidebar isVisible={width >= 600 ? true : false} />
           <div className={styles.content}>
-            <div className={styles.search}>
-              <img src="./images/searchicon.png" alt="search" />
-              <input type="text" placeholder="Search here" />
-            </div>
-            {!date && <Calendar onChange={selectDate} value={date} />}
-            {date && (
-              <div className={styles.selectTime}>
-                <div>
-                  <h3>Set Your time for the session</h3>
-                </div>
-                <TimePicker onChange={selectTime} value={time} />
-                <button>Done</button>
-              </div>
-            )}
+            <InlineWidget
+              url="https://calendly.com/mauricerana/30min"
+              styles={{
+                width: "75vw",
+                height: "100vh",
+                overflowY: "hidden",
+                backgroundColor: "transparent",
+                padding: "0",
+                border: "3px solid rgba(42, 114, 222, 1)",
+                borderRadius: "1rem",
+              }}
+            />
           </div>
         </div>
       </div>

@@ -2,8 +2,7 @@
     width: 350px;
     max-width: 100%;
     background: rgba(246,246,246,1);
-    // border: 1px solid rgb(160, 160, 150);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Poppins",Arial, Helvetica, sans-serif;
     line-height: 1.125em;
   
     &--doubleView {
@@ -88,7 +87,7 @@
       &__days {
         &__day {
           &--weekend {
-            color: rgb(209, 0, 0);
+            // color: rgb(209, 0, 0);
           }
   
           &--neighboringMonth {
@@ -138,7 +137,8 @@
   
       &--hasActive {
         @bgcolor: lighten(rgb(0, 110, 220), 30%);
-        background: @bgcolor;
+        // background: @bgcolor;
+        color: lighten(rgb(0, 110, 220), 30%);;
   
         &:enabled {
           &:hover,
