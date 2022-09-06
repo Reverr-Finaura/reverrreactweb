@@ -10,6 +10,7 @@ const MentorForm = () => {
         <label htmlFor="profile_choose">
           <img src="/images/profile.png" alt="" />
           <input
+            className={styles.input}
             type="file"
             name=""
             accept=".jpg,.png,.jpeg"
@@ -19,18 +20,60 @@ const MentorForm = () => {
         </label>
         {/* <img src="/images/image 210.svg" alt="" className={styles.bg_img1} /> */}
         <div className={styles.input_flex}>
-          <input type="text" name="" id="" placeholder="Full name" />
-          <input type="text" name="" id="" placeholder="Last name" />
+          <input
+            className={styles.input}
+            type="text"
+            name=""
+            id=""
+            placeholder="Full name"
+          />
+          <input
+            className={styles.input}
+            type="text"
+            name=""
+            id=""
+            placeholder="Last name"
+          />
         </div>
         <div className={styles.input_flex}>
-          <input type="text" name="" id="" placeholder="Date of Birth" />
-          <input type="text" name="" id="" placeholder="Gender" />
+          <input
+            className={styles.input}
+            type="text"
+            name=""
+            id=""
+            placeholder="Date of Birth"
+          />
+          <input
+            className={styles.input}
+            type="text"
+            name=""
+            id=""
+            placeholder="Gender"
+          />
         </div>
         <div className={styles.input_flex}>
-          <input type="text" name="" id="" placeholder="Hometown" />
-          <input type="text" name="" id="" placeholder="Location" />
+          <input
+            className={styles.input}
+            type="text"
+            name=""
+            id=""
+            placeholder="Hometown"
+          />
+          <input
+            className={styles.input}
+            type="text"
+            name=""
+            id=""
+            placeholder="Location"
+          />
         </div>
-        <input type="text" name="" id="" placeholder="Language" />
+        <input
+          className={styles.input}
+          type="text"
+          name=""
+          id=""
+          placeholder="Language"
+        />
         <textarea name="" id="" placeholder="Add Bio"></textarea>
 
         <div>
@@ -54,14 +97,26 @@ const MentorForm = () => {
 
       <div className={styles.education_details}>
         <h1 className={styles.heading}>Let's know about your Education!</h1>
-        <select placeholder="Degree">
+        <select className={styles.select} placeholder="Degree">
           <option value="degree">Degree</option>
         </select>
-        <select placeholder="Degree">
+        <select className={styles.select} placeholder="Degree">
           <option value="degree">College/School</option>
         </select>
-        <input type="text" name="" id="" placeholder="Starting date" />
-        <input type="text" name="" id="" placeholder="Last Date" />
+        <input
+          className={styles.input}
+          type="text"
+          name=""
+          id=""
+          placeholder="Starting date"
+        />
+        <input
+          className={styles.input}
+          type="text"
+          name=""
+          id=""
+          placeholder="Last Date"
+        />
         <img src="/images/plus-vector.svg" alt="" className={styles.add_btn} />
       </div>
 
@@ -70,20 +125,40 @@ const MentorForm = () => {
           Now let's get your Professional Profile Done
         </h1>
         <input
+          className={styles.input}
           type="text"
           name=""
           id=""
           placeholder="Previous Organisation you worked with"
         />
-        <input type="text" name="" id="" placeholder="Designation" />
         <input
+          className={styles.input}
+          type="text"
+          name=""
+          id=""
+          placeholder="Designation"
+        />
+        <input
+          className={styles.input}
           type="text"
           name=""
           id=""
           placeholder="Duration of years you worked"
         />
-        <input type="text" name="" id="" placeholder="Your Role" />
-        <input type="text" name="" id="" placeholder="Skills" />
+        <input
+          className={styles.input}
+          type="text"
+          name=""
+          id=""
+          placeholder="Your Role"
+        />
+        <input
+          className={styles.input}
+          type="text"
+          name=""
+          id=""
+          placeholder="Skills"
+        />
         <img src="/images/plus-vector.svg" alt="" className={styles.add_btn} />
       </div>
 
@@ -129,12 +204,42 @@ const MentorForm = () => {
             className={styles.upload_btn}
           />
         </label>
-        <input type="file" hidden name="" id="upload_docs" />
-        <input type="text" name="" placeholder="Full Name" id="" />
-        <input type="text" name="" placeholder="Professional Email" id="" />
-        <input type="text" name="" placeholder="Mobile No." id="" />
+        <input
+          className={styles.input}
+          type="file"
+          hidden
+          name=""
+          id="upload_docs"
+        />
+        <input
+          className={styles.input}
+          type="text"
+          name=""
+          placeholder="Full Name"
+          id=""
+        />
+        <input
+          className={styles.input}
+          type="text"
+          name=""
+          placeholder="Professional Email"
+          id=""
+        />
+        <input
+          className={styles.input}
+          type="text"
+          name=""
+          placeholder="Mobile No."
+          id=""
+        />
 
-        <input type="text" name="" placeholder="LinkedIn" id="" />
+        <input
+          className={styles.input}
+          type="text"
+          name=""
+          placeholder="LinkedIn"
+          id=""
+        />
         <a>
           <button className={styles.next_btn}>Save &#38; Next</button>
         </a>

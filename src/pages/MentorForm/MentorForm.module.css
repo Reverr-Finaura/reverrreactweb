@@ -47,8 +47,8 @@ html {
   cursor: pointer;
 }
 
-input,
-select {
+.input,
+.select {
   background: #f6f6f6;
   border: 2px solid #2a72de;
   border-radius: 8px;
@@ -79,7 +79,7 @@ textarea {
   margin: 1rem auto;
 }
 
-select {
+.select {
   width: 100%;
 }
 
@@ -196,9 +196,9 @@ select {
   .input_flex {
     display: block;
   }
-  input,
+  .input,
   textarea,
-  select {
+  .select {
     font-size: 16px;
   }
   .social_icons > a > img {
