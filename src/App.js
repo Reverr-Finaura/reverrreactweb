@@ -58,6 +58,11 @@ import BuildAudienceSlides from "./pages/AfterKnowledge/BuildAudience/BuildAudie
 import BusinessModalSlides from "./pages/AfterKnowledge/BusinessModal/BusinessModalSlides";
 import BusinessPlanningSlides from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanningSlides";
 import CompetitorAnalysisSlides from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysisSlides";
+import ReachingOutToInvestor from "./pages/AfterKnowledge/ReachingOutToInvestor/ReachingOutToInvestor";
+import ReachingOutSlides from "./pages/AfterKnowledge/ReachingOutToInvestor/ReachingOutSlides";
+import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
+import SocialMedia from "./pages/AfterKnowledge/SocialMedia/SocialMedia";
+import SocialMediaSlides from "./pages/AfterKnowledge/SocialMedia/SocialMediaSlides";
 
 function App() {
   const user = useSelector(selectUser);
@@ -115,10 +120,10 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes> */}
       {/* <BetaTesting /> */}
-
       {/* <BusinessPlanning /> */}
       {/* <Newsletter /> */}
       {/* <BuildAudience /> */}
+      {/* <BuildAudienceSlides /> */}
       {/* <BusinessModal /> */}
       {/* <CompetitorAnalysis /> */}
       {/* <BetaSlide /> */}
@@ -126,10 +131,15 @@ function App() {
       {/* <EESlides /> */}
       {/* <NDAgreements /> */}
       {/* <NDASlides /> */}
-      {/* <IdeaValidation />
-      <IV_Slides /> */}
-      {/* <FundraisingAndMeans />
-      <FundraisingSlides /> */}
+      {/* <IdeaValidation /> */}
+      {/* <IV_Slides /> */}
+      {/* <FundraisingAndMeans />*/}
+      {/* <FundraisingSlides /> */}
+      {/* <ReachingOutToInvestor /> */}
+      {/* <ReachingOutSlides /> */}
+      {/* <ESOP_Slides /> */}
+      {/* <SocialMedia /> */}
+      {/* <SocialMediaSlides /> */}
       <Routes>
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/com" element={<CompetitorAnalysisSlides />}></Route>
