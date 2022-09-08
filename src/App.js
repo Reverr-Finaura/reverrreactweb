@@ -29,7 +29,7 @@ import BusinessPlanning from "./pages/AfterKnowledge/BusinessPlanning/BusinessPl
 import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
 import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
 import BusinessModal from "./pages/AfterKnowledge/BusinessModal/BusinessModal";
-import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysis";
+import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysisSlides";
 // import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
 import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAgreement";
 
@@ -50,8 +50,15 @@ import FundingForm from "./pages/Funding/FundingForm";
 import MentorProfile from "./pages/MentorProfile/MentorProfile";
 import Community from "./pages/Community/Community";
 import Schedule from "./pages/Schedule/Schedule";
+<<<<<<< HEAD
 import FundraisingAndMeans from "./pages/AfterKnowledge/FundraisingAndMeans/FundraisingAndMeans";
 import FundraisingSlides from "./pages/AfterKnowledge/FundraisingAndMeans/FundraisingSlides";
+=======
+import BuildAudienceSlides from "./pages/AfterKnowledge/BuildAudience/BuildAudienceSlides";
+import BusinessModalSlides from "./pages/AfterKnowledge/BusinessModal/BusinessModalSlides";
+import BusinessPlanningSlides from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanningSlides"
+import CompetitorAnalysisSlides from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysisSlides";
+>>>>>>> bc08e897752c6dc479025cd2cd43aa356ca650de
 
 function App() {
   const user = useSelector(selectUser);
@@ -125,7 +132,9 @@ function App() {
       <FundraisingAndMeans />
       <FundraisingSlides />
       <Routes>
+
         <Route path="/knowledge" element={<Knowledge />}></Route>
+        <Route path="/com" element={<CompetitorAnalysisSlides />}></Route>
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>
