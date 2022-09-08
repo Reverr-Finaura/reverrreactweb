@@ -24,7 +24,7 @@ import { Toaster } from "react-hot-toast";
 import Knowledge from "./pages/Knowledge/Knowledge";
 import Mentors from "./pages/Mentors/Mentors";
 import BetaTesting from "./pages/AfterKnowledge/BetaTesting/BetaTesting";
-// import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
+import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
 import BusinessPlanning from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanning";
 import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
 import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
@@ -35,7 +35,7 @@ import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAg
 
 import EquityAndEverything from "./pages/AfterKnowledge/EquityAndEverything/EquityAndEverything";
 
-// import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
+import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
 // import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
 import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
 // import ESOP_Slides from "./pages/AfterKnowledge/Esop/ESOP_Slides";
@@ -50,6 +50,8 @@ import FundingForm from "./pages/Funding/FundingForm";
 import MentorProfile from "./pages/MentorProfile/MentorProfile";
 import Community from "./pages/Community/Community";
 import Schedule from "./pages/Schedule/Schedule";
+import FundraisingAndMeans from "./pages/AfterKnowledge/FundraisingAndMeans/FundraisingAndMeans";
+import FundraisingSlides from "./pages/AfterKnowledge/FundraisingAndMeans/FundraisingSlides";
 
 function App() {
   const user = useSelector(selectUser);
@@ -118,6 +120,10 @@ function App() {
       {/* <EESlides /> */}
       {/* <NDAgreements /> */}
       {/* <NDASlides /> */}
+      {/* <IdeaValidation />
+      <IV_Slides /> */}
+      <FundraisingAndMeans />
+      <FundraisingSlides />
       <Routes>
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/mentors" element={<Mentors />}></Route>
