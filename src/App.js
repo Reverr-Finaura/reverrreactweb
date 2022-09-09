@@ -24,18 +24,18 @@ import { Toaster } from "react-hot-toast";
 import Knowledge from "./pages/Knowledge/Knowledge";
 import Mentors from "./pages/Mentors/Mentors";
 import BetaTesting from "./pages/AfterKnowledge/BetaTesting/BetaTesting";
-// import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
+import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
 import BusinessPlanning from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanning";
 import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
 import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
 import BusinessModal from "./pages/AfterKnowledge/BusinessModal/BusinessModal";
-import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysis";
+import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysisSlides";
 // import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
 import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAgreement";
 
 import EquityAndEverything from "./pages/AfterKnowledge/EquityAndEverything/EquityAndEverything";
 
-// import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
+import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
 // import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
 import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
 // import ESOP_Slides from "./pages/AfterKnowledge/Esop/ESOP_Slides";
@@ -107,10 +107,10 @@ function App() {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       {/* <BetaTesting /> */}
-
       {/* <BusinessPlanning /> */}
       {/* <Newsletter /> */}
       {/* <BuildAudience /> */}
+      {/* <BuildAudienceSlides /> */}
       {/* <BusinessModal /> */}
       {/* <CompetitorAnalysis /> */}
       {/* <BetaSlide /> */}
@@ -118,8 +118,22 @@ function App() {
       {/* <EESlides /> */}
       {/* <NDAgreements /> */}
       {/* <NDASlides /> */}
+<<<<<<< HEAD
       {/* <Routes>
+=======
+      {/* <IdeaValidation /> */}
+      {/* <IV_Slides /> */}
+      {/* <FundraisingAndMeans />*/}
+      {/* <FundraisingSlides /> */}
+      {/* <ReachingOutToInvestor /> */}
+      {/* <ReachingOutSlides /> */}
+      {/* <ESOP_Slides /> */}
+      {/* <SocialMedia /> */}
+      {/* <SocialMediaSlides /> */}
+      <Routes>
+>>>>>>> fe7e994883d64d8406f8522971bbcdeb7b35201b
         <Route path="/knowledge" element={<Knowledge />}></Route>
+        <Route path="/com" element={<BusinessPlanningSlides />}></Route>
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>

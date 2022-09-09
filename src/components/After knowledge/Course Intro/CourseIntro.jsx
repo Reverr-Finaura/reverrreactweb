@@ -24,13 +24,6 @@ const CourseIntro = ({ courseDetails }) => {
         </p>
       </div>
       <div className={styles.course_right}>
-        <p>What you will learn</p>
-        <ul>
-          <li>I am feature</li>
-          <li>I am feature</li>
-          <li>I am feature</li>
-          <li>I am feature</li>
-        </ul>
         <div className={styles.course_btns}>
           <button className={styles.save_btn}>Save to courses</button>
           <button className={styles.learn_btn}>Learn Now</button>
