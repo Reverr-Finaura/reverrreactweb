@@ -118,9 +118,6 @@ function App() {
       {/* <EESlides /> */}
       {/* <NDAgreements /> */}
       {/* <NDASlides /> */}
-<<<<<<< HEAD
-      {/* <Routes>
-=======
       {/* <IdeaValidation /> */}
       {/* <IV_Slides /> */}
       {/* <FundraisingAndMeans />*/}
@@ -131,9 +128,8 @@ function App() {
       {/* <SocialMedia /> */}
       {/* <SocialMediaSlides /> */}
       <Routes>
->>>>>>> fe7e994883d64d8406f8522971bbcdeb7b35201b
         <Route path="/knowledge" element={<Knowledge />}></Route>
-        <Route path="/com" element={<BusinessPlanningSlides />}></Route>
+        {/* <Route path="/com" element={<BusinessPlanningSlides />}></Route> */}
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>
@@ -144,7 +140,7 @@ function App() {
         <Route path="/mentor-profile" element={<MentorProfile />}></Route>
         <Route path="/community" element={<Community />}></Route>
         <Route path="/schedule" element={<Schedule />}></Route>
-      </Routes> */}
+      </Routes>
     </>
   );
 }
