@@ -56,7 +56,7 @@ const BetaSlide = () => {
     {
       title: "What’s Next      ",
       para: "Did the beta testers test the product? Did you fix all the issues they found? Is the product ready? Depending on the results of beta testing, you can move to public launch or conduct a second round of public beta testing. When planning a public launch, make sure that the product is stable and bug-free. The beta stage can be extended if you are still uncertain about the functions of the product. Beta stages usually last between two and three months. When you pass this beta testing stage, it's time for the big launch.",
-      img: "es11.svg",
+      img: "es5.svg",
     },
   ];
 

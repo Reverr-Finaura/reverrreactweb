@@ -63,6 +63,9 @@ import ReachingOutSlides from "./pages/AfterKnowledge/ReachingOutToInvestor/Reac
 import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
 import SocialMedia from "./pages/AfterKnowledge/SocialMedia/SocialMedia";
 import SocialMediaSlides from "./pages/AfterKnowledge/SocialMedia/SocialMediaSlides";
+import ThinkingOfStartup from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartup";
+import ThinkingOfStartupSlide from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartupSlide";
+import ProductDevelopmentSlide from "./pages/AfterKnowledge/ProductDevelopment/ProductDevelopmentSlide";
 
 function App() {
   const user = useSelector(selectUser);
@@ -142,7 +145,7 @@ function App() {
       {/* <SocialMediaSlides /> */}
       <Routes>
         <Route path="/knowledge" element={<Knowledge />}></Route>
-        <Route path="/com" element={<CompetitorAnalysisSlides />}></Route>
+        <Route path="/com" element={<BusinessPlanningSlides />}></Route>
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>

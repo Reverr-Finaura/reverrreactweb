@@ -6,118 +6,118 @@ const BusinessPlanningSlides = () => {
     {
       title: "What is Business Planning.",
       para: "An idea without a plan is just an idea You might have already heard about the importance of a well-constructed business plan.But you might not know what exactly a business plan is, what are it’s key elements, what things you should include and make clear,well-written plan that can attract people towards your business and get them involved. We are here to help",
-      img: "es1.svg",
+      img: "bp1.png",
     },
     {
       title: "What is actually a business plan?",
       para: "Business Plan is a document that helps Investors and readers understand your business goals and the steps you’re taking to reach them. An “actionable plan” requires a bit of work. The best business plans are not just informative; they also excite apersuadereaders about taking part (and benefiting from it) in helping your business succeed.",
-      img: "es2.svg",
+      img: "bp2.png",
     },
     {
       title: "How do you do this?",
       para: "You do this by answering the major, fundamental questions that your readers will have about your business going forward. These questions fall into two key categories: the WHY questions and the HOW questions. The WHY Questions: Why this?  Why now? Why you? ",
-      img: "es3.svg",
+      img: "bp3.png",
     },
     {
       title: "How do you do this?",
       para: "he WHY Questions: Why this? Why now? Why you? The HOW Questions: How will you make money? How will you get customers? How will you grow your business? And while answering these questions your business plan should also highlight  How your company has the right product and the right market. ",
-      img: "es4.svg",
+      img: "bp4.png",
     },
     {
       title: "Why do you need a business Plan?",
       para: "1. To Develop your strategies Writing down your goals and analysing market helps you discover new trends in the industry that could help you develop your strategies.",
-      img: "es5.svg",
+      img: "bp5.png",
     },
     {
       title: "2. To guide you",
       para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      img: "es6.svg",
+      img: "bp6.png",
     },
     {
       title: "3. To attract Investors ",
       para: "A potential investor wants proof that their time and money will be repaid when they invest in your business. Your business plan helps you make that case.",
-      img: "es7.svg",
+      img: "bp7.png",
     },
     {
       title: "4. To obtain a business loan",
       para: "If you’re trying to seek a loan for your enterprise, you can strengthen your loan application using your business plan.",
-      img: "es8.svg",
+      img: "bp8.png",
     },
     {
       title: "5. To form strategic Partnerships",
       para: "If at a point of time, you decide to sell your business, your business plan can prove to be helpful for you and the buyer to reach at a best possible price for the sale of your business.",
-      img: "es9.svg",
+      img: "bp9.png",
     },
     {
       title: "Who Needs a Business Plan? ",
       para: " 1. Business Seeking funding : If you aim to raise money to support or grow your business. Having a business plan is a necessity. Having a business plan increases the likelihood of obtaining funding.  Established Companies Managing Their Businesses Unlike startups, existing businesses make extensive use of business plans with a view to directing business and accelerating and tracking growth. Established businesses also use business plans to convince consumers to find a company or bring potential partners or employees to the herd. ",
-      img: "es10.svg",
+      img: "bp10.png",
     },
     {
       title: "How to choose Good Business Plan",
       para: "Depending on your stage of growth and what you intend to use, business plans can come in a number of different forms.Let's take a quick look at a few of the most common examples.",
-      img: "es11.svg",
+      img: "es11.png",
     },
     {
       title: "1. General Business Plan",
       para: "If your goal is to convince investors to financially support your business, a general business plan - or 'external business plan', as it is sometimes called - is the most frequently requested response you will need. General business plans are very well set up and focus on showing investors how your vision translates into greater prof compared to the domestic business. For our purposes, we will focus our discussion firmly on the general business plan this article.",
-      img: "es12.svg",
+      img: "bp12.png",
     },
     {
       title: " One-Page Business Plan ",
       para: "A one-page business plan is actually an executive summary - in other words, the TL; DR version of your business plan where you break down every major part of your business plan into a phase or two, giving investors the opportunity to step in. - see key points. One pager is a great help to create early conversations with a potential investor. Investors are incredibly busy, so one pager is a great way to go when you are trying to arouse interest and set up a forum for in-depth discussions about your business after your initial contact",
-      img: "es13.svg",
+      img: "bp13.png",
     },
     {
       title: "3. Internal Business Plan",
       para: "As its name implies, internal business plans often reside within the office and are designed to serve as a management tool to help business owners plan and meet goals. Internal business plans are less concerned with covering issues such as overall team vision or problem solving and are more focused on business strategies, which is the next milestone, budget, and forecast. This type of business plan is more commonly used by companies that are more established than startups.",
-      img: "es14.svg",
+      img: "bp14.png",
     },
     {
       title: "Key Components of a Business Plan ",
       para: "A. Executive Summary : Your Executive Summary is a brief overview of your overall business plan. The goal is to break down each keyword into a sentence or two in order to convey the vision of your business and prepare the reader for future content. ",
-      img: "es15.svg",
+      img: "bp15.png",
     },
     {
       title: "B. Company Description",
       para: "The Company Profile will serve as a “great vision statement” that introduces your company, what it does, and why it is important. It conveys to your readers the direction your company is going, and the scope of the business you are building.",
-      img: "es16.svg",
+      img: "bp16.png",
     },
     {
       title: "C. Problem",
       para: "Every good product or service starts with a clear and straightforward problem that you are determined to solve. What problems do your customers face that your product / service solves? If you do not identify the problem that you are solving properly, then the solution (and your entire system) will fall into disrepair.",
-      img: "es17.svg",
+      img: "bp17.png",
     },{
       title:
         "D. Solution",
       para: "Once you have identified a problem that you intend to solve, highlight how your product / service connects right back to that problem and resolve it effectively.",
-      img: "es18.svg",
+      img: "bp18.png",
     },
     {
       title:
         "E. Market Size",
       para: "What is the size of your addressable market? Is it growing? How much? Is the market big enough for potential investors to enjoy? Has there been a significant exit from similar companies in your space?",
-      img: "es18.svg",
+      img: "bp19.png",
     },{
       title:
         "F. Product (How It Works)",
       para: "Provide readers with an overview of your company's products and services, their key features, with special emphasis on what makes them different from the solutions available in the market.",
-      img: "es18.svg",
+      img: "bp20.png",
     },{
       title:
         "G. Revenue Model",
 para: "How does your company (or will) make money? How do you set prices for your product / service? How does your price compare to similar products on the market? How much is your revenue projection for the next 5 years?",
-      img: "es18.svg",
+      img: "bp21.png",
     },{
       title:
         "H. Operating Model",
       para: "While your Revenue Model outlines how you will make money, your Operating Model is all about smart ways to manage costs and work efficiently to earn it.",
-      img: "es18.svg",
+      img: "bp22.png",
     },{
       title:
         "I. Competitive Analysis",
       para: "Identify other similar companies operating in your same area: What is your strength, and how do you plan to utilize it? What are their weaknesses and how do they translate into the profitability of your company?",
-      img: "es18.svg",
+      img: "bp23.png",
     },{
       title:
         "J. Customer Description",
