@@ -40,7 +40,7 @@ Some people are attracted by the excitement of working at a startup, or are pass
     {
       title: "How to draft your initial ESOP plan",
       para: `So, how do ESOPs work? You will need to determine two basic conditions:
-
+\t
 • ESOP “pool” size: That is, the number of options that must be provided to employees and the number of options per.
 • Provisioning terms: When options are actually given, what happens when an employee leaves, when they can use their shares, etc.
 
@@ -109,35 +109,6 @@ I think the sense of ownership has really motivated him, because he’s worked w
 However, providing equity with the ESOP program is a necessary step as your startup grows, especially if you are raising money. And it is worthwhile to attract talented, talented, hard-working professionals in their fields. I have no regrets!
 `,
       img: "es16.svg",
-    },
-    {
-      title: "Why do you need an Employee Stock Option Plan?    ",
-      para: `To recruit and retain top talent
-Because VCs expect it
-To motivate top employees
-All of the above
-`,
-      img: "es17.svg",
-    },
-    {
-      title:
-        "How much of the startup’s total equity is usually offered to employees through ESOPs? Or, what is the average size of the ESOP pool?    ",
-      para: `$1500
-90%
-10%
-1-3%
-`,
-      img: "es18.svg",
-    },
-    {
-      title: "What’s an ESOP?",
-      para: `A way of incentivizing top employees by offering them equity in your startup
-Some legal jargon that doesn’t concern me
-A kind of frog
-A hip-hop artist
-
-`,
-      img: "es18.svg",
     },
   ];
 

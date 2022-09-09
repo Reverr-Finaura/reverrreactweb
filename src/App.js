@@ -41,7 +41,7 @@ import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
 // import ESOP_Slides from "./pages/AfterKnowledge/Esop/ESOP_Slides";
 import Slide from "./components/After knowledge/Slide Format/Slide";
 import BetaSlide from "./pages/AfterKnowledge/BetaTesting/BetaSlide";
-
+import FundraisingSlides from "./pages/AfterKnowledge/FundraisingAndMeans/FundraisingSlides";
 import MentorForm from "./pages/MentorForm/MentorForm";
 import MentorMoreDetails from "./pages/MentorForm/MentorMoreDetails";
 import Mentor from "./pages/Mentor/Mentor";
@@ -50,6 +50,7 @@ import FundingForm from "./pages/Funding/FundingForm";
 import MentorProfile from "./pages/MentorProfile/MentorProfile";
 import Community from "./pages/Community/Community";
 import Schedule from "./pages/Schedule/Schedule";
+import ReachingOutSlides from "./pages/AfterKnowledge/ReachingOutToInvestor/ReachingOutSlides";
 
 function App() {
   const user = useSelector(selectUser);
