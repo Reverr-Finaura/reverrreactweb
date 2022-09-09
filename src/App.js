@@ -75,7 +75,7 @@ function App() {
 
   return (
     <>
-      {/* <Toaster />
+      <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
         {!user ? (
@@ -89,7 +89,7 @@ function App() {
         {newUser ? (
           <Route path="enterotp" element={<EnterOtp />}></Route>
         ) : null}
-        {newUser ? (
+        {user ? (
           <>
             <Route path="/startup-list" element={<Card />} />
             <Route path="/industry" element={<Industry />} />
@@ -103,9 +103,9 @@ function App() {
         ) : null}
         <Route path="/startup-verification" element={<Verification />} />
         <Route path="/knowledge" element={<Knowledge />}></Route>
-
+        <Route path="/schedule" element={<Schedule />}></Route>
         <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes> */}
+      </Routes>
       {/* <BetaTesting /> */}
 
       {/* <BusinessPlanning /> */}
@@ -118,7 +118,7 @@ function App() {
       {/* <EESlides /> */}
       {/* <NDAgreements /> */}
       {/* <NDASlides /> */}
-      <Routes>
+      {/* <Routes>
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
@@ -130,7 +130,7 @@ function App() {
         <Route path="/mentor-profile" element={<MentorProfile />}></Route>
         <Route path="/community" element={<Community />}></Route>
         <Route path="/schedule" element={<Schedule />}></Route>
-      </Routes>
+      </Routes> */}
     </>
   );
 }
