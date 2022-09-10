@@ -24,24 +24,24 @@ import { Toaster } from "react-hot-toast";
 import Knowledge from "./pages/Knowledge/Knowledge";
 import Mentors from "./pages/Mentors/Mentors";
 import BetaTesting from "./pages/AfterKnowledge/BetaTesting/BetaTesting";
-// import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
+import IdeaValidation from "./pages/AfterKnowledge/Idea Validation & EP/IdeaValidation";
 import BusinessPlanning from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanning";
 import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
 import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
 import BusinessModal from "./pages/AfterKnowledge/BusinessModal/BusinessModal";
-import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysis";
+import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysisSlides";
 // import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
 import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAgreement";
 
 import EquityAndEverything from "./pages/AfterKnowledge/EquityAndEverything/EquityAndEverything";
 
-// import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
+import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
 // import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
 import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
 // import ESOP_Slides from "./pages/AfterKnowledge/Esop/ESOP_Slides";
 import Slide from "./components/After knowledge/Slide Format/Slide";
 import BetaSlide from "./pages/AfterKnowledge/BetaTesting/BetaSlide";
-
+import FundraisingSlides from "./pages/AfterKnowledge/FundraisingAndMeans/FundraisingSlides";
 import MentorForm from "./pages/MentorForm/MentorForm";
 import MentorMoreDetails from "./pages/MentorForm/MentorMoreDetails";
 import Mentor from "./pages/Mentor/Mentor";
@@ -50,7 +50,7 @@ import FundingForm from "./pages/Funding/FundingForm";
 import MentorProfile from "./pages/MentorProfile/MentorProfile";
 import Community from "./pages/Community/Community";
 import Schedule from "./pages/Schedule/Schedule";
-import EESlides from "./pages/AfterKnowledge/EquityAndEverything/EESlides";
+import ReachingOutSlides from "./pages/AfterKnowledge/ReachingOutToInvestor/ReachingOutSlides";
 
 function App() {
   const user = useSelector(selectUser);
@@ -76,7 +76,7 @@ function App() {
 
   return (
     <>
-      {/* <Toaster />
+      <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
         {!user ? (
@@ -90,7 +90,7 @@ function App() {
         {newUser ? (
           <Route path="enterotp" element={<EnterOtp />}></Route>
         ) : null}
-        {newUser ? (
+        {user ? (
           <>
             <Route path="/startup-list" element={<Card />} />
             <Route path="/industry" element={<Industry />} />
@@ -104,14 +104,14 @@ function App() {
         ) : null}
         <Route path="/startup-verification" element={<Verification />} />
         <Route path="/knowledge" element={<Knowledge />}></Route>
-
+        <Route path="/schedule" element={<Schedule />}></Route>
         <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes> */}
+      </Routes>
       {/* <BetaTesting /> */}
-
       {/* <BusinessPlanning /> */}
       {/* <Newsletter /> */}
       {/* <BuildAudience /> */}
+      {/* <BuildAudienceSlides /> */}
       {/* <BusinessModal /> */}
       {/* <CompetitorAnalysis /> */}
       {/* <BetaSlide /> */}
@@ -119,9 +119,19 @@ function App() {
       {/* <EESlides /> */}
       {/* <NDAgreements /> */}
       {/* <NDASlides /> */}
+      {/* <IdeaValidation /> */}
+      {/* <IV_Slides /> */}
+      {/* <FundraisingAndMeans />*/}
+      {/* <FundraisingSlides /> */}
+      {/* <ReachingOutToInvestor /> */}
+      {/* <ReachingOutSlides /> */}
+      {/* <ESOP_Slides /> */}
+      {/* <SocialMedia /> */}
+      {/* <SocialMediaSlides /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/knowledge" element={<Knowledge />}></Route>
+        {/* <Route path="/com" element={<BusinessPlanningSlides />}></Route> */}
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>

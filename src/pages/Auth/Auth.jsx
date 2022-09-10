@@ -120,7 +120,10 @@ function Auth() {
             </h1>
           </div>
           <div className={styles.google_signup}>
-            <Button className={styles.googleSignUpBtn} onClick={signInWithGoogle}>
+            <Button
+              className={styles.googleSignUpBtn}
+              onClick={signInWithGoogle}
+            >
               <img src="/images/image 134.svg" alt="" />
               Sign up with Google
             </Button>
