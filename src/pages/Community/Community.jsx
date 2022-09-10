@@ -96,7 +96,11 @@ function Community() {
             content and make changes to the font. Feel free to drag and drop
             anywhere you like on your page.
           </p>
-          <img className={styles.bigImg} src="./images/commimg2.png" alt="" />
+          <img
+            className={styles.bigImg}
+            src="./images/commBigImg1.png"
+            alt=""
+          />
           <a href="https://play.google.com/store/apps/details?id=com.reverr">
             Click here to join the discussion
           </a>
@@ -109,7 +113,11 @@ function Community() {
             content and make changes to the font. Feel free to drag and drop
             anywhere you like on your page.
           </p>
-          <img className={styles.bigImg} src="./images/commimg2.png" alt="" />
+          <img
+            className={styles.bigImg}
+            src="./images/commBigImg2.png"
+            alt=""
+          />
           <a href="https://play.google.com/store/apps/details?id=com.reverr">
             Click here to join the discussion
           </a>

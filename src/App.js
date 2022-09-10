@@ -50,6 +50,7 @@ import FundingForm from "./pages/Funding/FundingForm";
 import MentorProfile from "./pages/MentorProfile/MentorProfile";
 import Community from "./pages/Community/Community";
 import Schedule from "./pages/Schedule/Schedule";
+import EESlides from "./pages/AfterKnowledge/EquityAndEverything/EESlides";
 
 function App() {
   const user = useSelector(selectUser);
@@ -119,6 +120,7 @@ function App() {
       {/* <NDAgreements /> */}
       {/* <NDASlides /> */}
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
@@ -130,6 +132,12 @@ function App() {
         <Route path="/mentor-profile" element={<MentorProfile />}></Route>
         <Route path="/community" element={<Community />}></Route>
         <Route path="/schedule" element={<Schedule />}></Route>
+        <Route path="/betaslide" element={<BetaSlide />}></Route>
+        <Route path="/eeslides" element={<EESlides />}></Route>
+        <Route
+          path="/equityandeverything"
+          element={<EquityAndEverything />}
+        ></Route>
       </Routes>
     </>
   );
