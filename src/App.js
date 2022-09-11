@@ -30,18 +30,19 @@ import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
 import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
 import BusinessModal from "./pages/AfterKnowledge/BusinessModal/BusinessModal";
 import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysisSlides";
-// import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
+import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
 import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAgreement";
 
 import EquityAndEverything from "./pages/AfterKnowledge/EquityAndEverything/EquityAndEverything";
 
 import IV_Slides from "./pages/AfterKnowledge/Idea Validation & EP/IV_Slides";
-// import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
+import ESOP_Slides from "./pages/AfterKnowledge/ESOP/ESOP_Slides";
 import FA_Slides from "./pages/AfterKnowledge/Founder Agreement/FA_Slides";
 // import ESOP_Slides from "./pages/AfterKnowledge/Esop/ESOP_Slides";
 import Slide from "./components/After knowledge/Slide Format/Slide";
 import BetaSlide from "./pages/AfterKnowledge/BetaTesting/BetaSlide";
 import FundraisingSlides from "./pages/AfterKnowledge/FundraisingAndMeans/FundraisingSlides";
+import FundraisingAndMeans from "./pages/AfterKnowledge/FundraisingAndMeans/FundraisingAndMeans";
 import MentorForm from "./pages/MentorForm/MentorForm";
 import MentorMoreDetails from "./pages/MentorForm/MentorMoreDetails";
 import Mentor from "./pages/Mentor/Mentor";
@@ -51,7 +52,17 @@ import MentorProfile from "./pages/MentorProfile/MentorProfile";
 import Community from "./pages/Community/Community";
 import Schedule from "./pages/Schedule/Schedule";
 import ReachingOutSlides from "./pages/AfterKnowledge/ReachingOutToInvestor/ReachingOutSlides";
+<<<<<<< HEAD
 import BusinessPlanningSlides from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanningSlides";
+=======
+import EESlides from "./pages/AfterKnowledge/EquityAndEverything/EESlides";
+import FinanceforStartupSlides from "./pages/AfterKnowledge/FinanceForStartup/FinanceforStartupSlides";
+import FInanceForStartup from "./pages/AfterKnowledge/FinanceForStartup/FInanceForStartup";
+import ReachingOutToInvestor from "./pages/AfterKnowledge/ReachingOutToInvestor/ReachingOutToInvestor";
+import SocialMediaSlides from "./pages/AfterKnowledge/SocialMedia/SocialMediaSlides";
+import SocialMedia from "./pages/AfterKnowledge/SocialMedia/SocialMedia";
+import NotFound from "./pages/NotFound/NotFound";
+>>>>>>> ef82afd15cd6949ebe66f9f7dd6fa05fd6d84304
 
 function App() {
   const user = useSelector(selectUser);
@@ -77,7 +88,7 @@ function App() {
 
   return (
     <>
-      <Toaster />
+      {/* <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
         {!user ? (
@@ -107,7 +118,7 @@ function App() {
         <Route path="/schedule" element={<Schedule />}></Route>
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      </Routes> */}
       {/* <BetaTesting /> */}
       {/* <BusinessPlanning /> */}
       {/* <Newsletter /> */}
@@ -130,6 +141,12 @@ function App() {
       {/* <SocialMedia /> */}
       {/* <SocialMediaSlides /> */}
       <Routes>
+<<<<<<< HEAD
+=======
+        <Route path="/" element={<Home />} />
+        <Route path="/knowledge" element={<Knowledge />}></Route>
+        {/* <Route path="/com" element={<BusinessPlanningSlides />}></Route> */}
+>>>>>>> ef82afd15cd6949ebe66f9f7dd6fa05fd6d84304
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>
@@ -139,6 +156,46 @@ function App() {
         <Route path="/mentor-profile" element={<MentorProfile />}></Route>
         <Route path="/community" element={<Community />}></Route>
         <Route path="/schedule" element={<Schedule />}></Route>
+        <Route path="/betaslide" element={<BetaSlide />}></Route>
+        <Route path="/eeslides" element={<EESlides />}></Route>
+        <Route
+          path="/equityandeverything"
+          element={<EquityAndEverything />}
+        ></Route>
+        <Route
+          path="/financeforstartup"
+          element={<FInanceForStartup />}
+        ></Route>
+        <Route
+          path="/financeforstartupslides"
+          element={<FinanceforStartupSlides />}
+        ></Route>
+        <Route path="/esop" element={<ESOP />}></Route>
+        <Route path="/esop-slides" element={<ESOP_Slides />}></Route>
+        <Route path="/idea-validation" element={<IdeaValidation />}></Route>
+        <Route path="/idea-validation-slides" element={<IV_Slides />}></Route>
+        <Route
+          path="/fundraising-and-means"
+          element={<FundraisingAndMeans />}
+        ></Route>
+        <Route
+          path="/fundraising-and-means-slides"
+          element={<FundraisingSlides />}
+        ></Route>
+        <Route
+          path="/reaching-out-to-investor"
+          element={<ReachingOutToInvestor />}
+        ></Route>
+        <Route
+          path="/reaching-out-to-investor-slides"
+          element={<ReachingOutSlides />}
+        ></Route>
+        <Route path="/social-media" element={<SocialMedia />}></Route>
+        <Route
+          path="/social-media-slides"
+          element={<SocialMediaSlides />}
+        ></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>
   );

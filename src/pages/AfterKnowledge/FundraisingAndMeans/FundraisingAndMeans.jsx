@@ -15,7 +15,10 @@ const FundraisingAndMeans = () => {
     <>
       <Header theme="black" />
       <Hero imgUrl="FundraisingandMeans.png" />
-      <CourseIntro courseDetails={courseDetails} />
+      <CourseIntro
+        courseDetails={courseDetails}
+        url="/fundraising-and-means-slides"
+      />
       <CourseContent imgUrl="fundraising2.png" />
       <CourseReview />
       <Footer />

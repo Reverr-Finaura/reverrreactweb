@@ -15,7 +15,7 @@ const SocialMedia = () => {
     <>
       <Header theme="black" />
       <Hero imgUrl="SocialMediaHandles.png" />
-      <CourseIntro courseDetails={courseDetails} />
+      <CourseIntro courseDetails={courseDetails} url="/social-media-slides" />
       <CourseContent imgUrl="socialMedia2.png" />
       <CourseReview />
       <Footer />

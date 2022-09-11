@@ -2,6 +2,14 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.chapter:hover {
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
 }
 
 .details {
@@ -69,4 +77,3 @@
     gap: 1rem;
   }
 }
-

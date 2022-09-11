@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Chapter.module.css";
+import { useNavigate } from "react-router-dom";
 
-function Chapter({ heading, status, description }) {
+function Chapter({ heading, status, description, url }) {
   const [image, setImage] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (status === "completed") {
@@ -15,7 +17,12 @@ function Chapter({ heading, status, description }) {
   }, [status]);
 
   return (
-    <div className={styles.chapter}>
+    <div
+      className={styles.chapter}
+      onClick={() => {
+        navigate(url);
+      }}
+    >
       <div className={styles.details}>
         <img src={image} alt="" />
         <div className={styles.info}>

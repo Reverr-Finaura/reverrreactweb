@@ -1,7 +1,9 @@
 import React from "react";
 import styles from "./CourseIntro.module.css";
+import { useNavigate } from "react-router-dom";
 
-const CourseIntro = ({ courseDetails }) => {
+const CourseIntro = ({ courseDetails, url }) => {
+  const navigate = useNavigate();
   return (
     <div className={styles.course_intro}>
       <div className={styles.course_left}>
@@ -26,7 +28,9 @@ const CourseIntro = ({ courseDetails }) => {
       <div className={styles.course_right}>
         <div className={styles.course_btns}>
           <button className={styles.save_btn}>Save to courses</button>
-          <button className={styles.learn_btn}>Learn Now</button>
+          <button className={styles.learn_btn} onClick={() => navigate(url)}>
+            Learn Now
+          </button>
         </div>
       </div>
     </div>

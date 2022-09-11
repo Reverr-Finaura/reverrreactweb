@@ -16,7 +16,10 @@ const IdeaValidation = () => {
     <>
       <Header theme="black" />
       <Hero imgUrl="ideavalidation.png" />
-      <CourseIntro courseDetails={courseDetails} />
+      <CourseIntro
+        courseDetails={courseDetails}
+        url="/idea-validation-slides"
+      />
       <CourseContent imgUrl="image 29.svg" />
       <CourseReview />
       <Footer />

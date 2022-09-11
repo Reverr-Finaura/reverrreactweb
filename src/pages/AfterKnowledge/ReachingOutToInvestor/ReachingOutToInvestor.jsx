@@ -15,7 +15,10 @@ const ReachingOutToInvestor = () => {
     <>
       <Header theme="black" />
       <Hero imgUrl="ReachingOutToInvestor.png" />
-      <CourseIntro courseDetails={courseDetails} />
+      <CourseIntro
+        courseDetails={courseDetails}
+        url="/reaching-out-to-investor-slides"
+      />
       <CourseContent imgUrl="reachingOut2.png" />
       <CourseReview />
       <Footer />
