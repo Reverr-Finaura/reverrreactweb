@@ -107,34 +107,39 @@ function Knowledge() {
               className={styles.chapters}
             >
               <Chapter
-                heading="Chapter - 01"
+                heading="Legal - ESOP"
                 status="completed"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
+                url="/esop"
               />
               <Chapter
-                heading="Chapter - 02"
+                heading="Idea Validation"
                 status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
+                url="/idea-validation"
               />
               <Chapter
-                heading="Chapter - 03"
+                heading="Fundraising and its Means"
                 status="locked"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
+                url="/fundraising-and-means"
               />
               <Chapter
-                heading="Chapter - 04"
+                heading="Reaching Out to Investor"
                 status="locked"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
+                url="/reaching-out-to-investor"
               />
               <Chapter
-                heading="Chapter - 05"
+                heading="Social Media"
                 status="locked"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
+                url="/social-media"
               />
               <Chapter
                 heading="Chapter - 06"

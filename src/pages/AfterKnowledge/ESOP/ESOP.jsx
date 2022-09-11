@@ -15,7 +15,7 @@ const ESOP = () => {
     <>
       <Header theme="black" />
       <Hero imgUrl="ESOP.svg" />
-      <CourseIntro courseDetails={courseDetails} />
+      <CourseIntro courseDetails={courseDetails} url="/esop-slides" />
       <CourseContent imgUrl="esop-rec.svg" />
       <CourseReview />
       <Footer />
