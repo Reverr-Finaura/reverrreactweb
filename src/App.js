@@ -51,6 +51,9 @@ import MentorProfile from "./pages/MentorProfile/MentorProfile";
 import Community from "./pages/Community/Community";
 import Schedule from "./pages/Schedule/Schedule";
 import ReachingOutSlides from "./pages/AfterKnowledge/ReachingOutToInvestor/ReachingOutSlides";
+import EESlides from "./pages/AfterKnowledge/EquityAndEverything/EESlides";
+import FinanceforStartupSlides from "./pages/AfterKnowledge/FinanceForStartup/FinanceforStartupSlides";
+import FInanceForStartup from "./pages/AfterKnowledge/FinanceForStartup/FInanceForStartup";
 
 function App() {
   const user = useSelector(selectUser);
@@ -76,7 +79,7 @@ function App() {
 
   return (
     <>
-      <Toaster />
+      {/* <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
         {!user ? (
@@ -106,7 +109,7 @@ function App() {
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/schedule" element={<Schedule />}></Route>
         <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      </Routes> */}
       {/* <BetaTesting /> */}
       {/* <BusinessPlanning /> */}
       {/* <Newsletter /> */}
@@ -147,6 +150,14 @@ function App() {
         <Route
           path="/equityandeverything"
           element={<EquityAndEverything />}
+        ></Route>
+        <Route
+          path="/financeforstartup"
+          element={<FInanceForStartup />}
+        ></Route>
+        <Route
+          path="/financeforstartupslides"
+          element={<FinanceforStartupSlides />}
         ></Route>
       </Routes>
     </>
