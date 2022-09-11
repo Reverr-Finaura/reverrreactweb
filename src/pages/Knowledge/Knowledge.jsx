@@ -107,7 +107,7 @@ function Knowledge() {
               className={styles.chapters}
             >
               <Chapter
-                heading="Chapter - 01"
+                heading="Beta Testing - 01"
                 status="completed"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
@@ -115,7 +115,7 @@ function Knowledge() {
               <Chapter
                 heading="Chapter - 02"
                 status="available"
-                description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
               />
               <Chapter

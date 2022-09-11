@@ -51,6 +51,7 @@ import MentorProfile from "./pages/MentorProfile/MentorProfile";
 import Community from "./pages/Community/Community";
 import Schedule from "./pages/Schedule/Schedule";
 import ReachingOutSlides from "./pages/AfterKnowledge/ReachingOutToInvestor/ReachingOutSlides";
+import BusinessPlanningSlides from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanningSlides";
 
 function App() {
   const user = useSelector(selectUser);
@@ -103,8 +104,8 @@ function App() {
           </>
         ) : null}
         <Route path="/startup-verification" element={<Verification />} />
-        <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/schedule" element={<Schedule />}></Route>
+        <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
       {/* <BetaTesting /> */}
@@ -129,15 +130,12 @@ function App() {
       {/* <SocialMedia /> */}
       {/* <SocialMediaSlides /> */}
       <Routes>
-        <Route path="/knowledge" element={<Knowledge />}></Route>
-        {/* <Route path="/com" element={<BusinessPlanningSlides />}></Route> */}
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>
         <Route path="/mentordetails" element={<MentorMoreDetails />}></Route>
         <Route path="/funding" element={<Funding />}></Route>
         <Route path="/fundingform" element={<FundingForm />}></Route>
-        <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="/mentor-profile" element={<MentorProfile />}></Route>
         <Route path="/community" element={<Community />}></Route>
         <Route path="/schedule" element={<Schedule />}></Route>
