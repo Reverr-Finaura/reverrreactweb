@@ -18,7 +18,7 @@ const BuildAudience = () => {
         imgUrl="audience1.png"
         // heading="Idea validation and elevator pitch"
       />
-      <CourseIntro courseDetails={courseDetails} />
+      <CourseIntro url="/buildingaudienceslides" courseDetails={courseDetails} />
       <CourseContent imgUrl="audience2.png" />
       <CourseReview />
       <Footer />

@@ -18,7 +18,7 @@ const BetaTesting = () => {
         imgUrl="betatesting.png"
         // heading="Idea validation and elevator pitch"
       />
-      <CourseIntro courseDetails={courseDetails} />
+      <CourseIntro url="/betatestingslides" courseDetails={courseDetails} />
       <CourseContent imgUrl="betaimg2.png" />
       <CourseReview />
       <Footer />

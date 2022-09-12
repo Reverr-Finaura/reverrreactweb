@@ -18,7 +18,10 @@ const ThinkingOfStartup = () => {
         imgUrl="tos1.png"
         // heading="Idea validation and elevator pitch"
       />
-      <CourseIntro courseDetails={courseDetails} />
+      <CourseIntro
+        url="/thinkingofstartupslides"
+        courseDetails={courseDetails}
+      />
       <CourseContent imgUrl="tos2.png" />
       <CourseReview />
       <Footer />

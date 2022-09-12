@@ -18,7 +18,7 @@ const CompetitorAnalysis = () => {
         imgUrl="competitor1.png"
         // heading="Idea validation and elevator pitch"
       />
-      <CourseIntro courseDetails={courseDetails} />
+      <CourseIntro url="/competitoranalysisslides" courseDetails={courseDetails} />
       <CourseContent imgUrl="competitor2.png" />
       <CourseReview />
       <Footer />

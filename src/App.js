@@ -29,7 +29,6 @@ import BusinessPlanning from "./pages/AfterKnowledge/BusinessPlanning/BusinessPl
 import Newsletter from "./pages/AfterKnowledge/Newsletter/Newsletter";
 import BuildAudience from "./pages/AfterKnowledge/BuildAudience/BuildAudience";
 import BusinessModal from "./pages/AfterKnowledge/BusinessModal/BusinessModal";
-import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysisSlides";
 import ESOP from "./pages/AfterKnowledge/ESOP/ESOP";
 import FounderAgreement from "./pages/AfterKnowledge/Founder Agreement/FounderAgreement";
 
@@ -52,9 +51,7 @@ import MentorProfile from "./pages/MentorProfile/MentorProfile";
 import Community from "./pages/Community/Community";
 import Schedule from "./pages/Schedule/Schedule";
 import ReachingOutSlides from "./pages/AfterKnowledge/ReachingOutToInvestor/ReachingOutSlides";
-<<<<<<< HEAD
 import BusinessPlanningSlides from "./pages/AfterKnowledge/BusinessPlanning/BusinessPlanningSlides";
-=======
 import EESlides from "./pages/AfterKnowledge/EquityAndEverything/EESlides";
 import FinanceforStartupSlides from "./pages/AfterKnowledge/FinanceForStartup/FinanceforStartupSlides";
 import FInanceForStartup from "./pages/AfterKnowledge/FinanceForStartup/FInanceForStartup";
@@ -62,7 +59,14 @@ import ReachingOutToInvestor from "./pages/AfterKnowledge/ReachingOutToInvestor/
 import SocialMediaSlides from "./pages/AfterKnowledge/SocialMedia/SocialMediaSlides";
 import SocialMedia from "./pages/AfterKnowledge/SocialMedia/SocialMedia";
 import NotFound from "./pages/NotFound/NotFound";
->>>>>>> ef82afd15cd6949ebe66f9f7dd6fa05fd6d84304
+import BuildAudienceSlides from "./pages/AfterKnowledge/BuildAudience/BuildAudienceSlides";
+import BusinessModalSlides from "./pages/AfterKnowledge/BuildAudience/BuildAudienceSlides";
+import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysis";
+import CompetitorAnalysisSlides from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysisSlides";
+import ProductDevelopment from "./pages/AfterKnowledge/ProductDevelopment/ProductDevelopment";
+import ProductDevelopmentSlide from "./pages/AfterKnowledge/ProductDevelopment/ProductDevelopmentSlide";
+import ThinkingOfStartup from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartup";
+import ThinkingOfStartupSlide from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartupSlide";
 
 function App() {
   const user = useSelector(selectUser);
@@ -141,12 +145,9 @@ function App() {
       {/* <SocialMedia /> */}
       {/* <SocialMediaSlides /> */}
       <Routes>
-<<<<<<< HEAD
-=======
         <Route path="/" element={<Home />} />
         <Route path="/knowledge" element={<Knowledge />}></Route>
         {/* <Route path="/com" element={<BusinessPlanningSlides />}></Route> */}
->>>>>>> ef82afd15cd6949ebe66f9f7dd6fa05fd6d84304
         <Route path="/mentors" element={<Mentors />}></Route>
         <Route path="/mentor" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>
@@ -170,6 +171,54 @@ function App() {
           path="/financeforstartupslides"
           element={<FinanceforStartupSlides />}
         ></Route>
+        <Route path="/betatesting" element={<BetaTesting />}></Route>
+        <Route path="/betatestingslides" element={<BetaSlide />}></Route>
+
+        <Route path="/buildingaudience" element={<BuildAudience />}></Route>
+        <Route
+          path="/buildingaudienceslides"
+          element={<BuildAudienceSlides />}
+        ></Route>
+
+        <Route path="/buisnessmodal" element={<BusinessModal />}></Route>
+        <Route
+          path="/buisnessmodalslides"
+          element={<BusinessModalSlides />}
+        ></Route>
+
+        <Route path="/buisnessplanning" element={<BusinessPlanning />}></Route>
+        <Route
+          path="/buisnessplanningslides"
+          element={<BusinessPlanningSlides />}
+        ></Route>
+
+        <Route
+          path="/competitoranalysis"
+          element={<CompetitorAnalysis />}
+        ></Route>
+        <Route
+          path="/competitoranalysisslides"
+          element={<CompetitorAnalysisSlides />}
+        ></Route>
+
+        <Route
+          path="/productdevelopment"
+          element={<ProductDevelopment />}
+        ></Route>
+        <Route
+          path="/productdevelopmentslides"
+          element={<ProductDevelopmentSlide />}
+        ></Route>
+
+        <Route
+          path="/thinkingofstartup"
+          element={<ThinkingOfStartup />}
+        ></Route>
+        <Route
+          path="/thinkingofstartupslides"
+          element={<ThinkingOfStartupSlide />}
+        ></Route>
+
         <Route path="/esop" element={<ESOP />}></Route>
         <Route path="/esop-slides" element={<ESOP_Slides />}></Route>
         <Route path="/idea-validation" element={<IdeaValidation />}></Route>

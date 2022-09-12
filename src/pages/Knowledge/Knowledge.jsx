@@ -107,11 +107,7 @@ function Knowledge() {
               className={styles.chapters}
             >
               <Chapter
-<<<<<<< HEAD
-                heading="Beta Testing - 01"
-=======
                 heading="Legal - ESOP"
->>>>>>> ef82afd15cd6949ebe66f9f7dd6fa05fd6d84304
                 status="completed"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
@@ -146,16 +142,58 @@ function Knowledge() {
                 url="/social-media"
               />
               <Chapter
-                heading="Chapter - 06"
+                heading="Beta Testing"
                 status="locked"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
+                url="/betatesting"
               />
               <Chapter
-                heading="Chapter - 07"
+                heading="Business Modal"
                 status="locked"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
+                url="/buisnessmodal"
+              />
+
+              <Chapter
+                heading="Business Planning"
+                status="locked"
+                description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor"
+                url="/buisnessplanning"
+              />
+
+              <Chapter
+                heading="Competitor Analysis"
+                status="locked"
+                description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor"
+                url="/competitoranalysis"
+              />
+
+              <Chapter
+                heading="Product Development"
+                status="locked"
+                description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor"
+                url="/productdevelopment"
+              />
+
+              <Chapter
+                heading="THINKING OF A STARTUP IDEA & IDEA SHORTLISTING"
+                status="locked"
+                description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor"
+                url="/thinkingofstartup"
+              />
+
+              <Chapter
+                heading="Building an Audience"
+                status="locked"
+                description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor"
+                url="/buildingaudience"
               />
             </section>
 

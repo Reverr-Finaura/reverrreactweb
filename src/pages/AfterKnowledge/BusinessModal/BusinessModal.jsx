@@ -18,7 +18,7 @@ const BusinessModal = () => {
         imgUrl="businessmodal1.png"
         // heading="Idea validation and elevator pitch"
       />
-      <CourseIntro courseDetails={courseDetails} />
+      <CourseIntro url="/buisnessmodalslides" courseDetails={courseDetails} />
       <CourseContent imgUrl="businessmodal2.png" />
       <CourseReview />
       <Footer />
