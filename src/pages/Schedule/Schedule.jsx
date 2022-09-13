@@ -34,8 +34,8 @@ function Schedule() {
   };
 
   const prefill = {
-    email: user.email,
-    name: user.displayName,
+    email: user?.email,
+    name: user?.displayName,
     guests: ["aditya2kumar2001@outlook.com"],
     date: new Date(Date.now() + 86400000),
   };
