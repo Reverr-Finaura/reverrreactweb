@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 
 function Sidebar() {
   const [isHoveringSidebar, setIsHoveringSidebar] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
+
+  const location = useLocation();
+  const pathname = location.pathname;
 
   const updateWidth = () => {
     setWidth(window.innerWidth);
@@ -22,46 +27,140 @@ function Sidebar() {
       onMouseOver={() => setIsHoveringSidebar(true)}
       onMouseOut={() => setIsHoveringSidebar(false)}
     >
-      <div className={styles.sidebarOption}>
-        <img src="./images/dashboard.svg" alt="" />
-        <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-          Dashboard
-        </p>
-      </div>
-      <div className={styles.sidebarOption}>
-        <img src="./images/presentation.svg" alt="" />
-        <p style={{ display: isHoveringSidebar ? "block" : "none" }}>Tools</p>
-      </div>
-      <div className={styles.sidebarOption}>
-        <img src="./images/brain.svg" alt="" />
-        <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-          Knowledge
-        </p>
-      </div>
-      <div className={styles.sidebarOption}>
-        <img src="./images/wallet.svg" alt="" />
-        <p style={{ display: isHoveringSidebar ? "block" : "none" }}>Funding</p>
-      </div>
-      <div className={styles.sidebarOption}>
-        <img src="./images/videos.svg" alt="" />
-        <p style={{ display: isHoveringSidebar ? "block" : "none" }}>Patch</p>
-      </div>
-      <div className={styles.sidebarOption}>
-        <img src="./images/bookopen.svg" alt="" />
-        <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-          Get Mentored
-        </p>
-      </div>
-      <div className={styles.sidebarOption}>
-        <img src="./images/handshake.svg" alt="" />
-        <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
-          Community
-        </p>
-      </div>
-      <div className={styles.sidebarOption}>
-        <img src="./images/crown.svg" alt="" />
-        <p style={{ display: isHoveringSidebar ? "block" : "none" }}>Upgrade</p>
-      </div>
+      <NavLink className={styles.navlink} to="/dashboard">
+        <div className={styles.sidebarOption}>
+          <img
+            src={
+              pathname === "/dashboard"
+                ? "./images/dashboard-selected.svg"
+                : "./images/dashboard.svg"
+            }
+            alt=""
+          />
+          <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            Dashboard
+          </p>
+        </div>
+      </NavLink>
+      <NavLink className={styles.navlink} to="/tools">
+        <div className={styles.sidebarOption}>
+          <img
+            src={
+              pathname === "/tools"
+                ? "./images/presentation-selected.svg"
+                : "./images/presentation.svg"
+            }
+            alt=""
+          />
+          <p style={{ display: isHoveringSidebar ? "block" : "none" }}>Tools</p>
+        </div>
+      </NavLink>
+      <NavLink className={styles.navlink} to="/knowledge">
+        <div className={styles.sidebarOption}>
+          <img
+            src={
+              pathname === "/knowledge"
+                ? "./images/knowledge-selected.svg"
+                : "./images/brain.svg"
+            }
+            alt=""
+          />
+          <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            Knowledge
+          </p>
+        </div>
+      </NavLink>
+      <NavLink className={styles.navlink} to="/funding">
+        <div className={styles.sidebarOption}>
+          <img
+            src={
+              pathname === "/funding"
+                ? "./images/funding-selected.svg"
+                : "./images/wallet.svg"
+            }
+            alt=""
+          />
+          <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            Funding
+          </p>
+        </div>
+      </NavLink>
+      <NavLink className={styles.navlink} to="/patch">
+        <div className={styles.sidebarOption}>
+          <img
+            src={
+              pathname === "/patch"
+                ? "./images/patch-selected.svg"
+                : "./images/videos.svg"
+            }
+            alt=""
+          />
+          <p style={{ display: isHoveringSidebar ? "block" : "none" }}>Patch</p>
+        </div>
+      </NavLink>
+      <NavLink className={styles.navlink} to="/mentors">
+        <div className={styles.sidebarOption}>
+          <img
+            src={
+              pathname === "/mentors" ||
+              pathname === "/mentor" ||
+              pathname === "/payment" ||
+              pathname === "/schedule"
+                ? "./images/book-selected.svg"
+                : "./images/bookopen.svg"
+            }
+            alt=""
+          />
+          <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            Get Mentored
+          </p>
+        </div>
+      </NavLink>
+      <NavLink className={styles.navlink} to="/community">
+        <div className={styles.sidebarOption}>
+          <img
+            src={
+              pathname === "/community"
+                ? "./images/community-selected.svg"
+                : "./images/handshake.svg"
+            }
+            alt=""
+          />
+          <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            Community
+          </p>
+        </div>
+      </NavLink>
+      <NavLink className={styles.navlink} to="/myprofile">
+        <div className={styles.sidebarOption}>
+          <img
+            src={
+              pathname === "/myprofile"
+                ? "./images/myprofile-selected.svg"
+                : "./images/myprofile.svg"
+            }
+            alt=""
+          />
+          <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            My Profile
+          </p>
+        </div>
+      </NavLink>
+      <NavLink className={styles.navlink} to="/upgrade">
+        <div className={styles.sidebarOption}>
+          <img
+            src={
+              pathname === "/upgrade"
+                ? "./images/knowledge-selected.svg"
+                : "./images/crown.svg"
+            }
+            alt=""
+          />
+          <p style={{ display: isHoveringSidebar ? "block" : "none" }}>
+            Upgrade
+          </p>
+        </div>
+      </NavLink>
     </div>
   );
 }
