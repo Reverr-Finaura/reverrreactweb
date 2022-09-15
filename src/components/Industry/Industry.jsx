@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./Expertise.module.css";
+import styles from "./Industry.module.css";
 
-function Expertise(props) {
+function Industry(props) {
   return (
     <Link className={styles.link} to={`/${props.to}`}>
-      <div className={styles.expertise}>
+      <div className={styles.industry}>
         <div className={styles.img}>
           <img src={[props.img]} alt="expertise" />
         </div>
@@ -22,4 +22,4 @@ function Expertise(props) {
   );
 }
 
-export default Expertise;
+export default Industry;

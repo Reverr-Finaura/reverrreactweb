@@ -6,7 +6,10 @@ import styles from "./Mentors.module.css";
 import Footer from "../Footer/Footer";
 import MentorOfWeek from "../../components/MentorOfWeek/MentorOfWeek";
 import Expertise from "../../components/Expertise/Expertise";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase";
 import "animate.css";
+import Industry from "../../components/Industry/Industry";
 
 function Mentors() {
   const mentorOfWeek = [
@@ -19,6 +22,8 @@ function Mentors() {
   const [width, setWidth] = useState(window.innerWidth);
   const [expertiseSelected, setExpertiseSelected] = useState(true);
   const [industrySelected, setIndustrySelected] = useState(false);
+  const [expertiseArray, setExpertiseArray] = useState([]);
+  const data = [];
 
   const updateWidth = () => {
     setWidth(window.innerWidth);
@@ -28,6 +33,21 @@ function Mentors() {
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
+
+  useEffect(() => {
+    async function fetchMentorExpertise() {
+      const mentorsRef = collection(db, "Mentors");
+      const q = query(mentorsRef);
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        data.push(doc.data());
+      });
+      setExpertiseArray(data);
+    }
+
+    fetchMentorExpertise();
+  }, []);
+
   return (
     <>
       <PhnSidebar />
@@ -97,7 +117,17 @@ function Mentors() {
             </div>
             {expertiseSelected ? (
               <div className="animate__animated animate__fadeInUp">
-                <div className={styles.expertiseRow}>
+                <div className={styles.test}>
+                  {expertiseArray.map((item, index) => (
+                    <Expertise
+                      key={index + Math.random()}
+                      img="./images/bussiness.svg"
+                      name={item.domain}
+                      to={item.domain}
+                    />
+                  ))}
+                </div>
+                {/* <div className={styles.expertiseRow}>
                   <Expertise
                     img="./images/bussiness.svg"
                     name="Bussiness"
@@ -132,9 +162,22 @@ function Mentors() {
                     name="Bussiness"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                   />
+                </div> */}
+              </div>
+            ) : (
+              <div className="animate__animated animate__fadeInUp">
+                <div className={styles.test}>
+                  {expertiseArray.map((item, index) => (
+                    <Industry
+                      key={index + Math.random()}
+                      img="./images/bussiness.svg"
+                      name={item.industry}
+                      to={item.industry}
+                    />
+                  ))}
                 </div>
               </div>
-            ) : null}
+            )}
           </div>
         </div>
       </div>

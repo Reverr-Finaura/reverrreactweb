@@ -4,6 +4,17 @@
   align-items: center;
 }
 
+.test {
+  /* columns: 2 auto;
+  grid-row: 5;
+  row-gap: 2rem;
+  gap: 2rem; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 2rem;
+}
+
 .body {
   width: 88.5%;
   display: flex;
