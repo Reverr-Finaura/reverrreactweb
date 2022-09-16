@@ -67,6 +67,7 @@ import ProductDevelopment from "./pages/AfterKnowledge/ProductDevelopment/Produc
 import ProductDevelopmentSlide from "./pages/AfterKnowledge/ProductDevelopment/ProductDevelopmentSlide";
 import ThinkingOfStartup from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartup";
 import ThinkingOfStartupSlide from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartupSlide";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   const user = useSelector(selectUser);
@@ -136,6 +137,7 @@ function App() {
         <Route path="/mentor-profile" element={<MentorProfile />}></Route>
         <Route path="/community" element={<Community />}></Route>
         <Route path="/schedule" element={<Schedule />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/betaslide" element={<BetaSlide />}></Route>
         <Route path="/eeslides" element={<EESlides />}></Route>
         <Route
