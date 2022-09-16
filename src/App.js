@@ -129,14 +129,17 @@ function App() {
         <Route path="/knowledge" element={<Knowledge />}></Route>
         {/* <Route path="/com" element={<BusinessPlanningSlides />}></Route> */}
         <Route path="/mentors" element={<Mentors />}></Route>
-        <Route path="/mentor/:type" element={<Mentor />}></Route>
+        <Route path="/mentor/:clickedOn/:type" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>
         <Route path="/mentordetails" element={<MentorMoreDetails />}></Route>
         <Route path="/funding" element={<Funding />}></Route>
         <Route path="/fundingform" element={<FundingForm />}></Route>
-        <Route path="/mentor-profile" element={<MentorProfile />}></Route>
+        <Route
+          path="/mentor-profile/:email"
+          element={<MentorProfile />}
+        ></Route>
         <Route path="/community" element={<Community />}></Route>
-        <Route path="/schedule" element={<Schedule />}></Route>
+        <Route path="/schedule/:mentorEmail" element={<Schedule />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/betaslide" element={<BetaSlide />}></Route>
         <Route path="/eeslides" element={<EESlides />}></Route>
