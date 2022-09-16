@@ -11,13 +11,14 @@ import { InlineWidget } from "react-calendly";
 import "animate.css";
 import axios from "axios";
 import GoogleLogin from "react-google-login";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
 
 function Schedule() {
   const [width, setWidth] = useState(window.innerWidth);
+  const { mentorEmail } = useParams();
   const user = useSelector(selectUser);
   // const [date, setDate] = useState(new Date());
   // const [endDate, setEndDate] = useState();
@@ -36,7 +37,7 @@ function Schedule() {
   const prefill = {
     email: user?.email,
     name: user?.displayName,
-    guests: ["aditya2kumar2001@outlook.com"],
+    guests: [mentorEmail?.toString()],
     date: new Date(Date.now() + 86400000),
   };
 
