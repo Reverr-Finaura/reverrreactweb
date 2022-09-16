@@ -21,7 +21,7 @@ function Mentor() {
     {
       id: "1",
       name: "Jimmy Joel",
-      img: "./images/mentorimg1.svg",
+      img: "/images/mentorimg1.svg",
       type: "Market Researcher",
       rating: "⭐⭐⭐",
       noofReviews: "76 Reviews",
@@ -29,7 +29,7 @@ function Mentor() {
     {
       id: "2",
       name: "Jimmy Joel",
-      img: "./images/mentorimg1.svg",
+      img: "/images/mentorimg1.svg",
       type: "Market Researcher",
       rating: "⭐⭐⭐",
       noofReviews: "76 Reviews",
@@ -37,7 +37,7 @@ function Mentor() {
     {
       id: "3",
       name: "Jimmy Joel",
-      img: "./images/mentorimg1.svg",
+      img: "/images/mentorimg1.svg",
       type: "Market Researcher",
       rating: "⭐⭐⭐",
       noofReviews: "76 Reviews",
@@ -61,18 +61,18 @@ function Mentor() {
           <Sidebar isVisible={width >= 600 ? true : false} />
           <div className={styles.content}>
             <div className={styles.search}>
-              <img src="./images/searchicon.png" alt="search" />
+              <img src="/images/searchicon.png" alt="search" />
               <input type="text" placeholder="Search here" />
             </div>
             <div className={styles.heading}>
               <h1>Bussiness Mentors</h1>
             </div>
-            <div className={styles.prices}>
+            {/* <div className={styles.prices}>
               {prices.map((price) => (
                 <Price key={price.id} price={price.price} />
               ))}
-            </div>
-            <div className={styles.mentorRow}>
+            </div> */}
+            {/* <div className={styles.mentorRow}>
               {mentors.map((mentor) => (
                 <MentorComponent
                   key={mentor.id}
@@ -107,7 +107,8 @@ function Mentor() {
                   noofReviews={mentor.noofReviews}
                 />
               ))}
-            </div>
+            </div> */}
+            <div className={styles.mentors}></div>
           </div>
         </div>
       </div>

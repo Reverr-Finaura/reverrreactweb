@@ -12,12 +12,12 @@ import "animate.css";
 import Industry from "../../components/Industry/Industry";
 
 function Mentors() {
-  const mentorOfWeek = [
-    { id: 1, name: "Tonnie Kimera", img: "mentor1.svg" },
-    { id: 2, name: "Jimmy Joel", img: "mentor2.svg" },
-    { id: 3, name: "Harry Notch", img: "mentor3.svg" },
-    { id: 4, name: "Vuiltion keane", img: "mentor4.svg" },
-  ];
+  // const mentorOfWeek = [
+  //   { id: 1, name: "Tonnie Kimera", img: "mentor1.svg" },
+  //   { id: 2, name: "Jimmy Joel", img: "mentor2.svg" },
+  //   { id: 3, name: "Harry Notch", img: "mentor3.svg" },
+  //   { id: 4, name: "Vuiltion keane", img: "mentor4.svg" },
+  // ];
 
   const [width, setWidth] = useState(window.innerWidth);
   const [expertiseSelected, setExpertiseSelected] = useState(true);
@@ -36,8 +36,8 @@ function Mentors() {
 
   useEffect(() => {
     async function fetchMentorExpertise() {
-      const mentorsRef = collection(db, "Mentors");
-      const q = query(mentorsRef);
+      const usersRef = collection(db, "Users");
+      const q = query(usersRef, where("userType", "==", "Mentor"));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         data.push(doc.data());
@@ -51,19 +51,19 @@ function Mentors() {
   return (
     <>
       <PhnSidebar />
-      <div className={styles.knowledge}>
+      <div className={styles.mentors}>
         <KnowledgeNavbar />
         <div className={styles.body}>
           <Sidebar isVisible={width >= 600 ? true : false} />
           <div className={styles.content}>
             <div className={styles.search}>
-              <img src="./images/searchicon.png" alt="search" />
+              <img src="/images/searchicon.png" alt="search" />
               <input type="text" placeholder="Search here" />
             </div>
             <div className={styles.heading}>
               <h1>Find the Best Mentor</h1>
             </div>
-            <div className={styles.week}>
+            {/* <div className={styles.week}>
               <p>
                 <b>Mentor of Week</b>
               </p>
@@ -76,7 +76,7 @@ function Mentors() {
                   />
                 ))}
               </div>
-            </div>
+            </div> */}
             <div className={styles.selector}>
               <div
                 className={styles.selectorButton}
@@ -118,47 +118,49 @@ function Mentors() {
             {expertiseSelected ? (
               <div className="animate__animated animate__fadeInUp">
                 <div className={styles.test}>
-                  {expertiseArray.map((item, index) => (
-                    <Expertise
-                      key={index + Math.random()}
-                      img="./images/bussiness.svg"
-                      name={item.domain}
-                      to={item.domain}
-                    />
-                  ))}
+                  {expertiseArray.map((item, index) =>
+                    item?.domain !== "" ? (
+                      <Expertise
+                        key={index + Math.random()}
+                        img="/images/bussiness.svg"
+                        name={item?.domain}
+                        to={item?.domain}
+                      />
+                    ) : null
+                  )}
                 </div>
                 {/* <div className={styles.expertiseRow}>
                   <Expertise
-                    img="./images/bussiness.svg"
+                    img="/images/bussiness.svg"
                     name="Bussiness"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                   />
                   <Expertise
-                    img="./images/bussiness.svg"
-                    name="Bussiness"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                  />
-                </div>
-                <div className={styles.expertiseRow}>
-                  <Expertise
-                    img="./images/bussiness.svg"
-                    name="Bussiness"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                  />
-                  <Expertise
-                    img="./images/bussiness.svg"
+                    img="/images/bussiness.svg"
                     name="Bussiness"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                   />
                 </div>
                 <div className={styles.expertiseRow}>
                   <Expertise
-                    img="./images/bussiness.svg"
+                    img="/images/bussiness.svg"
                     name="Bussiness"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                   />
                   <Expertise
-                    img="./images/bussiness.svg"
+                    img="/images/bussiness.svg"
+                    name="Bussiness"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                  />
+                </div>
+                <div className={styles.expertiseRow}>
+                  <Expertise
+                    img="/images/bussiness.svg"
+                    name="Bussiness"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+                  />
+                  <Expertise
+                    img="/images/bussiness.svg"
                     name="Bussiness"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
                   />
@@ -167,14 +169,16 @@ function Mentors() {
             ) : (
               <div className="animate__animated animate__fadeInUp">
                 <div className={styles.test}>
-                  {expertiseArray.map((item, index) => (
-                    <Industry
-                      key={index + Math.random()}
-                      img="./images/bussiness.svg"
-                      name={item.industry}
-                      to={item.industry}
-                    />
-                  ))}
+                  {expertiseArray.map((item, index) =>
+                    item?.industry !== "" ? (
+                      <Industry
+                        key={index + Math.random()}
+                        img="/images/bussiness.svg"
+                        name={item?.industry}
+                        to={item?.industry}
+                      />
+                    ) : null
+                  )}
                 </div>
               </div>
             )}

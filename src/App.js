@@ -149,7 +149,7 @@ function App() {
         <Route path="/knowledge" element={<Knowledge />}></Route>
         {/* <Route path="/com" element={<BusinessPlanningSlides />}></Route> */}
         <Route path="/mentors" element={<Mentors />}></Route>
-        <Route path="/mentor" element={<Mentor />}></Route>
+        <Route path="/mentor/:type" element={<Mentor />}></Route>
         <Route path="/mentorform" element={<MentorForm />}></Route>
         <Route path="/mentordetails" element={<MentorMoreDetails />}></Route>
         <Route path="/funding" element={<Funding />}></Route>

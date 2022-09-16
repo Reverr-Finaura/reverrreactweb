@@ -6,8 +6,7 @@
   border-radius: 0.5rem;
   padding: 3rem 1rem;
   color: black;
-  min-height: 10rem;
-  max-height: 12rem;
+  height: fit-content;
 }
 
 .link {
