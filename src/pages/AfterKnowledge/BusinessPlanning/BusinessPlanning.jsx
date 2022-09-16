@@ -18,7 +18,10 @@ const BusinessPlanning = () => {
         imgUrl="businessplan1.png"
         // heading="Idea validation and elevator pitch"
       />
-      <CourseIntro url="/buisnessplanningslides" courseDetails={courseDetails} />
+      <CourseIntro
+        url="/businessplanningslides"
+        courseDetails={courseDetails}
+      />
       <CourseContent imgUrl="businessplan2.png" />
       <CourseReview />
       <Footer />

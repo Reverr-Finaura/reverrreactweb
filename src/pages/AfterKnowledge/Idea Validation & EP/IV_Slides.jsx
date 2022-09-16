@@ -202,6 +202,7 @@ const IV_Slides = () => {
             setCurrIndex={setCurrIndex}
             currIndex={currIndex}
             size={totalLen}
+            url="/idea-validation"
           />
         </div>
       ))}

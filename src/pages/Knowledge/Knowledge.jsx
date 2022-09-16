@@ -53,13 +53,13 @@ function Knowledge() {
               <input type="text" placeholder="Search here" />
             </div>
             <div className={styles.headings}>
-              <div
+              {/* <div
                 onClick={selectBooks}
                 style={{ fontSize: booksSelected && "45px" }}
                 className={styles.heading}
               >
                 <p>Books</p>
-              </div>
+              </div> */}
               <div
                 onClick={selectJourney}
                 style={{ fontSize: journeySelected && "45px" }}
@@ -67,13 +67,13 @@ function Knowledge() {
               >
                 <p>The Journey</p>
               </div>
-              <div
+              {/* <div
                 onClick={selectCourses}
                 style={{ fontSize: coursesSelected && "45px" }}
                 className={styles.heading}
               >
                 <p>Courses</p>
-              </div>
+              </div> */}
             </div>
             <div className={styles.sectionDescription}>
               <p
@@ -153,7 +153,7 @@ function Knowledge() {
                 status="locked"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
-                url="/buisnessmodal"
+                url="/businessmodal"
               />
 
               <Chapter
@@ -161,7 +161,7 @@ function Knowledge() {
                 status="locked"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
-                url="/buisnessplanning"
+                url="/businessplanning"
               />
 
               <Chapter

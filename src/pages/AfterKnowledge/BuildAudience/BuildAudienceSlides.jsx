@@ -53,14 +53,12 @@ const BuildAudienceSlides = () => {
       para: "If you want to get a feel for what you'll need to do, the good folks of Mailchimp have a very easy step-by-step tutorial as well as a video walkthrough. You can dig into that now or keep reading and come back to the setup later.",
       img: "es10.svg",
     },
-    
+
     {
       title: "Almighty CTA",
       para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       img: "es12.svg",
     },
-    
-    
   ];
 
   var totalLen = Object.keys(obj).length;
@@ -78,6 +76,7 @@ const BuildAudienceSlides = () => {
             setCurrIndex={setCurrIndex}
             currIndex={currIndex}
             size={totalLen}
+            url="/buildingaudience"
           />
         </div>
       ))}

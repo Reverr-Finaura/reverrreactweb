@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Slide.module.css";
 import "animate.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,8 +8,10 @@ import {
   forward,
   selectAnimation,
 } from "../../../features/animationSlice";
+import { ArrowCircleLeftIcon } from "@heroicons/react/solid";
 
-const Slide = ({ content, setCurrIndex, currIndex, size }) => {
+const Slide = ({ content, setCurrIndex, currIndex, size, url }) => {
+  const navigate = useNavigate();
   const animation = useSelector(selectAnimation);
   const dispatch = useDispatch();
   const handleNext = () => {
@@ -24,6 +26,17 @@ const Slide = ({ content, setCurrIndex, currIndex, size }) => {
 
   return (
     <div className={`${styles.slide_container} animate__animated ${animation}`}>
+      <div
+        className={styles["back-button"]}
+        onClick={() => {
+          console.log("clicked");
+          navigate(url);
+        }}
+      >
+        <abbr title="Back to Course Home Page">
+          <ArrowCircleLeftIcon />
+        </abbr>
+      </div>
       <div className={styles.course_content}>
         <div className={styles.course_details}>
           <h1>{content.title}</h1>
@@ -31,9 +44,9 @@ const Slide = ({ content, setCurrIndex, currIndex, size }) => {
           <div className={styles.btns_div}>
             <button
               onClick={handlePrev}
-              style={{ display: currIndex === size - 1 && "none" }}
+              style={{ display: currIndex === 0 && "none" }}
             >
-              ⬅Move Ahead
+              ⬅ Move Backwards
             </button>
             <button
               onClick={handleNext}

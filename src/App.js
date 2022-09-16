@@ -60,13 +60,14 @@ import SocialMediaSlides from "./pages/AfterKnowledge/SocialMedia/SocialMediaSli
 import SocialMedia from "./pages/AfterKnowledge/SocialMedia/SocialMedia";
 import NotFound from "./pages/NotFound/NotFound";
 import BuildAudienceSlides from "./pages/AfterKnowledge/BuildAudience/BuildAudienceSlides";
-import BusinessModalSlides from "./pages/AfterKnowledge/BuildAudience/BuildAudienceSlides";
+import BusinessModalSlides from "./pages/AfterKnowledge/BusinessModal/BusinessModalSlides.jsx";
 import CompetitorAnalysis from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysis";
 import CompetitorAnalysisSlides from "./pages/AfterKnowledge/CompetitorAnalysis/CompetitorAnalysisSlides";
 import ProductDevelopment from "./pages/AfterKnowledge/ProductDevelopment/ProductDevelopment";
 import ProductDevelopmentSlide from "./pages/AfterKnowledge/ProductDevelopment/ProductDevelopmentSlide";
 import ThinkingOfStartup from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartup";
 import ThinkingOfStartupSlide from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartupSlide";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 function App() {
   const user = useSelector(selectUser);
@@ -123,27 +124,6 @@ function App() {
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes> */}
-      {/* <BetaTesting /> */}
-      {/* <BusinessPlanning /> */}
-      {/* <Newsletter /> */}
-      {/* <BuildAudience /> */}
-      {/* <BuildAudienceSlides /> */}
-      {/* <BusinessModal /> */}
-      {/* <CompetitorAnalysis /> */}
-      {/* <BetaSlide /> */}
-      {/* <EquityAndEverything /> */}
-      {/* <EESlides /> */}
-      {/* <NDAgreements /> */}
-      {/* <NDASlides /> */}
-      {/* <IdeaValidation /> */}
-      {/* <IV_Slides /> */}
-      {/* <FundraisingAndMeans />*/}
-      {/* <FundraisingSlides /> */}
-      {/* <ReachingOutToInvestor /> */}
-      {/* <ReachingOutSlides /> */}
-      {/* <ESOP_Slides /> */}
-      {/* <SocialMedia /> */}
-      {/* <SocialMediaSlides /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/knowledge" element={<Knowledge />}></Route>
@@ -157,6 +137,7 @@ function App() {
         <Route path="/mentor-profile" element={<MentorProfile />}></Route>
         <Route path="/community" element={<Community />}></Route>
         <Route path="/schedule" element={<Schedule />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/betaslide" element={<BetaSlide />}></Route>
         <Route path="/eeslides" element={<EESlides />}></Route>
         <Route
@@ -180,15 +161,15 @@ function App() {
           element={<BuildAudienceSlides />}
         ></Route>
 
-        <Route path="/buisnessmodal" element={<BusinessModal />}></Route>
+        <Route path="/businessmodal" element={<BusinessModal />}></Route>
         <Route
-          path="/buisnessmodalslides"
+          path="/businessmodalslides"
           element={<BusinessModalSlides />}
         ></Route>
 
-        <Route path="/buisnessplanning" element={<BusinessPlanning />}></Route>
+        <Route path="/businessplanning" element={<BusinessPlanning />}></Route>
         <Route
-          path="/buisnessplanningslides"
+          path="/businessplanningslides"
           element={<BusinessPlanningSlides />}
         ></Route>
 
