@@ -91,6 +91,7 @@ const ReachingOutSlides = () => {
             setCurrIndex={setCurrIndex}
             currIndex={currIndex}
             size={totalLen}
+            url="/reaching-out-to-investor"
           />
         </div>
       ))}

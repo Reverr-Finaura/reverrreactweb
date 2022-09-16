@@ -54,25 +54,25 @@ const ThinkingOfStartupSlide = () => {
       img: "es10.svg",
     },
     {
-        title: "MISTAKES FOUNDERS DO ",
+      title: "MISTAKES FOUNDERS DO ",
       para: "The following real number is the exact opposite. It's about taking the first idea that comes to mind without stopping and critically thinking about whether it's good or not. And it's amazing how common it is. That's the problem. If your startup succeeds, you will spend a lifetime working on it. And if you're going to spend a few years of your life doing something, wouldn't it make sense to spend a few weeks deciding what to do first? Surprisingly, very few founders do this, and when they do they are actually ahead of the curve. My argument is that if you imagine a spectrum where one end is 'try the idea that comes to mind first' and the other end 'wait for the perfect idea', you want to be somewhere in between. You should think of your original idea as a good starting point.",
       img: "es11.svg",
     },
     {
-        title: "MISTAKES FOUNDERS DO ",
+      title: "MISTAKES FOUNDERS DO ",
       para: "Startup ideas change over time. Take Airbnb as an example. Initially, Airbnb was literally a site for renting airbeds in someone else's home. Over time, it evolved into all types of vacation rentals. So, you need to choose a good starting point. If you have a good starting point, even if your initial idea isn't very good, you need to improve it to get a good one. On the other hand, if you choose a bad starting point, you can't turn it into a good starting point. You have to start all over again.",
       img: "es12.svg",
     },
     {
-        title: "MISTAKES FOUNDERS DO ",
+      title: "MISTAKES FOUNDERS DO ",
       para: "The third mistake is to start with the solution, not the problem. And we'll give you an example. Imagine coming up with a startup called Uber for plumbers. This app brings up the plumber at the push of a button. This is the solution. What problem do you solve? we do not know. It can be difficult to find a plumber. This may be a real problem, but when an idea like this comes up, I believe it starts with a solution. so there is a term. This is called SISP (Solving in Search of Problem). And that's usually not good because it usually doesn't find the problem. It's much better to start with the problem and then find a solution.",
       img: "es13.svg",
     },
     {
-        title: "MISTAKES FOUNDERS DO ",
+      title: "MISTAKES FOUNDERS DO ",
       para: "The final mistake is believing that startup ideas are hard to come by. In fact, it is easy to find because there are so many real problems left in the world. If you're having trouble finding it, you haven't learned how to do it yet. Learn to discover great startup ideas and you'll see them everywhere.",
       img: "es14.svg",
-    }
+    },
   ];
 
   var totalLen = Object.keys(obj).length;
@@ -90,6 +90,7 @@ const ThinkingOfStartupSlide = () => {
             setCurrIndex={setCurrIndex}
             currIndex={currIndex}
             size={totalLen}
+            url="/thinkingofstartup"
           />
         </div>
       ))}

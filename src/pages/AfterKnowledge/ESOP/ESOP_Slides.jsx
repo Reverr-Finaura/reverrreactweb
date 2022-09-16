@@ -127,6 +127,7 @@ However, providing equity with the ESOP program is a necessary step as your star
             setCurrIndex={setCurrIndex}
             currIndex={currIndex}
             size={totalLen}
+            url="/esop"
           />
         </div>
       ))}

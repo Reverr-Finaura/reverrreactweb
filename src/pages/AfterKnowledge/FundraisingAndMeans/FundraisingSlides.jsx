@@ -186,6 +186,7 @@ const FundraisingSlides = () => {
             setCurrIndex={setCurrIndex}
             currIndex={currIndex}
             size={totalLen}
+            url="/fundraising-and-means"
           />
         </div>
       ))}

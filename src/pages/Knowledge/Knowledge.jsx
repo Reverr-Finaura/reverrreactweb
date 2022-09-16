@@ -153,7 +153,7 @@ function Knowledge() {
                 status="locked"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
-                url="/buisnessmodal"
+                url="/businessmodal"
               />
 
               <Chapter
@@ -161,7 +161,7 @@ function Knowledge() {
                 status="locked"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
-                url="/buisnessplanning"
+                url="/businessplanning"
               />
 
               <Chapter

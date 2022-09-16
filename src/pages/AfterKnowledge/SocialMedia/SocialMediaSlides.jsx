@@ -100,6 +100,7 @@ const FundraisingSlides = () => {
             setCurrIndex={setCurrIndex}
             currIndex={currIndex}
             size={totalLen}
+            url="/social-media"
           />
         </div>
       ))}

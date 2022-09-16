@@ -75,6 +75,7 @@ const BetaSlide = () => {
             setCurrIndex={setCurrIndex}
             currIndex={currIndex}
             size={totalLen}
+            url="/betatesting"
           />
         </div>
       ))}
