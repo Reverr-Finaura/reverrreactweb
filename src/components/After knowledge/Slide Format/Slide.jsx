@@ -31,9 +31,9 @@ const Slide = ({ content, setCurrIndex, currIndex, size }) => {
           <div className={styles.btns_div}>
             <button
               onClick={handlePrev}
-              style={{ display: currIndex === size - 1 && "none" }}
+              style={{ display: currIndex === 0 && "none" }}
             >
-              ⬅Move Ahead
+              ⬅ Move Backwards
             </button>
             <button
               onClick={handleNext}

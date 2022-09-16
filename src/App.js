@@ -123,27 +123,6 @@ function App() {
         <Route path="/knowledge" element={<Knowledge />}></Route>
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes> */}
-      {/* <BetaTesting /> */}
-      {/* <BusinessPlanning /> */}
-      {/* <Newsletter /> */}
-      {/* <BuildAudience /> */}
-      {/* <BuildAudienceSlides /> */}
-      {/* <BusinessModal /> */}
-      {/* <CompetitorAnalysis /> */}
-      {/* <BetaSlide /> */}
-      {/* <EquityAndEverything /> */}
-      {/* <EESlides /> */}
-      {/* <NDAgreements /> */}
-      {/* <NDASlides /> */}
-      {/* <IdeaValidation /> */}
-      {/* <IV_Slides /> */}
-      {/* <FundraisingAndMeans />*/}
-      {/* <FundraisingSlides /> */}
-      {/* <ReachingOutToInvestor /> */}
-      {/* <ReachingOutSlides /> */}
-      {/* <ESOP_Slides /> */}
-      {/* <SocialMedia /> */}
-      {/* <SocialMediaSlides /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/knowledge" element={<Knowledge />}></Route>
