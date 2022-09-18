@@ -29,24 +29,24 @@ function KnowledgeNavbar() {
         className={styles.logo}
         onClick={() => setPhnOptionsVisible(!phnOptionsVisible)}
       >
-        <img src="./images/Reverr Black 1.png" alt="" />
+        <img src="/images/Reverr Black 1.png" alt="" />
         <p>REVERR</p>
       </div>
       <div className={styles.options}>
         <div>
-          <img src="./images/bell.svg" alt="" />
+          <img src="/images/bell.svg" alt="" />
         </div>
         <div>
-          <img src="./images/question.svg" alt="" />
+          <img src="/images/question.svg" alt="" />
         </div>
         <div>
-          <img src="./images/calender.svg" alt="" />
+          <img src="/images/calender.svg" alt="" />
         </div>
         <div>
-          <img src="./images/chat.svg" alt="" />
+          <img src="/images/chat.svg" alt="" />
         </div>
         <div>
-          <img src="./images/profile.svg" alt="" />
+          <img src="/images/profile.svg" alt="" />
         </div>
       </div>
       <div
@@ -56,19 +56,19 @@ function KnowledgeNavbar() {
         className={`${styles.phnOptions} animate__animated animate__fadeIn`}
       >
         <div>
-          <img src="./images/bell.svg" alt="" />
+          <img src="/images/bell.svg" alt="" />
         </div>
         <div>
-          <img src="./images/question.svg" alt="" />
+          <img src="/images/question.svg" alt="" />
         </div>
         <div>
-          <img src="./images/calender.svg" alt="" />
+          <img src="/images/calender.svg" alt="" />
         </div>
         <div>
-          <img src="./images/chat.svg" alt="" />
+          <img src="/images/chat.svg" alt="" />
         </div>
         <div>
-          <img src="./images/profile.svg" alt="" />
+          <img src="/images/profile.svg" alt="" />
         </div>
       </div>
     </navbar>

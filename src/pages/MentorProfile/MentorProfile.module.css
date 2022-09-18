@@ -132,6 +132,11 @@
   color: rgba(32, 32, 32, 0.75);
 }
 
+.link {
+  text-decoration: none;
+  color: #fff;
+}
+
 .mentor_contact {
   text-align: center;
   margin: 6rem auto;

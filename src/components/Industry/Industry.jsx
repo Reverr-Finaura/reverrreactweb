@@ -4,7 +4,7 @@ import styles from "./Industry.module.css";
 
 function Industry(props) {
   return (
-    <Link className={styles.link} to={`/${props.to}`}>
+    <Link className={styles.link} to={`/mentor/industry/${props.to}`}>
       <div className={styles.industry}>
         <div className={styles.img}>
           <img src={[props.img]} alt="expertise" />

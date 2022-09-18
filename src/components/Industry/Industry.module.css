@@ -6,6 +6,7 @@
   border-radius: 0.5rem;
   padding: 3rem 1rem;
   color: black;
+  height: fit-content;
 }
 
 .link {

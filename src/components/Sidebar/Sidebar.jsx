@@ -60,8 +60,8 @@ function Sidebar() {
           <img
             src={
               pathname === "/dashboard"
-                ? "./images/dashboard-selected.svg"
-                : "./images/dashboard.svg"
+                ? "/images/dashboard-selected.svg"
+                : "/images/dashboard.svg"
             }
             alt=""
           />
@@ -75,8 +75,8 @@ function Sidebar() {
           <img
             src={
               pathname === "/tools"
-                ? "./images/presentation-selected.svg"
-                : "./images/presentation.svg"
+                ? "/images/presentation-selected.svg"
+                : "/images/presentation.svg"
             }
             alt=""
           />
@@ -88,8 +88,8 @@ function Sidebar() {
           <img
             src={
               pathname === "/knowledge"
-                ? "./images/knowledge-selected.svg"
-                : "./images/brain.svg"
+                ? "/images/knowledge-selected.svg"
+                : "/images/brain.svg"
             }
             alt=""
           />
@@ -103,8 +103,8 @@ function Sidebar() {
           <img
             src={
               pathname === "/funding"
-                ? "./images/funding-selected.svg"
-                : "./images/wallet.svg"
+                ? "/images/funding-selected.svg"
+                : "/images/wallet.svg"
             }
             alt=""
           />
@@ -118,8 +118,8 @@ function Sidebar() {
           <img
             src={
               pathname === "/patch"
-                ? "./images/patch-selected.svg"
-                : "./images/videos.svg"
+                ? "/images/patch-selected.svg"
+                : "/images/videos.svg"
             }
             alt=""
           />
@@ -134,8 +134,8 @@ function Sidebar() {
               pathname === "/mentor" ||
               pathname === "/payment" ||
               pathname === "/schedule"
-                ? "./images/book-selected.svg"
-                : "./images/bookopen.svg"
+                ? "/images/book-selected.svg"
+                : "/images/bookopen.svg"
             }
             alt=""
           />
@@ -149,8 +149,8 @@ function Sidebar() {
           <img
             src={
               pathname === "/community"
-                ? "./images/community-selected.svg"
-                : "./images/handshake.svg"
+                ? "/images/community-selected.svg"
+                : "/images/handshake.svg"
             }
             alt=""
           />
@@ -164,8 +164,8 @@ function Sidebar() {
           <img
             src={
               pathname === "/myprofile"
-                ? "./images/myprofile-selected.svg"
-                : "./images/myprofile.svg"
+                ? "/images/myprofile-selected.svg"
+                : "/images/myprofile.svg"
             }
             alt=""
           />
@@ -179,8 +179,8 @@ function Sidebar() {
           <img
             src={
               pathname === "/upgrade"
-                ? "./images/knowledge-selected.svg"
-                : "./images/crown.svg"
+                ? "/images/knowledge-selected.svg"
+                : "/images/crown.svg"
             }
             alt=""
           />
