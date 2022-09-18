@@ -7,21 +7,49 @@ function Sidebar() {
   const [isActive, setIsActive] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  // new:
+  const [visible, setVisible] = useState(true);
+
   const location = useLocation();
   const pathname = location.pathname;
+
+  const handleScroll = () => {
+    // find current scroll position
+    const currentScrollPos = window.pageYOffset;
+
+    // set state based on location info (explained in more detail below)
+    setVisible(
+      (prevScrollPos > currentScrollPos &&
+        prevScrollPos - currentScrollPos < window.innerHeight) ||
+        currentScrollPos < window.innerHeight
+    );
+
+    // set state to new scroll position
+    setPrevScrollPos(currentScrollPos);
+  };
 
   const updateWidth = () => {
     setWidth(window.innerWidth);
   };
 
   useEffect(() => {
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+    // window.addEventListener("resize", updateWidth);
+    // return () => window.removeEventListener("resize", updateWidth);
+    console.log(window.scrollY);
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible, handleScroll]);
+
   return (
     <div
       style={{
         padding: isHoveringSidebar ? "1rem 10rem 1rem 1rem" : "1rem",
+        left: visible ? "auto" : "-100px",
       }}
       className={styles.sidebar}
       onMouseOver={() => setIsHoveringSidebar(true)}
