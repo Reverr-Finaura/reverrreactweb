@@ -42,7 +42,7 @@ const Payment = () => {
 
   const getToken = async () => {
     const res = await axios
-      .post("http://localhost:8080/order", order, {
+      .post("https://arcane-shelf-91993.herokuapp.com/order", order, {
         headers: headers,
       })
       .then((res) => {
