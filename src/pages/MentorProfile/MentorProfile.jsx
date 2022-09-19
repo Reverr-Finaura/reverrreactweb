@@ -6,11 +6,14 @@ import Sidebar from "../../components/Sidebar/Sidebar";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase";
 import { Link, useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setPlans } from "../../features/plansSlice";
 
 const MentorProfile = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [mentor, setMentor] = useState(null);
   const ratings = [];
+  const dispatch = useDispatch();
   const { email } = useParams();
 
   const rating = (n) => {
@@ -42,6 +45,8 @@ const MentorProfile = () => {
   console.log(typeof parseInt(mentor?.totalRating));
   rating(5);
   console.log(ratings);
+
+  dispatch(setPlans(mentor?.plans));
 
   return (
     <div style={{ backgroundColor: "#f6f6f6" }}>
@@ -143,6 +148,11 @@ const MentorProfile = () => {
             <button>
               <Link to={`/schedule/${mentor?.email}`} className={styles.link}>
                 Schedule
+              </Link>
+            </button>
+            <button style={{ marginLeft: "2rem" }}>
+              <Link to={`/payment/${mentor?.email}`} className={styles.link}>
+                Pay
               </Link>
             </button>
             <p>Contact</p>

@@ -68,7 +68,7 @@ import ProductDevelopmentSlide from "./pages/AfterKnowledge/ProductDevelopment/P
 import ThinkingOfStartup from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartup";
 import ThinkingOfStartupSlide from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartupSlide";
 import Dashboard from "./pages/Dashboard/Dashboard";
-
+import Payment from "./pages/Payment/Payment";
 function App() {
   const user = useSelector(selectUser);
   const newUser = useSelector(selectNewUser);
@@ -228,6 +228,7 @@ function App() {
           path="/social-media-slides"
           element={<SocialMediaSlides />}
         ></Route>
+        <Route path="/payment/:mentorEmail" element={<Payment />} />
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>

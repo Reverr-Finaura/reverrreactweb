@@ -1,0 +1,31 @@
+.main {
+  text-align: center;
+}
+
+.dropin-parent {
+  max-width: 420px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.btn-pay {
+  border-radius: 6px;
+  background-color: rgb(105, 51, 211);
+  color: rgb(255, 255, 255);
+  border: none;
+  font-size: 14px;
+  padding: 11px 16px;
+  margin-top: 2rem;
+}
+
+.mr-8 {
+  margin-right: 0.5rem;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
