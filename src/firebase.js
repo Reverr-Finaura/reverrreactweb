@@ -28,9 +28,9 @@ const analytics = getAnalytics(app);
 const auth = getAuth();
 const db = getFirestore(app);
 
-export const updateUserInDatabse = async (uid, data) => {
+export const updateUserInDatabse = async (uid, collection, data) => {
   try {
-    return await updateDoc(doc(db, "Users", uid), data);
+    return await updateDoc(doc(db, `${collection}`, uid), data);
   } catch (err) {
     console.log("Err: ", err);
   }

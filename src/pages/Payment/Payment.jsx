@@ -5,26 +5,19 @@ import { useEffect, useState } from "react";
 import { idGen } from "../../util/idGen";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
-import { addPaymentInDatabase, getUserFromDatabase } from "../../firebase";
+import {
+  addPaymentInDatabase,
+  getUserFromDatabase,
+  updateUserInDatabse,
+} from "../../firebase";
 import { updateCurrentUser } from "firebase/auth";
 import { useParams } from "react-router-dom";
 
 const Payment = () => {
   const [orderToken, setOrderToken] = useState(null);
-
   const user = useSelector(selectUser);
   console.log(user);
   const { mentorEmail } = useParams();
-
-  const getUser = async () => {
-    await getUserFromDatabase(user.uid)
-      .then((user) => console.log(user))
-      .catch((err) => console.log(err));
-  };
-
-  useEffect(() => {
-    getUser();
-  });
 
   var orderID = idGen(12);
   //   console.log(orderID);
@@ -49,7 +42,7 @@ const Payment = () => {
   const order = {
     id: orderID,
     currency: "INR",
-    amount: 0,
+    amount: amt,
     customer_id: customerID,
     customer_phone: customerPhone,
   };
@@ -60,7 +53,7 @@ const Payment = () => {
 
   const getToken = async () => {
     const res = await axios
-      .post("https://reverrserver.herokuapp.com/webcftoken", order, {
+      .post("http://localhost:8080/order", order, {
         headers: headers,
       })
       .then((res) => {
@@ -92,12 +85,8 @@ const Payment = () => {
     orderToken: orderToken,
 
     onSuccess: async (data) => {
-      console.log(data);
-      console.log("Success");
-      console.log(mentorEmail);
-      // await upda
-      const user = await getUserFromDatabase(user.uid);
-      await updateCurrentUser(user.uid, {
+      const user = await getUserFromDatabase(user.uid, "Users");
+      await updateUserInDatabse(user.uid, "Users", {
         ...user,
         mentors: [...user.mentors],
       });
@@ -116,9 +105,6 @@ const Payment = () => {
       });
     },
     onFailure: async (data) => {
-      console.log(data);
-      console.log(data.order.errorText);
-      console.log("Failed");
       await addPaymentInDatabase(idGen(20), {
         orderAmount: data.transactionAmount,
         orderId: data.orderId,
