@@ -126,6 +126,7 @@ function Mentors() {
                         name={item}
                         to={item}
                       />
+<<<<<<< HEAD
                     ) : null
                   )} */}
                   {/* {expertiseArray.map((item) => {
@@ -142,6 +143,12 @@ function Mentors() {
                           )
                       );
                   })} */}
+=======
+                    ) : (
+                      ""
+                    )
+                  )}
+>>>>>>> f37781deb641050f6eeb5921c98088b787945e3d
                 </div>
                 {/* <div className={styles.expertiseRow}>
                   <Expertise
