@@ -4,15 +4,16 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { idGen } from "../../util/idGen";
 import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
 
 const Payment = () => {
   const [orderToken, setOrderToken] = useState(null);
 
+  const user = useSelector(selectUser);
+
   var orderID = idGen(12);
-  //   console.log(orderID);
 
   const plans = useSelector((state) => state.plans.plans);
-  console.log(plans);
 
   const customerID = "xyz";
   const customerPhone = "1234567890";
@@ -31,7 +32,7 @@ const Payment = () => {
   const order = {
     id: orderID,
     currency: "INR",
-    amount: amt,
+    amount: 1,
     customer_id: customerID,
     customer_phone: customerPhone,
   };
@@ -42,7 +43,7 @@ const Payment = () => {
 
   const getToken = async () => {
     const res = await axios
-      .post("https://arcane-shelf-91993.herokuapp.com/order", order, {
+      .post("https://reverrserver.herokuapp.com/webcftoken", order, {
         headers: headers,
       })
       .then((res) => {
@@ -73,7 +74,8 @@ const Payment = () => {
     ],
     orderToken: orderToken,
     onSuccess: (data) => {
-      console.log("Success");
+      console.log(data);
+      // console.log("Success");
     },
     onFailure: (data) => {
       console.log(data.order.errorText);
