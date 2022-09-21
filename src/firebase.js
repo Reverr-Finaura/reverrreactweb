@@ -7,9 +7,9 @@ import {
   getDocs,
   updateDoc,
   query,
-  collection,
   where,
   setDoc,
+  collection,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -36,18 +36,36 @@ export const updateUserInDatabse = async (uid, collection, data) => {
   }
 };
 
+export const updateMentorInDatabse = async (email, collection, data) => {
+  try {
+    return await updateDoc(doc(db, `${collection}`), email);
+  } catch (err) {
+    console.log("Err: ", err);
+  }
+};
+
 // getUser
 
-export const getUserFromDatabase = async (uid, collection) => {
+export const getUserFromDatabase = async (uid) => {
   let User;
   await (
-    await getDocs(
-      query(collection(db, `${collection}`), where("uid", "==", `${uid}`))
-    )
+    await getDocs(query(collection(db, "Users"), where("uid", "==", `${uid}`)))
   ).forEach((doc) => {
     User = { ...doc.data() };
   });
   return User;
+};
+
+export const getMentorFromDatabase = async (email) => {
+  let Mentor;
+  await (
+    await getDocs(
+      query(collection(db, "Users"), where("email", "==", `${email}`))
+    )
+  ).forEach((doc) => {
+    Mentor = { ...doc.data() };
+  });
+  return Mentor;
 };
 
 export const addPaymentInDatabase = async (uid, data) => {
