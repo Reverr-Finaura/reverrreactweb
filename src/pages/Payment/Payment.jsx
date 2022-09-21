@@ -5,19 +5,14 @@ import { useEffect, useState } from "react";
 import { idGen } from "../../util/idGen";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
-<<<<<<< HEAD
-=======
 import { addPaymentInDatabase, getUserFromDatabase } from "../../firebase";
 import { updateCurrentUser } from "firebase/auth";
 import { useParams } from "react-router-dom";
->>>>>>> 25022db0516e0784b49c23236056dbab31ce408e
 
 const Payment = () => {
   const [orderToken, setOrderToken] = useState(null);
 
   const user = useSelector(selectUser);
-<<<<<<< HEAD
-=======
   console.log(user);
   const { mentorEmail } = useParams();
 
@@ -30,11 +25,12 @@ const Payment = () => {
   useEffect(() => {
     getUser();
   });
->>>>>>> 25022db0516e0784b49c23236056dbab31ce408e
 
   var orderID = idGen(12);
+  //   console.log(orderID);
 
   const plans = useSelector((state) => state.plans.plans);
+  console.log(plans);
 
   const customerID = "xyz";
   const customerPhone = "1234567890";
@@ -53,11 +49,7 @@ const Payment = () => {
   const order = {
     id: orderID,
     currency: "INR",
-<<<<<<< HEAD
-    amount: 1,
-=======
     amount: 0,
->>>>>>> 25022db0516e0784b49c23236056dbab31ce408e
     customer_id: customerID,
     customer_phone: customerPhone,
   };
@@ -98,11 +90,6 @@ const Payment = () => {
       "cardlessemi",
     ],
     orderToken: orderToken,
-<<<<<<< HEAD
-    onSuccess: (data) => {
-      console.log(data);
-      // console.log("Success");
-=======
 
     onSuccess: async (data) => {
       console.log(data);
@@ -127,7 +114,6 @@ const Payment = () => {
         user: user.email,
         vendor: mentorEmail,
       });
->>>>>>> 25022db0516e0784b49c23236056dbab31ce408e
     },
     onFailure: async (data) => {
       console.log(data);

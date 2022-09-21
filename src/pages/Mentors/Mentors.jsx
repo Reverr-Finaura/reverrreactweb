@@ -126,7 +126,9 @@ function Mentors() {
                         name={item?.domain}
                         to={item?.domain}
                       />
-                    ) : null
+                    ) : (
+                      ""
+                    )
                   )}
                 </div>
                 {/* <div className={styles.expertiseRow}>

@@ -1,17 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-<<<<<<< HEAD
-import {
-  collection,
-  doc,
-  getDocs,
-  getFirestore,
-  updateDoc,
-  where,
-} from "firebase/firestore";
-import { query } from "express";
-=======
 import { getFirestore } from "firebase/firestore";
 import {
   doc,
@@ -22,7 +11,6 @@ import {
   where,
   setDoc,
 } from "firebase/firestore";
->>>>>>> 25022db0516e0784b49c23236056dbab31ce408e
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -40,8 +28,6 @@ const analytics = getAnalytics(app);
 const auth = getAuth();
 const db = getFirestore(app);
 
-<<<<<<< HEAD
-=======
 export const updateUserInDatabse = async (uid, data) => {
   try {
     return await updateDoc(doc(db, "Users", uid), data);
@@ -74,5 +60,4 @@ export const addPaymentInDatabase = async (uid, data) => {
   }
 };
 
->>>>>>> 25022db0516e0784b49c23236056dbab31ce408e
 export { app, auth, db, analytics };
