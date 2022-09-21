@@ -145,14 +145,14 @@ const MentorProfile = () => {
           </div>
 
           <div className={styles.mentor_contact}>
-            <button>
+            {/* <button>
               <Link to={`/schedule/${mentor?.email}`} className={styles.link}>
                 Schedule
               </Link>
-            </button>
+            </button> */}
             <button style={{ marginLeft: "2rem" }}>
               <Link to={`/payment/${mentor?.email}`} className={styles.link}>
-                Pay
+                Schedule
               </Link>
             </button>
             <p>Contact</p>
@@ -168,7 +168,7 @@ const MentorProfile = () => {
       </div>
 
       <div className={styles.mentor_subscribe}>
-        <img src="/images/Ellipse 468.svg" alt="" />
+        <img src={mentor?.image} alt="" />
         <h1>Subscibe to {mentor?.name}</h1>
         <p>
           Subscribe for free to receive notification anout upcoming events,

@@ -118,16 +118,30 @@ function Mentors() {
             {expertiseSelected ? (
               <div className="animate__animated animate__fadeInUp">
                 <div className={styles.test}>
-                  {expertiseArray.map((item, index) =>
-                    item?.domain !== "" ? (
+                  {/* {expertiseArray?.domain?.map((item, index) =>
+                    item !== "" ? (
                       <Expertise
                         key={index + Math.random()}
                         img="/images/bussiness.svg"
-                        name={item?.domain}
-                        to={item?.domain}
+                        name={item}
+                        to={item}
                       />
                     ) : null
-                  )}
+                  )} */}
+                  {/* {expertiseArray.map((item) => {
+                    item?.domain?.length > 0 &&
+                      item?.domain?.map(
+                        (d, index) =>
+                          d !== "" && (
+                            <Expertise
+                              key={index + Math.random()}
+                              img="/images/bussiness.svg"
+                              name={d}
+                              to={d}
+                            />
+                          )
+                      );
+                  })} */}
                 </div>
                 {/* <div className={styles.expertiseRow}>
                   <Expertise

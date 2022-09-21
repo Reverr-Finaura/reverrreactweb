@@ -10,7 +10,6 @@ import "../../components/Clock/Clock.css";
 import { InlineWidget } from "react-calendly";
 import "animate.css";
 import axios from "axios";
-import GoogleLogin from "react-google-login";
 import { useNavigate, useParams } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { useSelector } from "react-redux";
