@@ -4,9 +4,27 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { idGen } from "../../util/idGen";
 import { useSelector } from "react-redux";
+import { selectUser } from "../../features/userSlice";
+import { addPaymentInDatabase, getUserFromDatabase } from "../../firebase";
+import { updateCurrentUser } from "firebase/auth";
+import { useParams } from "react-router-dom";
 
 const Payment = () => {
   const [orderToken, setOrderToken] = useState(null);
+
+  const user = useSelector(selectUser);
+  console.log(user);
+  const { mentorEmail } = useParams();
+
+  const getUser = async () => {
+    await getUserFromDatabase(user.uid)
+      .then((user) => console.log(user))
+      .catch((err) => console.log(err));
+  };
+
+  useEffect(() => {
+    getUser();
+  });
 
   var orderID = idGen(12);
   //   console.log(orderID);
@@ -31,7 +49,7 @@ const Payment = () => {
   const order = {
     id: orderID,
     currency: "INR",
-    amount: amt,
+    amount: 0,
     customer_id: customerID,
     customer_phone: customerPhone,
   };
@@ -42,7 +60,7 @@ const Payment = () => {
 
   const getToken = async () => {
     const res = await axios
-      .post("https://arcane-shelf-91993.herokuapp.com/order", order, {
+      .post("https://reverrserver.herokuapp.com/webcftoken", order, {
         headers: headers,
       })
       .then((res) => {
@@ -72,12 +90,47 @@ const Payment = () => {
       "cardlessemi",
     ],
     orderToken: orderToken,
-    onSuccess: (data) => {
+
+    onSuccess: async (data) => {
+      console.log(data);
       console.log("Success");
+      console.log(mentorEmail);
+      // await upda
+      const user = await getUserFromDatabase(user.uid);
+      await updateCurrentUser(user.uid, {
+        ...user,
+        mentors: [...user.mentors],
+      });
+
+      await addPaymentInDatabase(idGen(20), {
+        orderAmount: data.transactionAmount,
+        orderId: data.orderId,
+        paymentMode: data.activePaymentMethod,
+        referenceId: null,
+        signature: null,
+        txMsg: data.txMsg,
+        txStatus: data.txStatus,
+        txTime: Date.now().toISOString(),
+        user: user.email,
+        vendor: mentorEmail,
+      });
     },
-    onFailure: (data) => {
+    onFailure: async (data) => {
+      console.log(data);
       console.log(data.order.errorText);
       console.log("Failed");
+      await addPaymentInDatabase(idGen(20), {
+        orderAmount: data.transactionAmount,
+        orderId: data.orderId,
+        paymentMode: data.activePaymentMethod,
+        referenceId: null,
+        signature: null,
+        txMsg: data.txMsg,
+        txStatus: data.txStatus,
+        txTime: Date.now().toISOString(),
+        user: user.email,
+        vendor: mentorEmail,
+      });
     },
     style: {
       backgroundColor: "#ffffff",

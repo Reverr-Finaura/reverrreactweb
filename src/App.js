@@ -93,7 +93,7 @@ function App() {
 
   return (
     <>
-      {/* <Toaster />
+      <Toaster />
       <Routes>
         <Route path="/" element={<Home />} />
         {!user ? (
@@ -122,8 +122,8 @@ function App() {
         <Route path="/startup-verification" element={<Verification />} />
         <Route path="/schedule" element={<Schedule />}></Route>
         <Route path="/knowledge" element={<Knowledge />}></Route>
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes> */}
+        {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
+      </Routes>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/knowledge" element={<Knowledge />}></Route>
