@@ -8,6 +8,7 @@ import { db } from "../../firebase";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setPlans } from "../../features/plansSlice";
+import ExpertiseItem from "../../components/ExpertiseItem/ExpertiseItem";
 
 const MentorProfile = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -80,11 +81,6 @@ const MentorProfile = () => {
                 <div className={styles.detail}>
                   <h5>Rating</h5>
                   <p>
-                    {/* {rating(mentor)} */}
-                    {/* <img src="/images/star.png" alt="" />
-                    <img src="/images/star.png" alt="" />
-                    <img src="/images/star.png" alt="" />
-                    <img src="/images/star.png" alt="" /> */}
                     {ratings.map((item, index) => {
                       return (
                         <img
@@ -125,7 +121,16 @@ const MentorProfile = () => {
           <div className={styles.areaofExpertise}>
             <h1 className={styles.h1_tag}>Area Of Expertise</h1>
             <div className={styles.mentor_expertise}>
-              <div className={styles.expertise}>
+              {
+                mentor?.domain?.map((item, index) => (
+                  <ExpertiseItem
+                    img={index + 1}
+                    key={index + Math.random()}
+                    expertise={item}
+                  />
+                ))
+
+                /* <div className={styles.expertise}>
                 <img src="/images/expertise1.svg" alt="" />
                 <p>Market Research</p>
               </div>
@@ -140,7 +145,8 @@ const MentorProfile = () => {
               <div className={styles.expertise}>
                 <img src="/images/expertise4.svg" alt="" />
                 <p>Finance and Accounting</p>
-              </div>
+              </div> */
+              }
             </div>
           </div>
 
