@@ -10,6 +10,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase";
 import "animate.css";
 import Industry from "../../components/Industry/Industry";
+import { async } from "@firebase/util";
 
 function Mentors() {
   // const mentorOfWeek = [
@@ -22,8 +23,10 @@ function Mentors() {
   const [width, setWidth] = useState(window.innerWidth);
   const [expertiseSelected, setExpertiseSelected] = useState(true);
   const [industrySelected, setIndustrySelected] = useState(false);
+  const [mentorArray, setMentorArray] = useState([]);
   const [expertiseArray, setExpertiseArray] = useState([]);
   const data = [];
+  const data2 = [];
 
   const updateWidth = () => {
     setWidth(window.innerWidth);
@@ -42,11 +45,27 @@ function Mentors() {
       querySnapshot.forEach((doc) => {
         data.push(doc.data());
       });
-      setExpertiseArray(data);
+      setMentorArray(data);
     }
 
     fetchMentorExpertise();
   }, []);
+
+  useEffect(() => {
+    async function fetchExpertise() {
+      const expertiseRef = collection(db, "Expertise");
+      const q = query(expertiseRef);
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        data2.push(doc.data());
+      });
+      setExpertiseArray(data2);
+    }
+
+    fetchExpertise();
+  }, []);
+
+  console.log(expertiseArray);
 
   return (
     <>
@@ -118,60 +137,20 @@ function Mentors() {
             {expertiseSelected ? (
               <div className="animate__animated animate__fadeInUp">
                 <div className={styles.test}>
-                  {expertiseArray.map((item, index) =>
-                    item?.domain !== "" ? (
-                      <Expertise
-                        key={index + Math.random()}
-                        img="/images/bussiness.svg"
-                        name={item?.domain}
-                        to={item?.domain}
-                      />
-                    ) : (
-                      ""
-                    )
-                  )}
+                  {expertiseArray?.map((item, index) => (
+                    <Expertise
+                      key={index + Math.random()}
+                      img="/images/bussiness.svg"
+                      name={item?.name}
+                      to={item?.name}
+                    />
+                  ))}
                 </div>
-                {/* <div className={styles.expertiseRow}>
-                  <Expertise
-                    img="/images/bussiness.svg"
-                    name="Bussiness"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                  />
-                  <Expertise
-                    img="/images/bussiness.svg"
-                    name="Bussiness"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                  />
-                </div>
-                <div className={styles.expertiseRow}>
-                  <Expertise
-                    img="/images/bussiness.svg"
-                    name="Bussiness"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                  />
-                  <Expertise
-                    img="/images/bussiness.svg"
-                    name="Bussiness"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                  />
-                </div>
-                <div className={styles.expertiseRow}>
-                  <Expertise
-                    img="/images/bussiness.svg"
-                    name="Bussiness"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                  />
-                  <Expertise
-                    img="/images/bussiness.svg"
-                    name="Bussiness"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
-                  />
-                </div> */}
               </div>
             ) : (
               <div className="animate__animated animate__fadeInUp">
                 <div className={styles.test}>
-                  {expertiseArray.map((item, index) =>
+                  {mentorArray.map((item, index) =>
                     item?.industry !== "" ? (
                       <Industry
                         key={index + Math.random()}

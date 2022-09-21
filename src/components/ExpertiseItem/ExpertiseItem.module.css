@@ -1,0 +1,35 @@
+.expertise {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin: 1.5% auto;
+}
+
+.expertise > img {
+  height: 4rem;
+}
+
+.expertise > p {
+  font-size: 27px;
+  font-weight: 600;
+  color: rgba(32, 32, 32, 0.75);
+}
+
+@media (max-width: 600px) {
+  .expertise {
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  .expertise {
+    justify-content: center;
+  }
+  .expertise > img {
+    height: 2rem;
+  }
+
+  .expertise > p {
+    font-size: 16px;
+  }
+}

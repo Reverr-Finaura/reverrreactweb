@@ -12,43 +12,13 @@ import { db } from "../../firebase";
 import { useParams } from "react-router-dom";
 
 function Mentor() {
-  const { clickedOn, type } = useParams();
+  const { type } = useParams();
   const [width, setWidth] = useState(window.innerWidth);
   const [mentorsArray, setMentorsArray] = useState([]);
+  const [usersArray, setUsersArray] = useState([]);
   const data = [];
-  // const prices = [
-  //   { id: "1", price: "Rs.499" },
-  //   { id: "2", price: "Rs.749" },
-  //   { id: "3", price: "Rs.999" },
-  //   { id: "4", price: "Rs.999+" },
-  // ];
-
-  // const mentors = [
-  //   {
-  //     id: "1",
-  //     name: "Jimmy Joel",
-  //     img: "/images/mentorimg1.svg",
-  //     type: "Market Researcher",
-  //     rating: "⭐⭐⭐",
-  //     noofReviews: "76 Reviews",
-  //   },
-  //   {
-  //     id: "2",
-  //     name: "Jimmy Joel",
-  //     img: "/images/mentorimg1.svg",
-  //     type: "Market Researcher",
-  //     rating: "⭐⭐⭐",
-  //     noofReviews: "76 Reviews",
-  //   },
-  //   {
-  //     id: "3",
-  //     name: "Jimmy Joel",
-  //     img: "/images/mentorimg1.svg",
-  //     type: "Market Researcher",
-  //     rating: "⭐⭐⭐",
-  //     noofReviews: "76 Reviews",
-  //   },
-  // ];
+  const data2 = [];
+  const data3 = [];
 
   const updateWidth = () => {
     setWidth(window.innerWidth);
@@ -60,23 +30,45 @@ function Mentor() {
   }, []);
 
   useEffect(() => {
-    async function fetchMentorExpertise() {
-      const usersRef = collection(db, "Users");
-      const q = query(
-        usersRef,
-        where("userType", "==", "Mentor"),
-        where(clickedOn, "==", type)
-      );
+    async function fetchMentors() {
+      const mentorsRef = collection(db, "Expertise");
+      const q = query(mentorsRef, where("name", "==", type));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         data.push(doc.data());
       });
-      console.log(data);
       setMentorsArray(data);
     }
 
-    fetchMentorExpertise();
+    fetchMentors();
   }, []);
+
+  useEffect(() => {
+    async function fetchMentors() {
+      const usersRef = collection(db, "Users");
+      const q = query(usersRef, where("userType", "==", "Mentor"));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        data2.push(doc.data());
+      });
+      setUsersArray(data2);
+    }
+
+    fetchMentors();
+  }, []);
+
+  function format() {
+    for (var i = 0; i < mentorsArray[0]?.mentors.length; i++) {
+      for (var j = 0; j < usersArray.length; j++) {
+        if (mentorsArray[0]?.mentors[i] === usersArray[j].name) {
+          data3.push({ name: mentorsArray[0]?.mentors[i], ...usersArray[j] });
+        }
+      }
+    }
+  }
+
+  format();
+
   return (
     <>
       <PhnSidebar />
@@ -92,57 +84,16 @@ function Mentor() {
             <div className={styles.heading}>
               <h1>Bussiness Mentors</h1>
             </div>
-            {/* <div className={styles.prices}>
-              {prices.map((price) => (
-                <Price key={price.id} price={price.price} />
-              ))}
-            </div> */}
-            {/* <div className={styles.mentorRow}>
-              {mentors.map((mentor) => (
-                <MentorComponent
-                  key={mentor.id}
-                  name={mentor.name}
-                  img={mentor.img}
-                  type={mentor.type}
-                  rating={mentor.rating}
-                  noofReviews={mentor.noofReviews}
-                />
-              ))}
-            </div>
-            <div className={styles.mentorRow}>
-              {mentors.map((mentor) => (
-                <MentorComponent
-                  key={mentor.id}
-                  name={mentor.name}
-                  img={mentor.img}
-                  type={mentor.type}
-                  rating={mentor.rating}
-                  noofReviews={mentor.noofReviews}
-                />
-              ))}
-            </div>
-            <div className={styles.mentorRow}>
-              {mentors.map((mentor) => (
-                <MentorComponent
-                  key={mentor.id}
-                  name={mentor.name}
-                  img={mentor.img}
-                  type={mentor.type}
-                  rating={mentor.rating}
-                  noofReviews={mentor.noofReviews}
-                />
-              ))}
-            </div> */}
             <div className={styles.mentors}>
-              {mentorsArray.map((item, index) => (
+              {data3.map((item, index) => (
                 <MentorComponent
                   key={index + Math.random()}
-                  name={item?.name}
+                  name={item.name}
                   img={item?.image}
-                  type={item?.domain}
+                  type={type}
                   rating={item?.totalRating}
                   to={item?.email}
-                  // noofReviews={item?.noofReviews}
+                  noofReviews={item?.noofReviews}
                 />
               ))}
             </div>
