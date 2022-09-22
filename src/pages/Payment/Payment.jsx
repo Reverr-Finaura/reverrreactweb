@@ -12,12 +12,18 @@ import {
 } from "../../firebase";
 import { updateCurrentUser } from "firebase/auth";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { selectMentor } from "../../features/scheduleSlice";
 
 const Payment = () => {
   const [orderToken, setOrderToken] = useState(null);
   const user = useSelector(selectUser);
   console.log(user);
   const { mentorEmail } = useParams();
+
+  const scheduleMentor = useSelector(selectMentor);
+
+  const navigate = useNavigate();
 
   var orderID = idGen(12);
   //   console.log(orderID);
@@ -103,6 +109,8 @@ const Payment = () => {
         user: user.email,
         vendor: mentorEmail,
       });
+
+      navigate(`/schedule/${scheduleMentor?.email}`);
     },
     onFailure: async (data) => {
       await addPaymentInDatabase(idGen(20), {

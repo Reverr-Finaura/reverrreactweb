@@ -9,6 +9,7 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setPlans } from "../../features/plansSlice";
 import ExpertiseItem from "../../components/ExpertiseItem/ExpertiseItem";
+import { setScheduleMentor } from "../../features/scheduleSlice";
 
 const MentorProfile = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -121,43 +122,25 @@ const MentorProfile = () => {
           <div className={styles.areaofExpertise}>
             <h1 className={styles.h1_tag}>Area Of Expertise</h1>
             <div className={styles.mentor_expertise}>
-              {
-                mentor?.domain?.map((item, index) => (
-                  <ExpertiseItem
-                    img={index + 1}
-                    key={index + Math.random()}
-                    expertise={item}
-                  />
-                ))
-
-                /* <div className={styles.expertise}>
-                <img src="/images/expertise1.svg" alt="" />
-                <p>Market Research</p>
-              </div>
-              <div className={styles.expertise}>
-                <img src="/images/expertise2.svg" alt="" />
-                <p>Operation</p>
-              </div>
-              <div className={styles.expertise}>
-                <img src="/images/expertise3.svg" alt="" />
-                <p>Branding</p>
-              </div>
-              <div className={styles.expertise}>
-                <img src="/images/expertise4.svg" alt="" />
-                <p>Finance and Accounting</p>
-              </div> */
-              }
+              {mentor?.domain?.map((item, index) => (
+                <ExpertiseItem
+                  img={index + 1}
+                  key={index + Math.random()}
+                  expertise={item}
+                />
+              ))}
             </div>
           </div>
 
           <div className={styles.mentor_contact}>
-            {/* <button>
-              <Link to={`/schedule/${mentor?.email}`} className={styles.link}>
-                Schedule
-              </Link>
-            </button> */}
             <button style={{ marginLeft: "2rem" }}>
-              <Link to={`/payment/${mentor?.email}`} className={styles.link}>
+              <Link
+                onClick={() => {
+                  dispatch(setScheduleMentor(mentor));
+                }}
+                to={`/payment/${mentor?.email}`}
+                className={styles.link}
+              >
                 Schedule
               </Link>
             </button>
