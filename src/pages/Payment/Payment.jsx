@@ -14,6 +14,8 @@ import {
 import { updateCurrentUser } from "firebase/auth";
 import { useParams } from "react-router-dom";
 import { toast, Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { selectMentor } from "../../features/scheduleSlice";
 
 const Payment = () => {
   const [orderToken, setOrderToken] = useState(null);
@@ -21,6 +23,10 @@ const Payment = () => {
   const [fetchedMentor, setFetchedMentor] = useState("");
   const user = useSelector(selectUser);
   const { mentorEmail } = useParams();
+
+  const scheduleMentor = useSelector(selectMentor);
+
+  const navigate = useNavigate();
 
   var orderID = idGen(12);
 
@@ -127,6 +133,8 @@ const Payment = () => {
       await addPaymentInDatabase(paymentId, data);
       toast.success("Payment Successful");
       console.log(paymentId, "--", data);
+
+      navigate(`/schedule/${scheduleMentor?.email}`);
     },
     onFailure: async (data) => {
       toast.error("Payment Failed");
