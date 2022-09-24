@@ -43,7 +43,7 @@ const Payment = () => {
   const order = {
     id: orderID,
     currency: "INR",
-    amount: 1,
+    amount: amt,
     customer_id: customerID,
     customer_phone: customerPhone,
   };
