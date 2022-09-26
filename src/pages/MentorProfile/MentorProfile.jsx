@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { setPlans } from "../../features/plansSlice";
 import ExpertiseItem from "../../components/ExpertiseItem/ExpertiseItem";
 import { setScheduleMentor } from "../../features/scheduleSlice";
+import Footer from "../Footer/Footer";
 
 const MentorProfile = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -66,10 +67,10 @@ const MentorProfile = () => {
         </div>
         <div className={styles.profile_container}>
           <div className={styles.mentor_intro}>
-            <img src={mentor?.image} alt="" />
+            <img className={styles.mentorImg} src={mentor?.image} alt="" />
             <div className={styles.about_mentor}>
               <h1 className={styles.h1_tag}>{mentor?.name}</h1>
-              <p>{mentor?.domain}</p>
+              <p>{mentor?.domain[0]}</p>
               <div className={styles.mentor_details}>
                 <div className={styles.detail}>
                   <h5>Industry</h5>
@@ -99,7 +100,7 @@ const MentorProfile = () => {
           </div>
 
           <div className={styles.mentor_bio}>
-            <h1 className={styles.h1_tag}>{mentor?.about}</h1>
+            <p className={styles.h1_tag}>{mentor?.about}</p>
             {/* <h1 className={styles.h1_tag}>
               “I like being aware of new things around me ”
             </h1>
@@ -168,6 +169,7 @@ const MentorProfile = () => {
           <button>Subscribe for free</button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

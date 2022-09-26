@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import styles from "./Sidebar.module.css";
+import { motion } from "framer-motion";
 
 function Sidebar() {
   const [isHoveringSidebar, setIsHoveringSidebar] = useState(false);
@@ -46,7 +47,10 @@ function Sidebar() {
   }, [prevScrollPos, visible, handleScroll]);
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 1 }}
       style={{
         padding: isHoveringSidebar ? "1rem 10rem 1rem 1rem" : "1rem",
         left: visible ? "auto" : "-100px",
@@ -189,7 +193,7 @@ function Sidebar() {
           </p>
         </div>
       </NavLink>
-    </div>
+    </motion.div>
   );
 }
 

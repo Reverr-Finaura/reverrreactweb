@@ -45,11 +45,14 @@
 .mentor_intro {
   display: flex;
   margin: 1rem auto;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .mentor_intro > img {
-  height: 16rem;
+  width: 30%;
+  object-fit: cover;
 }
 
 .h1_tag {
@@ -255,7 +258,7 @@
   }
 
   .mentor_intro > img {
-    height: 9rem;
+    width: 30%;
   }
 
   .h1_tag {
