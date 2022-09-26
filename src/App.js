@@ -69,6 +69,7 @@ import ThinkingOfStartup from "./pages/AfterKnowledge/ThinkingOfStartup/Thinking
 import ThinkingOfStartupSlide from "./pages/AfterKnowledge/ThinkingOfStartup/ThinkingOfStartupSlide";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Payment from "./pages/Payment/Payment";
+import ThankYou from "./pages/ThankYou/ThankYou";
 function App() {
   const user = useSelector(selectUser);
   const newUser = useSelector(selectNewUser);
@@ -140,6 +141,7 @@ function App() {
         ></Route>
         <Route path="/community" element={<Community />}></Route>
         <Route path="/schedule/:mentorEmail" element={<Schedule />}></Route>
+        <Route path="/thankyou/:mentorEmail" element={<ThankYou />}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/betaslide" element={<BetaSlide />}></Route>
         <Route path="/eeslides" element={<EESlides />}></Route>

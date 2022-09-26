@@ -7,14 +7,17 @@ import Footer from "../Footer/Footer";
 import "../../components/Calendar/Calendar.css";
 import "../../components/TimePicker/TimePicker.css";
 import "../../components/Clock/Clock.css";
-import { InlineWidget } from "react-calendly";
+import { useCalendlyEventListener, InlineWidget } from "react-calendly";
 import "animate.css";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
+import { selectMentor } from "../../features/scheduleSlice";
 
 function Schedule() {
   const [width, setWidth] = useState(window.innerWidth);
+  const navigate = useNavigate();
+  const scheduleMentor = useSelector(selectMentor);
   const { mentorEmail } = useParams();
   const user = useSelector(selectUser);
 
@@ -28,6 +31,21 @@ function Schedule() {
     guests: [mentorEmail?.toString()],
     date: new Date(Date.now() + 86400000),
   };
+
+  // const prefill = {
+  //   email: "akaditya394@gmail.com",
+  //   name: "Aditya Kumar",
+  //   guests: ["akadiitya2020@gmail.com"],
+  //   date: new Date(Date.now() + 86400000),
+  // };
+
+  useCalendlyEventListener({
+    onDateAndTimeSelected: () => console.log("onDateAndTimeSelected"),
+    onEventScheduled: (e) => {
+      navigate(`/thankyou/${scheduleMentor?.email}`);
+      // console.log(e.data.payload);
+    },
+  });
 
   useEffect(() => {
     window.addEventListener("resize", updateWidth);

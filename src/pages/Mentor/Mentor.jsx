@@ -82,7 +82,7 @@ function Mentor() {
               <input type="text" placeholder="Search here" />
             </div>
             <div className={styles.heading}>
-              <h1>Bussiness Mentors</h1>
+              <h1>{type} Mentors</h1>
             </div>
             <div className={styles.mentors}>
               {data3.map((item, index) => (

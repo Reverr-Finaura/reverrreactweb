@@ -45,6 +45,8 @@ const Payment = () => {
     }
   }
 
+  // var amt = 1;
+
   const order = {
     id: orderID,
     currency: "INR",
@@ -97,6 +99,8 @@ const Payment = () => {
         mentors: [...user.mentors],
       });
 
+      navigate(`/schedule/${scheduleMentor?.email}`);
+
       await addPaymentInDatabase(idGen(20), {
         orderAmount: data.transactionAmount,
         orderId: data.orderId,
@@ -109,8 +113,6 @@ const Payment = () => {
         user: user.email,
         vendor: mentorEmail,
       });
-
-      navigate(`/schedule/${scheduleMentor?.email}`);
     },
     onFailure: async (data) => {
       await addPaymentInDatabase(idGen(20), {
