@@ -1,24 +1,27 @@
 import styles from "./Payment.module.css";
 import { cashfreeSandbox, cashfreeProd } from "cashfree-dropjs";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { idGen } from "../../util/idGen";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
 import {
   addPaymentInDatabase,
+  getMentorFromDatabase,
   getUserFromDatabase,
   updateUserInDatabse,
 } from "../../firebase";
 import { updateCurrentUser } from "firebase/auth";
 import { useParams } from "react-router-dom";
+import { toast, Toaster } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { selectMentor } from "../../features/scheduleSlice";
 
 const Payment = () => {
   const [orderToken, setOrderToken] = useState(null);
+  const [fetchedUser, setFetchedUser] = useState("");
+  const [fetchedMentor, setFetchedMentor] = useState("");
   const user = useSelector(selectUser);
-  console.log(user);
   const { mentorEmail } = useParams();
 
   const scheduleMentor = useSelector(selectMentor);
@@ -26,10 +29,8 @@ const Payment = () => {
   const navigate = useNavigate();
 
   var orderID = idGen(12);
-  //   console.log(orderID);
 
   const plans = useSelector((state) => state.plans.plans);
-  console.log(plans);
 
   const customerID = "xyz";
   const customerPhone = "1234567890";
@@ -60,24 +61,39 @@ const Payment = () => {
   };
 
   const getToken = async () => {
-    const res = await axios
-      .post("http://localhost:8080/order", order, {
+    await axios
+      .post("https://reverrserver.herokuapp.com/webcftoken", order, {
         headers: headers,
       })
       .then((res) => {
         setOrderToken(() => res.data.token);
-        console.log(orderToken);
+        // console.log(orderToken);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  useEffect(() => {
-    getToken();
+  const getUser = useCallback(async () => {
+    const results = await getUserFromDatabase(user.uid, "Users");
+    setFetchedUser(results);
   }, []);
 
-  console.log(orderToken);
+  const getMentor = useCallback(async () => {
+    const results = await getMentorFromDatabase(mentorEmail, "Users");
+    setFetchedMentor(results);
+  }, []);
+
+  console.log("User Data -", fetchedUser);
+  console.log("Mentor Data -", fetchedMentor);
+
+  useEffect(() => {
+    getToken();
+    getUser();
+    getMentor();
+  }, []);
+
+  console.log("Order Token-", orderToken);
 
   const dropConfig = {
     components: [
@@ -93,40 +109,53 @@ const Payment = () => {
     orderToken: orderToken,
 
     onSuccess: async (data) => {
-      const user = await getUserFromDatabase(user.uid, "Users");
       await updateUserInDatabse(user.uid, "Users", {
-        ...user,
-        mentors: [...user.mentors],
+        ...fetchedUser,
+        mentors: [...fetchedUser.mentors, mentorEmail],
       });
+
+      await updateUserInDatabse(fetchedMentor.email, "Users", {
+        ...fetchedMentor,
+        clients: [...fetchedMentor.clients, user.email],
+      });
+
+      data = {
+        orderAmount: data.transaction.transactionAmount || "",
+        orderId: data.order.orderId || "",
+        paymentMode: data.order.activePaymentMethod || "",
+        referenceId: "",
+        signature: "",
+        txMsg: data.transaction.txMsg || "",
+        txStatus: data.transaction.txStatus || "",
+        txTime: new Date().toISOString(),
+        user: user.email,
+        vendor: mentorEmail,
+      };
+      const paymentId = idGen(20);
+      await addPaymentInDatabase(paymentId, data);
+      toast.success("Payment Successful");
+      console.log(paymentId, "--", data);
 
       navigate(`/schedule/${scheduleMentor?.email}`);
-
-      await addPaymentInDatabase(idGen(20), {
-        orderAmount: data.transactionAmount,
-        orderId: data.orderId,
-        paymentMode: data.activePaymentMethod,
-        referenceId: null,
-        signature: null,
-        txMsg: data.txMsg,
-        txStatus: data.txStatus,
-        txTime: Date.now().toISOString(),
-        user: user.email,
-        vendor: mentorEmail,
-      });
     },
     onFailure: async (data) => {
-      await addPaymentInDatabase(idGen(20), {
-        orderAmount: data.transactionAmount,
-        orderId: data.orderId,
-        paymentMode: data.activePaymentMethod,
-        referenceId: null,
-        signature: null,
-        txMsg: data.txMsg,
-        txStatus: data.txStatus,
-        txTime: Date.now().toISOString(),
+      toast.error("Payment Failed");
+      console.log(data);
+      data = {
+        orderAmount: data.transaction.transactionAmount || "",
+        orderId: data.order.orderId || "",
+        paymentMode: data.order.activePaymentMethod || "",
+        referenceId: "",
+        signature: "",
+        txMsg: data.transaction.txMsg || "",
+        txStatus: data.transaction.txStatus || "",
+        txTime: new Date().toISOString(),
         user: user.email,
         vendor: mentorEmail,
-      });
+      };
+      const paymentId = idGen(20);
+      await addPaymentInDatabase(paymentId, data);
+      console.log(paymentId, "--", data);
     },
     style: {
       backgroundColor: "#ffffff",
@@ -162,6 +191,7 @@ const Payment = () => {
       >
         Loading...
       </div>
+      <Toaster />
     </div>
   );
 };
