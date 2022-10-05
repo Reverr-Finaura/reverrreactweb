@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import KnowledgeNavbar from "../../components/KnowledgeNavbar/KnowledgeNavbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import PhnSidebar from "../../components/PhnSidebar/PhnSidebar";
-import styles from "../Mentors/Mentors.module.css";
+import styles from "./Dashboard.module.css";
 import Footer from "../Footer/Footer";
 
 function Dashboard() {
@@ -19,7 +19,7 @@ function Dashboard() {
   return (
     <>
       <PhnSidebar />
-      <div className={styles.knowledge}>
+      <div className={styles.dashboard}>
         <KnowledgeNavbar />
         <div className={styles.body}>
           <Sidebar isVisible={width >= 600 ? true : false} />
