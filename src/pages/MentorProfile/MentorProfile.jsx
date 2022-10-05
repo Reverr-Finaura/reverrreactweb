@@ -147,11 +147,17 @@ const MentorProfile = () => {
             </button>
             <p>Contact</p>
             <div className={styles.contact_option}>
-              <img src="/images/phone-logo.svg" alt="" />
-              <img src="/images/gmail-logo.svg" alt="" />
+              <a href={`tel:${mentor?.mobile}`}>
+                <img src="/images/phone-logo.svg" alt="" />
+              </a>
+              <a href={`mailto:${mentor?.email}`}>
+                <img src="/images/gmail-logo.svg" alt="" />
+              </a>
+              <a href={mentor?.linkedin}>
+                <img src="/images/linkedIn3d.png" alt="" />
+              </a>
               {/* <img src="/images/instagram-logo.svg" alt="" />
               <img src="/images/twitter3d.png" alt="" /> */}
-              <img src="/images/linkedIn3d.png" alt="" />
             </div>
           </div>
         </div>

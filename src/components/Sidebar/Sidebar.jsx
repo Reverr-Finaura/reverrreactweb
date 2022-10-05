@@ -51,6 +51,7 @@ function Sidebar() {
       initial={{ opacity: 0, x: -100 }}
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 1 }}
+      viewport={{ once: true }}
       style={{
         padding: isHoveringSidebar ? "1rem 10rem 1rem 1rem" : "1rem",
         left: visible ? "auto" : "-100px",

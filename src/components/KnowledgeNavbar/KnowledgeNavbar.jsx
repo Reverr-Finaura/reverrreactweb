@@ -26,6 +26,7 @@ function KnowledgeNavbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
       className={styles.navbar}
+      viewport={{ once: true }}
     >
       <MenuIcon
         onClick={() => dispatch(phnSidebarVisible())}

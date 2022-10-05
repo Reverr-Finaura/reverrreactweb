@@ -13,7 +13,7 @@ import { toast } from "react-hot-toast";
 
 function Auth() {
   const navigate = useNavigate();
-  const [userType, setUserType] = useState("FOUNDER");
+  const [userType, setUserType] = useState("Founder");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -181,7 +181,7 @@ function Auth() {
                 Login Here
               </Link>
             </div>
-            <div className={styles.links}>
+            {/* <div className={styles.links}>
               <p>
                 {`Want to join as a ${
                   userType === "FOUNDER" ? "MENTOR" : "FOUNDER"
@@ -195,7 +195,7 @@ function Auth() {
               >
                 Apply Here
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
