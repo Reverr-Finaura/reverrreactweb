@@ -149,8 +149,8 @@ const MentorProfile = () => {
             <div className={styles.contact_option}>
               <img src="/images/phone-logo.svg" alt="" />
               <img src="/images/gmail-logo.svg" alt="" />
-              <img src="/images/instagram-logo.svg" alt="" />
-              <img src="/images/twitter3d.png" alt="" />
+              {/* <img src="/images/instagram-logo.svg" alt="" />
+              <img src="/images/twitter3d.png" alt="" /> */}
               <img src="/images/linkedIn3d.png" alt="" />
             </div>
           </div>
