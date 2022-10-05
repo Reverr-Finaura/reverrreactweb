@@ -13,7 +13,7 @@ import { toast } from "react-hot-toast";
 
 function Auth() {
   const navigate = useNavigate();
-  const [userType, setUserType] = useState("Mentor");
+  const [userType, setUserType] = useState("Founder");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
