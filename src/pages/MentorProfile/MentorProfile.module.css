@@ -156,6 +156,11 @@
   padding: 0.7rem 3rem;
   cursor: pointer;
   margin-bottom: 4rem;
+  transition: all 200ms;
+}
+
+.mentor_contact > button:hover {
+  box-shadow: none;
 }
 
 .mentor_contact > p {
