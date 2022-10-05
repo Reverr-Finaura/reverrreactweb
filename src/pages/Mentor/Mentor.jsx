@@ -4,8 +4,6 @@ import KnowledgeNavbar from "../../components/KnowledgeNavbar/KnowledgeNavbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import PhnSidebar from "../../components/PhnSidebar/PhnSidebar";
 import Footer from "../Footer/Footer";
-import Expertise from "../../components/Expertise/Expertise";
-import Price from "../../components/Price/Price";
 import MentorComponent from "../../components/MentorComponent/MentorComponent";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase";
@@ -68,6 +66,7 @@ function Mentor() {
   }
 
   format();
+  console.log(data3);
 
   return (
     <>
@@ -91,9 +90,8 @@ function Mentor() {
                   name={item.name}
                   img={item?.image}
                   type={type}
-                  rating={item?.totalRating}
+                  rating={item?.Rating}
                   to={item?.email}
-                  noofReviews={item?.noofReviews}
                 />
               ))}
             </div>
