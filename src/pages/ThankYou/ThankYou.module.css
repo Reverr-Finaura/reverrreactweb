@@ -166,6 +166,7 @@
   border: solid #d9d9d9 0.5rem;
   border-radius: 0.5rem;
   padding: 1rem 0;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .form {
@@ -182,6 +183,7 @@
   padding: 0.5rem 1rem;
   outline: none;
   border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .form > button {
@@ -192,6 +194,8 @@
   border: none;
   outline: none;
   border-radius: 0.2rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  cursor: pointer;
 }
 
 @media (max-width: 1024px) {
