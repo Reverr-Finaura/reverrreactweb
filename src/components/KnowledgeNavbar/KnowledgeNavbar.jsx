@@ -50,9 +50,6 @@ function KnowledgeNavbar() {
           <img src="/images/calender.svg" alt="" />
         </div>
         <div>
-          <img src="/images/chat.svg" alt="" />
-        </div>
-        <div>
           <img src="/images/profile.svg" alt="" />
         </div>
       </div>
