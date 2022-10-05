@@ -153,10 +153,7 @@ textarea {
 .form__heading {
   font-size: 35px;
 }
-.heading {
-  font-size: 25px;
-  opacity: 0.75;
-}
+
 .social__flex {
   display: flex;
   justify-content: space-around;

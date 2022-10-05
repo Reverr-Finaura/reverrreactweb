@@ -101,14 +101,14 @@ function FundingForm() {
           id=""
           placeholder="Years of Experience"
         />
-        <div className={styles.heading}>Interests</div>
+        <div className={styles.form__heading}>Interests</div>
         <div className={styles.input_flex}>
           <input type="text" className={styles.input} name="" id="" />
           <input type="text" className={styles.input} name="" id="" />
           <input type="text" className={styles.input} name="" id="" />
         </div>
 
-        <div className={styles.heading}>How can we meet</div>
+        <div className={styles.form__heading}>How can we meet</div>
         <div className={styles.social__flex}>
           <img
             className={styles.social__icons}

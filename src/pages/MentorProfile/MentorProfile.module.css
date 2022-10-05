@@ -45,18 +45,18 @@
 .mentor_intro {
   display: flex;
   margin: 1rem auto;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   width: 100%;
 }
 
 .mentor_intro > img {
-  width: 30%;
+  width: 25%;
   object-fit: cover;
 }
 
 .h1_tag {
-  font-size: 45px;
+  font-size: 40px;
   color: #202020;
   font-weight: 600;
   margin: 0 auto;
@@ -66,7 +66,7 @@
 .about_mentor > p {
   color: rgba(32, 32, 32, 0.75);
   text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.12);
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 500;
   margin-top: 0;
 }
@@ -79,14 +79,14 @@
 
 .detail > h5 {
   color: rgba(32, 32, 32, 0.75);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 600;
   margin: 0 auto;
 }
 
 .detail > p {
   color: #878787;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 400;
 }
 
@@ -101,7 +101,7 @@
 
 .mentor_bio > p {
   color: rgba(32, 32, 32, 0.75);
-  font-size: 30px;
+  font-size: 22px;
   font-weight: 500;
   margin-top: 3rem;
 }
@@ -126,11 +126,11 @@
 }
 
 .expertise > img {
-  height: 4rem;
+  height: 2rem;
 }
 
 .expertise > p {
-  font-size: 27px;
+  font-size: 22px;
   font-weight: 600;
   color: rgba(32, 32, 32, 0.75);
 }
@@ -187,13 +187,13 @@
 }
 
 .mentor_subscribe > img {
-  height: 12rem;
+  height: 10rem;
   margin-bottom: 2rem;
 }
 
 .mentor_subscribe > p {
   color: rgba(32, 32, 32, 0.75);
-  font-size: 27px;
+  font-size: 23px;
   font-weight: 500;
   width: 90%;
 }
@@ -209,7 +209,8 @@
   filter: drop-shadow(2px 3px 11px rgba(0, 0, 0, 0.4));
   border-radius: 10px;
   padding: 0.5rem 2rem;
-  font-size: 24px;
+  font-size: 20px;
+  outline: none;
   font-weight: 500;
 }
 
@@ -219,7 +220,7 @@
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 20px;
   color: #fff;
   padding: 0.4rem 2rem;
 }
@@ -262,10 +263,10 @@
   }
 
   .h1_tag {
-    font-size: 32px;
+    font-size: 27px;
   }
   .about_mentor > p {
-    font-size: 25px;
+    font-size: 22px;
   }
 
   .mentor_details {
@@ -273,10 +274,10 @@
   }
 
   .detail > h5 {
-    font-size: 17px;
+    font-size: 14px;
   }
   .detail > p {
-    font-size: 13px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -291,7 +292,7 @@
   }
 
   .mentor_bio > p {
-    font-size: 19px;
+    font-size: 13px;
   }
 
   .areaofExpertise {
@@ -310,7 +311,7 @@
 
   .mentor_contact > button,
   .mentor_contact > p {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .contact_option > img {
@@ -318,25 +319,25 @@
   }
 
   .mentor_subscribe > img {
-    height: 9rem;
+    height: 5rem;
   }
 
   .mentor_subscribe > p {
-    font-size: 23px;
+    font-size: 14px;
   }
 
   .mentor_subscribe > h1 {
-    font-size: 27px;
+    font-size: 24px;
   }
   .subscribe {
     flex-direction: column;
   }
   .subscribe > input {
-    font-size: 19px;
+    font-size: 13px;
     padding: 0.6rem 1rem;
   }
 
   .subscribe > button {
-    font-size: 19px;
+    font-size: 14px;
   }
 }
