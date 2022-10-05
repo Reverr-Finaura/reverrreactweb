@@ -9,6 +9,13 @@
   color: black;
   height: 20rem;
   justify-content: space-evenly;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  transition: all 200ms ease-in-out;
+}
+
+.mentor:hover {
+  box-shadow: none;
+  background-color: white;
 }
 
 .link {
