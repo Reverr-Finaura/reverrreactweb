@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem auto;
 }
 
 .body {
@@ -93,6 +92,26 @@
   gap: 1rem;
 }
 
+.section4 {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.headingsec4 {
+  text-align: center;
+  color: rgba(42, 114, 222, 0.75);
+  font-size: 2rem;
+  width: 60%;
+  margin: 1rem auto;
+}
+
+.blogs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: auto;
+  gap: 1rem;
+}
+
 @media (max-width: 600px) {
   .body {
     width: 100%;
@@ -139,5 +158,18 @@
     justify-content: space-around;
     text-align: center;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .blogs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .headingsec4 {
+    font-size: 1.5rem;
   }
 }

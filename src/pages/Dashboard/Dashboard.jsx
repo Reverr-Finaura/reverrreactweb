@@ -6,14 +6,41 @@ import styles from "./Dashboard.module.css";
 import Footer from "../Footer/Footer";
 import RecommendedCourse from "../../components/RecommendedCourse/RecommendedCourse";
 import { Calendar } from "react-calendar";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  limit,
+  query,
+} from "firebase/firestore";
+import { db } from "../../firebase";
+
 import "react-calendar/dist/Calendar.css";
+import Blog from "../../components/Blog/Blog";
 
 function Dashboard() {
   const [width, setWidth] = useState(window.innerWidth);
+  const [blogsArray, setBlogsArray] = useState([]);
+  const data = [];
 
   const updateWidth = () => {
     setWidth(window.innerWidth);
   };
+
+  useEffect(() => {
+    async function getBlogs() {
+      const blogRef = collection(db, "Blogs");
+      const q = query(blogRef, limit(3));
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        data.push(doc.data());
+      });
+      setBlogsArray(data);
+    }
+
+    getBlogs();
+  }, []);
 
   useEffect(() => {
     window.addEventListener("resize", updateWidth);
@@ -67,6 +94,23 @@ function Dashboard() {
               </div>
               <div className={styles.right}>
                 <Calendar />
+              </div>
+            </section>
+            <section className={styles.section4}>
+              <h1 className={styles.headingsec4}>
+                Want to Explore more about Start-Up
+              </h1>
+              <div className={styles.blogs}>
+                {blogsArray.map((item, index) => {
+                  return (
+                    <Blog
+                      key={item.id}
+                      img={item.image?.imageUrl}
+                      name={item.name}
+                      body={item.body}
+                    />
+                  );
+                })}
               </div>
             </section>
           </div>
