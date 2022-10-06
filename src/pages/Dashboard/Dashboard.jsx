@@ -106,7 +106,7 @@ function Dashboard() {
                     <Blog
                       key={item.id}
                       img={item.image?.imageUrl}
-                      name={item.name}
+                      name={item.heading}
                       body={item.body}
                     />
                   );

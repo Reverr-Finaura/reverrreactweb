@@ -7,8 +7,8 @@ function Blog(props) {
     <Link to="/" className={styles.link}>
       <div className={styles.main}>
         <img src={props.img} alt="blog" />
-        <h2>{props.name}</h2>
-        <p className={styles.blogBody}>{props.body}</p>
+        <h2 className={styles.name}>{props.name}</h2>
+        <p className={styles.blogBody}>{props.body.substring(0, 200)}</p>
       </div>
     </Link>
   );
