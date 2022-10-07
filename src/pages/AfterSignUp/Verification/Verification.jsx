@@ -19,7 +19,9 @@ const Verification = () => {
                 own content{" "}
               </p>
 
-              <button className={styles.btn1}>Start your Journey</button>
+              <Link to="/dashboard" className={styles.link}>
+                <button className={styles.btn1}>Start your Journey</button>
+              </Link>
             </div>
             <div className={styles.review_img}>
               <img src="/images/verification.png" alt="" />

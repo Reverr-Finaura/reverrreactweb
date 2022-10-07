@@ -7,6 +7,7 @@
   padding: 3rem 1rem;
   color: black;
   height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .link {

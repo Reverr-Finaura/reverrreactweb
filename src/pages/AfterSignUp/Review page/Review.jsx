@@ -15,12 +15,13 @@ const Review = () => {
   const navigate = useNavigate();
   const newUser = useSelector(selectNewUser);
   useEffect(() => {
-    dispatch(modify({ isVerfied: false }));
+    dispatch(modify({ isVerified: false }));
 
     const docRef = addDoc(collection(db, "Users"), {
       email: auth?.currentUser?.email,
       uid: auth?.currentUser?.uid,
       displayName: auth?.currentUser?.displayName,
+      isVerified: false,
       ...newUser,
     }).then(() => {
       var templateParams = {
