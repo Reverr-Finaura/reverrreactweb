@@ -1,0 +1,21 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+  transition: all 200ms;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.main {
+  background-color: #fafaff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 1.2rem;
+}

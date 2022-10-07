@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1rem auto;
 }
 
 .body {
@@ -238,6 +237,85 @@
   .funding_card > img {
     height: 12rem;
   }
+  .section3 {
+    display: flex;
+    margin: 2rem auto;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .left {
+    display: flex;
+    width: 60%;
+    background-color: white;
+    padding: 1rem;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  .right {
+    background-color: white;
+  }
+
+  .explore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    border-right: dotted blue 0.5rem;
+    padding-right: 1rem;
+  }
+
+  .exploreText > p {
+    text-align: center;
+  }
+
+  .exploreButton {
+    background-color: #2a72de;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    border-radius: 0.5rem;
+  }
+
+  .recommendedCourses {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .section4 {
+    width: 100%;
+    margin: 2rem auto;
+  }
+
+  .headingsec4 {
+    text-align: center;
+    color: rgba(42, 114, 222, 0.75);
+    font-size: 2rem;
+    width: 60%;
+    margin: 1rem auto;
+  }
+
+  .blogs {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    gap: 1rem;
+  }
+
+  .explorelink {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 @media (max-width: 600px) {
@@ -250,4 +328,54 @@
   /* .content {
     margin: 2rem auto;
   } */
+}
+
+@media (max-width: 1357px) {
+  .section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1250px) {
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
+  .explore {
+    border: none;
+    padding: 0;
+    min-width: fit-content;
+  }
+
+  .explore > img {
+    width: 90%;
+  }
+
+  .recommendedCourses {
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .blogs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .headingsec4 {
+    font-size: 1.5rem;
+  }
 }

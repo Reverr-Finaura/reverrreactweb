@@ -70,6 +70,7 @@ import ThinkingOfStartupSlide from "./pages/AfterKnowledge/ThinkingOfStartup/Thi
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Payment from "./pages/Payment/Payment";
 import ThankYou from "./pages/ThankYou/ThankYou";
+import ScrollToTop from "react-scroll-to-top";
 function App() {
   const user = useSelector(selectUser);
   const newUser = useSelector(selectNewUser);
@@ -95,6 +96,7 @@ function App() {
   return (
     <>
       <Toaster />
+      <ScrollToTop smooth />
       <Routes>
         <Route path="/" element={<Home />} />
         {!user ? (

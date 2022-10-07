@@ -1,56 +1,41 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import styles from "./Sidebar.module.css";
-import { motion } from "framer-motion";
 
 function Sidebar() {
   const [isHoveringSidebar, setIsHoveringSidebar] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
 
-  // const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
   const location = useLocation();
   const pathname = location.pathname;
-
-  // const handleScroll = () => {
-  //   // find current scroll position
-  //   const currentScrollPos = window.pageYOffset;
-
-  //   // set state based on location info (explained in more detail below)
-  //   setVisible(
-  //     (prevScrollPos > currentScrollPos &&
-  //       prevScrollPos - currentScrollPos < window.innerHeight) ||
-  //       currentScrollPos < window.innerHeight
-  //   );
-
-  //   // set state to new scroll position
-  //   setPrevScrollPos(currentScrollPos);
-  // };
 
   const updateWidth = () => {
     setWidth(window.innerWidth);
   };
 
   useEffect(() => {
-    // window.addEventListener("resize", updateWidth);
-    // return () => window.removeEventListener("resize", updateWidth);
+    window.addEventListener("resize", updateWidth);
     console.log(window.scrollY);
+    return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      setVisible(currentScrollPos > 0 ? false : true);
+      setPrevScrollPos(currentScrollPos);
+    };
+    window.addEventListener("scroll", handleScroll);
 
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, [prevScrollPos, visible, handleScroll]);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, visible]);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 1 }}
-      viewport={{ once: true }}
+    <div
       style={{
         padding: isHoveringSidebar ? "1rem 10rem 1rem 1rem" : "1rem",
         left: visible ? "auto" : "-100px",
@@ -193,7 +178,7 @@ function Sidebar() {
           </p>
         </div>
       </NavLink>
-    </motion.div>
+    </div>
   );
 }
 
