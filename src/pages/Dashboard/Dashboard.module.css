@@ -112,6 +112,11 @@
   gap: 1rem;
 }
 
+.explorelink {
+  text-decoration: none;
+  color: inherit;
+}
+
 @media (max-width: 600px) {
   .body {
     width: 100%;

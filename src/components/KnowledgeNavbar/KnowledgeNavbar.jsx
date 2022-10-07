@@ -6,7 +6,6 @@ import {
   selectPhnSidebar,
 } from "../../features/phnSidebarSlice";
 import styles from "./KnowledgeNavbar.module.css";
-import { motion } from "framer-motion";
 
 function KnowledgeNavbar() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -21,13 +20,7 @@ function KnowledgeNavbar() {
   const [phnOptionsVisible, setPhnOptionsVisible] = useState(false);
   const dispatch = useDispatch();
   return (
-    <motion.navbar
-      initial={{ opacity: 0, y: -100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-      className={styles.navbar}
-      viewport={{ once: true }}
-    >
+    <navbar className={styles.navbar}>
       <MenuIcon
         onClick={() => dispatch(phnSidebarVisible())}
         className={styles.menuIcon}
@@ -75,7 +68,7 @@ function KnowledgeNavbar() {
           <img src="/images/profile.svg" alt="" />
         </div>
       </div>
-    </motion.navbar>
+    </navbar>
   );
 }
 

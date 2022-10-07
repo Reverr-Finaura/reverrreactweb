@@ -18,6 +18,7 @@ import { db } from "../../firebase";
 
 import "react-calendar/dist/Calendar.css";
 import Blog from "../../components/Blog/Blog";
+import { Link } from "react-router-dom";
 
 function Dashboard() {
   const [width, setWidth] = useState(window.innerWidth);
@@ -70,9 +71,11 @@ function Dashboard() {
                       success to start-up.
                     </p>
                   </div>
-                  <button className={styles.exploreButton}>
-                    Explore Courses
-                  </button>
+                  <Link to="/knowledge" className={styles.explorelink}>
+                    <button className={styles.exploreButton}>
+                      Explore Courses
+                    </button>
+                  </Link>
                 </div>
                 <div className={styles.recommendedCourses}>
                   <p>
