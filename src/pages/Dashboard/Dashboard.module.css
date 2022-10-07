@@ -38,6 +38,208 @@
   background-color: transparent;
 }
 
+.mentor_detail {
+  display: flex;
+  margin: 2% auto;
+  gap: 2%;
+  align-items: center;
+}
+
+.mentor_detail > img {
+  height: 8rem;
+  object-fit: cover;
+}
+
+.mentor_info > h3,
+.mentor_greeting > h1 {
+  font-size: 28px;
+}
+
+.mentor_info > p {
+  font-size: 18px;
+}
+
+.quoteNmeeting {
+  display: flex;
+  gap: 5%;
+  margin: 3% auto;
+}
+
+.getQuote {
+  overflow: hidden;
+  width: 70%;
+  border-radius: 16px;
+}
+
+.slider {
+  display: flex;
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+.slide {
+  height: 250px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  /* display: flex; */
+}
+
+.slide > h1 {
+  font-size: 24px;
+  margin: 0%;
+}
+
+.meetings {
+  background-color: #fff;
+  padding: 10px 20px;
+  width: 40%;
+  border-radius: 16px;
+}
+
+.meetings > h3 {
+  font-size: 18px;
+}
+
+.meeting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meeting > img {
+  height: 3rem;
+}
+.meeting_info > h5 {
+  font-size: 14px;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.meeting_info > p {
+  font-size: 12px;
+  margin-top: 0;
+  color: #c4c4c4;
+}
+
+.meeting > button {
+  background: #2a72de;
+  border-radius: 32px;
+  border: none;
+  font-size: 8px;
+
+  color: #fff;
+  padding: 4px 16px;
+  cursor: pointer;
+}
+
+.mentorship {
+  display: flex;
+  gap: 3%;
+}
+
+.funding_card {
+  background-color: #fafafa;
+  padding: 27px 40px;
+  width: 47%;
+}
+
+.funding_card > img {
+  height: 14rem;
+}
+
+.funding_card > h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.funding_card > p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.funding_card > button {
+  background: #2a72de;
+  border-radius: 32px;
+  border: none;
+  font-size: 12px;
+  padding: 8px 25px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.contact_mentor {
+  background-color: #fafafa;
+  padding: 10px 20px;
+  width: 40%;
+  /* border-radius: 16px; */
+}
+
+.contact_mentor > h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.mentor_info > h5 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+.mentor_info > p {
+  font-size: 14px;
+  margin-top: 0;
+  font-weight: 500;
+}
+
+.contact > img {
+  height: 4rem;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-bottom: 4%;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.contact > button {
+  background: #2a72de;
+  border-radius: 32px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .quoteNmeeting {
+    display: block;
+  }
+
+  .getQuote,
+  .meetings {
+    width: 70%;
+  }
+
+  .mentorship {
+    display: block;
+  }
+
+  .funding_card,
+  .contact_mentor {
+    width: 70%;
+  }
+
+  .funding_card > img {
+    height: 12rem;
+  }
+}
+
 @media (max-width: 600px) {
   .body {
     width: 100%;
@@ -45,7 +247,7 @@
     align-items: center;
   }
 
-  .content {
+  /* .content {
     margin: 2rem auto;
-  }
+  } */
 }
