@@ -70,6 +70,8 @@ import ThankYou from "./pages/ThankYou/ThankYou";
 import ScrollToTop from "react-scroll-to-top";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { selectMentor } from "./features/scheduleSlice";
+import { ColorRing } from "react-loader-spinner";
+import Loading from "./pages/Loading/Loading";
 function App() {
   var data = [];
   const [userArray, setUserArray] = useState([]);
@@ -182,7 +184,9 @@ function App() {
                       element={<ThankYou />}
                     ></Route>
                   </>
-                ) : null}
+                ) : (
+                  <Route path="*" element={<Loading />} />
+                )}
                 <Route path="/dashboard" element={<Dashboard />}></Route>
                 <Route path="/betaslide" element={<BetaSlide />}></Route>
                 <Route path="/eeslides" element={<EESlides />}></Route>
@@ -291,15 +295,20 @@ function App() {
                 ></Route>
                 <Route path="/payment/:mentorEmail" element={<Payment />} />
               </>
-            ) : null}
+            ) : (
+              <Route path="*" element={<Loading />} />
+            )}
             <Route path="/mentorform" element={<MentorForm />}></Route>
             <Route
               path="/mentordetails"
               element={<MentorMoreDetails />}
             ></Route>
           </>
-        ) : null}
+        ) : (
+          <Route path="*" element={<Loading />} />
+        )}
         <Route path="*" element={<NotFound />}></Route>
+        <Route path="/loading" element={<Loading />} />
       </Routes>
     </>
   );
