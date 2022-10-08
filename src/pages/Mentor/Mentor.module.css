@@ -4,6 +4,14 @@
   align-items: center;
 }
 
+.loader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 6.5rem auto;
+}
+
 .mentors {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

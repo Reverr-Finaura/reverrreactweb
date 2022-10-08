@@ -10,7 +10,6 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "../../firebase";
 import "animate.css";
 import Industry from "../../components/Industry/Industry";
-import { async } from "@firebase/util";
 
 function Mentors() {
   // const mentorOfWeek = [
