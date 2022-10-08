@@ -51,6 +51,8 @@ function Mentors() {
     fetchMentorExpertise();
   }, []);
 
+  console.log(mentorArray);
+
   useEffect(() => {
     async function fetchExpertise() {
       const expertiseRef = collection(db, "Expertise");

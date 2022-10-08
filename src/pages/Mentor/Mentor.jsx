@@ -10,7 +10,7 @@ import { db } from "../../firebase";
 import { useParams } from "react-router-dom";
 
 function Mentor() {
-  const { type } = useParams();
+  const { type, clickedOn } = useParams();
   const [width, setWidth] = useState(window.innerWidth);
   const [mentorsArray, setMentorsArray] = useState([]);
   const [usersArray, setUsersArray] = useState([]);
@@ -66,7 +66,7 @@ function Mentor() {
   }
 
   format();
-  console.log(data3);
+  console.log(usersArray);
 
   return (
     <>
@@ -84,16 +84,29 @@ function Mentor() {
               <h1>{type} Mentors</h1>
             </div>
             <div className={styles.mentors}>
-              {data3.map((item, index) => (
-                <MentorComponent
-                  key={index + Math.random()}
-                  name={item.name}
-                  img={item?.image}
-                  type={type}
-                  rating={item?.Rating}
-                  to={item?.email}
-                />
-              ))}
+              {clickedOn === "industry"
+                ? usersArray.map((item, index) =>
+                    item?.industry === type ? (
+                      <MentorComponent
+                        key={index + Math.random()}
+                        name={item.name}
+                        img={item?.image}
+                        type={type}
+                        rating={item?.Rating}
+                        to={item?.email}
+                      />
+                    ) : null
+                  )
+                : data3.map((item, index) => (
+                    <MentorComponent
+                      key={index + Math.random()}
+                      name={item.name}
+                      img={item?.image}
+                      type={type}
+                      rating={item?.Rating}
+                      to={item?.email}
+                    />
+                  ))}
             </div>
           </div>
         </div>
