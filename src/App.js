@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 import { selectNewUser } from "./features/newUserSlice";
 import { login, logout, selectUser } from "./features/userSlice";
 import Card from "./pages/AfterSignUp/Cards/Card";
@@ -77,6 +77,7 @@ function App() {
   const newUser = useSelector(selectNewUser);
   const dispatch = useDispatch();
   const mentor = useSelector(selectMentor);
+  const navigate = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -105,6 +106,7 @@ function App() {
         }
 
         checkUser();
+        navigate("/dashboard");
       } else {
         dispatch(logout());
       }

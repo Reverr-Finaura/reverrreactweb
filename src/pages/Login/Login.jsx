@@ -13,11 +13,13 @@ import { Link } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../Footer/Footer";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 function Auth() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const provider = new GoogleAuthProvider();
 
@@ -32,6 +34,9 @@ function Auth() {
             profilePic: auth.currentUser.photoURL,
           })
         );
+      })
+      .then(() => {
+        navigate("/dashboard");
       })
       .catch((error) => {
         alert(error);
@@ -55,6 +60,9 @@ function Auth() {
       .then(() => {
         toast.success("Sucessfully logged in");
       })
+      .then(() => {
+        navigate("/dashboard");
+      })
       .catch((error) => {
         const errorMessage = error.message;
         alert(errorMessage);
@@ -67,7 +75,10 @@ function Auth() {
       <section className={styles.auth}>
         <div className={styles.signup}>
           <div className={styles.google_signup}>
-            <Button className={styles.googleLoginBtn} onClick={signInWithGoogle}>
+            <Button
+              className={styles.googleLoginBtn}
+              onClick={signInWithGoogle}
+            >
               <img src="/images/image 134.svg" alt="" />
               Login with Google
             </Button>
