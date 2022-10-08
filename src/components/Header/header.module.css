@@ -1,3 +1,8 @@
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
 .headerContainer {
   display: flex;
   justify-content: center;

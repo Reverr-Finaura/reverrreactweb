@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logout, selectUser } from "../../features/userSlice";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
@@ -64,9 +64,11 @@ const Header = ({ theme }) => {
               : "flex",
         }}
       >
-        <button className={styles.navButton} style={{ color: theme }}>
-          Investors
-        </button>
+        <Link to="/dashboard" className={styles.link}>
+          <button className={styles.navButton} style={{ color: theme }}>
+            Dashboard
+          </button>
+        </Link>
         <button className={styles.navButton} style={{ color: theme }}>
           Founders
         </button>

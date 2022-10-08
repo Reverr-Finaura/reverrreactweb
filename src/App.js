@@ -105,8 +105,13 @@ function App() {
           setUserArray(data);
         }
 
-        checkUser();
-        navigate("/dashboard");
+        checkUser()
+          .then(() => {
+            // navigate("/dashboard");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       } else {
         dispatch(logout());
       }
