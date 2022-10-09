@@ -15,6 +15,16 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link > div > img {
+  width: 2rem;
+  object-fit: cover;
+}
+
 .logo {
   display: flex;
   flex-direction: column;

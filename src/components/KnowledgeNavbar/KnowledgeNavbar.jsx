@@ -1,6 +1,7 @@
 import { MenuIcon } from "@heroicons/react/outline";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import {
   phnSidebarVisible,
   selectPhnSidebar,
@@ -33,18 +34,24 @@ function KnowledgeNavbar() {
         <p>REVERR</p>
       </div>
       <div className={styles.options}>
-        <div>
-          <img src="/images/bell.svg" alt="" />
-        </div>
-        <div>
+        <Link className={styles.link} to="/notifications">
+          <div>
+            <img src="/images/bell.svg" alt="" />
+          </div>
+        </Link>
+        {/* <div>
           <img src="/images/question.svg" alt="" />
-        </div>
-        <div>
-          <img src="/images/calender.svg" alt="" />
-        </div>
-        <div>
-          <img src="/images/profile.svg" alt="" />
-        </div>
+        </div> */}
+        <Link className={styles.link} to="/dashboard/#calendar">
+          <div>
+            <img src="/images/calender.svg" alt="" />
+          </div>
+        </Link>
+        <Link className={styles.link} to="/myprofile">
+          <div>
+            <img src="/images/profile.svg" alt="" />
+          </div>
+        </Link>
       </div>
       <div
         style={{
