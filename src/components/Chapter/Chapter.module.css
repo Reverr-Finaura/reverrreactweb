@@ -4,6 +4,12 @@
   gap: 2rem;
   padding: 1rem;
   cursor: pointer;
+  position: relative;
+}
+
+.courseImage {
+  position: absolute;
+  opacity: 0.4;
 }
 
 .chapter:hover {

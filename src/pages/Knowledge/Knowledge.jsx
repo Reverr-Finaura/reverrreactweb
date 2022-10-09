@@ -107,6 +107,7 @@ function Knowledge() {
               className={styles.chapters}
             >
               <Chapter
+                courseImage="/images/chapter1.svg"
                 heading="Legal - ESOP"
                 status="completed"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -114,6 +115,7 @@ function Knowledge() {
                 url="/esop"
               />
               <Chapter
+                courseImage="/images/chapter2.svg"
                 heading="Idea Validation"
                 status="available"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -121,76 +123,86 @@ function Knowledge() {
                 url="/idea-validation"
               />
               <Chapter
+                courseImage="/images/chapter3.svg"
                 heading="Fundraising and its Means"
-                status="locked"
+                status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
                 url="/fundraising-and-means"
               />
               <Chapter
+                courseImage="/images/chapter4.svg"
                 heading="Reaching Out to Investor"
-                status="locked"
+                status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
                 url="/reaching-out-to-investor"
               />
               <Chapter
+                courseImage="/images/chapter5.svg"
                 heading="Social Media"
-                status="locked"
+                status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
                 url="/social-media"
               />
               <Chapter
+                courseImage="/images/chapter6.svg"
                 heading="Beta Testing"
-                status="locked"
+                status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
                 url="/betatesting"
               />
               <Chapter
+                courseImage="/images/chapter7.svg"
                 heading="Business Modal"
-                status="locked"
+                status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
                 url="/businessmodal"
               />
 
               <Chapter
+                courseImage="/images/chapter8.svg"
                 heading="Business Planning"
-                status="locked"
+                status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
                 url="/businessplanning"
               />
 
               <Chapter
+                courseImage="/images/chapter9.svg"
                 heading="Competitor Analysis"
-                status="locked"
+                status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
                 url="/competitoranalysis"
               />
 
               <Chapter
+                courseImage="/images/chapter10.svg"
                 heading="Product Development"
-                status="locked"
+                status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
                 url="/productdevelopment"
               />
 
               <Chapter
+                courseImage="/images/chapter11.svg"
                 heading="THINKING OF A STARTUP IDEA & IDEA SHORTLISTING"
-                status="locked"
+                status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
                 url="/thinkingofstartup"
               />
 
               <Chapter
+                courseImage="/images/chapter12.svg"
                 heading="Building an Audience"
-                status="locked"
+                status="available"
                 description="    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor"
                 url="/buildingaudience"

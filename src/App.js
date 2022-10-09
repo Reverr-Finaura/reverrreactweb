@@ -149,164 +149,176 @@ function App() {
             <Route path="/startup-confirm" element={<Confirmation />} />
             <Route path="/startup-onboarding" element={<Onboarding />} />
             <Route path="/startup-review" element={<Review />} />{" "}
-          </>
-        ) : null}
-
-        {userArray.length > 0 ? (
-          <>
-            {userArray[0]?.isVerified === true ? (
+            {userArray.length > 0 ? (
               <>
-                <Route
-                  path="/startup-verification"
-                  element={<Verification />}
-                />
-                <Route path="/knowledge" element={<Knowledge />}></Route>
-                <Route path="/mentors" element={<Mentors />}></Route>
-                <Route
-                  path="/mentor/:clickedOn/:type"
-                  element={<Mentor />}
-                ></Route>
-                <Route path="/funding" element={<Funding />}></Route>
-                <Route path="/fundingform" element={<FundingForm />}></Route>
-                <Route
-                  path="/mentor-profile/:email"
-                  element={<MentorProfile />}
-                ></Route>
-                <Route path="/community" element={<Community />}></Route>
-                {userArray[0]?.mentors?.includes(mentor?.email) ? (
+                {userArray[0]?.isVerified === true ? (
                   <>
                     <Route
-                      path="/schedule/:mentorEmail"
-                      element={<Schedule />}
+                      path="/startup-verification"
+                      element={<Verification />}
+                    />
+                    <Route path="/knowledge" element={<Knowledge />}></Route>
+                    <Route path="/mentors" element={<Mentors />}></Route>
+                    <Route
+                      path="/mentor/:clickedOn/:type"
+                      element={<Mentor />}
+                    ></Route>
+                    <Route path="/funding" element={<Funding />}></Route>
+                    <Route
+                      path="/fundingform"
+                      element={<FundingForm />}
                     ></Route>
                     <Route
-                      path="/thankyou/:mentorEmail"
-                      element={<ThankYou />}
+                      path="/mentor-profile/:email"
+                      element={<MentorProfile />}
                     ></Route>
+                    <Route path="/community" element={<Community />}></Route>
+                    {userArray[0]?.mentors?.includes(mentor?.email) ? (
+                      <>
+                        <Route
+                          path="/schedule/:mentorEmail"
+                          element={<Schedule />}
+                        ></Route>
+                        <Route
+                          path="/thankyou/:mentorEmail"
+                          element={<ThankYou />}
+                        ></Route>
+                      </>
+                    ) : (
+                      <Route path="*" element={<Loading />} />
+                    )}
+                    <Route path="/dashboard" element={<Dashboard />}></Route>
+                    <Route path="/betaslide" element={<BetaSlide />}></Route>
+                    <Route path="/eeslides" element={<EESlides />}></Route>
+                    <Route
+                      path="/equityandeverything"
+                      element={<EquityAndEverything />}
+                    ></Route>
+                    <Route
+                      path="/financeforstartup"
+                      element={<FInanceForStartup />}
+                    ></Route>
+                    <Route
+                      path="/financeforstartupslides"
+                      element={<FinanceforStartupSlides />}
+                    ></Route>
+                    <Route
+                      path="/betatesting"
+                      element={<BetaTesting />}
+                    ></Route>
+                    <Route
+                      path="/betatestingslides"
+                      element={<BetaSlide />}
+                    ></Route>
+
+                    <Route
+                      path="/buildingaudience"
+                      element={<BuildAudience />}
+                    ></Route>
+                    <Route
+                      path="/buildingaudienceslides"
+                      element={<BuildAudienceSlides />}
+                    ></Route>
+
+                    <Route
+                      path="/businessmodal"
+                      element={<BusinessModal />}
+                    ></Route>
+                    <Route
+                      path="/businessmodalslides"
+                      element={<BusinessModalSlides />}
+                    ></Route>
+
+                    <Route
+                      path="/businessplanning"
+                      element={<BusinessPlanning />}
+                    ></Route>
+                    <Route
+                      path="/businessplanningslides"
+                      element={<BusinessPlanningSlides />}
+                    ></Route>
+
+                    <Route
+                      path="/competitoranalysis"
+                      element={<CompetitorAnalysis />}
+                    ></Route>
+                    <Route
+                      path="/competitoranalysisslides"
+                      element={<CompetitorAnalysisSlides />}
+                    ></Route>
+
+                    <Route
+                      path="/productdevelopment"
+                      element={<ProductDevelopment />}
+                    ></Route>
+                    <Route
+                      path="/productdevelopmentslides"
+                      element={<ProductDevelopmentSlide />}
+                    ></Route>
+
+                    <Route
+                      path="/thinkingofstartup"
+                      element={<ThinkingOfStartup />}
+                    ></Route>
+                    <Route
+                      path="/thinkingofstartupslides"
+                      element={<ThinkingOfStartupSlide />}
+                    ></Route>
+
+                    <Route path="/esop" element={<ESOP />}></Route>
+                    <Route
+                      path="/esop-slides"
+                      element={<ESOP_Slides />}
+                    ></Route>
+                    <Route
+                      path="/idea-validation"
+                      element={<IdeaValidation />}
+                    ></Route>
+                    <Route
+                      path="/idea-validation-slides"
+                      element={<IV_Slides />}
+                    ></Route>
+                    <Route
+                      path="/fundraising-and-means"
+                      element={<FundraisingAndMeans />}
+                    ></Route>
+                    <Route
+                      path="/fundraising-and-means-slides"
+                      element={<FundraisingSlides />}
+                    ></Route>
+                    <Route
+                      path="/reaching-out-to-investor"
+                      element={<ReachingOutToInvestor />}
+                    ></Route>
+                    <Route
+                      path="/reaching-out-to-investor-slides"
+                      element={<ReachingOutSlides />}
+                    ></Route>
+                    <Route
+                      path="/social-media"
+                      element={<SocialMedia />}
+                    ></Route>
+                    <Route
+                      path="/social-media-slides"
+                      element={<SocialMediaSlides />}
+                    ></Route>
+                    <Route path="/payment/:mentorEmail" element={<Payment />} />
                   </>
                 ) : (
                   <Route path="*" element={<Loading />} />
                 )}
-                <Route path="/dashboard" element={<Dashboard />}></Route>
-                <Route path="/betaslide" element={<BetaSlide />}></Route>
-                <Route path="/eeslides" element={<EESlides />}></Route>
+                <Route path="/mentorform" element={<MentorForm />}></Route>
                 <Route
-                  path="/equityandeverything"
-                  element={<EquityAndEverything />}
+                  path="/mentordetails"
+                  element={<MentorMoreDetails />}
                 ></Route>
-                <Route
-                  path="/financeforstartup"
-                  element={<FInanceForStartup />}
-                ></Route>
-                <Route
-                  path="/financeforstartupslides"
-                  element={<FinanceforStartupSlides />}
-                ></Route>
-                <Route path="/betatesting" element={<BetaTesting />}></Route>
-                <Route
-                  path="/betatestingslides"
-                  element={<BetaSlide />}
-                ></Route>
-
-                <Route
-                  path="/buildingaudience"
-                  element={<BuildAudience />}
-                ></Route>
-                <Route
-                  path="/buildingaudienceslides"
-                  element={<BuildAudienceSlides />}
-                ></Route>
-
-                <Route
-                  path="/businessmodal"
-                  element={<BusinessModal />}
-                ></Route>
-                <Route
-                  path="/businessmodalslides"
-                  element={<BusinessModalSlides />}
-                ></Route>
-
-                <Route
-                  path="/businessplanning"
-                  element={<BusinessPlanning />}
-                ></Route>
-                <Route
-                  path="/businessplanningslides"
-                  element={<BusinessPlanningSlides />}
-                ></Route>
-
-                <Route
-                  path="/competitoranalysis"
-                  element={<CompetitorAnalysis />}
-                ></Route>
-                <Route
-                  path="/competitoranalysisslides"
-                  element={<CompetitorAnalysisSlides />}
-                ></Route>
-
-                <Route
-                  path="/productdevelopment"
-                  element={<ProductDevelopment />}
-                ></Route>
-                <Route
-                  path="/productdevelopmentslides"
-                  element={<ProductDevelopmentSlide />}
-                ></Route>
-
-                <Route
-                  path="/thinkingofstartup"
-                  element={<ThinkingOfStartup />}
-                ></Route>
-                <Route
-                  path="/thinkingofstartupslides"
-                  element={<ThinkingOfStartupSlide />}
-                ></Route>
-
-                <Route path="/esop" element={<ESOP />}></Route>
-                <Route path="/esop-slides" element={<ESOP_Slides />}></Route>
-                <Route
-                  path="/idea-validation"
-                  element={<IdeaValidation />}
-                ></Route>
-                <Route
-                  path="/idea-validation-slides"
-                  element={<IV_Slides />}
-                ></Route>
-                <Route
-                  path="/fundraising-and-means"
-                  element={<FundraisingAndMeans />}
-                ></Route>
-                <Route
-                  path="/fundraising-and-means-slides"
-                  element={<FundraisingSlides />}
-                ></Route>
-                <Route
-                  path="/reaching-out-to-investor"
-                  element={<ReachingOutToInvestor />}
-                ></Route>
-                <Route
-                  path="/reaching-out-to-investor-slides"
-                  element={<ReachingOutSlides />}
-                ></Route>
-                <Route path="/social-media" element={<SocialMedia />}></Route>
-                <Route
-                  path="/social-media-slides"
-                  element={<SocialMediaSlides />}
-                ></Route>
-                <Route path="/payment/:mentorEmail" element={<Payment />} />
               </>
             ) : (
               <Route path="*" element={<Loading />} />
             )}
-            <Route path="/mentorform" element={<MentorForm />}></Route>
-            <Route
-              path="/mentordetails"
-              element={<MentorMoreDetails />}
-            ></Route>
           </>
-        ) : (
-          <Route path="*" element={<Loading />} />
-        )}
+        ) : null}
+
         <Route path="*" element={<NotFound />}></Route>
         <Route path="/loading" element={<Loading />} />
       </Routes>

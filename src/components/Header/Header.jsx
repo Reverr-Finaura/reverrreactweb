@@ -64,11 +64,22 @@ const Header = ({ theme }) => {
               : "flex",
         }}
       >
-        <Link to="/dashboard" className={styles.link}>
-          <button className={styles.navButton} style={{ color: theme }}>
+        {user ? (
+          <Link to="/dashboard" className={styles.link}>
+            <button className={styles.navButton} style={{ color: theme }}>
+              Dashboard
+            </button>
+          </Link>
+        ) : (
+          <button
+            onClick={() => toast.error("You'll have to login first!")}
+            className={styles.navButton}
+            style={{ color: theme }}
+          >
             Dashboard
           </button>
-        </Link>
+        )}
+
         <button className={styles.navButton} style={{ color: theme }}>
           Founders
         </button>
