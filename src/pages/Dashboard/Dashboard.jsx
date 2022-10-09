@@ -185,7 +185,7 @@ function Dashboard() {
                 ))}
               </div>
             </div>
-            <section className={styles.section3}>
+            <section id="calendar" className={styles.section3}>
               <div className={styles.left}>
                 <div className={styles.explore}>
                   <img src="/images/explore.svg" alt="explore" />
