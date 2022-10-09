@@ -59,7 +59,7 @@ function Sidebar() {
           </p>
         </div>
       </NavLink>
-      <NavLink className={styles.navlink} to="/tools">
+      {/* <NavLink className={styles.navlink} to="/tools">
         <div className={styles.sidebarOption}>
           <img
             src={
@@ -71,7 +71,7 @@ function Sidebar() {
           />
           <p style={{ display: isHoveringSidebar ? "block" : "none" }}>Tools</p>
         </div>
-      </NavLink>
+      </NavLink> */}
       <NavLink className={styles.navlink} to="/knowledge">
         <div className={styles.sidebarOption}>
           <img
@@ -102,7 +102,7 @@ function Sidebar() {
           </p>
         </div>
       </NavLink>
-      <NavLink className={styles.navlink} to="/patch">
+      {/* <NavLink className={styles.navlink} to="/patch">
         <div className={styles.sidebarOption}>
           <img
             src={
@@ -114,7 +114,7 @@ function Sidebar() {
           />
           <p style={{ display: isHoveringSidebar ? "block" : "none" }}>Patch</p>
         </div>
-      </NavLink>
+      </NavLink> */}
       <NavLink className={styles.navlink} to="/mentors">
         <div className={styles.sidebarOption}>
           <img
