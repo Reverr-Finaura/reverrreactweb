@@ -1,4 +1,74 @@
-.funding__flex {
+.knowledge {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.body {
+  width: 88.5%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.content {
+  width: 85%;
+  margin: auto 5rem auto 10rem;
+}
+
+.search {
+  background-color: #d9d9d9;
+  border-radius: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  flex: 1;
+  padding: 0.5rem 1rem;
+}
+
+.search > img {
+  width: 2rem;
+  object-fit: contain;
+}
+
+.search > input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.funding__flex {
+  text-align: center;
+}
+
+.heading > h1 {
+  font-size: 50px;
+  font-weight: 700;
+  color: #202020;
+}
+
+.funding__para {
+  font-size: 40px;
+  font-weight: 500;
+  color: #202020;
+  margin: 5% auto;
+}
+
+.textcolor {
+  color: rgba(32, 32, 32, 0.75);
+}
+
+.funding__btn {
+  margin-bottom: 30px !important;
+  display: block;
+  text-align: center;
+  margin: auto;
+  border: none;
+  outline: none;
+  background: #2a72de;
+  border-radius: 6px;
+  font-size: 24px;
+  color: #f6f6f6;
+  padding: 0.4rem 5rem;
+  cursor: pointer;
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import KnowledgeNavbar from "../../../components/KnowledgeNavbar/KnowledgeNavbar";
 import Sidebar from "../../../components/Sidebar/Sidebar";
 import PhnSidebar from "../../../components/PhnSidebar/PhnSidebar";
-import styles from "../../Mentors/Mentors.module.css";
+import styles from "./funding.module.css";
 import Footer from "../../Footer/Footer";
 import "animate.css";
 import "../FundingPage/funding.module.css";
@@ -40,6 +40,7 @@ function Funding() {
                 </span>
                 <br /> Join our Private Fundings and save your time
               </div>
+
               <div className={styles.funding__para}>
                 <span className={styles.textcolor}>Register as a </span>
                 Start-up <br /> and <br />
