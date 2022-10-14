@@ -321,6 +321,7 @@ function App() {
 
         <Route path="*" element={<NotFound />}></Route>
         <Route path="/loading" element={<Loading />} />
+        <Route path="/thankyou/:mentorEmail" element={<ThankYou />}></Route>
       </Routes>
     </>
   );
