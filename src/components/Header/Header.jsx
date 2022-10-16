@@ -137,6 +137,7 @@ const Header = ({ theme }) => {
                     .then(() => {
                       dispatch(logout());
                       dispatch(remove());
+                      navigate("/");
                     })
                     .then(() => {
                       toast.success("Sucessfully logged out");
