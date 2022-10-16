@@ -22,3 +22,8 @@
   width: 15%;
   object-fit: cover;
 }
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
