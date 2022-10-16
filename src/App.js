@@ -187,7 +187,10 @@ function App() {
                     ) : (
                       <Route path="*" element={<Loading />} />
                     )}
-                    <Route path="/dashboard" element={<Dashboard />}></Route>
+                    <Route
+                      path="/dashboard"
+                      element={<Dashboard userInfo={userArray[0]} />}
+                    ></Route>
                     <Route path="/betaslide" element={<BetaSlide />}></Route>
                     <Route path="/eeslides" element={<EESlides />}></Route>
                     <Route
@@ -321,7 +324,7 @@ function App() {
 
         <Route path="*" element={<NotFound />}></Route>
         <Route path="/loading" element={<Loading />} />
-        <Route path="/thankyou/:mentorEmail" element={<ThankYou />}></Route>
+        {/* <Route path="/thankyou/:mentorEmail" element={<ThankYou />}></Route> */}
       </Routes>
     </>
   );
