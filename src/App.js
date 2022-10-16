@@ -86,7 +86,12 @@ function App() {
   useEffect(() => {
     async function fetchMentors() {
       const usersRef = collection(db, "Users");
-      const q = query(usersRef, where("userType", "==", "Mentor"), limit(2));
+      const q = query(
+        usersRef,
+        where("userType", "==", "Mentor"),
+        where("industry", "==", "IT Services"),
+        limit(2)
+      );
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         data2.push(doc.data());

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./DashboardMentor.module.css";
 
 function DashboardMentor({ mentor }) {
@@ -9,7 +10,11 @@ function DashboardMentor({ mentor }) {
         <h5> {mentor.name}</h5>
         <p>{mentor.industry}</p>
       </div>
-      <button>Contact Now</button>
+      <button>
+        <Link className={styles.link} to={`/mentor-profile/${mentor.email}`}>
+          Contact Now
+        </Link>
+      </button>
     </div>
   );
 }
