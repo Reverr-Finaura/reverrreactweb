@@ -23,6 +23,7 @@ import Blog from "../../components/Blog/Blog";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import DashboardUpcomingMeeting from "../../components/DashboardUpcomingMeeting/DashboardUpcomingMeeting";
+import DashboardMentor from "../../components/DashboardMentor/DashboardMentor";
 
 function Dashboard(props) {
   const [width, setWidth] = useState(window.innerWidth);
@@ -87,28 +88,6 @@ function Dashboard(props) {
   };
 
   useEffect(() => {
-    // async function checkUser() {
-    //   const q = query(
-    //     collection(db, "Users"),
-    //     where("email", "==", user.email)
-    //   );
-    //   const querySnapshot = await getDocs(q);
-    //   console.log(querySnapshot);
-    //   querySnapshot.forEach((doc) => {
-    //     data.push(doc.data());
-    //   });
-
-    //   setUserArray(data);
-    // }
-
-    // checkUser()
-    //   .then(() => {
-    //     // navigate("/dashboard");
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-
     async function getBlogs() {
       const blogRef = collection(db, "Blogs");
       const q = query(blogRef, limit(3));
@@ -172,12 +151,18 @@ function Dashboard(props) {
               </div>
               <div className={styles.meetings}>
                 <h3>Upcoming Meetings</h3>
-                {props.userInfo?.meetings?.map((meeting, index) => (
-                  <DashboardUpcomingMeeting
-                    key={index + Math.random()}
-                    meeting={meeting}
-                  />
-                ))}
+                {props.userInfo.meetings ? (
+                  props.userInfo.meetings.map((meeting, index) => (
+                    <DashboardUpcomingMeeting
+                      key={index + Math.random()}
+                      meeting={meeting}
+                    />
+                  ))
+                ) : (
+                  <p style={{ width: "80%", margin: "1rem auto" }}>
+                    No pcoming meetings!
+                  </p>
+                )}
               </div>
             </div>
             <div className={styles.mentorship}>
@@ -197,15 +182,16 @@ function Dashboard(props) {
               </div>
               <div className={styles.contact_mentor}>
                 <h3>Take Mentorship</h3>
-                {mentors.map((m, index) => (
-                  <div key={index} className={styles.contact}>
+                {props.mentors.map((mentor, index) => (
+                  /* <div key={index} className={styles.contact}>
                     <img src={m.profile} alt="" />
                     <div className={styles.mentor_info}>
                       <h5> {m.name}</h5>
                       <p>{m.field}</p>
                     </div>
                     <button>Contact Now</button>
-                  </div>
+                  </div> */
+                  <DashboardMentor mentor={mentor} />
                 ))}
               </div>
             </div>
