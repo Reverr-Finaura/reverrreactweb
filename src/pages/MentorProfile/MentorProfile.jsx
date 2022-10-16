@@ -100,7 +100,7 @@ const MentorProfile = () => {
           </div>
 
           <div className={styles.mentor_bio}>
-            <p className={styles.h1_tag}>{mentor?.about}</p>
+            <p className={styles.about}>{mentor?.about}</p>
             {/* <h1 className={styles.h1_tag}>
               “I like being aware of new things around me ”
             </h1>
