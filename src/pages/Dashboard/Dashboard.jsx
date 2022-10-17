@@ -125,7 +125,14 @@ function Dashboard(props) {
               <h1>Welcome!👋🏻</h1>
             </div>
             <div className={styles.mentor_detail}>
-              <img src={`${props.userInfo?.profilePic || null}`} alt="" />
+              <img
+                src={`${
+                  props.userInfo.profilePic
+                    ? props.userInfo.profilePic
+                    : "/images/profile-pic-default.png"
+                }`}
+                alt=""
+              />
               <div className={styles.mentor_info}>
                 <h3>{props.userInfo?.displayName}</h3>
                 <p>Start-up {props.userInfo?.userType}</p>
