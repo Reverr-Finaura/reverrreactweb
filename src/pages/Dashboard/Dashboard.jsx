@@ -36,19 +36,19 @@ function Dashboard() {
       quote:
         "Your reputation is more important than your paycheck, and your integrity is worth more than your career.      ",
       author: " Joshua Johnson ",
-      // bg: "red",
+      bg: "red",
     },
     {
       quote:
         "Your reputation is more important than your paycheck, and your integrity is worth more than your career.      ",
       author: " Joshua Johnson ",
-      // bg: "yellow",
+      bg: "yellow",
     },
     {
       quote:
         "Your reputation is more important than your paycheck, and your integrity is worth more than your career.      ",
       author: " Joshua Johnson ",
-      // bg: "green",
+      bg: "green",
     },
   ];
 
@@ -99,12 +99,12 @@ function Dashboard() {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     carouselInfiniteScroll();
-  //   }, 5000);
-  //   return () => clearInterval(interval);
-  // });
+  useEffect(() => {
+    const interval = setInterval(() => {
+      carouselInfiniteScroll();
+    }, 5000);
+    return () => clearInterval(interval);
+  });
 
   return (
     <>
@@ -134,7 +134,7 @@ function Dashboard() {
                     <div
                       key={index}
                       className={styles.slide}
-                      style={{ backgroundColor: "#e6e6e6" }}
+                      style={{ backgroundColor: slide.bg }}
                     >
                       <h1>{slide.quote}</h1>
                       <p>{slide.author}</p>
