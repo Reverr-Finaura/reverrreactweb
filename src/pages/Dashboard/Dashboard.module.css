@@ -47,6 +47,8 @@
 .mentor_detail > img {
   height: 8rem;
   object-fit: cover;
+  border-radius: 100%;
+  border: 0.1rem solid blue;
 }
 
 .mentor_info > h3,

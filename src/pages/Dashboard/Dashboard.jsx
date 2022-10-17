@@ -3,6 +3,7 @@ import KnowledgeNavbar from "../../components/KnowledgeNavbar/KnowledgeNavbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import PhnSidebar from "../../components/PhnSidebar/PhnSidebar";
 import styles from "./Dashboard.module.css";
+// import { login, logout, selectUser } from "./features/userSlice";
 import Footer from "../Footer/Footer";
 import RecommendedCourse from "../../components/RecommendedCourse/RecommendedCourse";
 import { Calendar } from "react-calendar";
@@ -13,16 +14,22 @@ import {
   getDocs,
   limit,
   query,
+  where,
 } from "firebase/firestore";
 import { db } from "../../firebase";
 
 import "react-calendar/dist/Calendar.css";
 import Blog from "../../components/Blog/Blog";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import DashboardUpcomingMeeting from "../../components/DashboardUpcomingMeeting/DashboardUpcomingMeeting";
+import DashboardMentor from "../../components/DashboardMentor/DashboardMentor";
 
-function Dashboard() {
+function Dashboard(props) {
   const [width, setWidth] = useState(window.innerWidth);
+  const [userArray, setUserArray] = useState([]);
   const [index, setIndex] = useState(0);
+  // const user = useSelector(selectUser);
 
   const [blogsArray, setBlogsArray] = useState([]);
   const data = [];
@@ -118,10 +125,10 @@ function Dashboard() {
               <h1>Welcome!👋🏻</h1>
             </div>
             <div className={styles.mentor_detail}>
-              <img src="/images/Ellipse 387.svg" alt="" />
+              <img src={`${props.userInfo?.profilePic || null}`} alt="" />
               <div className={styles.mentor_info}>
-                <h3>John Doe</h3>
-                <p>Start-up Owner</p>
+                <h3>{props.userInfo?.displayName}</h3>
+                <p>Start-up {props.userInfo?.userType}</p>
               </div>
             </div>
             <div className={styles.quoteNmeeting}>
@@ -144,16 +151,18 @@ function Dashboard() {
               </div>
               <div className={styles.meetings}>
                 <h3>Upcoming Meetings</h3>
-                {meeting.map((m, index) => (
-                  <div key={index} className={styles.meeting}>
-                    <img src={m.profile} alt="" />
-                    <div className={styles.meeting_info}>
-                      <h5>Connect with {m.mentor}</h5>
-                      <p>{m.time}</p>
-                    </div>
-                    <button>Reschedule</button>
-                  </div>
-                ))}
+                {props.userInfo.meetings ? (
+                  props.userInfo.meetings.map((meeting, index) => (
+                    <DashboardUpcomingMeeting
+                      key={index + Math.random()}
+                      meeting={meeting}
+                    />
+                  ))
+                ) : (
+                  <p style={{ width: "80%", margin: "1rem auto" }}>
+                    No pcoming meetings!
+                  </p>
+                )}
               </div>
             </div>
             <div className={styles.mentorship}>
@@ -173,15 +182,16 @@ function Dashboard() {
               </div>
               <div className={styles.contact_mentor}>
                 <h3>Take Mentorship</h3>
-                {mentors.map((m, index) => (
-                  <div key={index} className={styles.contact}>
+                {props.mentors.map((mentor, index) => (
+                  /* <div key={index} className={styles.contact}>
                     <img src={m.profile} alt="" />
                     <div className={styles.mentor_info}>
                       <h5> {m.name}</h5>
                       <p>{m.field}</p>
                     </div>
                     <button>Contact Now</button>
-                  </div>
+                  </div> */
+                  <DashboardMentor mentor={mentor} />
                 ))}
               </div>
             </div>

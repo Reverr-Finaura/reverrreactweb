@@ -1,0 +1,31 @@
+.meeting {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.meeting > img {
+  height: 3rem;
+}
+.meeting_info > h5 {
+  font-size: 14px;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.meeting_info > p {
+  font-size: 12px;
+  margin-top: 0;
+  color: #c4c4c4;
+}
+
+.meeting > button {
+  background: #2a72de;
+  border-radius: 32px;
+  border: none;
+  font-size: 8px;
+
+  color: #fff;
+  padding: 4px 16px;
+  cursor: pointer;
+}

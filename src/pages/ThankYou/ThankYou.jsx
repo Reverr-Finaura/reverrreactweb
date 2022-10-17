@@ -20,11 +20,21 @@ function ThankYou() {
   const mentor = useSelector(selectMentor);
   const [fetchedUser, setFetchedUser] = useState("");
   const [fetchedMentor, setFetchedMentor] = useState("");
+  const [date, setDate] = useState(new Date());
+  const [time, setTime] = useState("");
   const { mentorEmail } = useParams();
   const [width, setWidth] = useState(window.innerWidth);
 
   const updateWidth = () => {
     setWidth(window.innerWidth);
+  };
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+  };
+
+  const handleTimeChange = (e) => {
+    setTime(e.target.value);
   };
 
   const getUser = useCallback(async () => {
@@ -47,13 +57,14 @@ function ThankYou() {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  async function handleConfirm() {
+  async function handleConfirm(e) {
+    e.preventDefault();
     await updateUserInDatabse(user.uid, "Users", {
-      meetings: [...fetchedUser.mentors, mentorEmail],
+      meetings: [{ email: mentorEmail, date, time }],
     });
 
     await updateMentorInDatabse(mentor.email, "Users", {
-      meetings: [...fetchedMentor.clients, user.email],
+      meetings: [{ email: user.email, date, time }],
     });
   }
 
@@ -73,10 +84,10 @@ function ThankYou() {
               <h1>Confirm the details of your meeting with {mentorEmail}</h1>
               <form className={styles.form}>
                 <div>
-                  <input type="date" />
+                  <input type="date" onChange={handleDateChange} value={date} />
                 </div>
                 <div>
-                  <input type="time" />
+                  <input type="time" onChange={handleTimeChange} value={time} />
                 </div>
                 <button onClick={handleConfirm}>Confirm</button>
               </form>

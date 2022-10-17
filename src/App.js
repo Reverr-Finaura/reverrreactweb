@@ -68,7 +68,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Payment from "./pages/Payment/Payment";
 import ThankYou from "./pages/ThankYou/ThankYou";
 import ScrollToTop from "react-scroll-to-top";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, limit, query, where } from "firebase/firestore";
 import { selectMentor } from "./features/scheduleSlice";
 import { ColorRing } from "react-loader-spinner";
 import Loading from "./pages/Loading/Loading";
@@ -80,8 +80,27 @@ function App() {
   const dispatch = useDispatch();
   const mentor = useSelector(selectMentor);
   const navigate = useNavigate();
+  const data2 = [];
+  const [mentorsArray, setMentorsArray] = useState([]);
 
   useEffect(() => {
+    async function fetchMentors() {
+      const usersRef = collection(db, "Users");
+      const q = query(
+        usersRef,
+        where("userType", "==", "Mentor"),
+        where("industry", "==", "IT Services"),
+        limit(2)
+      );
+      const querySnapshot = await getDocs(q);
+      querySnapshot.forEach((doc) => {
+        data2.push(doc.data());
+      });
+      setMentorsArray(data2);
+    }
+
+    fetchMentors();
+
     onAuthStateChanged(auth, (user) => {
       if (user) {
         dispatch(
@@ -187,7 +206,15 @@ function App() {
                     ) : (
                       <Route path="*" element={<Loading />} />
                     )}
-                    <Route path="/dashboard" element={<Dashboard />}></Route>
+                    <Route
+                      path="/dashboard"
+                      element={
+                        <Dashboard
+                          userInfo={userArray[0]}
+                          mentors={mentorsArray}
+                        />
+                      }
+                    ></Route>
                     <Route path="/betaslide" element={<BetaSlide />}></Route>
                     <Route path="/eeslides" element={<EESlides />}></Route>
                     <Route
@@ -321,6 +348,7 @@ function App() {
 
         <Route path="*" element={<NotFound />}></Route>
         <Route path="/loading" element={<Loading />} />
+        {/* <Route path="/thankyou/:mentorEmail" element={<ThankYou />}></Route> */}
       </Routes>
     </>
   );

@@ -1,0 +1,29 @@
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-bottom: 4%;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.contact > button {
+  background: #2a72de;
+  border-radius: 32px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  padding: 4px 16px;
+  cursor: pointer;
+}
+
+.contact > img {
+  width: 15%;
+  object-fit: cover;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}

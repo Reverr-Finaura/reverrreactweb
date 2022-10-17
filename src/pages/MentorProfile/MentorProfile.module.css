@@ -77,6 +77,14 @@
   text-align: center;
 }
 
+.about {
+  text-align: left;
+  font-weight: 500;
+  line-height: 2rem;
+  font-size: 16px;
+  color: black;
+}
+
 .detail > h5 {
   color: rgba(32, 32, 32, 0.75);
   font-size: 18px;
@@ -95,14 +103,13 @@
 }
 
 .mentor_bio {
-  text-align: center;
   margin: 7% auto;
 }
 
 .mentor_bio > p {
-  color: rgba(32, 32, 32, 0.75);
-  font-size: 22px;
-  font-weight: 500;
+  /* color: rgba(32, 32, 32, 0.75); */
+  /* font-size: 22px; */
+  /* font-weight: 500; */
   margin-top: 3rem;
 }
 
