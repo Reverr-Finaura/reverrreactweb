@@ -29,21 +29,21 @@ const Home = () => {
           </p>
           <div className={styles.rs_stats}>
             <div className={styles.rs_card}>
-              <div>
+              <div className={styles.card_div}>
                 <img src="/images/blue-bg.svg" alt="" />
                 <span className={styles.rs_stat_no}>900+</span>
               </div>
               <p>I'm a stat about start-ups</p>
             </div>
             <div className={styles.rs_card}>
-              <div>
+              <div className={styles.card_div}>
                 <img src="/images/blue-bg.svg" alt="" />
                 <span className={styles.rs_stat_no}>5Cr+</span>
               </div>
               <p>I'm a stat about start-ups</p>
             </div>
             <div className={styles.rs_card}>
-              <div>
+              <div className={styles.card_div}>
                 <img src="/images/blue-bg.svg" alt="" />
                 <span className={styles.rs_stat_no}>115L+</span>
               </div>
@@ -52,14 +52,14 @@ const Home = () => {
           </div>
           <div className={styles.rs_stats}>
             <div className={styles.rs_card}>
-              <div>
+              <div className={styles.card_div}>
                 <img src="/images/blue-bg.svg" alt="" />
                 <span className={styles.rs_stat_no}>200+</span>
               </div>
               <p>I'm a stat about start-ups</p>
             </div>
             <div className={styles.rs_card}>
-              <div>
+              <div className={styles.card_div}>
                 <img src="/images/blue-bg.svg" alt="" />
                 <span className={styles.rs_stat_no}>100+</span>
               </div>
