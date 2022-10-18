@@ -46,7 +46,7 @@ const Payment = () => {
     }
   }
 
-  // var amt = 1;
+  var amt = 1;
 
   const order = {
     id: orderID,
@@ -75,12 +75,12 @@ const Payment = () => {
   };
 
   const getUser = useCallback(async () => {
-    const results = await getUserFromDatabase(user.uid, "Users");
+    const results = await getUserFromDatabase(user.email);
     setFetchedUser(results);
   }, []);
 
   const getMentor = useCallback(async () => {
-    const results = await getMentorFromDatabase(mentorEmail, "Users");
+    const results = await getMentorFromDatabase(mentorEmail);
     setFetchedMentor(results);
   }, []);
 
