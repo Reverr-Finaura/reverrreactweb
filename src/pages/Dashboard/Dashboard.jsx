@@ -43,19 +43,19 @@ function Dashboard(props) {
       quote:
         "Your reputation is more important than your paycheck, and your integrity is worth more than your career.      ",
       author: " Joshua Johnson ",
-      // bg: "red",
+      bg: "red",
     },
     {
       quote:
         "Your reputation is more important than your paycheck, and your integrity is worth more than your career.      ",
       author: " Joshua Johnson ",
-      // bg: "yellow",
+      bg: "yellow",
     },
     {
       quote:
         "Your reputation is more important than your paycheck, and your integrity is worth more than your career.      ",
       author: " Joshua Johnson ",
-      // bg: "green",
+      bg: "green",
     },
   ];
 
@@ -106,12 +106,12 @@ function Dashboard(props) {
     return () => window.removeEventListener("resize", updateWidth);
   }, []);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     carouselInfiniteScroll();
-  //   }, 5000);
-  //   return () => clearInterval(interval);
-  // });
+  useEffect(() => {
+    const interval = setInterval(() => {
+      carouselInfiniteScroll();
+    }, 5000);
+    return () => clearInterval(interval);
+  });
 
   return (
     <>
@@ -125,7 +125,14 @@ function Dashboard(props) {
               <h1>Welcome!👋🏻</h1>
             </div>
             <div className={styles.mentor_detail}>
-              <img src={`${props.userInfo?.profilePic || null}`} alt="" />
+              <img
+                src={`${
+                  props.userInfo.profilePic
+                    ? props.userInfo.profilePic
+                    : "/images/profile-pic-default.png"
+                }`}
+                alt=""
+              />
               <div className={styles.mentor_info}>
                 <h3>{props.userInfo?.displayName}</h3>
                 <p>Start-up {props.userInfo?.userType}</p>
@@ -141,7 +148,7 @@ function Dashboard(props) {
                     <div
                       key={index}
                       className={styles.slide}
-                      style={{ backgroundColor: "#e6e6e6" }}
+                      style={{ backgroundColor: slide.bg }}
                     >
                       <h1>{slide.quote}</h1>
                       <p>{slide.author}</p>

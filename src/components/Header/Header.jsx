@@ -41,17 +41,19 @@ const Header = ({ theme }) => {
 
   return (
     <section className={styles.headerContainer}>
-      <button className={styles.logo} onClick={handleClick}>
-        <img
-          src={
-            theme === "black"
-              ? "/images/Reverr Black 1.svg"
-              : "/images/reaver-logo.svg"
-          }
-          alt=""
-        />
-        <img src={"/images/reaver-text.svg"} alt="" />
-      </button>
+      <Link to="/">
+        <button className={styles.logo} onClick={handleClick}>
+          <img
+            src={
+              theme === "black"
+                ? "/images/Reverr Black 1.svg"
+                : "/images/reaver-logo.svg"
+            }
+            alt=""
+          />
+          <img src={"/images/reaver-text.svg"} alt="" />
+        </button>
+      </Link>
 
       <div
         className={styles.buttonRow}

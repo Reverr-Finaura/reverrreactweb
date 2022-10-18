@@ -26,13 +26,15 @@ function KnowledgeNavbar() {
         onClick={() => dispatch(phnSidebarVisible())}
         className={styles.menuIcon}
       />
-      <div
-        className={styles.logo}
-        onClick={() => setPhnOptionsVisible(!phnOptionsVisible)}
-      >
-        <img src="/images/Reverr Black 1.png" alt="" />
-        <p>REVERR</p>
-      </div>
+      <Link to="/" className={styles.Homelink}>
+        <div
+          className={styles.logo}
+          onClick={() => setPhnOptionsVisible(!phnOptionsVisible)}
+        >
+          <img src="/images/Reverr Black 1.png" alt="" />
+          <p>REVERR</p>
+        </div>
+      </Link>
       <div className={styles.options}>
         <Link className={styles.link} to="/notifications">
           <div>

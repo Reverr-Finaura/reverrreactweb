@@ -28,10 +28,10 @@
 
 .rs_stat_no {
   position: relative;
-  font-size: 56px;
+  font-size: 40px;
   font-weight: 600;
-  left: -20%;
-  top: -26px;
+  left: -100px;
+  top: -40px;
 }
 
 .rs_card {
