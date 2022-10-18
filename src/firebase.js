@@ -46,10 +46,12 @@ export const updateMentorInDatabse = async (email, collection, data) => {
 
 // getUser
 
-export const getUserFromDatabase = async (uid) => {
+export const getUserFromDatabase = async (email) => {
   let User;
   await (
-    await getDocs(query(collection(db, "Users"), where("uid", "==", `${uid}`)))
+    await getDocs(
+      query(collection(db, "Users"), where("email", "==", `${email}`))
+    )
   ).forEach((doc) => {
     User = { ...doc.data() };
   });
