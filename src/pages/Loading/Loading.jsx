@@ -7,8 +7,8 @@ function Loading() {
     <div className={styles.main}>
       <ColorRing
         visible={true}
-        height="200"
-        width="200"
+        height="150"
+        width="150"
         ariaLabel="blocks-loading"
         wrapperStyle={{}}
         wrapperClass="blocks-wrapper"

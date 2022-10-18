@@ -6,6 +6,7 @@ import Footer from "../Footer/Footer";
 import KnowledgeNavbar from "../../components/KnowledgeNavbar/KnowledgeNavbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import {
+  db,
   getMentorFromDatabase,
   getUserFromDatabase,
   updateMentorInDatabse,
@@ -14,6 +15,8 @@ import {
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/userSlice";
 import { selectMentor } from "../../features/scheduleSlice";
+import { doc, setDoc, updateDoc } from "firebase/firestore";
+import toast from "react-hot-toast";
 
 function ThankYou() {
   const user = useSelector(selectUser);
@@ -66,6 +69,20 @@ function ThankYou() {
     await updateMentorInDatabse(mentor.email, "Users", {
       meetings: [{ email: user.email, date, time }],
     });
+
+    // await setDoc(doc(db, "Users", user.email), {
+    //   meetings: [{ email: mentorEmail, date, time }],
+    //   yourRole: "undefined",
+    // });
+
+    // await updateDoc(doc(user.email, {
+    //   meetings: [{ email: mentorEmail, date, time }],
+    // });
+    // updateDoc(doc(db, `Users`, user.email), {
+    //   meetings: [{ email: mentorEmail, date, time }],
+    // });
+    console.log("done");
+    toast.success("Meeting details confirmed!");
   }
 
   return (

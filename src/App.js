@@ -192,7 +192,15 @@ function App() {
                       element={<MentorProfile />}
                     ></Route>
                     <Route path="/community" element={<Community />}></Route>
-                    {userArray[0]?.mentors?.includes(mentor?.email) ? (
+                    <Route
+                      path="/schedule/:mentorEmail"
+                      element={<Schedule />}
+                    ></Route>
+                    <Route
+                      path="/thankyou/:mentorEmail"
+                      element={<ThankYou />}
+                    ></Route>
+                    {/* {userArray[0]?.mentors?.includes(mentor?.email) ? (
                       <>
                         <Route
                           path="/schedule/:mentorEmail"
@@ -205,7 +213,7 @@ function App() {
                       </>
                     ) : (
                       <Route path="*" element={<Loading />} />
-                    )}
+                    )} */}
                     <Route
                       path="/dashboard"
                       element={
