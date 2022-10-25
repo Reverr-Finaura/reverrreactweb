@@ -213,7 +213,7 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
                   }
                 }}
               >
-                {mentors.name}
+                {client.name}
               </div>
             ))}
           </div>
@@ -231,13 +231,9 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
               {selectedMentor ? <h3>{selectedMentor.name}</h3> : null}
             </div>
             <div style={{ display: "flex", alignItems: "center" }}>
+              <img src="images/add.png" alt="add" className={styles.add} />
               <img
-                src="public/images/add.png"
-                alt="add"
-                className={styles.add}
-              />
-              <img
-                src={"public/images/options.png"}
+                src={"images/options.png"}
                 alt="add"
                 className={styles.options}
               />
