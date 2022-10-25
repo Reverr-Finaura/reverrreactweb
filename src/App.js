@@ -72,6 +72,8 @@ import { collection, getDocs, limit, query, where } from "firebase/firestore";
 import { selectMentor } from "./features/scheduleSlice";
 import { ColorRing } from "react-loader-spinner";
 import Loading from "./pages/Loading/Loading";
+import Chat from "./pages/Chats/Chat";
+
 function App() {
   var data = [];
   const [userArray, setUserArray] = useState([]);
@@ -147,6 +149,7 @@ function App() {
       <ScrollToTop smooth />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/chat" element={<Chat />} />
         {!user ? (
           <>
             <Route path="/signup" element={<Auth />} />

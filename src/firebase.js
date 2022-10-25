@@ -12,6 +12,13 @@ import {
   collection,
 } from "firebase/firestore";
 
+import {
+  getDownloadURL,
+  getStorage,
+  ref,
+  uploadBytesResumable,
+} from "firebase/storage";
+
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -25,6 +32,8 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const storage = getStorage(app);
+
 const auth = getAuth();
 const db = getFirestore(app);
 
@@ -58,6 +67,22 @@ export const getUserFromDatabase = async (email) => {
   return User;
 };
 
+export const getClientMentorMsgs = async () => {
+  try {
+    let clients = [];
+    await (
+      await getDocs(
+        collection(db, `Messages/mauricerana@gmail.com/YourMentors`)
+      )
+    ).forEach((doc) => {
+      clients.push({ ...doc.data(), email: doc.id });
+    });
+    return clients;
+  } catch (err) {
+    console.log("Err: ", err);
+  }
+};
+
 export const getMentorFromDatabase = async (email) => {
   let Mentor;
   await (
@@ -68,6 +93,39 @@ export const getMentorFromDatabase = async (email) => {
     Mentor = { ...doc.data() };
   });
   return Mentor;
+};
+
+export const addMsgsInDatabase = async (email, data) => {
+  try {
+    return await setDoc(
+      doc(db, `Messages/jatin.dsquare@gmail.com/YourClients`, `${email}`),
+      data
+    );
+  } catch (err) {
+    console.log("Err: ", err);
+  }
+};
+
+export const updateMsgsInDatabase = async (email, updatedData) => {
+  try {
+    return await updateDoc(
+      doc(db, `Messages/jatin.dsquare@gmail.com/YourClients`, `${email}`),
+      updatedData
+    );
+  } catch (err) {
+    console.log("Err: ", err);
+  }
+};
+
+export const uploadMedia = async (media, path) => {
+  try {
+    await uploadBytesResumable(ref(storage, `${path}/${media.name}`), media);
+    const getMedia = await ref(storage, `${path}/${media.name}`);
+    const mediaLink = await getDownloadURL(getMedia);
+    return mediaLink;
+  } catch (err) {
+    console.log("Err: ", err);
+  }
 };
 
 export const addPaymentInDatabase = async (uid, data) => {

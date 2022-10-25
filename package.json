@@ -13,6 +13,7 @@
     "axios": "^0.27.2",
     "body-parser": "^1.20.0",
     "cashfree-dropjs": "^1.1.4",
+    "emoji-picker-react": "^4.4.3",
     "express": "^4.18.1",
     "firebase": "^9.10.0",
     "framer-motion": "^7.3.6",
