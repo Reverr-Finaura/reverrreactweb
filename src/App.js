@@ -120,7 +120,7 @@ function App() {
             where("email", "==", user.email)
           );
           const querySnapshot = await getDocs(q);
-          console.log(querySnapshot);
+          // console.log(querySnapshot);
           querySnapshot.forEach((doc) => {
             data.push(doc.data());
           });
@@ -141,7 +141,7 @@ function App() {
     });
   }, []);
 
-  console.log(userArray[0]);
+  // console.log(userArray[0]);
 
   return (
     <>

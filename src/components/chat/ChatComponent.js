@@ -1,30 +1,67 @@
-import React, { Suspense, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./ChatComponent.module.css";
-
-// import { updateMsgsInDatabase, uploadMedia } from "../../firebase/firebase";
 import EmojiPicker from "emoji-picker-react";
 import {
-  addMsgsInDatabase,
-  getMentorClientsDatabase,
-  getUserFromDatabase,
-  updateMsgsInDatabase,
+  addMsgsInMentorDatabase,
+  updateMsgsInMentorDatabase,
   uploadMedia,
+  getClientMsgs,
+  updateMsgsInClientDatabase,
+  getUserFromDatabase,
+  addMsgsInClientDatabase,
 } from "../../firebase";
 import { useSelector } from "react-redux";
 import { toast, Toaster } from "react-hot-toast";
 
-const ChatComponent = ({ mentors, mentorMsgs }) => {
-  const [selectedMentor, setSelectedMentor] = useState([]);
+const ChatComponent = () => {
+  const [mentors, setMentors] = useState([]);
+  const [mentorZero, setMentorZero] = useState("");
+  const [clientMsgs, setClientMsgs] = useState([]);
+  const [mentorsLoading, setMentorsLoading] = useState(false);
+
+  const [selectedMentor, setselectedMentor] = useState([]);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-  const [clientMentorMsgs, setClientMentorMsgs] = useState(mentorMsgs);
   const [isLoading, setIsLoading] = useState(false);
   const [file, setFile] = useState(null);
-  const msgEndRef = useRef(null);
+  const msgEndRef = useRef();
 
   const [newMsg, setNewMsg] = useState([]);
+  const clientEmail = "mauricerana@gmail.com";
 
-  // console.log(clientMsgs);
-  // console.log(clientMentorMsgs);
+  // console.log("Mentors - ", mentors);
+  // console.log("Client Messages- ", clientMsgs);
+  console.log("Selected Mentor - ", selectedMentor);
+
+  const fetchMentors = async () => {
+    setMentorsLoading(true);
+    let result = await getUserFromDatabase(clientEmail);
+    if (result !== null || undefined) {
+      const results = [];
+      for (let i = 0; i < result.mentors.length; i++) {
+        let res = await getUserFromDatabase(result.mentors[i]);
+        results.push(res);
+      }
+      setMentors(results);
+      setMentorZero(results[0]);
+      setMentorsLoading(false);
+    }
+  };
+
+  const fetchClientMsgs = async () => {
+    let results = await getClientMsgs(clientEmail);
+
+    if (results.messages?.length !== clientMsgs.messages?.length) {
+      console.log(results !== clientMsgs);
+      setClientMsgs(results);
+    } else if (clientMsgs.length === 0) {
+      setClientMsgs(results);
+    }
+  };
+
+  useEffect(() => {
+    fetchMentors();
+    fetchClientMsgs();
+  }, []);
 
   const sendMsg = async () => {
     // FOR SENDING FILE
@@ -42,9 +79,9 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
           ...selectedMentor,
           messages: [
             {
-              createdAt: new Date().toDateString(),
+              createdAt: new Date(),
               msg: fileUrl,
-              sendBy: "mauricerana@gmail.com",
+              sendBy: clientEmail,
               type: file.type,
             },
           ],
@@ -55,20 +92,21 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
           messages: [
             ...selectedMentor.messages,
             {
-              createdAt: new Date().toDateString(),
+              createdAt: new Date(),
               msg: fileUrl,
-              sendBy: "mauricerana@gmail.com",
+              sendBy: clientEmail,
               type: file.type,
             },
           ],
         };
       }
-      setSelectedMentor(curClientData);
+      setselectedMentor(curClientData);
       setIsLoading(false);
 
+      console.log(curClientData);
       var isExist;
-      for (let i = 0; i < clientMentorMsgs.length; i++) {
-        if (clientMentorMsgs[i].email == selectedMentor.email) {
+      for (let i = 0; i < clientMsgs.length; i++) {
+        if (clientMsgs[i].email == selectedMentor.email) {
           isExist = true;
           break;
         } else {
@@ -76,8 +114,8 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
         }
       }
       if (isExist) {
-        setClientMentorMsgs(
-          clientMentorMsgs.map((data) => {
+        setClientMsgs(
+          clientMsgs.map((data) => {
             if (data.email == selectedMentor.email) {
               return data, curClientData;
             } else {
@@ -85,12 +123,18 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
             }
           })
         );
-        await updateMsgsInDatabase(selectedMentor.email, {
+        await updateMsgsInMentorDatabase(selectedMentor.email, clientEmail, {
+          messages: curClientData.messages,
+        });
+        await updateMsgsInClientDatabase(clientEmail, selectedMentor.email, {
           messages: curClientData.messages,
         });
       } else {
-        setClientMentorMsgs([...clientMentorMsgs, curClientData]);
-        await addMsgsInDatabase(selectedMentor.email, {
+        setClientMsgs([...clientMsgs, curClientData]);
+        await addMsgsInMentorDatabase(selectedMentor.email, clientEmail, {
+          messages: curClientData.messages,
+        });
+        await addMsgsInClientDatabase(clientEmail, selectedMentor.email, {
           messages: curClientData.messages,
         });
       }
@@ -104,9 +148,9 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
             ...selectedMentor,
             messages: [
               {
-                createdAt: new Date().toDateString(),
+                createdAt: new Date(),
                 msg: newMsg,
-                sendBy: "jatin.dsquare@gmail.com",
+                sendBy: clientEmail,
                 type: "text",
               },
             ],
@@ -117,18 +161,18 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
             messages: [
               ...selectedMentor.messages,
               {
-                createdAt: new Date().toDateString(),
+                createdAt: new Date(),
                 msg: newMsg,
-                sendBy: "mauricerana@gmail.com",
+                sendBy: clientEmail,
                 type: "text",
               },
             ],
           };
         }
-        setSelectedMentor(curClientData);
+        setselectedMentor(curClientData);
         var isExist;
-        for (let i = 0; i < clientMentorMsgs.length; i++) {
-          if (clientMentorMsgs[i].email == selectedMentor.email) {
+        for (let i = 0; i < clientMsgs.length; i++) {
+          if (clientMsgs[i].email == selectedMentor.email) {
             isExist = true;
             break;
           } else {
@@ -136,8 +180,8 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
           }
         }
         if (isExist) {
-          setClientMentorMsgs(
-            clientMentorMsgs.map((data) => {
+          setClientMsgs(
+            clientMsgs.map((data) => {
               if (data.email == selectedMentor.email) {
                 return data, curClientData;
               } else {
@@ -145,12 +189,18 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
               }
             })
           );
-          await updateMsgsInDatabase(selectedMentor.email, {
+          await updateMsgsInMentorDatabase(selectedMentor.email, clientEmail, {
+            messages: curClientData.messages,
+          });
+          await updateMsgsInClientDatabase(clientEmail, selectedMentor.email, {
             messages: curClientData.messages,
           });
         } else {
-          setClientMentorMsgs([...clientMentorMsgs, curClientData]);
-          await addMsgsInDatabase(selectedMentor.email, {
+          setClientMsgs([...clientMsgs, curClientData]);
+          await addMsgsInMentorDatabase(selectedMentor.email, clientEmail, {
+            messages: curClientData.messages,
+          });
+          await addMsgsInClientDatabase(clientEmail, selectedMentor.email, {
             messages: curClientData.messages,
           });
         }
@@ -163,9 +213,53 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
     setNewMsg((prevInput) => prevInput + emojiObj.emoji);
     setShowEmojiPicker(false);
   };
+
   useEffect(() => {
-    msgEndRef.current?.scrollIntoView();
-  }, [newMsg, selectedMentor]);
+    msgEndRef.current?.scrollIntoView({ behaviour: "smooth" });
+  }, [selectedMentor]);
+
+  useEffect(() => {
+    var isEmailExist = false;
+    for (let i = 0; i < clientMsgs?.length; i++) {
+      if (clientMsgs[i].email == mentorZero.email) {
+        isEmailExist = true;
+        break;
+      } else {
+        isEmailExist = false;
+      }
+    }
+
+    if (isEmailExist) {
+      const messages = [];
+      clientMsgs.forEach((data) => {
+        if (data.email == mentorZero.email) {
+          messages.push(...data.messages);
+        }
+      });
+
+      messages.sort((a, b) => {
+        const dateA = a.createdAt;
+        const dateB = b.createdAt;
+        if (dateA > dateB) return 1;
+        else if (dateA < dateB) return -1;
+        return 0;
+      });
+
+      setselectedMentor({
+        image: mentorZero.image,
+        name: mentorZero.name,
+        email: mentorZero.email,
+        messages: messages,
+      });
+    } else {
+      setselectedMentor({
+        image: mentorZero.image,
+        name: mentorZero.name,
+        email: mentorZero.email,
+        messages: null,
+      });
+    }
+  }, [mentorZero]);
 
   return (
     <>
@@ -173,49 +267,65 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
         <div className={styles["users-section"]}>
           <div className={styles["top-bar-users"]}>
             <img
-              src="https://sm.askmen.com/t/askmen_in/article/f/facebook-p/facebook-profile-picture-affects-chances-of-gettin_fr3n.1200.jpg"
+              src="https://firebasestorage.googleapis.com/v0/b/reverr-25fb3.appspot.com/o/Images%2FDefaultdp.png?alt=media&token=eaf853bf-3c60-42df-9c8b-d4ebf5a1a2a6"
               alt="profile"
               className={styles["mentor-profile"]}
             />
           </div>
           <div className={styles["user-profiles"]}>
-            {mentors.map((client, index) => (
-              <div
-                key={index}
-                onClick={() => {
-                  var isEmailExist = false;
-                  for (let i = 0; i < clientMentorMsgs.length; i++) {
-                    if (clientMentorMsgs[i].email == client.email) {
-                      isEmailExist = true;
-                      break;
-                    } else {
-                      isEmailExist = false;
-                    }
-                  }
-
-                  if (isEmailExist) {
-                    clientMentorMsgs.map((data) => {
-                      if (data.email == client.email) {
-                        setSelectedMentor({
-                          image: client.image,
-                          name: client.name,
-                          ...data,
-                        });
+            {mentorsLoading ? (
+              <div className={styles.loader}></div>
+            ) : (
+              mentors?.map((mentor, index) => (
+                <div
+                  key={index}
+                  onClick={() => {
+                    var isEmailExist = false;
+                    for (let i = 0; i < clientMsgs?.length; i++) {
+                      if (clientMsgs[i].email == mentor.email) {
+                        isEmailExist = true;
+                        break;
+                      } else {
+                        isEmailExist = false;
                       }
-                    });
-                  } else {
-                    setSelectedMentor({
-                      image: client.image,
-                      name: client.name,
-                      email: client.email,
-                      messages: null,
-                    });
-                  }
-                }}
-              >
-                {client.name}
-              </div>
-            ))}
+                    }
+
+                    if (isEmailExist) {
+                      const messages = [];
+                      clientMsgs.forEach((data) => {
+                        if (data.email == mentor.email) {
+                          messages.push(...data.messages);
+                        }
+                      });
+
+                      messages.sort((a, b) => {
+                        const dateA = a.createdAt;
+                        const dateB = b.createdAt;
+                        if (dateA > dateB) return 1;
+                        else if (dateA < dateB) return -1;
+                        return 0;
+                      });
+
+                      setselectedMentor({
+                        image: mentor.image,
+                        name: mentor.name,
+                        email: mentor.email,
+                        messages: messages,
+                      });
+                    } else {
+                      setselectedMentor({
+                        image: mentor.image,
+                        name: mentor.name,
+                        email: mentor.email,
+                        messages: null,
+                      });
+                    }
+                  }}
+                >
+                  {mentor.name}
+                </div>
+              ))
+            )}
           </div>
         </div>
         <div className={styles["chat-section"]}>
@@ -233,7 +343,7 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
             <div style={{ display: "flex", alignItems: "center" }}>
               <img src="images/add.png" alt="add" className={styles.add} />
               <img
-                src={"images/options.png"}
+                src="images/options.png"
                 alt="add"
                 className={styles.options}
               />
@@ -248,9 +358,9 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
                     <>
                       <h4
                         className={
-                          curMsg.sendBy == "mauricerana@gmail.com"
-                            ? styles["mentor-h4"]
-                            : styles["client-h4"]
+                          curMsg.sendBy == clientEmail
+                            ? styles["client-h4"]
+                            : styles["mentor-h4"]
                         }
                       >
                         {curMsg?.msg}
@@ -268,16 +378,16 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
                         target="_blank"
                         rel="noreferrer"
                         className={
-                          curMsg.sendBy == "mauricerana@gmail.com"
-                            ? styles["mentor-img"]
-                            : styles["client-img"]
+                          curMsg.sendBy == clientEmail
+                            ? styles["client-img"]
+                            : styles["mentor-img"]
                         }
                       >
                         <img
                           src={curMsg.msg}
                           alt="img"
                           style={{
-                            width: "50%",
+                            width: "150px",
                             border: "2px solid #b9ceef",
                             borderRadius: "10px",
                           }}
@@ -292,16 +402,16 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
                       target="_blank"
                       rel="noreferrer"
                       className={
-                        curMsg.sendBy == "mauricerana@gmail.com"
-                          ? styles["mentor-img"]
-                          : styles["client-img"]
+                        curMsg.sendBy == clientEmail
+                          ? styles["client-img"]
+                          : styles["mentor-img"]
                       }
                     >
                       <img
                         src="/images/doc.png"
                         alt="doc"
                         style={{
-                          width: "50%",
+                          width: "150px",
                           border: "2px solid transparent",
                           borderRadius: "10px",
                         }}
@@ -314,15 +424,9 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
               <h3 style={{ color: "grey", textAlign: "center" }}>
                 No Conversation yet!
               </h3>
-            ) : (
-              <h3 className={styles["chat-area__message"]}>
-                Select a client first
-                <br />
-                to start chatting
-              </h3>
-            )}
+            ) : null}
 
-            <div ref={msgEndRef} />
+            <div ref={msgEndRef}></div>
             {isLoading ? (
               <h5
                 style={{ position: "absolute", right: "2rem", bottom: "15%" }}
@@ -335,7 +439,7 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
           <div className={styles["bottom-bar"]}>
             <label htmlFor="file">
               <img
-                src={"/images/attachment.png"}
+                src="images/attachment.png"
                 alt="attachment"
                 className={styles.attachment}
                 style={
@@ -354,7 +458,7 @@ const ChatComponent = ({ mentors, mentorMsgs }) => {
               disabled={selectedMentor.length === 0 ? true : false}
             />
             <img
-              src={"/images/emoji.png"}
+              src="images/emoji.png"
               alt="emoji"
               className={styles.emoji}
               onClick={() => {
